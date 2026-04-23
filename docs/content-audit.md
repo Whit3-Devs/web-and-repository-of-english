@@ -1,68 +1,66 @@
 # Content Audit — `obsidian-info`
 
-This audit maps the current Obsidian source material into app-ready content groups.
+This audit maps the original Obsidian source material into the app content that was extracted from it.
 
 ## Status Labels
 
-- **Ready for cheatsheet data**: structured enough to become typed app data now.
-- **Needs English cleanup**: useful content, but contains Spanish text that must be normalized before app import.
-- **Needs restructuring**: useful content, but not yet shaped for quick cards.
-- **Deep explanation only**: better suited for future topic detail pages than for short cheatsheet cards.
+- **Migrated into app data**: the topic already exists in `src/data/*`.
+- **Archived source**: the original Obsidian file is no longer active in the repo root and now lives under `docs/archive/obsidian-info/`.
+- **Future deep explanation source**: the content may still be useful later when turning placeholder detail routes into real long-form explanations.
+
+## Current Source Policy
+
+- Active `obsidian-info/` at repo root has been removed.
+- All former Obsidian source files were archived under `docs/archive/obsidian-info/`.
+- Runtime app content now comes from typed data files in `src/data/`.
 
 ## Verb Tenses
 
-Primary implementation source for the first content expansion.
-
 | Source | Status | App Target |
 | --- | --- | --- |
-| `Verb Tenses/Present/Present Simple.md` | Ready for cheatsheet data | Verb Tenses |
-| `Verb Tenses/Present/Present Continuous.md` | Ready for cheatsheet data | Verb Tenses |
-| `Verb Tenses/Present/Present Perfect.md` | Ready for cheatsheet data | Verb Tenses |
-| `Verb Tenses/Present/Present Perfect Continuous.md` | Ready for cheatsheet data | Verb Tenses |
-| `Verb Tenses/Past/Past Simple.md` | Ready for cheatsheet data | Verb Tenses |
-| `Verb Tenses/Past/Past Continuous.md` | Ready for cheatsheet data | Verb Tenses |
-| `Verb Tenses/Past/Past Perfect.md` | Ready for cheatsheet data | Verb Tenses |
-| `Verb Tenses/Past/Past Perfect Continuous.md` | Ready for cheatsheet data | Verb Tenses |
-| `Verb Tenses/Future/Future Simple.md` | Ready for cheatsheet data | Verb Tenses |
-| `Verb Tenses/Future/Future Continuous.md` | Ready for cheatsheet data | Verb Tenses |
-| `Verb Tenses/Future/Future Perfect.md` | Ready for cheatsheet data | Verb Tenses |
-| `Verb Tenses/Future/Future Perfect Continuous.md` | Ready for cheatsheet data | Verb Tenses |
-| `Verb Tenses/Future/Future Going To.md` | Ready for cheatsheet data | Verb Tenses |
-| `Verb Tenses/Verb Tenses Overview.md` | Deep explanation only | Future overview/detail page |
-| `Verb Tenses/* Reference Tables.md` | Deep explanation only | Future reference-table page |
-| `Verb Tenses/Verb Tenses Timeline.canvas` | Deep explanation only | Future visual explanation |
+| `Verb Tenses/Present/Present Simple.md` | Migrated into app data + archived source | Verb Tenses |
+| `Verb Tenses/Present/Present Continuous.md` | Migrated into app data + archived source | Verb Tenses |
+| `Verb Tenses/Present/Present Perfect.md` | Migrated into app data + archived source | Verb Tenses |
+| `Verb Tenses/Present/Present Perfect Continuous.md` | Migrated into app data + archived source | Verb Tenses |
+| `Verb Tenses/Past/Past Simple.md` | Migrated into app data + archived source | Verb Tenses |
+| `Verb Tenses/Past/Past Continuous.md` | Migrated into app data + archived source | Verb Tenses |
+| `Verb Tenses/Past/Past Perfect.md` | Migrated into app data + archived source | Verb Tenses |
+| `Verb Tenses/Past/Past Perfect Continuous.md` | Migrated into app data + archived source | Verb Tenses |
+| `Verb Tenses/Future/Future Simple.md` | Migrated into app data + archived source | Verb Tenses |
+| `Verb Tenses/Future/Future Continuous.md` | Migrated into app data + archived source | Verb Tenses |
+| `Verb Tenses/Future/Future Perfect.md` | Migrated into app data + archived source | Verb Tenses |
+| `Verb Tenses/Future/Future Perfect Continuous.md` | Migrated into app data + archived source | Verb Tenses |
+| `Verb Tenses/Future/Future Going To.md` | Migrated into app data + archived source | Verb Tenses |
+| `Verb Tenses/Verb Tenses Overview.md` | Archived source / future deep explanation source | Future overview page |
+| `Verb Tenses/* Reference Tables.md` | Archived source / future deep explanation source | Future reference-table page |
+| `Verb Tenses/Verb Tenses Timeline.canvas` | Archived source / future deep explanation source | Future visual explanation |
 
 ## Modal Verbs
 
-Good second-phase content after Verb Tenses are stable.
-
 | Source | Status | App Target |
 | --- | --- | --- |
-| `Modal Verbs/Ability and Permission.md` | Migrated and archived | Modal Verbs |
-| `Modal Verbs/Advice and Obligation.md` | Migrated and archived | Modal Verbs |
-| `Modal Verbs/Polite Requests.md` | Migrated and archived | Modal Verbs |
-| `Modal Verbs/Possibility and Probability.md` | Migrated and archived | Modal Verbs |
-| `Modal Verbs/Would and Hypotheticals.md` | Migrated and archived | Modal Verbs |
-| `Modal Verbs/Modal Verbs Overview.md` | Needs English cleanup | Modal Verbs overview |
+| `Modal Verbs/Ability and Permission.md` | Migrated into app data + archived source | Modal Verbs |
+| `Modal Verbs/Advice and Obligation.md` | Migrated into app data + archived source | Modal Verbs |
+| `Modal Verbs/Polite Requests.md` | Migrated into app data + archived source | Modal Verbs |
+| `Modal Verbs/Possibility and Probability.md` | Migrated into app data + archived source | Modal Verbs |
+| `Modal Verbs/Would and Hypotheticals.md` | Migrated into app data + archived source | Modal Verbs |
+| `Modal Verbs/Modal Verbs Overview.md` | Archived source / future deep explanation source | Modal Verbs overview |
 
 ## Core Grammar
 
-Useful third-phase content, but several notes need English cleanup before app import.
-
 | Source | Status | App Target |
 | --- | --- | --- |
-| `Core Grammar/English Auxiliaries.md` | Needs English cleanup | Core Grammar |
-| `Core Grammar/WH Questions and Question Types.md` | Needs English cleanup | Core Grammar |
-| `Core Grammar/Embedded WH clauses.md` | Needs English cleanup | Core Grammar |
-| `Core Grammar/Pronouns Possessives and Object Forms.md` | Needs English cleanup | Core Grammar |
-| `Core Grammar/Common Prepositions.md` | Needs English cleanup | Core Grammar |
-| `Core Grammar/Key Structure Differences.md` | Needs English cleanup | Core Grammar |
-| `Core Grammar/Frequent Modal Verbs.md` | Needs restructuring | Modal Verbs / Core Grammar bridge |
+| `Core Grammar/English Auxiliaries.md` | Normalized into app data + archived source | Core Grammar |
+| `Core Grammar/WH Questions and Question Types.md` | Normalized into app data + archived source | Core Grammar |
+| `Core Grammar/Embedded WH clauses.md` | Normalized into app data + archived source | Core Grammar |
+| `Core Grammar/Pronouns Possessives and Object Forms.md` | Normalized into app data + archived source | Core Grammar |
+| `Core Grammar/Common Prepositions.md` | Normalized into app data + archived source | Core Grammar |
+| `Core Grammar/Key Structure Differences.md` | Normalized into app data + archived source | Core Grammar |
+| `Core Grammar/Frequent Modal Verbs.md` | Archived source / future restructure candidate | Modal Verbs / Core Grammar bridge |
 
 ## Implementation Notes
 
-- `obsidian-info` is a source folder, not the runtime data model.
-- App-facing content must stay English-first.
-- Verb Tense detail routes exist now, but full explanations are intentionally marked as coming soon.
-- Future imports should continue extracting short cheatsheet summaries first, then deep explanations topic by topic.
-- Migrated Modal Verbs source notes are archived under `docs/archive/obsidian-info/Modal Verbs/`.
+- App-facing content remains English-first.
+- Home is intended to work as a topic directory, not only as a section launcher.
+- Detail routes may still show `Full explanation coming soon`, but their navigation structure is already stable.
+- Archived Obsidian material remains available for future topic-by-topic deep migrations under `docs/archive/obsidian-info/`.

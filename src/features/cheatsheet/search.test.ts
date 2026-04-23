@@ -37,13 +37,16 @@ const verbTenses: VerbTense[] = [
 const irregularVerbs: IrregularVerb[] = [
   {
     id: "go",
+    slug: "go",
     infinitive: "go",
-      pastSimple: "went",
-      pastParticiple: "gone",
+    pastSimple: "went",
+    pastParticiple: "gone",
     meaning: "move from one place to another",
     example: "I went home.",
     frequency: "high",
-    category: "movement"
+    category: "movement",
+    fullExplanationPath: "/irregular-verbs/go",
+    hasFullExplanation: false
   }
 ];
 

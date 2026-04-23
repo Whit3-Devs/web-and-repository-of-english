@@ -22,7 +22,7 @@ export const verbTenses: VerbTense[] = [
     commonMistakes: ["She don't work here. \u274c", "She doesn't work here. \u2705", "Does he works here? \u274c", "Does he work here? \u2705"],
     relatedTopics: ["Present Continuous", "Present Perfect"],
     fullExplanationPath: "/verb-tenses/present-simple",
-    hasFullExplanation: false,
+    hasFullExplanation: true,
     category: "present",
   },
   {
@@ -44,7 +44,7 @@ export const verbTenses: VerbTense[] = [
     commonMistakes: ["She studying now. \u274c", "She is studying now. \u2705", "I am work now. \u274c", "I am working now. \u2705"],
     relatedTopics: ["Present Simple", "Present Perfect Continuous"],
     fullExplanationPath: "/verb-tenses/present-continuous",
-    hasFullExplanation: false,
+    hasFullExplanation: true,
     category: "present",
   },
   {
@@ -66,7 +66,7 @@ export const verbTenses: VerbTense[] = [
     commonMistakes: ["I have seen it yesterday. \u274c", "I saw it yesterday. \u2705", "She has went home. \u274c", "She has gone home. \u2705"],
     relatedTopics: ["Past Simple", "Present Perfect Continuous"],
     fullExplanationPath: "/verb-tenses/present-perfect",
-    hasFullExplanation: false,
+    hasFullExplanation: true,
     category: "present",
   },
   {
@@ -88,7 +88,7 @@ export const verbTenses: VerbTense[] = [
     commonMistakes: ["I am living here since 2022. \u274c", "I have been living here since 2022. \u2705", "She has been work all day. \u274c", "She has been working all day. \u2705"],
     relatedTopics: ["Present Perfect", "Present Continuous"],
     fullExplanationPath: "/verb-tenses/present-perfect-continuous",
-    hasFullExplanation: false,
+    hasFullExplanation: true,
     category: "present",
   },
   {
@@ -110,7 +110,7 @@ export const verbTenses: VerbTense[] = [
     commonMistakes: ["Did you went? \u274c", "Did you go? \u2705", "I have seen her yesterday. \u274c", "I saw her yesterday. \u2705"],
     relatedTopics: ["Past Continuous", "Present Perfect", "Past Perfect"],
     fullExplanationPath: "/verb-tenses/past-simple",
-    hasFullExplanation: false,
+    hasFullExplanation: true,
     category: "past",
   },
   {
@@ -132,7 +132,7 @@ export const verbTenses: VerbTense[] = [
     commonMistakes: ["She was read a book. \u274c", "She was reading a book. \u2705", "They were study when I arrived. \u274c", "They were studying when I arrived. \u2705"],
     relatedTopics: ["Past Simple", "Past Perfect Continuous"],
     fullExplanationPath: "/verb-tenses/past-continuous",
-    hasFullExplanation: false,
+    hasFullExplanation: true,
     category: "past",
   },
   {
@@ -154,7 +154,7 @@ export const verbTenses: VerbTense[] = [
     commonMistakes: ["When I arrived, they left already. \u274c", "When I arrived, they had already left. \u2705", "She had went home. \u274c", "She had gone home. \u2705"],
     relatedTopics: ["Past Simple", "Past Perfect Continuous"],
     fullExplanationPath: "/verb-tenses/past-perfect",
-    hasFullExplanation: false,
+    hasFullExplanation: true,
     category: "past",
   },
   {
@@ -176,7 +176,7 @@ export const verbTenses: VerbTense[] = [
     commonMistakes: ["I had been study for two hours. \u274c", "I had been studying for two hours. \u2705", "She had working before I came. \u274c", "She had been working before I came. \u2705"],
     relatedTopics: ["Past Perfect", "Past Continuous"],
     fullExplanationPath: "/verb-tenses/past-perfect-continuous",
-    hasFullExplanation: false,
+    hasFullExplanation: true,
     category: "past",
   },
   {
@@ -198,7 +198,7 @@ export const verbTenses: VerbTense[] = [
     commonMistakes: ["I will to call you. \u274c", "I will call you. \u2705", "He will goes tomorrow. \u274c", "He will go tomorrow. \u2705"],
     relatedTopics: ["Future Going To", "Future Continuous", "Future Perfect"],
     fullExplanationPath: "/verb-tenses/future-simple",
-    hasFullExplanation: false,
+    hasFullExplanation: true,
     category: "future",
   },
   {
@@ -220,7 +220,7 @@ export const verbTenses: VerbTense[] = [
     commonMistakes: ["I will be study at 9. \u274c", "I will be studying at 9. \u2705", "Will be you working later? \u274c", "Will you be working later? \u2705"],
     relatedTopics: ["Future Simple", "Future Perfect Continuous"],
     fullExplanationPath: "/verb-tenses/future-continuous",
-    hasFullExplanation: false,
+    hasFullExplanation: true,
     category: "future",
   },
   {
@@ -242,7 +242,7 @@ export const verbTenses: VerbTense[] = [
     commonMistakes: ["I will have finish it by tomorrow. \u274c", "I will have finished it by tomorrow. \u2705", "She will has completed it. \u274c", "She will have completed it. \u2705"],
     relatedTopics: ["Future Simple", "Future Perfect Continuous"],
     fullExplanationPath: "/verb-tenses/future-perfect",
-    hasFullExplanation: false,
+    hasFullExplanation: true,
     category: "future",
   },
   {
@@ -264,7 +264,7 @@ export const verbTenses: VerbTense[] = [
     commonMistakes: ["I will have been work here for years. \u274c", "I will have been working here for years. \u2705", "She will have been lived here for years. \u274c", "She will have been living here for years. \u2705"],
     relatedTopics: ["Future Perfect", "Present Perfect Continuous"],
     fullExplanationPath: "/verb-tenses/future-perfect-continuous",
-    hasFullExplanation: false,
+    hasFullExplanation: true,
     category: "future",
   },
   {
@@ -286,7 +286,7 @@ export const verbTenses: VerbTense[] = [
     commonMistakes: ["I am go to study. \u274c", "I am going to study. \u2705", "She going to travel tomorrow. \u274c", "She is going to travel tomorrow. \u2705"],
     relatedTopics: ["Future Simple", "Present Continuous"],
     fullExplanationPath: "/verb-tenses/future-going-to",
-    hasFullExplanation: false,
+    hasFullExplanation: true,
     category: "future",
   },
 ];

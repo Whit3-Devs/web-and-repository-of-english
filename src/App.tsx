@@ -3,6 +3,7 @@ import { AppLayout } from "./components/AppLayout";
 import { GrammarTopicDetailPage } from "./pages/GrammarTopicDetailPage";
 import { GrammarTopicsPage } from "./pages/GrammarTopicsPage";
 import { HomePage } from "./pages/HomePage";
+import { IrregularVerbDetailPage } from "./pages/IrregularVerbDetailPage";
 import { IrregularVerbsPage } from "./pages/IrregularVerbsPage";
 import { VerbTenseDetailPage } from "./pages/VerbTenseDetailPage";
 import { VerbTensesPage } from "./pages/VerbTensesPage";
@@ -37,6 +38,7 @@ export function App() {
           }
         />
         <Route path="irregular-verbs" element={<IrregularVerbsPage />} />
+        <Route path="irregular-verbs/:slug" element={<IrregularVerbDetailPage />} />
         <Route path="*" element={<Navigate to="/" replace />} />
       </Route>
     </Routes>

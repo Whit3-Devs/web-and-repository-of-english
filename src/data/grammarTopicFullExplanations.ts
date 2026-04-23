@@ -1,0 +1,2029 @@
+import type { GrammarTopicFullExplanation, GrammarTopicSection } from "../shared/types/content";
+
+export const grammarTopicFullExplanations: GrammarTopicFullExplanation[] = [
+  {
+    contentType: "modal-topic",
+    slug: "ability-and-permission",
+    title: "Ability and Permission",
+    section: "modal-verbs",
+    overview:
+      "Use can, could, and may to talk about ability, ask for permission, and choose the right level of formality when you ask or allow something.",
+    whatItDoes: [
+      "Express what someone is able to do in the present or in the past.",
+      "Ask for or give permission with different tones, from everyday to formal.",
+      "Help you choose between direct, softer, and more formal modal choices."
+    ],
+    coreRule: [
+      "Subject + modal + base verb + complement",
+      "Negative: Subject + modal + not + base verb + complement",
+      "Question: Modal + subject + base verb + complement?",
+      "After a modal, the main verb stays in the base form: no to and no -s."
+    ],
+    decisionRules: [
+      "If you mean present ability or everyday permission, choose can.",
+      "If you mean past ability or a softer permission request, choose could.",
+      "If you want more formal permission, choose may.",
+      "If you are asking politely, could often sounds softer than can.",
+      "After any modal in this topic, keep the next verb in base form."
+    ],
+    modalCards: [
+      {
+        title: "Can for present ability",
+        modal: "can",
+        mainUse: "Present ability",
+        whenToUse: "Use it when someone is able to do something now or in general.",
+        tone: "Neutral and everyday.",
+        structures: {
+          affirmative: "Subject + can + base verb",
+          negative: "Subject + cannot / can't + base verb",
+          question: "Can + subject + base verb?"
+        },
+        contractions: ["can't"],
+        examples: [
+          "I can speak English.",
+          "She can't drive yet.",
+          "Can he solve this problem?"
+        ]
+      },
+      {
+        title: "Can for informal permission",
+        modal: "can",
+        mainUse: "Informal permission",
+        whenToUse: "Use it in everyday situations when asking or giving permission directly.",
+        tone: "Informal and direct.",
+        structures: {
+          affirmative: "Subject + can + base verb",
+          negative: "Subject + cannot / can't + base verb",
+          question: "Can + subject + base verb?"
+        },
+        contractions: ["can't"],
+        examples: [
+          "You can sit here.",
+          "We can't enter this room.",
+          "Can I use your charger?"
+        ],
+        notes: ["Can is common in natural everyday speech when the context is informal."]
+      },
+      {
+        title: "Could for past ability",
+        modal: "could",
+        mainUse: "Past ability",
+        whenToUse: "Use it for general ability in the past.",
+        tone: "Neutral, often descriptive.",
+        structures: {
+          affirmative: "Subject + could + base verb",
+          negative: "Subject + could not / couldn't + base verb",
+          question: "Could + subject + base verb?"
+        },
+        contractions: ["couldn't"],
+        examples: [
+          "I could swim when I was five.",
+          "He couldn't read at that age.",
+          "Could she play the piano when she was a child?"
+        ],
+        notes: [
+          "Could usually describes general past ability, not one single successful action."
+        ]
+      },
+      {
+        title: "Could for softer permission or polite request",
+        modal: "could",
+        mainUse: "Softer permission / polite request",
+        whenToUse: "Use it when you want to sound less direct than can.",
+        tone: "Softer and more polite than can.",
+        structures: {
+          affirmative: "Subject + could + base verb",
+          negative: "Subject + could not / couldn't + base verb",
+          question: "Could + subject + base verb?"
+        },
+        contractions: ["couldn't"],
+        examples: [
+          "Could I leave early today?",
+          "Could you help me for a minute?",
+          "We couldn't stay long."
+        ],
+        notes: ["In questions, could often sounds more polite than can."]
+      },
+      {
+        title: "May for formal permission",
+        modal: "may",
+        mainUse: "Formal permission",
+        whenToUse: "Use it in formal contexts, careful requests, or institutional language.",
+        tone: "Formal and respectful.",
+        structures: {
+          affirmative: "Subject + may + base verb",
+          negative: "Subject + may not + base verb",
+          question: "May + subject + base verb?"
+        },
+        examples: [
+          "You may enter now.",
+          "Students may not use phones during the exam.",
+          "May I ask a question?"
+        ],
+        notes: [
+          "May sounds more formal than can.",
+          "May not is common; a short contracted form is not the normal teaching priority here."
+        ]
+      }
+    ],
+    comparisonBlocks: [
+      {
+        title: "Can vs Could",
+        explanation:
+          "Can usually talks about present ability or direct permission. Could often talks about past ability or a softer, more polite request.",
+        examples: [
+          "I can solve it now. / I could solve it when I had more time.",
+          "Can I open the window? / Could I open the window?"
+        ],
+        takeaway: "Choose could when you want distance, past reference, or softer tone."
+      },
+      {
+        title: "Can vs May",
+        explanation:
+          "Both can appear around permission, but can sounds everyday and may sounds more formal.",
+        examples: [
+          "Can I come in? → natural and informal",
+          "May I come in? → formal and careful"
+        ],
+        takeaway: "Choose may when the situation needs more formality."
+      },
+      {
+        title: "Could vs May",
+        explanation:
+          "Could often softens a request, while may usually highlights formal permission rather than softness.",
+        examples: [
+          "Could I borrow your pen? → polite and natural",
+          "May I leave now? → formal permission"
+        ],
+        takeaway: "Could is often the better choice for polite everyday interaction; may is stronger in formal settings."
+      }
+    ],
+    personalizedExamples: [
+      "I can explain this bug now, but I can't deploy it today.",
+      "Could you review my English note after lunch?",
+      "May I join the meeting for the last ten minutes?",
+      "When I started coding, I couldn't read error messages well.",
+      "Now I can write small scripts without help."
+    ],
+    explainedMistakes: [
+      {
+        wrong: "She can speaks English.",
+        correct: "She can speak English.",
+        reason: "After a modal, use the base form of the verb, not the third-person form."
+      },
+      {
+        wrong: "Can I to ask something?",
+        correct: "Can I ask something?",
+        reason: "After a modal, do not use to before the main verb."
+      },
+      {
+        wrong: "May I to enter?",
+        correct: "May I enter?",
+        reason: "May is followed directly by the base verb."
+      },
+      {
+        wrong: "He couldn't to swim when he was six.",
+        correct: "He couldn't swim when he was six.",
+        reason: "Negative modals still take the base verb without to."
+      }
+    ],
+    quickMemory: [
+      "Can = present ability or informal permission.",
+      "Could = past ability or softer permission/request.",
+      "May = formal permission.",
+      "After can, could, and may, use the base verb.",
+      "No to and no -s after the modal."
+    ],
+    practiceItems: [
+      {
+        prompt: "Complete the sentence: She can ___ English very well.",
+        answer: "speak",
+        focus: "base verb after a modal"
+      },
+      {
+        prompt: "Turn this into a question: I can leave early.",
+        answer: "Can I leave early?",
+        focus: "question structure with can"
+      },
+      {
+        prompt: "Make it negative: He could swim at five.",
+        answer: "He couldn't swim at five.",
+        focus: "negative structure with could"
+      },
+      {
+        prompt: "Choose the better formal request: Can I enter? / May I enter?",
+        answer: "May I enter?",
+        focus: "formal permission"
+      },
+      {
+        prompt: "Correct the sentence: She can studies at night.",
+        answer: "She can study at night.",
+        focus: "base verb after can"
+      }
+    ],
+    relatedTopics: [
+      "Polite Requests",
+      "Possibility and Probability",
+      "English Auxiliaries",
+      "WH Questions"
+    ]
+  },
+  {
+    contentType: "prepositions",
+    slug: "common-prepositions",
+    title: "Common Prepositions",
+    section: "core-grammar",
+    overview:
+      "Use prepositions to connect nouns, pronouns, or verb-ing forms to ideas such as place, time, movement, cause, topic, means, or company.",
+    whatItDoes: [
+      "Show location, direction, time, and relationship.",
+      "Connect a noun or pronoun to another part of the sentence.",
+      "Create fixed patterns that often need to be learned with examples, not only with translation."
+    ],
+    basicStructure: [
+      "Preposition + noun: in the room, on the desk, after lunch.",
+      "Preposition + pronoun: with me, for her, from them.",
+      "Preposition + verb-ing: after eating, before leaving, without saying goodbye."
+    ],
+    referenceTables: [
+      {
+        group: "general",
+        title: "General reference table",
+        rows: [
+          {
+            preposition: "in",
+            use: "Inside a space, longer time periods, general areas",
+            pattern: "in + place/time period",
+            example: "She is in the kitchen. I was born in 1998.",
+            note: "Use it for countries, cities, months, years, and parts of the day."
+          },
+          {
+            preposition: "on",
+            use: "Surfaces, days, dates",
+            pattern: "on + surface/day/date",
+            example: "The keys are on the table. The meeting is on Monday."
+          },
+          {
+            preposition: "at",
+            use: "Exact point, exact time, precise place",
+            pattern: "at + point/time",
+            example: "Meet me at the station at 8:00."
+          },
+          {
+            preposition: "to",
+            use: "Direction, destination, receiver",
+            pattern: "to + place/person",
+            example: "We walked to the office. Give it to her."
+          },
+          {
+            preposition: "for",
+            use: "Purpose, benefit, duration",
+            pattern: "for + person/time/use",
+            example: "This note is for you. We waited for an hour."
+          },
+          {
+            preposition: "with",
+            use: "Company, instrument",
+            pattern: "with + person/object",
+            example: "I went with my friend. She wrote with a pencil."
+          },
+          {
+            preposition: "by",
+            use: "Means, author, passive agent",
+            pattern: "by + means/agent",
+            example: "I travel by bus. The novel was written by Borges."
+          },
+          {
+            preposition: "about",
+            use: "Topic",
+            pattern: "about + topic",
+            example: "We talked about the problem."
+          }
+        ]
+      },
+      {
+        group: "place",
+        title: "Place",
+        rows: [
+          {
+            preposition: "in",
+            use: "Inside an enclosed or limited space",
+            pattern: "in + room/building/city/country",
+            example: "The phone is in the bag."
+          },
+          {
+            preposition: "on",
+            use: "On a surface",
+            pattern: "on + surface",
+            example: "The laptop is on the desk."
+          },
+          {
+            preposition: "at",
+            use: "At a specific point or address",
+            pattern: "at + point/place",
+            example: "She is at the door."
+          },
+          {
+            preposition: "under",
+            use: "Lower position",
+            pattern: "under + noun",
+            example: "The shoes are under the bed."
+          },
+          {
+            preposition: "between",
+            use: "Middle position with two references",
+            pattern: "between + A + and + B",
+            example: "The bank is between the school and the pharmacy."
+          },
+          {
+            preposition: "next to",
+            use: "Very close at the side",
+            pattern: "next to + noun",
+            example: "The chair is next to the window."
+          }
+        ]
+      },
+      {
+        group: "time",
+        title: "Time",
+        rows: [
+          {
+            preposition: "in",
+            use: "Months, years, seasons, parts of the day",
+            pattern: "in + month/year/season/part of day",
+            example: "I was born in 2000. We study in the morning."
+          },
+          {
+            preposition: "on",
+            use: "Days and dates",
+            pattern: "on + day/date",
+            example: "The class is on Tuesday. Her birthday is on May 9."
+          },
+          {
+            preposition: "at",
+            use: "Exact times",
+            pattern: "at + clock time",
+            example: "The meeting starts at 9:00."
+          },
+          {
+            preposition: "before",
+            use: "Earlier than a time or event",
+            pattern: "before + noun/verb-ing",
+            example: "Review the note before class."
+          },
+          {
+            preposition: "after",
+            use: "Later than a time or event",
+            pattern: "after + noun/verb-ing",
+            example: "We practiced after dinner."
+          },
+          {
+            preposition: "for",
+            use: "Duration",
+            pattern: "for + length of time",
+            example: "She studied for three hours."
+          },
+          {
+            preposition: "since",
+            use: "Starting point until now",
+            pattern: "since + point in time",
+            example: "He has lived here since 2021.",
+            note: "Usually appears with Present Perfect or Present Perfect Continuous."
+          }
+        ]
+      },
+      {
+        group: "movement",
+        title: "Movement / Direction",
+        rows: [
+          {
+            preposition: "to",
+            use: "Destination",
+            pattern: "go/walk/run + to + place",
+            example: "They went to the park."
+          },
+          {
+            preposition: "into",
+            use: "Movement from outside to inside",
+            pattern: "move + into + place",
+            example: "She walked into the room."
+          },
+          {
+            preposition: "out of",
+            use: "Movement from inside to outside",
+            pattern: "move + out of + place",
+            example: "He came out of the house."
+          },
+          {
+            preposition: "through",
+            use: "Movement through the inside of something",
+            pattern: "move + through + space",
+            example: "We walked through the tunnel."
+          },
+          {
+            preposition: "across",
+            use: "Movement from one side to the other",
+            pattern: "move + across + surface/area",
+            example: "She ran across the street."
+          },
+          {
+            preposition: "along",
+            use: "Movement following a line",
+            pattern: "move + along + line/path",
+            example: "We walked along the beach."
+          }
+        ]
+      },
+      {
+        group: "means",
+        title: "Company / Means / Instrument",
+        rows: [
+          {
+            preposition: "with",
+            use: "Company",
+            pattern: "with + person",
+            example: "I went with my brother."
+          },
+          {
+            preposition: "with",
+            use: "Instrument or tool",
+            pattern: "with + object",
+            example: "She cut the paper with scissors."
+          },
+          {
+            preposition: "by",
+            use: "Means of transport",
+            pattern: "by + transport",
+            example: "They traveled by train."
+          },
+          {
+            preposition: "by",
+            use: "Agent in passive voice",
+            pattern: "be + past participle + by + agent",
+            example: "The article was written by the editor."
+          }
+        ]
+      },
+      {
+        group: "cause-purpose-topic",
+        title: "Cause / Purpose / Topic",
+        rows: [
+          {
+            preposition: "for",
+            use: "Benefit or purpose",
+            pattern: "for + person/purpose",
+            example: "This guide is for beginners."
+          },
+          {
+            preposition: "about",
+            use: "Topic",
+            pattern: "about + topic",
+            example: "We talked about modal verbs."
+          },
+          {
+            preposition: "of",
+            use: "Possession, relation, part of something",
+            pattern: "of + noun",
+            example: "The roof of the house is new."
+          },
+          {
+            preposition: "because of",
+            use: "Cause or reason",
+            pattern: "because of + noun phrase",
+            example: "The game was canceled because of the rain."
+          }
+        ]
+      }
+    ],
+    comparisonBlocks: [
+      {
+        title: "In vs On vs At",
+        explanation:
+          "Use in for bigger spaces and longer time periods, on for surfaces and days, and at for exact points in place or time.",
+        examples: [
+          "in Argentina / in the kitchen / in July",
+          "on the table / on Monday / on March 25",
+          "at home / at the door / at 7:00"
+        ]
+      },
+      {
+        title: "To vs In vs Into",
+        explanation:
+          "Use to for destination, in for position inside, and into for movement from outside to inside.",
+        examples: [
+          "I go to the room. → destination",
+          "I am in the room. → position",
+          "I walk into the room. → movement inside"
+        ]
+      },
+      {
+        title: "For vs Since",
+        explanation:
+          "Use for to express duration and since to express the starting point of that duration.",
+        examples: [
+          "for two hours / for a week / for many years",
+          "since Monday / since 2020 / since last night",
+          "I have studied for three hours. / I have lived here since 2021."
+        ]
+      },
+      {
+        title: "By vs With",
+        explanation:
+          "Use by for transport, authorship, and passive agents. Use with for company or the instrument you use to do something.",
+        examples: [
+          "by bus / by train / a novel by Cortázar",
+          "with my friend / with a pen / with a knife"
+        ]
+      }
+    ],
+    contrastTables: [
+      {
+        title: "Quick contrast: time prepositions",
+        rows: [
+          {
+            situation: "Exact time",
+            use: "at",
+            example: "at 7:00"
+          },
+          {
+            situation: "Day or date",
+            use: "on",
+            example: "on Monday / on May 9"
+          },
+          {
+            situation: "Month, year, season, part of day",
+            use: "in",
+            example: "in March / in 2026 / in the morning"
+          }
+        ]
+      },
+      {
+        title: "Quick contrast: movement and duration",
+        rows: [
+          {
+            situation: "Destination",
+            use: "to",
+            example: "go to school"
+          },
+          {
+            situation: "Movement inside",
+            use: "into",
+            example: "walk into the room"
+          },
+          {
+            situation: "Duration",
+            use: "for",
+            example: "for two hours"
+          },
+          {
+            situation: "Starting point",
+            use: "since",
+            example: "since Monday"
+          }
+        ]
+      }
+    ],
+    fixedExpressions: [
+      {
+        title: "Adjective + preposition",
+        items: [
+          "interested in",
+          "good at",
+          "afraid of",
+          "famous for",
+          "different from",
+          "ready for"
+        ]
+      },
+      {
+        title: "Verb + preposition",
+        items: [
+          "depend on",
+          "listen to",
+          "talk about",
+          "talk to",
+          "arrive at / arrive in",
+          "look for"
+        ]
+      }
+    ],
+    ruleNotes: [
+      {
+        title: "Preposition + verb-ing",
+        structure: "preposition + verb-ing",
+        examples: [
+          "before going",
+          "after eating",
+          "without saying goodbye",
+          "Thank you for helping me."
+        ],
+        takeaway:
+          "After a preposition, a verb normally changes to the -ing form instead of staying in the base form."
+      }
+    ],
+    commonMistakes: [
+      {
+        wrong: "The class starts in 8:00.",
+        correct: "The class starts at 8:00.",
+        reason: "Use at for exact clock times."
+      },
+      {
+        wrong: "My birthday is at July.",
+        correct: "My birthday is in July.",
+        reason: "Use in for months, years, seasons, and longer time periods."
+      },
+      {
+        wrong: "I arrived on 2024.",
+        correct: "I arrived in 2024.",
+        reason: "Use in with years, not on."
+      },
+      {
+        wrong: "Thank you for help me.",
+        correct: "Thank you for helping me.",
+        reason: "After a preposition, the verb usually needs the -ing form."
+      },
+      {
+        wrong: "She went in the room.",
+        correct: "She went into the room.",
+        reason: "Use into when there is movement from outside to inside."
+      },
+      {
+        wrong: "I have lived here for Monday.",
+        correct: "I have lived here since Monday.",
+        reason: "Use since for a starting point and for for duration."
+      }
+    ],
+    practiceItems: [
+      {
+        prompt: "The lesson starts ___ 8:30.",
+        answer: "at",
+        focus: "exact time"
+      },
+      {
+        prompt: "We have studied English ___ three months.",
+        answer: "for",
+        focus: "duration"
+      },
+      {
+        prompt: "She walked ___ the office and sat down.",
+        answer: "into",
+        focus: "movement inside"
+      },
+      {
+        prompt: "I usually go to work ___ bus.",
+        answer: "by",
+        focus: "means of transport"
+      },
+      {
+        prompt: "Correct the sentence: Thank you for help me.",
+        answer: "Thank you for helping me.",
+        focus: "preposition + verb-ing"
+      },
+      {
+        prompt: "Correct the sentence: I have lived here for Monday.",
+        answer: "I have lived here since Monday.",
+        focus: "starting point"
+      }
+    ],
+    examples: [
+      "The keys are in the drawer.",
+      "The notebook is on the table.",
+      "The lesson starts at 9:00.",
+      "They went to the park after lunch.",
+      "We talked about the new page.",
+      "She traveled by bus with her friend."
+    ],
+    quickMemory: [
+      "Use in for years, months, cities, countries, and larger spaces.",
+      "Use on for surfaces, days, and dates.",
+      "Use at for exact times and exact points.",
+      "Use to for destination and into for movement inside.",
+      "Use for duration and since for the starting point.",
+      "Use by for transport or passive agent, and with for company or tools.",
+      "After a preposition, a verb usually becomes verb-ing."
+    ],
+    relatedTopics: ["Key Structure Differences", "WH Questions", "English Auxiliaries"]
+  },
+  {
+    contentType: "wh-questions",
+    slug: "wh-questions",
+    title: "WH Questions",
+    section: "core-grammar",
+    overview:
+      "Use WH questions to ask for specific information instead of only getting a yes or no answer.",
+    whatItDoes: [
+      "Ask about a specific person, place, time, reason, thing, choice, possession, or process.",
+      "Keep the normal question logic, but add a WH word at the beginning.",
+      "Help the speaker guide the answer toward the exact information they need."
+    ],
+    coreRule: "WH word + auxiliary + subject + main verb + complement?",
+    whWordTable: [
+      {
+        whWord: "what",
+        mainUse: "thing, idea, action, general information",
+        questionItAnswers: "What information do I want?",
+        example: "What do you need?"
+      },
+      {
+        whWord: "where",
+        mainUse: "place, direction, location",
+        questionItAnswers: "Where does it happen?",
+        example: "Where do you live?"
+      },
+      {
+        whWord: "when",
+        mainUse: "time, moment, date, period",
+        questionItAnswers: "When does it happen?",
+        example: "When does the class start?"
+      },
+      {
+        whWord: "who",
+        mainUse: "person",
+        questionItAnswers: "Who is involved?",
+        example: "Who called you?",
+        note: "When who is the subject, you usually do not need do/does/did."
+      },
+      {
+        whWord: "why",
+        mainUse: "reason, cause, motivation",
+        questionItAnswers: "Why does it happen?",
+        example: "Why are you tired?"
+      },
+      {
+        whWord: "which",
+        mainUse: "choice between limited options",
+        questionItAnswers: "Which option do I mean?",
+        example: "Which color do you prefer?"
+      },
+      {
+        whWord: "whose",
+        mainUse: "possession",
+        questionItAnswers: "Who owns it?",
+        example: "Whose notebook is this?"
+      },
+      {
+        whWord: "how",
+        mainUse: "manner, state, process, degree",
+        questionItAnswers: "How does it happen or feel?",
+        example: "How do you study English?",
+        note: "How also combines with other words: how long, how often, how much, how many."
+      }
+    ],
+    structureTables: [
+      {
+        title: "With an auxiliary already present",
+        pattern: "WH word + auxiliary + subject + main verb/complement?",
+        use: "Use this when the tense or modal already gives you an auxiliary.",
+        examples: [
+          "What are you doing?",
+          "Why has he arrived early?",
+          "Where will they stay?"
+        ]
+      },
+      {
+        title: "With do / does / did",
+        pattern: "WH word + do/does/did + subject + base verb + complement?",
+        use: "Use this with Present Simple and Past Simple when there is no other auxiliary.",
+        examples: [
+          "Where do you work?",
+          "What does she want?",
+          "Why did they leave?"
+        ]
+      },
+      {
+        title: "With to be",
+        pattern: "WH word + be + subject + complement?",
+        use: "Use this when the main verb is a form of be.",
+        examples: [
+          "Where are you?",
+          "Why is she upset?",
+          "When was the meeting?"
+        ]
+      }
+    ],
+    questionTypeComparisons: [
+      {
+        title: "Yes/No questions vs WH questions",
+        explanation:
+          "Yes/No questions check if something is true. WH questions ask for a specific piece of information.",
+        examples: [
+          "Do you work here? → yes/no",
+          "Where do you work? → specific information"
+        ]
+      },
+      {
+        title: "Indirect questions",
+        explanation:
+          "Indirect questions sound softer and use statement order after the introductory phrase.",
+        examples: [
+          "Direct: Where does she live?",
+          "Indirect: Can you tell me where she lives?"
+        ]
+      },
+      {
+        title: "Subject questions",
+        explanation:
+          "When the WH word is the subject, you usually do not use do/does/did because the WH word already fills the subject position.",
+        examples: [
+          "Who called you?",
+          "What happened?",
+          "Which student won?"
+        ]
+      }
+    ],
+    specialCases: [
+      {
+        title: "Who as subject",
+        explanation:
+          "If who is asking about the subject of the sentence, keep the verb directly after who.",
+        examples: [
+          "Who called you?",
+          "Who broke the window?",
+          "Who wants coffee?"
+        ]
+      },
+      {
+        title: "How expressions",
+        explanation:
+          "How can combine with other words to ask about age, amount, duration, frequency, distance, or degree.",
+        examples: [
+          "How old are you?",
+          "How often do you practice?",
+          "How long did you wait?",
+          "How much is this?"
+        ]
+      },
+      {
+        title: "Subject questions vs normal WH questions",
+        explanation:
+          "Normal WH questions usually need an auxiliary before the subject. Subject questions do not, because the WH word itself is the subject.",
+        examples: [
+          "Who did you meet? → who = object",
+          "Who called you? → who = subject"
+        ]
+      }
+    ],
+    commonMistakes: [
+      {
+        wrong: "Where you live?",
+        correct: "Where do you live?",
+        reason: "Present Simple WH questions usually need do or does when there is no other auxiliary."
+      },
+      {
+        wrong: "Why she is sad?",
+        correct: "Why is she sad?",
+        reason: "With the verb be, the correct order is WH word + be + subject."
+      },
+      {
+        wrong: "Where do you are?",
+        correct: "Where are you?",
+        reason: "Do is not used when be is already the main verb."
+      },
+      {
+        wrong: "Can you tell me where does she live?",
+        correct: "Can you tell me where she lives?",
+        reason: "Indirect questions use statement order after the introductory phrase."
+      },
+      {
+        wrong: "Who did call you?",
+        correct: "Who called you?",
+        reason: "When who is the subject, you usually do not add do or did."
+      }
+    ],
+    sideBySideExamples: [
+      {
+        tense: "Present Simple",
+        yesNo: "Do you work here?",
+        wh: "Where do you work?"
+      },
+      {
+        tense: "Present Continuous",
+        yesNo: "Are they studying?",
+        wh: "What are they studying?"
+      },
+      {
+        tense: "Past Simple",
+        yesNo: "Did she call you?",
+        wh: "Why did she call you?"
+      },
+      {
+        tense: "Present Perfect",
+        yesNo: "Have you finished?",
+        wh: "What have you finished?"
+      },
+      {
+        tense: "To be",
+        yesNo: "Is he at home?",
+        wh: "Why is he at home?"
+      }
+    ],
+    quickMemory: [
+      "Start with the WH word, then keep the normal question logic.",
+      "Use do/does/did in Present Simple and Past Simple when there is no other auxiliary.",
+      "With be, use WH word + be + subject.",
+      "If the WH word is the subject, you usually do not use do/does/did.",
+      "Indirect questions use statement order, not question order."
+    ],
+    practiceItems: [
+      {
+        prompt: "Turn this into a WH question: You live in Córdoba. Ask about place.",
+        answer: "Where do you live?",
+        focus: "place question in Present Simple"
+      },
+      {
+        prompt: "Turn this into a WH question: She is tired. Ask about reason.",
+        answer: "Why is she tired?",
+        focus: "to be question"
+      },
+      {
+        prompt: "Turn this into a WH question: They arrived at 7. Ask about time.",
+        answer: "When did they arrive?",
+        focus: "Past Simple with did"
+      },
+      {
+        prompt: "Correct the sentence: Where you study English?",
+        answer: "Where do you study English?",
+        focus: "missing auxiliary"
+      },
+      {
+        prompt: "Correct the sentence: Can you tell me where does he work?",
+        answer: "Can you tell me where he works?",
+        focus: "indirect question word order"
+      }
+    ],
+    relatedTopics: ["Embedded WH Clauses", "English Auxiliaries", "Key Structure Differences"]
+  },
+  {
+    contentType: "embedded-wh-clauses",
+    slug: "embedded-wh-clauses",
+    title: "Embedded WH Clauses",
+    section: "core-grammar",
+    overview:
+      "Use embedded WH clauses when a WH structure appears inside a bigger sentence instead of acting as a direct independent question.",
+    whatItDoes: [
+      "Put a WH idea inside another sentence such as I know..., Can you tell me..., or I wonder....",
+      "Keep the meaning of the WH word, but change the word order from question order to statement order.",
+      "Help you sound more natural when asking softer questions or reporting information."
+    ],
+    coreRule: "Embedded WH clauses use statement order: WH word + subject + verb.",
+    directVsEmbeddedTable: [
+      {
+        direct: "Where is he?",
+        embedded: "Do you know where he is?"
+      },
+      {
+        direct: "Why did she leave?",
+        embedded: "I understand why she left."
+      },
+      {
+        direct: "What does he want?",
+        embedded: "Tell me what he wants."
+      },
+      {
+        direct: "How does this work?",
+        embedded: "Can you explain how this works?"
+      },
+      {
+        direct: "When will they arrive?",
+        embedded: "I don't know when they will arrive."
+      }
+    ],
+    usageBlocks: [
+      {
+        title: "After common verbs",
+        explanation:
+          "Embedded WH clauses often follow verbs such as know, ask, tell, explain, remember, wonder, understand, and decide.",
+        examples: [
+          "I know what you mean.",
+          "She asked where the station was.",
+          "I wonder how they did it.",
+          "We need to decide which option is better."
+        ]
+      },
+      {
+        title: "After introductory expressions",
+        explanation:
+          "They also appear after expressions that introduce a softer or more indirect request for information.",
+        examples: [
+          "I'm not sure where he works.",
+          "Do you know why she left?",
+          "Can you tell me how this app works?",
+          "Could you explain what happened?"
+        ]
+      },
+      {
+        title: "Inside longer ideas",
+        explanation:
+          "An embedded WH clause can simply be one part of a larger statement, not only a soft question.",
+        examples: [
+          "The problem is that nobody knows when the meeting starts.",
+          "I like how she explains grammar.",
+          "We discussed what we should do next."
+        ]
+      }
+    ],
+    commonIntroPatterns: [
+      {
+        pattern: "I know + embedded WH clause",
+        use: "State that you have the information.",
+        examples: [
+          "I know where she lives.",
+          "I know what you need."
+        ]
+      },
+      {
+        pattern: "Do you know + embedded WH clause",
+        use: "Ask for information in a natural, softer way.",
+        examples: [
+          "Do you know where he is?",
+          "Do you know what time it is?"
+        ]
+      },
+      {
+        pattern: "Can you tell me + embedded WH clause",
+        use: "Ask someone to provide information politely.",
+        examples: [
+          "Can you tell me where she works?",
+          "Can you tell me why this matters?"
+        ]
+      },
+      {
+        pattern: "I wonder + embedded WH clause",
+        use: "Show uncertainty or curiosity.",
+        examples: [
+          "I wonder why she is upset.",
+          "I wonder how they solved it."
+        ]
+      },
+      {
+        pattern: "Could you explain + embedded WH clause",
+        use: "Ask for clarification in a more formal or careful way.",
+        examples: [
+          "Could you explain what happened?",
+          "Could you explain why the route changed?"
+        ]
+      }
+    ],
+    whWordUsage: [
+      {
+        whWord: "what",
+        use: "thing, information, or idea inside a larger sentence",
+        example: "I know what you need."
+      },
+      {
+        whWord: "where",
+        use: "place or location",
+        example: "She asked where I lived."
+      },
+      {
+        whWord: "when",
+        use: "time or moment",
+        example: "I remember when we met."
+      },
+      {
+        whWord: "why",
+        use: "reason or cause",
+        example: "He explained why he was late."
+      },
+      {
+        whWord: "how",
+        use: "manner or process",
+        example: "Show me how this works."
+      },
+      {
+        whWord: "who",
+        use: "person",
+        example: "Do you know who called?"
+      },
+      {
+        whWord: "which",
+        use: "choice between options",
+        example: "We must decide which route is better."
+      },
+      {
+        whWord: "whose",
+        use: "possession",
+        example: "He asked whose laptop that was."
+      }
+    ],
+    commonMistakes: [
+      {
+        wrong: "Can you tell me where does she live?",
+        correct: "Can you tell me where she lives?",
+        reason: "Embedded WH clauses use statement order, so the auxiliary does not move before the subject."
+      },
+      {
+        wrong: "Do you know where is my phone?",
+        correct: "Do you know where my phone is?",
+        reason: "With be, embedded clauses still use subject + be, not inversion."
+      },
+      {
+        wrong: "I know what does he want.",
+        correct: "I know what he wants.",
+        reason: "Do not keep direct-question structure inside the embedded clause."
+      },
+      {
+        wrong: "I wonder why is she upset.",
+        correct: "I wonder why she is upset.",
+        reason: "After I wonder, the embedded clause keeps normal statement order."
+      }
+    ],
+    transformations: [
+      {
+        direct: "Where does she work?",
+        embedded: "Do you know where she works?"
+      },
+      {
+        direct: "Why is he angry?",
+        embedded: "I don't know why he is angry."
+      },
+      {
+        direct: "What did they buy?",
+        embedded: "Tell me what they bought."
+      },
+      {
+        direct: "How can I fix this?",
+        embedded: "Can you explain how I can fix this?"
+      },
+      {
+        direct: "When will the class start?",
+        embedded: "Do you know when the class will start?"
+      }
+    ],
+    quickMemory: [
+      "Direct questions use question order, but embedded WH clauses use statement order.",
+      "Think: WH word + subject + verb, not WH word + auxiliary + subject.",
+      "This pattern often appears after know, ask, wonder, tell me, and explain.",
+      "Do not invert be inside the embedded clause.",
+      "If the WH idea is inside a larger sentence, check the word order first."
+    ],
+    practiceItems: [
+      {
+        prompt: "Turn this into an embedded clause: Where does she work?",
+        answer: "Do you know where she works?",
+        focus: "direct question to embedded clause"
+      },
+      {
+        prompt: "Turn this into an embedded clause: Why is he upset?",
+        answer: "I wonder why he is upset.",
+        focus: "be verb in statement order"
+      },
+      {
+        prompt: "Correct the sentence: Can you tell me where does he live?",
+        answer: "Can you tell me where he lives?",
+        focus: "remove question order"
+      },
+      {
+        prompt: "Correct the sentence: Do you know what time is it?",
+        answer: "Do you know what time it is?",
+        focus: "embedded clause with be"
+      }
+    ],
+    relatedTopics: ["WH Questions", "English Auxiliaries", "Key Structure Differences"]
+  },
+  {
+    contentType: "english-auxiliaries",
+    slug: "english-auxiliaries",
+    title: "English Auxiliaries",
+    section: "core-grammar",
+    overview:
+      "Use auxiliaries to build questions, negatives, continuous forms, perfect forms, and future forms without changing the core meaning of the main verb.",
+    whatItDoes: [
+      "Help form questions and negatives in simple tenses.",
+      "Build continuous, perfect, and future structures.",
+      "Control the verb form that comes after them, so structure matters as much as meaning."
+    ],
+    auxiliaryReferenceTable: [
+      {
+        auxiliary: "do",
+        mainUse: "questions and negatives",
+        usedIn: "Present Simple",
+        example: "Do you work here?"
+      },
+      {
+        auxiliary: "does",
+        mainUse: "questions and negatives with he/she/it",
+        usedIn: "Present Simple",
+        example: "Does she live here?"
+      },
+      {
+        auxiliary: "did",
+        mainUse: "questions and negatives",
+        usedIn: "Past Simple",
+        example: "Did they call you?"
+      },
+      {
+        auxiliary: "am / is / are",
+        mainUse: "present be forms",
+        usedIn: "Present Continuous / going to",
+        example: "She is going to travel."
+      },
+      {
+        auxiliary: "was / were",
+        mainUse: "past be forms",
+        usedIn: "Past Continuous",
+        example: "They were talking."
+      },
+      {
+        auxiliary: "have / has",
+        mainUse: "perfect forms",
+        usedIn: "Present Perfect",
+        example: "I have finished."
+      },
+      {
+        auxiliary: "had",
+        mainUse: "perfect forms in the past",
+        usedIn: "Past Perfect",
+        example: "They had left."
+      },
+      {
+        auxiliary: "will",
+        mainUse: "future",
+        usedIn: "Future with will",
+        example: "We will call you."
+      }
+    ],
+    auxiliaryGroups: [
+      {
+        title: "Do / Does",
+        use: "Use them to build Present Simple questions and negatives.",
+        structures: [
+          "Negative: Subject + do/does not + base verb",
+          "Question: Do/Does + subject + base verb?"
+        ],
+        examples: [
+          "Do you work here?",
+          "She does not work here.",
+          "Does he like coffee?"
+        ]
+      },
+      {
+        title: "Did",
+        use: "Use it to build Past Simple questions and negatives.",
+        structures: [
+          "Negative: Subject + did not + base verb",
+          "Question: Did + subject + base verb?"
+        ],
+        examples: [
+          "Did they call you?",
+          "I did not see her yesterday.",
+          "Did she finish the task?"
+        ]
+      },
+      {
+        title: "Am / Is / Are",
+        use: "Use them for Present Continuous and going to future forms.",
+        structures: [
+          "Continuous: Subject + am/is/are + verb-ing",
+          "Going to: Subject + am/is/are going to + base verb"
+        ],
+        examples: [
+          "I am studying now.",
+          "She is not working.",
+          "They are going to travel."
+        ]
+      },
+      {
+        title: "Was / Were",
+        use: "Use them for Past Continuous.",
+        structures: [
+          "Affirmative: Subject + was/were + verb-ing",
+          "Question: Was/Were + subject + verb-ing?"
+        ],
+        examples: [
+          "She was reading.",
+          "They were not sleeping.",
+          "Were you waiting?"
+        ]
+      },
+      {
+        title: "Have / Has",
+        use: "Use them for Present Perfect.",
+        structures: [
+          "Affirmative: Subject + have/has + past participle",
+          "Question: Have/Has + subject + past participle?"
+        ],
+        examples: [
+          "I have finished my work.",
+          "He has not arrived yet.",
+          "Have you seen it?"
+        ]
+      },
+      {
+        title: "Had",
+        use: "Use it for Past Perfect.",
+        structures: [
+          "Affirmative: Subject + had + past participle",
+          "Question: Had + subject + past participle?"
+        ],
+        examples: [
+          "They had left.",
+          "She had not called.",
+          "Had they finished before noon?"
+        ]
+      },
+      {
+        title: "Will",
+        use: "Use it for future statements, offers, promises, and predictions.",
+        structures: [
+          "Affirmative: Subject + will + base verb",
+          "Question: Will + subject + base verb?"
+        ],
+        examples: [
+          "I will help you.",
+          "She will not call.",
+          "Will they come?"
+        ]
+      }
+    ],
+    patternRules: [
+      {
+        title: "After do / does / did / will",
+        rule: "Use the base form of the main verb after these auxiliaries.",
+        examples: [
+          "Do you work here?",
+          "Did she go?",
+          "I will call you."
+        ]
+      },
+      {
+        title: "After be in continuous forms",
+        rule: "Use verb-ing after am / is / are / was / were when building continuous tenses.",
+        examples: [
+          "She is working.",
+          "They were studying."
+        ]
+      },
+      {
+        title: "After have / has / had",
+        rule: "Use the past participle after perfect auxiliaries.",
+        examples: [
+          "I have seen it.",
+          "They had left before noon."
+        ]
+      }
+    ],
+    contractionTables: [
+      {
+        title: "Negative contractions",
+        rows: [
+          { longForm: "do not", shortForm: "don't" },
+          { longForm: "does not", shortForm: "doesn't" },
+          { longForm: "did not", shortForm: "didn't" },
+          { longForm: "is not", shortForm: "isn't" },
+          { longForm: "are not", shortForm: "aren't" },
+          { longForm: "was not", shortForm: "wasn't" },
+          { longForm: "were not", shortForm: "weren't" },
+          { longForm: "have not", shortForm: "haven't" },
+          { longForm: "has not", shortForm: "hasn't" },
+          { longForm: "had not", shortForm: "hadn't" },
+          { longForm: "will not", shortForm: "won't" }
+        ]
+      },
+      {
+        title: "Common short forms",
+        rows: [
+          { longForm: "I am", shortForm: "I'm" },
+          { longForm: "you are", shortForm: "you're" },
+          { longForm: "he is", shortForm: "he's" },
+          { longForm: "we are", shortForm: "we're" },
+          { longForm: "I have", shortForm: "I've" },
+          { longForm: "they have", shortForm: "they've" },
+          { longForm: "I will", shortForm: "I'll" },
+          { longForm: "they will", shortForm: "they'll" }
+        ]
+      }
+    ],
+    commonMistakes: [
+      {
+        wrong: "She don't like it.",
+        correct: "She doesn't like it.",
+        reason: "Use does not with he, she, and it in Present Simple."
+      },
+      {
+        wrong: "Does she works here?",
+        correct: "Does she work here?",
+        reason: "After does, the main verb returns to the base form."
+      },
+      {
+        wrong: "Did you went?",
+        correct: "Did you go?",
+        reason: "After did, use the base form, not the past form."
+      },
+      {
+        wrong: "She are working.",
+        correct: "She is working.",
+        reason: "Use is with he, she, and it in the present."
+      },
+      {
+        wrong: "I have saw that movie.",
+        correct: "I have seen that movie.",
+        reason: "Perfect forms need the past participle, not the simple past."
+      },
+      {
+        wrong: "I will to call you.",
+        correct: "I will call you.",
+        reason: "Will is followed by the base form without to."
+      }
+    ],
+    quickComparisons: [
+      {
+        title: "Do / Does vs Am / Is / Are",
+        explanation:
+          "Use do/does for Present Simple questions and negatives, but use am/is/are when the main verb is be or when you build a continuous or going to form.",
+        examples: [
+          "Do you work here?",
+          "Are you tired?",
+          "She is going to travel."
+        ]
+      },
+      {
+        title: "Did vs past verb in affirmatives",
+        explanation:
+          "Use did only in questions and negatives. In affirmative Past Simple sentences, the main verb itself shows the past.",
+        examples: [
+          "They visited us.",
+          "Did they visit us?",
+          "They did not visit us."
+        ]
+      },
+      {
+        title: "Have / Has vs Had",
+        explanation:
+          "Have and has build Present Perfect, while had builds Past Perfect.",
+        examples: [
+          "She has arrived.",
+          "They had left before we arrived."
+        ]
+      },
+      {
+        title: "Will vs be going to",
+        explanation:
+          "Will often marks a decision, offer, or prediction. Be going to often shows a plan or present evidence.",
+        examples: [
+          "I'll help you.",
+          "She is going to study tonight."
+        ]
+      }
+    ],
+    modalLinkBlock: {
+      title: "Short modal link",
+      explanation:
+        "Modal auxiliaries also come before a base verb, but they are covered in the Modal Verbs section because their meaning is the main focus there.",
+      examples: [
+        "You can study now.",
+        "We should practice every day.",
+        "He might be late."
+      ]
+    },
+    quickMemory: [
+      "After do, does, did, and will, use the base verb.",
+      "After be in continuous forms, use verb-ing.",
+      "After have, has, and had, use the past participle.",
+      "Use auxiliaries to build questions and negatives, not only to name tenses.",
+      "Check the subject first when choosing does, is, was, or has."
+    ],
+    practiceItems: [
+      {
+        prompt: "Complete the question: ___ she work here?",
+        answer: "Does",
+        focus: "Present Simple question"
+      },
+      {
+        prompt: "Correct the sentence: Did she went home?",
+        answer: "Did she go home?",
+        focus: "base verb after did"
+      },
+      {
+        prompt: "Complete the sentence: They ___ studying now.",
+        answer: "are",
+        focus: "present be form"
+      },
+      {
+        prompt: "Correct the sentence: I have saw that before.",
+        answer: "I have seen that before.",
+        focus: "past participle after have"
+      },
+      {
+        prompt: "Complete the sentence: I ___ call you later.",
+        answer: "will",
+        focus: "future with will"
+      }
+    ],
+    relatedTopics: ["Verb Tenses", "Modal Verbs", "WH Questions", "Embedded WH Clauses"]
+  },
+  {
+    contentType: "pronouns-possessives",
+    slug: "pronouns-possessives-and-object-forms",
+    title: "Pronouns, Possessives, Object Forms, and Reflexives",
+    section: "core-grammar",
+    overview:
+      "Use different pronoun and possessive forms according to the function the word has in the sentence: subject, object, possession, or reflexive reference.",
+    whatItDoes: [
+      "Show who does the action, who receives it, and who owns something.",
+      "Help you avoid repeating nouns again and again.",
+      "Let you choose the right word form based on grammar function, not only meaning."
+    ],
+    mainReferenceTable: [
+      {
+        subjectPronoun: "I",
+        objectPronoun: "me",
+        possessiveAdjective: "my",
+        possessivePronoun: "mine",
+        reflexive: "myself",
+        example: "I see my book. That book is mine."
+      },
+      {
+        subjectPronoun: "you",
+        objectPronoun: "you",
+        possessiveAdjective: "your",
+        possessivePronoun: "yours",
+        reflexive: "yourself / yourselves",
+        example: "You have your phone. That phone is yours."
+      },
+      {
+        subjectPronoun: "he",
+        objectPronoun: "him",
+        possessiveAdjective: "his",
+        possessivePronoun: "his",
+        reflexive: "himself",
+        example: "I called him. His car is new. That car is his."
+      },
+      {
+        subjectPronoun: "she",
+        objectPronoun: "her",
+        possessiveAdjective: "her",
+        possessivePronoun: "hers",
+        reflexive: "herself",
+        example: "I saw her. Her bag is blue. That bag is hers."
+      },
+      {
+        subjectPronoun: "it",
+        objectPronoun: "it",
+        possessiveAdjective: "its",
+        possessivePronoun: "—",
+        reflexive: "itself",
+        example: "It is big. Its color is black."
+      },
+      {
+        subjectPronoun: "we",
+        objectPronoun: "us",
+        possessiveAdjective: "our",
+        possessivePronoun: "ours",
+        reflexive: "ourselves",
+        example: "We love our house. That house is ours."
+      },
+      {
+        subjectPronoun: "they",
+        objectPronoun: "them",
+        possessiveAdjective: "their",
+        possessivePronoun: "theirs",
+        reflexive: "themselves",
+        example: "I know them. Their teacher is nice. The idea is theirs."
+      }
+    ],
+    functionBlocks: [
+      {
+        title: "Subject pronouns",
+        use: "Use them before the verb to show who does the action.",
+        examples: ["He works here.", "They study every day.", "We are ready."]
+      },
+      {
+        title: "Object pronouns",
+        use: "Use them after a verb or preposition to show who receives the action.",
+        examples: ["I called him.", "She invited us.", "They talked to her."]
+      },
+      {
+        title: "Possessive adjectives",
+        use: "Use them before a noun to show possession.",
+        examples: ["My book is here.", "Her bag is blue.", "Their teacher is kind."]
+      },
+      {
+        title: "Possessive pronouns",
+        use: "Use them to replace a noun that is already understood.",
+        examples: ["That book is mine.", "This seat is hers.", "The house is ours."]
+      },
+      {
+        title: "Reflexives",
+        use: "Use them when the subject and the object refer to the same person or thing.",
+        examples: ["He hurt himself.", "She taught herself.", "We introduced ourselves."]
+      }
+    ],
+    focusWords: [
+      {
+        word: "him",
+        type: "object pronoun",
+        meaningHint: "him = the object form of he",
+        examples: ["I helped him.", "She called him yesterday."]
+      },
+      {
+        word: "his",
+        type: "possessive adjective / possessive pronoun",
+        meaningHint: "his can come before a noun or replace the noun",
+        examples: ["His jacket is black.", "That jacket is his."]
+      },
+      {
+        word: "her",
+        type: "object pronoun / possessive adjective",
+        meaningHint: "her can be the object or come before a noun",
+        examples: ["I called her.", "Her name is Anna."]
+      },
+      {
+        word: "hers",
+        type: "possessive pronoun",
+        meaningHint: "hers replaces the noun completely",
+        examples: ["That bag is hers.", "The red car is hers."]
+      }
+    ],
+    quickRules: [
+      "Before the verb, use a subject pronoun.",
+      "After a verb or preposition, use an object pronoun.",
+      "Before a noun, use a possessive adjective.",
+      "To replace a noun completely, use a possessive pronoun.",
+      "If the subject and object are the same, use a reflexive pronoun."
+    ],
+    commonMistakes: [
+      {
+        wrong: "I called he.",
+        correct: "I called him.",
+        reason: "After a verb, you need the object pronoun, not the subject pronoun."
+      },
+      {
+        wrong: "This is hers laptop.",
+        correct: "This is her laptop.",
+        reason: "Before a noun, use a possessive adjective like her, not a possessive pronoun like hers."
+      },
+      {
+        wrong: "The bag is her.",
+        correct: "The bag is hers.",
+        reason: "When the noun is replaced completely, use a possessive pronoun."
+      },
+      {
+        wrong: "He hurt him.",
+        correct: "He hurt himself.",
+        reason: "If the subject and the object are the same person, use a reflexive pronoun."
+      }
+    ],
+    contrastBlocks: [
+      {
+        title: "He / Him / His",
+        explanation:
+          "He is the subject, him is the object, and his shows possession before a noun or as a possessive pronoun.",
+        examples: [
+          "He is my friend.",
+          "I called him.",
+          "His phone is expensive. / That phone is his."
+        ]
+      },
+      {
+        title: "She / Her / Hers",
+        explanation:
+          "She is the subject, her can be the object or a possessive adjective, and hers is the possessive pronoun.",
+        examples: [
+          "She is my teacher.",
+          "I saw her.",
+          "Her car is red. / That car is hers."
+        ]
+      },
+      {
+        title: "My / Mine",
+        explanation:
+          "My comes before a noun. Mine replaces the noun.",
+        examples: [
+          "My book is here.",
+          "That book is mine."
+        ]
+      },
+      {
+        title: "Their / Theirs",
+        explanation:
+          "Their comes before a noun. Theirs replaces the noun.",
+        examples: [
+          "Their house is big.",
+          "The house is theirs."
+        ]
+      }
+    ],
+    quickMemory: [
+      "Subject pronouns do the action.",
+      "Object pronouns receive the action.",
+      "Possessive adjectives come before nouns.",
+      "Possessive pronouns replace nouns.",
+      "Reflexives point back to the same subject."
+    ],
+    practiceItems: [
+      {
+        prompt: "Choose the correct form: I called ___. (he / him)",
+        answer: "him",
+        focus: "object pronoun"
+      },
+      {
+        prompt: "Complete the sentence: ___ bag is blue. (her / hers)",
+        answer: "Her",
+        focus: "possessive adjective before a noun"
+      },
+      {
+        prompt: "Complete the sentence: The blue bag is ___. (her / hers)",
+        answer: "hers",
+        focus: "possessive pronoun"
+      },
+      {
+        prompt: "Correct the sentence: This is hers laptop.",
+        answer: "This is her laptop.",
+        focus: "possessive adjective vs possessive pronoun"
+      },
+      {
+        prompt: "Complete the sentence: He taught ___ to code. (him / himself)",
+        answer: "himself",
+        focus: "reflexive pronoun"
+      }
+    ],
+    relatedTopics: ["Common Prepositions", "English Auxiliaries", "Key Structure Differences"]
+  },
+  {
+    contentType: "structure-differences",
+    slug: "key-structure-differences",
+    title: "Key Structure Differences",
+    section: "core-grammar",
+    overview:
+      "Compare similar English structures so you can choose the right one based on meaning, time reference, and sentence purpose instead of guessing.",
+    whatItDoes: [
+      "Show the practical meaning difference between structures that learners often confuse.",
+      "Help you decide faster by linking each choice to a real communication goal.",
+      "Turn quick contrast notes into a study page you can scan and reuse."
+    ],
+    decisionRules: [
+      "If you mean routine or fact, choose Present Simple; if you mean now or temporary, choose Present Continuous.",
+      "If the past event has a finished time like yesterday or last week, choose Past Simple; if the past connects to now, choose Present Perfect.",
+      "If the future idea is a plan already in your mind, choose going to; if it is a decision now, offer, or spontaneous prediction, choose will.",
+      "If you need duration, choose for; if you need the starting point, choose since.",
+      "If you ask about countable plural nouns, choose many; if you ask about uncountable quantity, choose much."
+    ],
+    comparisonCards: [
+      {
+        title: "Present Simple vs Present Continuous",
+        structureA: "Present Simple",
+        structureB: "Present Continuous",
+        mainDifference:
+          "Present Simple shows routine, habit, or fact. Present Continuous shows an action happening now or a temporary situation.",
+        whenToUseA: "Use it for routines, habits, schedules, and general truths.",
+        whenToUseB: "Use it for actions in progress now or situations that are temporary.",
+        exampleA: "I work from home.",
+        exampleB: "I am working from home today.",
+        signals: ["always, usually, often, every day", "now, right now, at the moment, today"],
+        quickMemory: ["routine vs now"]
+      },
+      {
+        title: "Past Simple vs Past Continuous",
+        structureA: "Past Simple",
+        structureB: "Past Continuous",
+        mainDifference:
+          "Past Simple shows a finished action. Past Continuous shows an action in progress at a moment in the past.",
+        whenToUseA: "Use it for completed past events or the main event in a story.",
+        whenToUseB: "Use it for background action, interrupted action, or a scene in progress.",
+        exampleA: "I studied last night.",
+        exampleB: "I was studying at 8 p.m.",
+        signals: ["last night, yesterday, in 2024", "at 8 p.m., while, when + interruption"],
+        quickMemory: ["finished action vs background action"]
+      },
+      {
+        title: "Past Simple vs Present Perfect",
+        structureA: "Past Simple",
+        structureB: "Present Perfect",
+        mainDifference:
+          "Past Simple stays in a finished past time. Present Perfect connects the past result or experience to now.",
+        whenToUseA: "Use it when the time is finished or specific.",
+        whenToUseB: "Use it for life experience, recent result, or an unfinished time period connected to now.",
+        exampleA: "I saw that movie yesterday.",
+        exampleB: "I have seen that movie before.",
+        signals: ["yesterday, last week, in 2024, two days ago", "ever, never, already, yet, before"],
+        quickMemory: ["finished time vs present connection"]
+      },
+      {
+        title: "Will vs Going To",
+        structureA: "will",
+        structureB: "be going to",
+        mainDifference:
+          "Will often shows a decision now, offer, promise, or spontaneous prediction. Going to usually shows a prior plan or evidence-based prediction.",
+        whenToUseA: "Use it for instant decisions, offers, promises, and predictions that appear in the moment.",
+        whenToUseB: "Use it for existing plans, intentions, or evidence you can see now.",
+        exampleA: "I'll answer the phone.",
+        exampleB: "I'm going to study tonight.",
+        signals: ["I'll, I think, don't worry", "already planned, look at those clouds"],
+        quickMemory: ["decision now vs plan already"]
+      },
+      {
+        title: "Present Simple vs Going To",
+        structureA: "Present Simple",
+        structureB: "be going to",
+        mainDifference:
+          "Present Simple describes routine or fact. Going to moves the meaning to a future plan or intention.",
+        whenToUseA: "Use it for habits and repeated actions.",
+        whenToUseB: "Use it when you already intend to do something later.",
+        exampleA: "I study English every day.",
+        exampleB: "I am going to study English tonight.",
+        quickMemory: ["habit vs future plan"]
+      },
+      {
+        title: "Can vs Could",
+        structureA: "can",
+        structureB: "could",
+        mainDifference:
+          "Can expresses present ability, possibility, or everyday permission. Could often marks past ability, softer possibility, or a more polite request.",
+        whenToUseA: "Use it for present ability, informal permission, and direct possibility.",
+        whenToUseB: "Use it for past ability, softer requests, and weaker possibility.",
+        exampleA: "I can swim.",
+        exampleB: "Could you help me?",
+        quickMemory: ["present / direct vs past / softer"]
+      },
+      {
+        title: "Must vs Have To",
+        structureA: "must",
+        structureB: "have to",
+        mainDifference:
+          "Both express obligation, but must usually sounds more personal or speaker-driven, while have to often sounds external or practical.",
+        whenToUseA: "Use it for strong personal obligation, rule emphasis, or the speaker's strong feeling.",
+        whenToUseB: "Use it for schedule pressure, external rules, or practical necessity.",
+        exampleA: "I must call my mom.",
+        exampleB: "I have to go to work tomorrow.",
+        quickMemory: ["speaker pressure vs external necessity"]
+      },
+      {
+        title: "For vs Since",
+        structureA: "for",
+        structureB: "since",
+        mainDifference:
+          "For answers how long. Since answers from when.",
+        whenToUseA: "Use it with a duration.",
+        whenToUseB: "Use it with a starting point in time.",
+        exampleA: "I have lived here for two years.",
+        exampleB: "I have lived here since 2024.",
+        quickMemory: ["duration vs start point"]
+      },
+      {
+        title: "In vs On vs At (time)",
+        structureA: "in / on / at",
+        structureB: "time references",
+        mainDifference:
+          "In is for longer periods, on is for days and dates, and at is for exact points in time.",
+        whenToUseA: "Use in with months, years, seasons, and parts of the day; use on with days and dates; use at with exact clock times.",
+        whenToUseB: "Choose the preposition by how specific the time reference is.",
+        exampleA: "I was born in 1998.",
+        exampleB: "We met on Monday at 8 p.m.",
+        quickMemory: ["big period / day / exact point"]
+      },
+      {
+        title: "Some vs Any",
+        structureA: "some",
+        structureB: "any",
+        mainDifference:
+          "Some is common in affirmative statements and offers. Any is common in negatives and most questions.",
+        whenToUseA: "Use it in positive statements and often in offers or requests when you expect yes.",
+        whenToUseB: "Use it in negatives and general questions.",
+        exampleA: "I have some questions.",
+        exampleB: "Do you have any questions?",
+        quickMemory: ["affirmative / offer vs negative / general question"]
+      }
+    ],
+    comparisonTables: [
+      {
+        title: "Quick contrast: for vs since",
+        rows: [
+          {
+            situation: "Duration",
+            use: "for",
+            example: "for two hours"
+          },
+          {
+            situation: "Starting point",
+            use: "since",
+            example: "since Monday"
+          }
+        ]
+      },
+      {
+        title: "Quick contrast: in / on / at",
+        rows: [
+          {
+            situation: "Month, year, season, part of day",
+            use: "in",
+            example: "in July / in 2026 / in the morning"
+          },
+          {
+            situation: "Day or date",
+            use: "on",
+            example: "on Monday / on May 3"
+          },
+          {
+            situation: "Exact time",
+            use: "at",
+            example: "at 7 p.m. / at noon"
+          }
+        ]
+      },
+      {
+        title: "Quick contrast: some / any",
+        rows: [
+          {
+            situation: "Affirmative statement",
+            use: "some",
+            example: "I have some ideas."
+          },
+          {
+            situation: "Offer or expected yes",
+            use: "some",
+            example: "Would you like some coffee?"
+          },
+          {
+            situation: "Negative statement",
+            use: "any",
+            example: "I don't have any money."
+          },
+          {
+            situation: "General question",
+            use: "any",
+            example: "Do you have any questions?"
+          }
+        ]
+      }
+    ],
+    commonMistakes: [
+      {
+        wrong: "I work from home today right now.",
+        correct: "I am working from home today.",
+        reason: "Use Present Continuous for an action happening now or for a temporary current arrangement."
+      },
+      {
+        wrong: "I have seen it yesterday.",
+        correct: "I saw it yesterday.",
+        reason: "Yesterday is a finished past time, so Past Simple is the correct choice."
+      },
+      {
+        wrong: "I will to call you later.",
+        correct: "I will call you later.",
+        reason: "After will, use the base verb without to."
+      },
+      {
+        wrong: "I am here since Monday.",
+        correct: "I have been here since Monday.",
+        reason: "Since usually works with Present Perfect or Present Perfect Continuous to connect the starting point to now."
+      },
+      {
+        wrong: "Do you have some questions?",
+        correct: "Do you have any questions?",
+        reason: "In a general question, any is the normal determiner."
+      }
+    ],
+    quickMemory: [
+      "Present Simple vs Present Continuous = routine vs now.",
+      "Past Simple vs Past Continuous = finished event vs background action.",
+      "Past Simple vs Present Perfect = finished time vs present connection.",
+      "Will vs Going To = decision now vs prior plan.",
+      "For vs Since = duration vs starting point.",
+      "In / On / At = bigger period vs day/date vs exact time.",
+      "Some vs Any = affirmative / offer vs negative / general question."
+    ],
+    practiceItems: [
+      {
+        prompt: "Choose the best form: I usually work from home, but today I ___.",
+        answer: "am working from the office",
+        focus: "routine vs temporary current action"
+      },
+      {
+        prompt: "Choose the correct sentence: I have seen it yesterday / I saw it yesterday.",
+        answer: "I saw it yesterday.",
+        focus: "finished past time"
+      },
+      {
+        prompt: "Complete the sentence: We have lived here ___ 2022.",
+        answer: "since",
+        focus: "starting point"
+      },
+      {
+        prompt: "Choose the better future form: The phone is ringing. I ___ it.",
+        answer: "will answer",
+        focus: "decision at the moment"
+      },
+      {
+        prompt: "Complete the question: Do you have ___ questions?",
+        answer: "any",
+        focus: "general question with determiner choice"
+      }
+    ],
+    relatedTopics: [
+      "Verb Tenses",
+      "Common Prepositions",
+      "English Auxiliaries",
+      "WH Questions"
+    ]
+  }
+];
+
+export function findGrammarTopicFullExplanationBySlug(
+  section: GrammarTopicSection,
+  slug: string
+) {
+  return grammarTopicFullExplanations.find(
+    (entry) => entry.section === section && entry.slug === slug
+  );
+}

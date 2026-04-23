@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import { SearchInput } from "../components/SearchInput";
 import { irregularVerbs } from "../data/irregularVerbs";
 import { filterIrregularVerbs } from "../features/cheatsheet/search";
@@ -85,7 +86,12 @@ export function IrregularVerbsPage() {
             key={verb.id}
             className="grid grid-cols-1 gap-2 border-t border-slate-100 px-5 py-4 text-slate-700 md:grid-cols-5 md:gap-4"
           >
-            <strong className="text-slate-950">{verb.infinitive}</strong>
+            <Link
+              to={verb.fullExplanationPath}
+              className="font-bold text-slate-950 underline decoration-slate-300 underline-offset-4 hover:text-blue-700"
+            >
+              {verb.infinitive}
+            </Link>
             <span>{verb.pastSimple}</span>
             <span>{verb.pastParticiple}</span>
             <span className="capitalize">{verb.category}</span>

@@ -27,7 +27,7 @@ export const grammarTopics: GrammarTopic[] = [
     ],
     relatedTopics: ["Polite Requests", "Possibility and Probability"],
     fullExplanationPath: "/modal-verbs/ability-and-permission",
-    hasFullExplanation: false
+    hasFullExplanation: true
   },
   {
     id: "advice-and-obligation",
@@ -166,7 +166,7 @@ export const grammarTopics: GrammarTopic[] = [
     ],
     relatedTopics: ["Embedded WH Clauses", "English Auxiliaries"],
     fullExplanationPath: "/core-grammar/wh-questions",
-    hasFullExplanation: false
+    hasFullExplanation: true
   },
   {
     id: "embedded-wh-clauses",
@@ -191,7 +191,7 @@ export const grammarTopics: GrammarTopic[] = [
     ],
     relatedTopics: ["WH Questions", "English Auxiliaries"],
     fullExplanationPath: "/core-grammar/embedded-wh-clauses",
-    hasFullExplanation: false
+    hasFullExplanation: true
   },
   {
     id: "english-auxiliaries",
@@ -219,7 +219,7 @@ export const grammarTopics: GrammarTopic[] = [
     ],
     relatedTopics: ["Verb Tenses", "Modal Verbs"],
     fullExplanationPath: "/core-grammar/english-auxiliaries",
-    hasFullExplanation: false
+    hasFullExplanation: true
   },
   {
     id: "common-prepositions",
@@ -246,15 +246,15 @@ export const grammarTopics: GrammarTopic[] = [
     ],
     relatedTopics: ["Key Structure Differences", "WH Questions"],
     fullExplanationPath: "/core-grammar/common-prepositions",
-    hasFullExplanation: false
+    hasFullExplanation: true
   },
   {
     id: "pronouns-possessives-and-object-forms",
     slug: "pronouns-possessives-and-object-forms",
-    title: "Pronouns, Possessives, and Object Forms",
+    title: "Pronouns, Possessives, Object Forms, and Reflexives",
     section: "core-grammar",
     summary:
-      "Use subject pronouns, object pronouns, possessive adjectives, and possessive pronouns to avoid repeating nouns.",
+      "Use subject pronouns, object pronouns, possessive forms, and reflexives according to the function each word has in the sentence.",
     keyIdeas: [
       "Use subject pronouns before the verb.",
       "Use object pronouns after verbs or prepositions.",
@@ -273,7 +273,7 @@ export const grammarTopics: GrammarTopic[] = [
     ],
     relatedTopics: ["Common Prepositions", "English Auxiliaries"],
     fullExplanationPath: "/core-grammar/pronouns-possessives-and-object-forms",
-    hasFullExplanation: false
+    hasFullExplanation: true
   },
   {
     id: "key-structure-differences",
@@ -300,7 +300,7 @@ export const grammarTopics: GrammarTopic[] = [
     ],
     relatedTopics: ["Verb Tenses", "Modal Verbs", "Common Prepositions"],
     fullExplanationPath: "/core-grammar/key-structure-differences",
-    hasFullExplanation: false
+    hasFullExplanation: true
   }
 ];
 
