@@ -139,7 +139,7 @@ export const grammarTopics: GrammarTopic[] = [
     ],
     relatedTopics: ["Polite Requests", "Advice and Obligation"],
     fullExplanationPath: "/modal-verbs/would-and-hypotheticals",
-    hasFullExplanation: false
+    hasFullExplanation: true
   },
   {
     id: "wh-questions",

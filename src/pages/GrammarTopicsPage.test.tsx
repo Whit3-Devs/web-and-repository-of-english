@@ -3,6 +3,7 @@ import { MemoryRouter, Route, Routes } from "react-router-dom";
 import { describe, expect, it } from "vitest";
 import { GrammarTopicDetailPage } from "./GrammarTopicDetailPage";
 import { GrammarTopicsPage } from "./GrammarTopicsPage";
+import { IrregularVerbDetailPage } from "./IrregularVerbDetailPage";
 import { AppLayout } from "../components/AppLayout";
 
 describe("Grammar topic pages", () => {
@@ -28,25 +29,16 @@ describe("Grammar topic pages", () => {
     expect(screen.getByText("Common Prepositions")).toBeTruthy();
   });
 
-  it("renders placeholder detail routes", () => {
+  it("renders placeholder detail routes for irregular verb pages that are not migrated yet", () => {
     render(
-      <MemoryRouter initialEntries={["/modal-verbs/would-and-hypotheticals"]}>
+      <MemoryRouter initialEntries={["/irregular-verbs/go"]}>
         <Routes>
-          <Route
-            path="/modal-verbs/:slug"
-            element={
-              <GrammarTopicDetailPage
-                section="modal-verbs"
-                backPath="/modal-verbs"
-                backLabel="Modal Verbs"
-              />
-            }
-          />
+          <Route path="/irregular-verbs/:slug" element={<IrregularVerbDetailPage />} />
         </Routes>
       </MemoryRouter>
     );
 
-    expect(screen.getByText("Would and Hypotheticals")).toBeTruthy();
+    expect(screen.getByRole("heading", { name: "go" })).toBeTruthy();
     expect(screen.getByText("Full explanation coming soon")).toBeTruthy();
   });
 
@@ -226,6 +218,51 @@ describe("Grammar topic pages", () => {
     expect(screen.getByText("Micro practice")).toBeTruthy();
     expect(
       screen.getByText("Complete the sentence: Would you like to ___ with us after class?")
+    ).toBeTruthy();
+  });
+
+  it("renders full explanation content for Would and Hypotheticals", () => {
+    render(
+      <MemoryRouter initialEntries={["/modal-verbs/would-and-hypotheticals"]}>
+        <Routes>
+          <Route
+            path="/modal-verbs/:slug"
+            element={
+              <GrammarTopicDetailPage
+                section="modal-verbs"
+                backPath="/modal-verbs"
+                backLabel="Modal Verbs"
+              />
+            }
+          />
+        </Routes>
+      </MemoryRouter>
+    );
+
+    expect(screen.getByRole("heading", { name: "Would and Hypotheticals" })).toBeTruthy();
+    expect(screen.getByText("Available now")).toBeTruthy();
+    expect(screen.getByText("What this topic helps you express")).toBeTruthy();
+    expect(screen.getByText("Core rule")).toBeTruthy();
+    expect(screen.getByText("Decision rules")).toBeTruthy();
+    expect(screen.getByText("Would for imagined result and softer meaning")).toBeTruthy();
+    expect(screen.getByText("Would like for polite wants and invitations")).toBeTruthy();
+    expect(screen.getByText("Would rather for preference")).toBeTruthy();
+    expect(screen.getByText("Would ... if ... for hypothetical result")).toBeTruthy();
+    expect(screen.getAllByText("Affirmative").length).toBeGreaterThan(0);
+    expect(screen.getAllByText("Negative").length).toBeGreaterThan(0);
+    expect(screen.getAllByText("Question").length).toBeGreaterThan(0);
+    expect(screen.getAllByText(/wouldn.?t/i).length).toBeGreaterThan(0);
+    expect(screen.getByText("Would Like vs Want")).toBeTruthy();
+    expect(screen.getByText("Would Rather vs Would Like")).toBeTruthy();
+    expect(screen.getByText("Would for hypothetical result vs direct reality")).toBeTruthy();
+    expect(screen.getAllByText(/would like to \+ base verb/i).length).toBeGreaterThan(0);
+    expect(screen.getAllByText(/would rather \+ base verb/i).length).toBeGreaterThan(0);
+    expect(screen.getAllByText(/would \+ base verb \+ if \+ past simple/i).length).toBeGreaterThan(0);
+    expect(screen.getByText("Personalized examples")).toBeTruthy();
+    expect(screen.getByText("Common mistakes")).toBeTruthy();
+    expect(screen.getByText("Micro practice")).toBeTruthy();
+    expect(
+      screen.getByText("Complete the sentence: I would like to ___ my English more this week.")
     ).toBeTruthy();
   });
 
@@ -475,28 +512,6 @@ describe("Grammar topic pages", () => {
     expect(
       screen.getByText("Choose the best form: I usually work from home, but today I ___.")
     ).toBeTruthy();
-  });
-
-  it("keeps placeholder detail routes for non-migrated modal topics", () => {
-    render(
-      <MemoryRouter initialEntries={["/modal-verbs/would-and-hypotheticals"]}>
-        <Routes>
-          <Route
-            path="/modal-verbs/:slug"
-            element={
-              <GrammarTopicDetailPage
-                section="modal-verbs"
-                backPath="/modal-verbs"
-                backLabel="Modal Verbs"
-              />
-            }
-          />
-        </Routes>
-      </MemoryRouter>
-    );
-
-    expect(screen.getByText("Would and Hypotheticals")).toBeTruthy();
-    expect(screen.getByText("Full explanation coming soon")).toBeTruthy();
   });
 
   it("renders topic not found for an invalid grammar slug", () => {

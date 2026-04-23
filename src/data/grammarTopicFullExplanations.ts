@@ -859,6 +859,220 @@ export const grammarTopicFullExplanations: GrammarTopicFullExplanation[] = [
     ]
   },
   {
+    contentType: "modal-topic",
+    slug: "would-and-hypotheticals",
+    title: "Would and Hypotheticals",
+    section: "modal-verbs",
+    overview:
+      "Use would to move meaning away from direct reality and into softer wants, invitations, preferences, or imagined results in hypothetical situations.",
+    whatItDoes: [
+      "Help you express polite wants and invitations without sounding too direct.",
+      "Show how would rather expresses preference between options.",
+      "Introduce the core pattern for hypothetical results with if + past simple."
+    ],
+    coreRule: [
+      "Subject + would + base verb + complement",
+      "Subject + would like + noun / to + base verb",
+      "Subject + would rather + base verb",
+      "Subject + would + base verb + if + subject + past simple",
+      "After would, use the base verb. Would like to adds to before the verb, but would rather does not."
+    ],
+    decisionRules: [
+      "If you want a polite want or invitation, choose would like.",
+      "If you want to show preference between options, choose would rather.",
+      "If you want an imagined result in an unreal or hypothetical situation, choose would + base verb with if + past simple.",
+      "If you want to sound less direct than want, choose would like.",
+      "Do not add to after would or would rather unless the structure is would like to + verb."
+    ],
+    modalCards: [
+      {
+        title: "Would for imagined result and softer meaning",
+        modal: "would",
+        mainUse: "Imagined result / softer space",
+        whenToUse: "Use it when you move away from direct reality and describe what someone would do in an imagined situation or softer frame.",
+        tone: "Less direct, more imagined, and often more distant from reality.",
+        structures: {
+          affirmative: "Subject + would + base verb",
+          negative: "Subject + would not / wouldn't + base verb",
+          question: "Would + subject + base verb?"
+        },
+        contractions: ["wouldn't"],
+        examples: [
+          "I would travel more.",
+          "She wouldn't ignore that problem.",
+          "Would they understand the reason?"
+        ],
+        notes: [
+          "Would often moves meaning away from direct reality into imagined or softer space."
+        ]
+      },
+      {
+        title: "Would like for polite wants and invitations",
+        modal: "would like",
+        mainUse: "Polite want / invitation",
+        whenToUse: "Use it when you want something politely or invite someone in a softer way than want.",
+        tone: "Polite, softer, and socially careful.",
+        structures: {
+          affirmative: "Subject + would like + noun / to + base verb",
+          negative: "Subject + would not like + noun / to + base verb",
+          question: "Would + subject + like + noun / to + base verb?"
+        },
+        contractions: ["wouldn't"],
+        examples: [
+          "I would like to practice English.",
+          "She wouldn't like that schedule.",
+          "Would you like to review this note?"
+        ],
+        notes: [
+          "Would like sounds softer than want.",
+          "Use would like to + base verb when the next idea is an action."
+        ]
+      },
+      {
+        title: "Would rather for preference",
+        modal: "would rather",
+        mainUse: "Preference",
+        whenToUse: "Use it when you want to say which option you prefer.",
+        tone: "Personal, comparative, and preference-focused.",
+        structures: {
+          affirmative: "Subject + would rather + base verb",
+          negative: "Subject + would rather not + base verb",
+          question: "Would + subject + rather + base verb?"
+        },
+        contractions: ["wouldn't"],
+        examples: [
+          "I would rather practice speaking today.",
+          "She would rather not wait until tomorrow.",
+          "Would you rather start with grammar or speaking?"
+        ],
+        notes: ["Do not use to after would rather."]
+      },
+      {
+        title: "Would ... if ... for hypothetical result",
+        modal: "would ... if ...",
+        mainUse: "Hypothetical result",
+        whenToUse: "Use it when you describe the result of an unreal or imagined situation.",
+        tone: "Imagined, conditional, and not directly real now.",
+        structures: {
+          affirmative: "Subject + would + base verb + if + subject + past simple",
+          negative: "Subject + would not / wouldn't + base verb + if + subject + past simple",
+          question: "Would + subject + base verb + if + subject + past simple?"
+        },
+        contractions: ["wouldn't"],
+        examples: [
+          "I would practice more if I had more time.",
+          "We wouldn't make that mistake if we checked the details.",
+          "Would you move abroad if you had the chance?"
+        ],
+        notes: [
+          "This page introduces the core hypothetical result pattern only.",
+          "It does not expand into a full conditionals lesson."
+        ]
+      }
+    ],
+    comparisonBlocks: [
+      {
+        title: "Would Like vs Want",
+        explanation:
+          "Both express desire, but want is more direct while would like sounds softer and more polite.",
+        examples: [
+          "I want to practice now. → direct",
+          "I would like to practice now. → softer and more polite"
+        ],
+        takeaway: "Choose would like when you want the same basic meaning with more social softness."
+      },
+      {
+        title: "Would Rather vs Would Like",
+        explanation:
+          "Would like expresses a polite want or invitation. Would rather expresses preference between options.",
+        examples: [
+          "I would like to join the class. → polite want",
+          "I would rather join the later class. → preference"
+        ],
+        takeaway: "Choose would rather when the key meaning is preference, not just a polite desire."
+      },
+      {
+        title: "Would for hypothetical result vs direct reality",
+        explanation:
+          "Would shows an imagined result, while direct reality uses forms that describe what really happens now or in fact.",
+        examples: [
+          "I practice every day. → direct reality",
+          "I would practice more if I had more time. → imagined result"
+        ],
+        takeaway: "Choose would when the result belongs to an unreal or imagined situation."
+      }
+    ],
+    personalizedExamples: [
+      "I would like to review my English notes before the meeting.",
+      "I would rather fix the root cause than patch the symptom.",
+      "We would ship faster if the requirements were clearer.",
+      "Would you like to practice speaking after lunch?",
+      "I wouldn't change that config if I didn't understand the side effects."
+    ],
+    explainedMistakes: [
+      {
+        wrong: "I would to travel more.",
+        correct: "I would travel more.",
+        reason: "After would, use the base verb without to."
+      },
+      {
+        wrong: "I would like practice every day.",
+        correct: "I would like to practice every day.",
+        reason: "Use would like to + base verb when the next idea is an action."
+      },
+      {
+        wrong: "She would rather to study first.",
+        correct: "She would rather study first.",
+        reason: "Would rather is followed directly by the base verb, not by to + verb."
+      },
+      {
+        wrong: "I would practice more if I will have time.",
+        correct: "I would practice more if I had time.",
+        reason: "In the core hypothetical pattern taught here, use if + past simple, not will."
+      }
+    ],
+    quickMemory: [
+      "Would often moves meaning away from direct reality.",
+      "Would like = polite want or invitation.",
+      "Would rather = preference.",
+      "Would + base verb + if + past simple = hypothetical result.",
+      "No to after would or would rather; use would like to + verb."
+    ],
+    practiceItems: [
+      {
+        prompt: "Complete the sentence: I would like to ___ my English more this week.",
+        answer: "practice",
+        focus: "would like to + base verb"
+      },
+      {
+        prompt: "Choose the preference form: I would like / I would rather study speaking first.",
+        answer: "I would rather study speaking first.",
+        focus: "preference with would rather"
+      },
+      {
+        prompt: "Correct the sentence: She would rather to wait.",
+        answer: "She would rather wait.",
+        focus: "no to after would rather"
+      },
+      {
+        prompt: "Complete the hypothetical sentence: I would travel more if I ___ more money.",
+        answer: "had",
+        focus: "if + past simple"
+      },
+      {
+        prompt: "Choose the softer sentence: I want to ask a question. / I would like to ask a question.",
+        answer: "I would like to ask a question.",
+        focus: "direct desire vs polite softer desire"
+      }
+    ],
+    relatedTopics: [
+      "Polite Requests",
+      "Advice and Obligation",
+      "Possibility and Probability",
+      "Key Structure Differences"
+    ]
+  },
+  {
     contentType: "prepositions",
     slug: "common-prepositions",
     title: "Common Prepositions",

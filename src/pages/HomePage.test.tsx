@@ -128,6 +128,16 @@ describe("Home page topic directory", () => {
     expect(document.title).toBe("Polite Requests | English Cheatsheet");
   });
 
+  it("uses would and hypotheticals in the browser tab", () => {
+    render(
+      <MemoryRouter initialEntries={["/modal-verbs/would-and-hypotheticals"]}>
+        <App />
+      </MemoryRouter>
+    );
+
+    expect(document.title).toBe("Would and Hypotheticals | English Cheatsheet");
+  });
+
   it("uses section titles for list routes", () => {
     render(
       <MemoryRouter initialEntries={["/verb-tenses"]}>
