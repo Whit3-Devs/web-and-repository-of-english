@@ -30,7 +30,7 @@ describe("Grammar topic pages", () => {
 
   it("renders placeholder detail routes", () => {
     render(
-      <MemoryRouter initialEntries={["/modal-verbs/polite-requests"]}>
+      <MemoryRouter initialEntries={["/modal-verbs/would-and-hypotheticals"]}>
         <Routes>
           <Route
             path="/modal-verbs/:slug"
@@ -46,7 +46,7 @@ describe("Grammar topic pages", () => {
       </MemoryRouter>
     );
 
-    expect(screen.getByText("Polite Requests")).toBeTruthy();
+    expect(screen.getByText("Would and Hypotheticals")).toBeTruthy();
     expect(screen.getByText("Full explanation coming soon")).toBeTruthy();
   });
 
@@ -93,6 +93,139 @@ describe("Grammar topic pages", () => {
     expect(screen.getByText("Micro practice")).toBeTruthy();
     expect(
       screen.getByText("Complete the sentence: She can ___ English very well.")
+    ).toBeTruthy();
+  });
+
+  it("renders full explanation content for Advice and Obligation", () => {
+    render(
+      <MemoryRouter initialEntries={["/modal-verbs/advice-and-obligation"]}>
+        <Routes>
+          <Route
+            path="/modal-verbs/:slug"
+            element={
+              <GrammarTopicDetailPage
+                section="modal-verbs"
+                backPath="/modal-verbs"
+                backLabel="Modal Verbs"
+              />
+            }
+          />
+        </Routes>
+      </MemoryRouter>
+    );
+
+    expect(screen.getByRole("heading", { name: "Advice and Obligation" })).toBeTruthy();
+    expect(screen.getByText("Available now")).toBeTruthy();
+    expect(screen.getByText("What this topic helps you express")).toBeTruthy();
+    expect(screen.getByText("Core rule")).toBeTruthy();
+    expect(screen.getByText("Decision rules")).toBeTruthy();
+    expect(screen.getByText("Should for advice and recommendation")).toBeTruthy();
+    expect(screen.getByText("Ought to for moral or more formal advice")).toBeTruthy();
+    expect(screen.getByText("Must for strong obligation or necessity")).toBeTruthy();
+    expect(screen.getByText("Must not for prohibition")).toBeTruthy();
+    expect(screen.getAllByText("Affirmative").length).toBeGreaterThan(0);
+    expect(screen.getAllByText("Negative").length).toBeGreaterThan(0);
+    expect(screen.getAllByText("Question").length).toBeGreaterThan(0);
+    expect(screen.getAllByText(/shouldn.?t/i).length).toBeGreaterThan(0);
+    expect(screen.getAllByText(/mustn.?t/i).length).toBeGreaterThan(0);
+    expect(screen.getByText("Should vs Ought To")).toBeTruthy();
+    expect(screen.getByText("Should vs Must")).toBeTruthy();
+    expect(screen.getByText("Must vs Must Not")).toBeTruthy();
+    expect(screen.getByText("Personalized examples")).toBeTruthy();
+    expect(screen.getByText("Common mistakes")).toBeTruthy();
+    expect(screen.getByText("Micro practice")).toBeTruthy();
+    expect(
+      screen.getByText("Complete the sentence: You should ___ more water.")
+    ).toBeTruthy();
+  });
+
+  it("renders full explanation content for Possibility and Probability", () => {
+    render(
+      <MemoryRouter initialEntries={["/modal-verbs/possibility-and-probability"]}>
+        <Routes>
+          <Route
+            path="/modal-verbs/:slug"
+            element={
+              <GrammarTopicDetailPage
+                section="modal-verbs"
+                backPath="/modal-verbs"
+                backLabel="Modal Verbs"
+              />
+            }
+          />
+        </Routes>
+      </MemoryRouter>
+    );
+
+    expect(screen.getByRole("heading", { name: "Possibility and Probability" })).toBeTruthy();
+    expect(screen.getByText("Available now")).toBeTruthy();
+    expect(screen.getByText("What this topic helps you express")).toBeTruthy();
+    expect(screen.getByText("Core rule")).toBeTruthy();
+    expect(screen.getByText("Decision rules")).toBeTruthy();
+    expect(screen.getByText("May for possibility")).toBeTruthy();
+    expect(screen.getByText("Might for weaker or more uncertain possibility")).toBeTruthy();
+    expect(screen.getByText("Could for one possible option")).toBeTruthy();
+    expect(screen.getByText("Must for strong logical deduction")).toBeTruthy();
+    expect(screen.getAllByText("Affirmative").length).toBeGreaterThan(0);
+    expect(screen.getAllByText("Negative").length).toBeGreaterThan(0);
+    expect(screen.getAllByText("Question").length).toBeGreaterThan(0);
+    expect(screen.getAllByText(/couldn.?t/i).length).toBeGreaterThan(0);
+    expect(screen.getAllByText(/mustn.?t/i).length).toBeGreaterThan(0);
+    expect(screen.getByText("May vs Might")).toBeTruthy();
+    expect(screen.getByText("Might vs Could")).toBeTruthy();
+    expect(screen.getByText("Could vs Must")).toBeTruthy();
+    expect(screen.getByText("Personalized examples")).toBeTruthy();
+    expect(screen.getByText("Common mistakes")).toBeTruthy();
+    expect(screen.getByText("Micro practice")).toBeTruthy();
+    expect(
+      screen.getByText("Complete the sentence: It might ___ later.")
+    ).toBeTruthy();
+  });
+
+  it("renders full explanation content for Polite Requests", () => {
+    render(
+      <MemoryRouter initialEntries={["/modal-verbs/polite-requests"]}>
+        <Routes>
+          <Route
+            path="/modal-verbs/:slug"
+            element={
+              <GrammarTopicDetailPage
+                section="modal-verbs"
+                backPath="/modal-verbs"
+                backLabel="Modal Verbs"
+              />
+            }
+          />
+        </Routes>
+      </MemoryRouter>
+    );
+
+    expect(screen.getByRole("heading", { name: "Polite Requests" })).toBeTruthy();
+    expect(screen.getByText("Available now")).toBeTruthy();
+    expect(screen.getByText("What this topic helps you express")).toBeTruthy();
+    expect(screen.getByText("Core rule")).toBeTruthy();
+    expect(screen.getByText("Decision rules")).toBeTruthy();
+    expect(screen.getByText("Can for direct everyday requests")).toBeTruthy();
+    expect(screen.getByText("Could for softer, more polite requests")).toBeTruthy();
+    expect(
+      screen.getByText("Would for offers, invitations, and would like requests")
+    ).toBeTruthy();
+    expect(screen.getByText("May for formal permission requests")).toBeTruthy();
+    expect(screen.getAllByText("Affirmative").length).toBeGreaterThan(0);
+    expect(screen.getAllByText("Negative").length).toBeGreaterThan(0);
+    expect(screen.getAllByText("Question").length).toBeGreaterThan(0);
+    expect(screen.getAllByText(/can.?t/i).length).toBeGreaterThan(0);
+    expect(screen.getAllByText(/couldn.?t/i).length).toBeGreaterThan(0);
+    expect(screen.getAllByText(/wouldn.?t/i).length).toBeGreaterThan(0);
+    expect(screen.getByText("Can vs Could")).toBeTruthy();
+    expect(screen.getByText("Could vs May")).toBeTruthy();
+    expect(screen.getByText("Could vs Would")).toBeTruthy();
+    expect(screen.getAllByText(/Would you like to \+ base verb/i).length).toBeGreaterThan(0);
+    expect(screen.getByText("Personalized examples")).toBeTruthy();
+    expect(screen.getByText("Common mistakes")).toBeTruthy();
+    expect(screen.getByText("Micro practice")).toBeTruthy();
+    expect(
+      screen.getByText("Complete the sentence: Would you like to ___ with us after class?")
     ).toBeTruthy();
   });
 
@@ -346,7 +479,7 @@ describe("Grammar topic pages", () => {
 
   it("keeps placeholder detail routes for non-migrated modal topics", () => {
     render(
-      <MemoryRouter initialEntries={["/modal-verbs/advice-and-obligation"]}>
+      <MemoryRouter initialEntries={["/modal-verbs/would-and-hypotheticals"]}>
         <Routes>
           <Route
             path="/modal-verbs/:slug"
@@ -362,7 +495,7 @@ describe("Grammar topic pages", () => {
       </MemoryRouter>
     );
 
-    expect(screen.getByText("Advice and Obligation")).toBeTruthy();
+    expect(screen.getByText("Would and Hypotheticals")).toBeTruthy();
     expect(screen.getByText("Full explanation coming soon")).toBeTruthy();
   });
 

@@ -55,7 +55,7 @@ export const grammarTopics: GrammarTopic[] = [
     ],
     relatedTopics: ["Ability and Permission", "Possibility and Probability"],
     fullExplanationPath: "/modal-verbs/advice-and-obligation",
-    hasFullExplanation: false
+    hasFullExplanation: true
   },
   {
     id: "possibility-and-probability",
@@ -83,7 +83,7 @@ export const grammarTopics: GrammarTopic[] = [
     ],
     relatedTopics: ["Advice and Obligation", "Ability and Permission"],
     fullExplanationPath: "/modal-verbs/possibility-and-probability",
-    hasFullExplanation: false
+    hasFullExplanation: true
   },
   {
     id: "polite-requests",
@@ -111,7 +111,7 @@ export const grammarTopics: GrammarTopic[] = [
     ],
     relatedTopics: ["Would and Hypotheticals", "Ability and Permission"],
     fullExplanationPath: "/modal-verbs/polite-requests",
-    hasFullExplanation: false
+    hasFullExplanation: true
   },
   {
     id: "would-and-hypotheticals",

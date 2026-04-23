@@ -229,6 +229,636 @@ export const grammarTopicFullExplanations: GrammarTopicFullExplanation[] = [
     ]
   },
   {
+    contentType: "modal-topic",
+    slug: "advice-and-obligation",
+    title: "Advice and Obligation",
+    section: "modal-verbs",
+    overview:
+      "Use should, ought to, and must to give advice, express moral recommendation, show strong obligation, and mark clear prohibition when something is not allowed.",
+    whatItDoes: [
+      "Help you recommend what someone should do.",
+      "Show stronger pressure when something feels necessary or non-negotiable.",
+      "Differentiate between advice, moral duty, and prohibition."
+    ],
+    coreRule: [
+      "Subject + should + base verb + complement",
+      "Subject + ought to + base verb + complement",
+      "Subject + must + base verb + complement",
+      "Should and must take the base verb directly; ought to includes to before the base verb."
+    ],
+    decisionRules: [
+      "If you want to give advice or a recommendation, choose should.",
+      "If the advice has a moral or slightly more formal tone, choose ought to.",
+      "If the situation feels strong, necessary, or obligatory, choose must.",
+      "If something is forbidden, choose must not or mustn't.",
+      "Do not confuse must not with lack of obligation; it means prohibition."
+    ],
+    modalCards: [
+      {
+        title: "Should for advice and recommendation",
+        modal: "should",
+        mainUse: "Advice, recommendation",
+        whenToUse: "Use it when you want to say what is a good idea, wise action, or recommended choice.",
+        tone: "Neutral, helpful, and common.",
+        structures: {
+          affirmative: "Subject + should + base verb",
+          negative: "Subject + should not / shouldn't + base verb",
+          question: "Should + subject + base verb?"
+        },
+        contractions: ["shouldn't"],
+        examples: [
+          "You should rest.",
+          "You shouldn't skip practice.",
+          "Should we review the notes first?"
+        ]
+      },
+      {
+        title: "Ought to for moral or more formal advice",
+        modal: "ought to",
+        mainUse: "Moral duty, more formal advice",
+        whenToUse: "Use it when the advice feels more ethical, responsible, or slightly more formal than should.",
+        tone: "A bit more formal and moral in tone.",
+        structures: {
+          affirmative: "Subject + ought to + base verb",
+          negative: "Subject + ought not to + base verb",
+          question: "Ought + subject + to + base verb?"
+        },
+        examples: [
+          "You ought to apologize.",
+          "We ought not to ignore this problem.",
+          "Ought we to call them now?"
+        ],
+        notes: [
+          "Ought to includes to in the structure.",
+          "Questions with ought to are less common in everyday speech than questions with should."
+        ]
+      },
+      {
+        title: "Must for strong obligation or necessity",
+        modal: "must",
+        mainUse: "Strong obligation, necessity",
+        whenToUse: "Use it when the speaker wants to show strong pressure, necessity, or an important rule.",
+        tone: "Strong, direct, and forceful.",
+        structures: {
+          affirmative: "Subject + must + base verb",
+          negative: "Subject + must not / mustn't + base verb",
+          question: "Must + subject + base verb?"
+        },
+        contractions: ["mustn't"],
+        examples: [
+          "You must wear a seatbelt.",
+          "We must finish this today.",
+          "Must I bring my passport?"
+        ]
+      },
+      {
+        title: "Must not for prohibition",
+        modal: "must not",
+        mainUse: "Prohibition",
+        whenToUse: "Use it when something is not allowed at all.",
+        tone: "Strict and prohibitive.",
+        structures: {
+          affirmative: "Subject + must + base verb",
+          negative: "Subject + must not / mustn't + base verb",
+          question: "Must + subject + base verb?"
+        },
+        contractions: ["mustn't"],
+        examples: [
+          "You must not smoke here.",
+          "You mustn't share your password.",
+          "Must we stay behind this line?"
+        ],
+        notes: [
+          "Must not means prohibition.",
+          "It does not mean that something is unnecessary."
+        ]
+      }
+    ],
+    comparisonBlocks: [
+      {
+        title: "Should vs Ought To",
+        explanation:
+          "Both can give advice, but ought to often sounds a bit more formal or moral, while should is more common and neutral.",
+        examples: [
+          "You should rest. → normal recommendation",
+          "You ought to tell the truth. → advice with moral weight"
+        ],
+        takeaway: "Choose should for everyday advice and ought to when the advice feels more principled or formal."
+      },
+      {
+        title: "Should vs Must",
+        explanation:
+          "Should recommends. Must pushes much harder and can sound like an obligation, rule, or necessity.",
+        examples: [
+          "You should study more. → recommendation",
+          "You must submit the form today. → strong obligation"
+        ],
+        takeaway: "Choose must only when the pressure or necessity is clearly stronger than normal advice."
+      },
+      {
+        title: "Must vs Must Not",
+        explanation:
+          "Must tells you something is necessary. Must not tells you something is forbidden.",
+        examples: [
+          "You must wear a badge. → required",
+          "You must not enter this area. → prohibited"
+        ],
+        takeaway: "Must not means no permission, not no obligation."
+      }
+    ],
+    personalizedExamples: [
+      "You should review the pull request before pushing again.",
+      "We ought to document this decision so the next session stays clear.",
+      "You must back up the database before making that change.",
+      "You must not share production credentials in chat.",
+      "I should practice speaking every day if I want to sound more natural."
+    ],
+    explainedMistakes: [
+      {
+        wrong: "You should to study.",
+        correct: "You should study.",
+        reason: "After should, use the base verb without to."
+      },
+      {
+        wrong: "He musts go now.",
+        correct: "He must go now.",
+        reason: "Modal verbs do not add -s in the third person."
+      },
+      {
+        wrong: "You ought study more.",
+        correct: "You ought to study more.",
+        reason: "Ought must be followed by to."
+      },
+      {
+        wrong: "You must not come if you don't want to.",
+        correct: "You don't have to come if you don't want to.",
+        reason: "Must not means prohibition, not lack of obligation."
+      }
+    ],
+    quickMemory: [
+      "Should = advice.",
+      "Ought to = more formal or moral advice.",
+      "Must = strong obligation.",
+      "Must not = prohibition.",
+      "Should and must take the base verb directly; ought to includes to."
+    ],
+    practiceItems: [
+      {
+        prompt: "Complete the sentence: You should ___ more water.",
+        answer: "drink",
+        focus: "base verb after should"
+      },
+      {
+        prompt: "Make it negative: You must share this password.",
+        answer: "You must not share this password.",
+        focus: "prohibition with must not"
+      },
+      {
+        prompt: "Choose the better option for moral advice: should / ought to",
+        answer: "ought to",
+        focus: "moral or more formal advice"
+      },
+      {
+        prompt: "Correct the sentence: We ought finish this first.",
+        answer: "We ought to finish this first.",
+        focus: "ought to structure"
+      },
+      {
+        prompt: "Choose the stronger form: You should be careful. / You must be careful.",
+        answer: "You must be careful.",
+        focus: "advice vs strong obligation"
+      }
+    ],
+    relatedTopics: [
+      "Ability and Permission",
+      "Polite Requests",
+      "English Auxiliaries",
+      "Key Structure Differences"
+    ]
+  },
+  {
+    contentType: "modal-topic",
+    slug: "possibility-and-probability",
+    title: "Possibility and Probability",
+    section: "modal-verbs",
+    overview:
+      "Use may, might, could, and must to talk about possibility, uncertainty, one possible option, or a strong logical conclusion based on evidence.",
+    whatItDoes: [
+      "Help you talk about different levels of certainty.",
+      "Show the difference between a weak possibility, one possible option, and a strong deduction.",
+      "Let you choose the modal that matches how sure you really are."
+    ],
+    coreRule: [
+      "Subject + modal + base verb + complement",
+      "Negative: Subject + modal + not + base verb + complement",
+      "Question: Modal + subject + base verb + complement?",
+      "After a modal, the main verb stays in the base form: no to and no -s."
+    ],
+    decisionRules: [
+      "If something is possible, choose may.",
+      "If the possibility feels weaker or more uncertain, choose might.",
+      "If you want to present one possible option among others, choose could.",
+      "If the evidence makes you feel strongly sure, choose must for deduction.",
+      "In this topic, must expresses logical conclusion, not obligation."
+    ],
+    modalCards: [
+      {
+        title: "May for possibility",
+        modal: "may",
+        mainUse: "Possibility",
+        whenToUse: "Use it when something is possible and you want a neutral probability tone.",
+        tone: "Neutral and careful.",
+        structures: {
+          affirmative: "Subject + may + base verb",
+          negative: "Subject + may not + base verb",
+          question: "May + subject + base verb?"
+        },
+        examples: [
+          "It may rain later.",
+          "She may join the meeting.",
+          "May this approach work?"
+        ],
+        notes: [
+          "In this topic, the focus is probability, not permission.",
+          "May often sounds slightly more neutral than might."
+        ]
+      },
+      {
+        title: "Might for weaker or more uncertain possibility",
+        modal: "might",
+        mainUse: "Weaker possibility",
+        whenToUse: "Use it when you want to sound less certain than with may.",
+        tone: "More tentative and less sure.",
+        structures: {
+          affirmative: "Subject + might + base verb",
+          negative: "Subject + might not + base verb",
+          question: "Might + subject + base verb?"
+        },
+        examples: [
+          "It might rain later.",
+          "They might not understand the requirement.",
+          "Might we need more time?"
+        ],
+        notes: ["Might usually feels weaker or less certain than may."]
+      },
+      {
+        title: "Could for one possible option",
+        modal: "could",
+        mainUse: "Possible option",
+        whenToUse: "Use it when you want to name one possible explanation, result, or action among several options.",
+        tone: "Open and exploratory.",
+        structures: {
+          affirmative: "Subject + could + base verb",
+          negative: "Subject + could not / couldn't + base verb",
+          question: "Could + subject + base verb?"
+        },
+        contractions: ["couldn't"],
+        examples: [
+          "This could be the problem.",
+          "We could try another solution.",
+          "Could the issue come from the cache?"
+        ],
+        notes: [
+          "Here, could means possible option, not past ability or polite permission."
+        ]
+      },
+      {
+        title: "Must for strong logical deduction",
+        modal: "must",
+        mainUse: "Strong deduction from evidence",
+        whenToUse: "Use it when the evidence makes you feel that something is very probably true.",
+        tone: "Strong and confident.",
+        structures: {
+          affirmative: "Subject + must + base verb",
+          negative: "Subject + must not / mustn't + base verb",
+          question: "Must + subject + base verb?"
+        },
+        contractions: ["mustn't"],
+        examples: [
+          "You must be tired.",
+          "The server must be down.",
+          "Must this be the reason?"
+        ],
+        notes: [
+          "In this topic, must means strong logical conclusion.",
+          "It does not mean obligation here.",
+          "Must not appears here for structural completeness, not as the main deduction opposite."
+        ]
+      }
+    ],
+    comparisonBlocks: [
+      {
+        title: "May vs Might",
+        explanation:
+          "Both express possibility, but might usually sounds weaker or more uncertain than may.",
+        examples: [
+          "It may work. → possible",
+          "It might work. → possible, but less certain"
+        ],
+        takeaway: "Choose might when you want more distance or less confidence."
+      },
+      {
+        title: "Might vs Could",
+        explanation:
+          "Might focuses on uncertainty level, while could often presents one possible option or explanation among several.",
+        examples: [
+          "They might be late. → uncertain",
+          "The delay could come from traffic. → one possible cause"
+        ],
+        takeaway: "Choose could when you want to name an option, not only a weak probability."
+      },
+      {
+        title: "Could vs Must",
+        explanation:
+          "Could keeps the idea open as one possible option. Must shows a strong conclusion based on evidence.",
+        examples: [
+          "This could be the issue. → one possible explanation",
+          "This must be the issue. → strong conclusion from evidence"
+        ],
+        takeaway: "In this topic, must means deduction, not obligation."
+      }
+    ],
+    personalizedExamples: [
+      "This bug might come from stale cache data.",
+      "The deploy may fail if the environment variables are missing.",
+      "We could try a smaller refactor first.",
+      "The API must be down because every request is timing out.",
+      "She might join the English practice call later."
+    ],
+    explainedMistakes: [
+      {
+        wrong: "It might rains.",
+        correct: "It might rain.",
+        reason: "After a modal, use the base verb, not the third-person form."
+      },
+      {
+        wrong: "This could to work.",
+        correct: "This could work.",
+        reason: "After could, do not use to."
+      },
+      {
+        wrong: "You must are tired.",
+        correct: "You must be tired.",
+        reason: "After must, use the base verb. The correct base form here is be."
+      },
+      {
+        wrong: "We may trying again later.",
+        correct: "We may try again later.",
+        reason: "After may, use the base form, not verb-ing."
+      }
+    ],
+    quickMemory: [
+      "May = possible.",
+      "Might = weaker or more uncertain possibility.",
+      "Could = one possible option.",
+      "Must = strong deduction from evidence.",
+      "After all these modals, use the base verb.",
+      "Must here does not mean obligation."
+    ],
+    practiceItems: [
+      {
+        prompt: "Complete the sentence: It might ___ later.",
+        answer: "rain",
+        focus: "base verb after might"
+      },
+      {
+        prompt: "Choose the stronger conclusion: This could be the answer. / This must be the answer.",
+        answer: "This must be the answer.",
+        focus: "possible option vs strong deduction"
+      },
+      {
+        prompt: "Correct the sentence: This could to work.",
+        answer: "This could work.",
+        focus: "no to after a modal"
+      },
+      {
+        prompt: "Choose the weaker possibility: may / might",
+        answer: "might",
+        focus: "certainty level"
+      },
+      {
+        prompt: "Complete the sentence: The issue ___ come from the cache.",
+        answer: "could",
+        focus: "one possible option"
+      }
+    ],
+    relatedTopics: [
+      "Ability and Permission",
+      "Advice and Obligation",
+      "English Auxiliaries",
+      "Key Structure Differences"
+    ]
+  },
+  {
+    contentType: "modal-topic",
+    slug: "polite-requests",
+    title: "Polite Requests",
+    section: "modal-verbs",
+    overview:
+      "Use can, could, would, and may to ask for something with the right level of directness, politeness, or formality, and to understand when a request becomes an offer or invitation.",
+    whatItDoes: [
+      "Help you ask for help, action, or permission with the tone you really want.",
+      "Show the difference between direct everyday requests, softer requests, and formal permission questions.",
+      "Explain when would introduces an offer, invitation, or would like pattern instead of a simple request."
+    ],
+    coreRule: [
+      "Question pattern: Modal + subject + base verb + complement?",
+      "Affirmative pattern: Subject + modal + base verb + complement",
+      "Negative pattern: Subject + modal + not + base verb + complement",
+      "After can, could, may, and would, the next verb stays in the base form.",
+      "Important exception: Would you like to + base verb...? includes to after like, not directly after would."
+    ],
+    decisionRules: [
+      "If you want a direct everyday request, choose can.",
+      "If you want a softer and more polite request, choose could.",
+      "If you want to offer, invite, or use would like, choose would.",
+      "If you want a very formal permission request, choose may.",
+      "Do not add to after can, could, may, or would unless the structure is would like to + verb."
+    ],
+    modalCards: [
+      {
+        title: "Can for direct everyday requests",
+        modal: "can",
+        mainUse: "Direct everyday request",
+        whenToUse: "Use it when the situation is normal, informal, and you do not need extra distance or formality.",
+        tone: "Direct, natural, and everyday.",
+        structures: {
+          affirmative: "Subject + can + base verb",
+          negative: "Subject + cannot / can't + base verb",
+          question: "Can + subject + base verb?"
+        },
+        contractions: ["can't"],
+        examples: [
+          "Can you help me with this exercise?",
+          "Can I use your laptop for a minute?",
+          "We can't stay long today."
+        ],
+        notes: ["In this topic, the main focus of can is direct everyday requesting."]
+      },
+      {
+        title: "Could for softer, more polite requests",
+        modal: "could",
+        mainUse: "Softer request",
+        whenToUse: "Use it when you want to ask without sounding too direct.",
+        tone: "Softer, more polite, and slightly more distant than can.",
+        structures: {
+          affirmative: "Subject + could + base verb",
+          negative: "Subject + could not / couldn't + base verb",
+          question: "Could + subject + base verb?"
+        },
+        contractions: ["couldn't"],
+        examples: [
+          "Could you review this note tonight?",
+          "Could I ask you something after class?",
+          "I couldn't stay after the meeting."
+        ],
+        notes: ["Could often sounds more polite than can in everyday requests."]
+      },
+      {
+        title: "Would for offers, invitations, and would like requests",
+        modal: "would",
+        mainUse: "Polite offer / invitation / preference-based request",
+        whenToUse: "Use it when you invite, offer something, or build a polite request with would like.",
+        tone: "Polite, careful, and often more socially framed than could.",
+        structures: {
+          affirmative: "Subject + would + base verb",
+          negative: "Subject + would not / wouldn't + base verb",
+          question: "Would + subject + base verb?"
+        },
+        contractions: ["wouldn't"],
+        examples: [
+          "Would you pass the salt, please?",
+          "Would you like to practice English together?",
+          "I wouldn't interrupt them right now."
+        ],
+        notes: [
+          "Would often introduces offers, invitations, or polite preference-based requests.",
+          "Would like + noun and would like to + base verb are special high-frequency patterns."
+        ]
+      },
+      {
+        title: "May for formal permission requests",
+        modal: "may",
+        mainUse: "Formal permission request",
+        whenToUse: "Use it in formal, careful, or institutional situations when asking permission.",
+        tone: "Formal and respectful.",
+        structures: {
+          affirmative: "Subject + may + base verb",
+          negative: "Subject + may not + base verb",
+          question: "May + subject + base verb?"
+        },
+        examples: [
+          "May I ask a question?",
+          "May I leave a little early today?",
+          "Students may not enter this room."
+        ],
+        notes: ["May sounds more formal than can or could in permission requests."]
+      }
+    ],
+    comparisonBlocks: [
+      {
+        title: "Can vs Could",
+        explanation:
+          "Both can ask for something, but can sounds more direct and everyday, while could sounds softer and more polite.",
+        examples: [
+          "Can you open the window? → direct and normal",
+          "Could you open the window? → softer and more polite"
+        ],
+        takeaway: "Choose could when politeness matters more than speed or directness."
+      },
+      {
+        title: "Could vs May",
+        explanation:
+          "Could is common for polite everyday requests. May usually focuses on formal permission rather than natural everyday softness.",
+        examples: [
+          "Could I borrow your notes? → polite and natural",
+          "May I enter the office? → formal permission"
+        ],
+        takeaway: "Choose could for polite daily interaction and may for more formal permission contexts."
+      },
+      {
+        title: "Could vs Would",
+        explanation:
+          "Could often asks someone to do something. Would often frames an offer, invitation, or polite request through preference language like would like.",
+        examples: [
+          "Could you help me with this file? → asking for action",
+          "Would you like to join us? → invitation",
+          "Would you pass the salt? → polite social request"
+        ],
+        takeaway: "Choose would when the request is tied to invitation, offer, or would like style framing."
+      }
+    ],
+    personalizedExamples: [
+      "Can you check this bug report before the stand-up?",
+      "Could you explain that grammar point one more time?",
+      "Would you like to practice speaking after work?",
+      "May I ask a question before we move to the next topic?",
+      "Would you pass me the notebook where I wrote those examples?"
+    ],
+    explainedMistakes: [
+      {
+        wrong: "Could you to help me?",
+        correct: "Could you help me?",
+        reason: "After could, use the base verb directly. Do not add to."
+      },
+      {
+        wrong: "Would you like practice?",
+        correct: "Would you like to practice?",
+        reason: "With a verb after would like, use would like to + base verb."
+      },
+      {
+        wrong: "May I to ask a question?",
+        correct: "May I ask a question?",
+        reason: "After may, use the base verb without to."
+      },
+      {
+        wrong: "Can you helps me for a minute?",
+        correct: "Can you help me for a minute?",
+        reason: "After a modal, the main verb stays in the base form, not the third-person form."
+      }
+    ],
+    quickMemory: [
+      "Can = direct everyday request.",
+      "Could = softer and more polite request.",
+      "Would = polite offer, invitation, or would like pattern.",
+      "May = formal permission request.",
+      "After the modal, use the base verb. Only would like to adds to before a verb."
+    ],
+    practiceItems: [
+      {
+        prompt: "Choose the softer request: Can you review this? / Could you review this?",
+        answer: "Could you review this?",
+        focus: "directness vs politeness"
+      },
+      {
+        prompt: "Complete the sentence: Would you like to ___ with us after class?",
+        answer: "practice",
+        focus: "would like to + base verb"
+      },
+      {
+        prompt: "Correct the sentence: May I to leave now?",
+        answer: "May I leave now?",
+        focus: "base verb after may"
+      },
+      {
+        prompt: "Choose the more formal permission request: Could I come in? / May I come in?",
+        answer: "May I come in?",
+        focus: "formal permission"
+      },
+      {
+        prompt: "Complete the request: Can you ___ me with this exercise?",
+        answer: "help",
+        focus: "base verb after can"
+      }
+    ],
+    relatedTopics: [
+      "Ability and Permission",
+      "Would and Hypotheticals",
+      "Advice and Obligation",
+      "English Auxiliaries"
+    ]
+  },
+  {
     contentType: "prepositions",
     slug: "common-prepositions",
     title: "Common Prepositions",

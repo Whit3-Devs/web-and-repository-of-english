@@ -98,6 +98,36 @@ describe("Home page topic directory", () => {
     expect(document.title).toBe("Ability and Permission | English Cheatsheet");
   });
 
+  it("uses advice and obligation in the browser tab", () => {
+    render(
+      <MemoryRouter initialEntries={["/modal-verbs/advice-and-obligation"]}>
+        <App />
+      </MemoryRouter>
+    );
+
+    expect(document.title).toBe("Advice and Obligation | English Cheatsheet");
+  });
+
+  it("uses possibility and probability in the browser tab", () => {
+    render(
+      <MemoryRouter initialEntries={["/modal-verbs/possibility-and-probability"]}>
+        <App />
+      </MemoryRouter>
+    );
+
+    expect(document.title).toBe("Possibility and Probability | English Cheatsheet");
+  });
+
+  it("uses polite requests in the browser tab", () => {
+    render(
+      <MemoryRouter initialEntries={["/modal-verbs/polite-requests"]}>
+        <App />
+      </MemoryRouter>
+    );
+
+    expect(document.title).toBe("Polite Requests | English Cheatsheet");
+  });
+
   it("uses section titles for list routes", () => {
     render(
       <MemoryRouter initialEntries={["/verb-tenses"]}>
