@@ -539,6 +539,39 @@ export const grammarTopics: GrammarTopic[] = [
     hasFullExplanation: true
   },
   {
+    id: "adjectives-and-adverbs",
+    slug: "adjectives-and-adverbs",
+    title: "Adjectives and Adverbs",
+    section: "core-grammar",
+    summary:
+      "Choose adjectives for nouns and adverbs for actions, descriptions, and how something happens.",
+    keyIdeas: [
+      "Adjectives describe nouns: a quick solution, a clear explanation.",
+      "Adverbs describe verbs, adjectives, or other adverbs: works well, really useful.",
+      "Use adjectives after linking verbs like be, seem, look, feel, sound, and taste.",
+      "Use well, not good, when you describe how an action happens."
+    ],
+    examples: [
+      "This is a quick solution.",
+      "The app loads quickly.",
+      "That sounds good.",
+      "The feature works well."
+    ],
+    commonMistakes: [
+      "It works good. → It works well.",
+      "She speaks fluent. → She speaks fluently.",
+      "This is a quickly solution. → This is a quick solution.",
+      "The app feels smoothly. → The app feels smooth."
+    ],
+    relatedTopics: [
+      "Comparatives and Superlatives",
+      "Key Structure Differences",
+      "English Auxiliaries"
+    ],
+    fullExplanationPath: "/core-grammar/adjectives-and-adverbs",
+    hasFullExplanation: true
+  },
+  {
     id: "key-structure-differences",
     slug: "key-structure-differences",
     title: "Key Structure Differences",

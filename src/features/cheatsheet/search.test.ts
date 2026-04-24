@@ -222,6 +222,31 @@ const grammarTopics: GrammarTopic[] = [
     hasFullExplanation: true
   },
   {
+    id: "adjectives-and-adverbs",
+    slug: "adjectives-and-adverbs",
+    title: "Adjectives and Adverbs",
+    section: "core-grammar",
+    summary:
+      "Choose adjectives for nouns and adverbs for actions, descriptions, and how something happens.",
+    keyIdeas: [
+      "Adjectives describe nouns like a quick solution.",
+      "Adverbs describe actions like works well and loads quickly.",
+      "Linking verbs use adjectives: That sounds good."
+    ],
+    examples: [
+      "This is a quick solution.",
+      "The app loads quickly.",
+      "The feature works well."
+    ],
+    commonMistakes: [
+      "It works good. → It works well.",
+      "This is a quickly solution. → This is a quick solution."
+    ],
+    relatedTopics: ["Comparatives and Superlatives", "Key Structure Differences"],
+    fullExplanationPath: "/core-grammar/adjectives-and-adverbs",
+    hasFullExplanation: true
+  },
+  {
     id: "polite-requests",
     slug: "polite-requests",
     title: "Polite Requests",
@@ -301,15 +326,20 @@ describe("cheatsheet search", () => {
     expect(matchesGrammarTopic(grammarTopics[7], "the most useful")).toBe(true);
     expect(matchesGrammarTopic(grammarTopics[7], "better")).toBe(true);
     expect(matchesGrammarTopic(grammarTopics[7], "as useful as")).toBe(true);
-    expect(matchesGrammarTopic(grammarTopics[8], "polite")).toBe(true);
-    expect(matchesGrammarTopic(grammarTopics[8], "softer")).toBe(true);
-    expect(matchesGrammarTopic(grammarTopics[8], "could you help")).toBe(true);
+    expect(matchesGrammarTopic(grammarTopics[8], "adjectives")).toBe(true);
+    expect(matchesGrammarTopic(grammarTopics[8], "adverbs")).toBe(true);
+    expect(matchesGrammarTopic(grammarTopics[8], "quickly")).toBe(true);
+    expect(matchesGrammarTopic(grammarTopics[8], "works well")).toBe(true);
+    expect(matchesGrammarTopic(grammarTopics[8], "linking verbs")).toBe(true);
+    expect(matchesGrammarTopic(grammarTopics[9], "polite")).toBe(true);
+    expect(matchesGrammarTopic(grammarTopics[9], "softer")).toBe(true);
+    expect(matchesGrammarTopic(grammarTopics[9], "could you help")).toBe(true);
   });
 
   it("filters grammar topics by section and full explanation availability", () => {
     expect(filterGrammarTopics(grammarTopics, { section: "modal-verbs" })).toHaveLength(2);
-    expect(filterGrammarTopics(grammarTopics, { section: "core-grammar" })).toHaveLength(7);
+    expect(filterGrammarTopics(grammarTopics, { section: "core-grammar" })).toHaveLength(8);
     expect(filterGrammarTopics(grammarTopics, { hasFullExplanation: false })).toHaveLength(1);
-    expect(filterGrammarTopics(grammarTopics, { hasFullExplanation: true })).toHaveLength(8);
+    expect(filterGrammarTopics(grammarTopics, { hasFullExplanation: true })).toHaveLength(9);
   });
 });

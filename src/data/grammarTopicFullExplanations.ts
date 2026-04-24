@@ -4334,6 +4334,183 @@ export const grammarTopicFullExplanations: GrammarTopicFullExplanation[] = [
       "Common Prepositions",
       "Reported Speech"
     ]
+  },
+  {
+    contentType: "adjectives-adverbs",
+    slug: "adjectives-and-adverbs",
+    title: "Adjectives and Adverbs",
+    section: "core-grammar",
+    overview:
+      "Use adjectives to describe nouns and adverbs to describe actions, adjectives, or other adverbs.",
+    whatItDoes: [
+      "Help you decide between adjective forms like quick and adverb forms like quickly.",
+      "Show when good is correct and when you need well.",
+      "Explain why linking verbs take adjectives: The app feels smooth.",
+      "Prevent Spanish-speaker mistakes like works good and speaks fluent."
+    ],
+    decisionRules: [
+      "If the word describes a noun, use an adjective: a quick solution.",
+      "If the word describes how an action happens, use an adverb: loads quickly.",
+      "After linking verbs like be, seem, look, feel, sound, and taste, use an adjective.",
+      "Use well as the adverb form of good when you describe performance or action.",
+      "Adverbs can also modify adjectives: really useful, very clear, extremely important.",
+      "Do not use an -ly adverb before a noun: quick solution, not quickly solution."
+    ],
+    referenceTable: [
+      {
+        form: "Adjective",
+        job: "Describes a noun or pronoun",
+        pattern: "adjective + noun / be + adjective",
+        example: "This is a quick solution."
+      },
+      {
+        form: "Adverb",
+        job: "Describes a verb, adjective, or another adverb",
+        pattern: "verb + adverb / adverb + adjective",
+        example: "The app loads quickly."
+      },
+      {
+        form: "Linking verb + adjective",
+        job: "Describes the subject, not the action",
+        pattern: "subject + linking verb + adjective",
+        example: "That sounds good."
+      },
+      {
+        form: "Good vs well",
+        job: "Good describes nouns; well describes actions or performance",
+        pattern: "be good / work well",
+        example: "The feature is good, and it works well."
+      }
+    ],
+    adjectivePatterns: [
+      {
+        title: "Adjective before a noun",
+        pattern: "adjective + noun",
+        use: "Use an adjective when the word directly describes the thing.",
+        examples: [
+          "This is a quick solution.",
+          "She wrote a clear explanation.",
+          "We need a stable version."
+        ],
+        commonTrap: "Do not use an -ly adverb before a noun: a quick solution, not a quickly solution."
+      },
+      {
+        title: "Adjective after be",
+        pattern: "subject + be + adjective",
+        use: "Use an adjective after be to describe the subject.",
+        examples: [
+          "The app is fast.",
+          "The rule is simple.",
+          "The documentation is useful."
+        ],
+        commonTrap: "Do not say The app is quickly when you mean its quality is fast."
+      }
+    ],
+    adverbPatterns: [
+      {
+        title: "Adverb after an action verb",
+        pattern: "verb + adverb",
+        use: "Use an adverb to describe how an action happens.",
+        examples: [
+          "The app loads quickly.",
+          "She explained it clearly.",
+          "The test ran successfully."
+        ],
+        commonTrap: "Do not use the adjective when you describe the action: loads quickly, not loads quick."
+      },
+      {
+        title: "Adverb before an adjective",
+        pattern: "adverb + adjective",
+        use: "Use adverbs like really, very, extremely, and too to intensify adjectives.",
+        examples: [
+          "This example is really useful.",
+          "The explanation is very clear.",
+          "The setup is too complex."
+        ],
+        commonTrap: "The adverb modifies the adjective; it does not replace the adjective."
+      }
+    ],
+    linkingVerbCards: [
+      {
+        title: "Be, seem, look, feel, sound, taste",
+        pattern: "subject + linking verb + adjective",
+        use: "Use an adjective because the word describes the subject, not an action.",
+        examples: [
+          "The app is fast.",
+          "That sounds good.",
+          "The interface feels smooth."
+        ],
+        commonTrap: "Do not say feels smoothly when you describe the interface."
+      },
+      {
+        title: "Action verb vs linking verb",
+        pattern: "action verb + adverb / linking verb + adjective",
+        use: "Choose based on whether the verb shows an action or links the subject to a description.",
+        examples: [
+          "The app runs smoothly.",
+          "The app feels smooth.",
+          "She speaks clearly."
+        ],
+        commonTrap: "Run is an action, so use smoothly. Feel is a linking verb, so use smooth."
+      }
+    ],
+    commonMistakes: [
+      {
+        wrong: "It works good.",
+        correct: "It works well.",
+        reason: "Works is an action verb, so use the adverb well."
+      },
+      {
+        wrong: "She speaks fluent.",
+        correct: "She speaks fluently.",
+        reason: "Speaks is an action verb, so use an adverb."
+      },
+      {
+        wrong: "This is a quickly solution.",
+        correct: "This is a quick solution.",
+        reason: "Solution is a noun, so use the adjective quick."
+      },
+      {
+        wrong: "The app feels smoothly.",
+        correct: "The app feels smooth.",
+        reason: "Feels is a linking verb here, so use an adjective."
+      }
+    ],
+    quickMemory: [
+      "Noun? Use an adjective: quick solution.",
+      "Action? Use an adverb: loads quickly.",
+      "Be, seem, look, feel, sound, taste usually connect to adjectives.",
+      "Good describes a thing; well describes how something works or how someone performs.",
+      "Really, very, extremely, and too can intensify adjectives."
+    ],
+    practiceItems: [
+      {
+        prompt: "Correct the sentence: It works good.",
+        answer: "It works well.",
+        focus: "good vs well"
+      },
+      {
+        prompt: "Choose the correct form: This is a quick / quickly solution.",
+        answer: "quick",
+        focus: "adjective before a noun"
+      },
+      {
+        prompt: "Complete the sentence: The app loads ___.",
+        answer: "quickly",
+        focus: "adverb after an action verb"
+      },
+      {
+        prompt: "Correct the sentence: The interface feels smoothly.",
+        answer: "The interface feels smooth.",
+        focus: "linking verb + adjective"
+      }
+    ],
+    relatedTopics: [
+      "Comparatives and Superlatives",
+      "Key Structure Differences",
+      "English Auxiliaries",
+      "Common Prepositions"
+    ]
   }
 ];
 

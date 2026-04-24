@@ -62,6 +62,7 @@ This audit maps the original Obsidian source material into the app content that 
 | New authored topic: `Passive Voice` | Authored directly in app data | Core Grammar |
 | New authored topic: `Reported Speech` | Authored directly in app data | Core Grammar |
 | New authored topic: `Comparatives and Superlatives` | Authored directly in app data | Core Grammar |
+| New authored topic: `Adjectives and Adverbs` | Authored directly in app data | Core Grammar |
 
 ## Implementation Notes
 
@@ -74,3 +75,4 @@ This audit maps the original Obsidian source material into the app content that 
 - `Passive Voice` is a new authored topic, not a migrated Obsidian source file.
 - `Reported Speech` is a new authored topic, not a migrated Obsidian source file.
 - `Comparatives and Superlatives` is a new authored topic, not a migrated Obsidian source file.
+- `Adjectives and Adverbs` is a new authored topic, not a migrated Obsidian source file.

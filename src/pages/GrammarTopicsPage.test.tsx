@@ -35,6 +35,7 @@ describe("Grammar topic pages", () => {
     expect(screen.getByText("Passive Voice")).toBeTruthy();
     expect(screen.getByText("Reported Speech")).toBeTruthy();
     expect(screen.getByText("Comparatives and Superlatives")).toBeTruthy();
+    expect(screen.getByText("Adjectives and Adverbs")).toBeTruthy();
   });
 
   it("renders placeholder detail routes for irregular verb pages that are not migrated yet", () => {
@@ -756,6 +757,42 @@ describe("Grammar topic pages", () => {
     expect(
       screen.getByText("Complete the sentence: This option is as ___ as the old one.")
     ).toBeTruthy();
+  });
+
+  it("renders full explanation content for Adjectives and Adverbs", () => {
+    render(
+      <MemoryRouter initialEntries={["/core-grammar/adjectives-and-adverbs"]}>
+        <Routes>
+          <Route
+            path="/core-grammar/:slug"
+            element={
+              <GrammarTopicDetailPage
+                section="core-grammar"
+                backPath="/core-grammar"
+                backLabel="Core Grammar"
+              />
+            }
+          />
+        </Routes>
+      </MemoryRouter>
+    );
+
+    expect(screen.getByRole("heading", { name: "Adjectives and Adverbs" })).toBeTruthy();
+    expect(screen.getByText("Available now")).toBeTruthy();
+    expect(screen.getByText("What this page helps you decide")).toBeTruthy();
+    expect(screen.getByText("Adjective / adverb decision rules")).toBeTruthy();
+    expect(screen.getByText("Adjective vs adverb reference")).toBeTruthy();
+    expect(screen.getByText("Adjective patterns")).toBeTruthy();
+    expect(screen.getByText("Adverb patterns")).toBeTruthy();
+    expect(screen.getByText("Linking verbs")).toBeTruthy();
+    expect(screen.getByText("Adjective before a noun")).toBeTruthy();
+    expect(screen.getByText("Adverb after an action verb")).toBeTruthy();
+    expect(screen.getByText("Be, seem, look, feel, sound, taste")).toBeTruthy();
+    expect(screen.getByText("Common mistakes")).toBeTruthy();
+    expect(screen.getByText("Micro practice")).toBeTruthy();
+    expect(screen.getByText("It works good.")).toBeTruthy();
+    expect(screen.getAllByText("It works well.").length).toBeGreaterThan(0);
+    expect(screen.getByText("Complete the sentence: The app loads ___.")).toBeTruthy();
   });
 
   it("renders full explanation content for Question Builder Cheat Sheet", () => {

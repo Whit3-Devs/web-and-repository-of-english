@@ -714,6 +714,39 @@ export type GrammarTopicComparativesSuperlativesFullExplanation = {
   relatedTopics: string[];
 };
 
+export type GrammarTopicAdjectiveAdverbReferenceRow = {
+  form: string;
+  job: string;
+  pattern: string;
+  example: string;
+};
+
+export type GrammarTopicAdjectiveAdverbPatternCard = {
+  title: string;
+  pattern: string;
+  use: string;
+  examples: string[];
+  commonTrap: string;
+};
+
+export type GrammarTopicAdjectivesAdverbsFullExplanation = {
+  contentType: "adjectives-adverbs";
+  slug: string;
+  title: string;
+  section: GrammarTopicSection;
+  overview: string;
+  whatItDoes: string[];
+  decisionRules: string[];
+  referenceTable: GrammarTopicAdjectiveAdverbReferenceRow[];
+  adjectivePatterns: GrammarTopicAdjectiveAdverbPatternCard[];
+  adverbPatterns: GrammarTopicAdjectiveAdverbPatternCard[];
+  linkingVerbCards: GrammarTopicAdjectiveAdverbPatternCard[];
+  commonMistakes: GrammarTopicFullExplanationMistake[];
+  quickMemory: string[];
+  practiceItems: GrammarTopicFullExplanationPracticeItem[];
+  relatedTopics: string[];
+};
+
 export type GrammarTopicModalCard = {
   title: string;
   modal: string;
@@ -769,4 +802,5 @@ export type GrammarTopicFullExplanation =
   | GrammarTopicPassiveVoiceFullExplanation
   | GrammarTopicReportedSpeechFullExplanation
   | GrammarTopicComparativesSuperlativesFullExplanation
+  | GrammarTopicAdjectivesAdverbsFullExplanation
   | GrammarTopicModalTopicFullExplanation;
