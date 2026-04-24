@@ -4134,6 +4134,206 @@ export const grammarTopicFullExplanations: GrammarTopicFullExplanation[] = [
       "English Auxiliaries",
       "Gerunds and Infinitives"
     ]
+  },
+  {
+    contentType: "comparatives-superlatives",
+    slug: "comparatives-and-superlatives",
+    title: "Comparatives and Superlatives",
+    section: "core-grammar",
+    overview:
+      "Use comparatives to compare two things and superlatives to identify the highest or lowest degree in a group.",
+    whatItDoes: [
+      "Help you choose between -er, more, the -est, and the most.",
+      "Show when to use than and when to use the.",
+      "Give you the irregular forms that matter most in everyday English.",
+      "Prevent double-comparison mistakes like more faster and the most fastest."
+    ],
+    decisionRules: [
+      "If you compare two things, use a comparative form with than.",
+      "If you choose one item from a group as the highest degree, use a superlative form with the.",
+      "Use -er and -est with many short adjectives: fast, faster, the fastest.",
+      "Use more and the most with longer adjectives: useful, more useful, the most useful.",
+      "Do not combine more with -er or the most with -est.",
+      "Memorize the irregular forms: good, better, the best; bad, worse, the worst."
+    ],
+    comparativePatterns: [
+      {
+        title: "Short adjective comparative",
+        pattern: "adjective + -er + than",
+        use: "Use it with many one-syllable adjectives and some short two-syllable adjectives.",
+        examples: [
+          "This option is faster than the old one.",
+          "The new modal is smaller than the previous one.",
+          "This explanation is easier than the last one."
+        ],
+        commonTrap: "Do not say more faster or more easier."
+      },
+      {
+        title: "Long adjective comparative",
+        pattern: "more + adjective + than",
+        use: "Use it with longer adjectives and many technical or abstract adjectives.",
+        examples: [
+          "This approach is more useful than the old one.",
+          "The paid plan is more expensive than the free plan.",
+          "This version is more reliable than the beta."
+        ],
+        commonTrap: "Do not add -er after more: more reliable, not more reliabler."
+      }
+    ],
+    superlativePatterns: [
+      {
+        title: "Short adjective superlative",
+        pattern: "the + adjective + -est",
+        use: "Use it when one item has the highest degree in a group.",
+        examples: [
+          "This is the fastest solution.",
+          "That is the smallest component.",
+          "This is the easiest rule to remember."
+        ],
+        commonTrap: "Do not say the most fastest."
+      },
+      {
+        title: "Long adjective superlative",
+        pattern: "the most + adjective",
+        use: "Use it with longer adjectives and many abstract or technical adjectives.",
+        examples: [
+          "This is the most useful example.",
+          "That was the most expensive option.",
+          "This is the most reliable version."
+        ],
+        commonTrap: "Do not add -est after the most: the most reliable, not the most reliablest."
+      }
+    ],
+    irregularForms: [
+      {
+        adjective: "good",
+        comparative: "better",
+        superlative: "the best",
+        example: "This option is better than the old one, but that one is the best."
+      },
+      {
+        adjective: "bad",
+        comparative: "worse",
+        superlative: "the worst",
+        example: "This bug is worse than the previous one, but the crash was the worst."
+      },
+      {
+        adjective: "far",
+        comparative: "farther / further",
+        superlative: "the farthest / the furthest",
+        example: "The second solution goes further than the first one."
+      }
+    ],
+    equalityLessPatterns: [
+      {
+        title: "Equality",
+        pattern: "as + adjective + as",
+        use: "Use it when two things have the same degree.",
+        examples: [
+          "This option is as useful as the old one.",
+          "The new page is as clear as the previous page."
+        ],
+        commonTrap: "Do not say as more useful as."
+      },
+      {
+        title: "Negative equality",
+        pattern: "not as + adjective + as",
+        use: "Use it when one thing has a lower degree without using less.",
+        examples: [
+          "This solution is not as fast as the other one.",
+          "The first explanation is not as clear as the second one."
+        ],
+        commonTrap: "Keep the adjective in the base form after as."
+      },
+      {
+        title: "Lower degree",
+        pattern: "less + adjective + than",
+        use: "Use it to compare downward.",
+        examples: [
+          "This option is less expensive than the premium plan.",
+          "The old version is less reliable than the new one."
+        ],
+        commonTrap: "Less works like more: use the base adjective."
+      },
+      {
+        title: "Lowest degree",
+        pattern: "the least + adjective",
+        use: "Use it for the lowest degree in a group.",
+        examples: [
+          "This is the least expensive option.",
+          "That was the least useful example."
+        ],
+        commonTrap: "Use the before least in normal superlative noun phrases."
+      }
+    ],
+    commonMistakes: [
+      {
+        wrong: "This is more faster than that.",
+        correct: "This is faster than that.",
+        reason: "Do not combine more with an -er comparative."
+      },
+      {
+        wrong: "This is more easy than before.",
+        correct: "This is easier than before.",
+        reason: "Easy is a short adjective ending in y, so use easier."
+      },
+      {
+        wrong: "This is the most fastest option.",
+        correct: "This is the fastest option.",
+        reason: "Do not combine the most with an -est superlative."
+      },
+      {
+        wrong: "This is better that the old version.",
+        correct: "This is better than the old version.",
+        reason: "Comparatives use than, not that."
+      },
+      {
+        wrong: "This is the better option of all.",
+        correct: "This is the best option of all.",
+        reason: "Use a superlative when choosing one item from a group of three or more."
+      }
+    ],
+    quickMemory: [
+      "Two things = comparative + than.",
+      "One item at the top of a group = the + superlative.",
+      "Short adjectives often use -er / -est.",
+      "Long adjectives use more / the most.",
+      "Never double the comparison: not more faster, not the most fastest.",
+      "Good, better, the best. Bad, worse, the worst."
+    ],
+    practiceItems: [
+      {
+        prompt: "Correct the sentence: This is more faster than that.",
+        answer: "This is faster than that.",
+        focus: "avoid double comparatives"
+      },
+      {
+        prompt: "Complete the sentence: This explanation is ___ useful than the last one.",
+        answer: "more",
+        focus: "long adjective comparative"
+      },
+      {
+        prompt: "Choose the correct form: the most useful / the usefulest.",
+        answer: "the most useful",
+        focus: "long adjective superlative"
+      },
+      {
+        prompt: "Complete the sentence: This option is as ___ as the old one.",
+        answer: "useful",
+        focus: "as + adjective + as"
+      },
+      {
+        prompt: "Correct the sentence: This is the better option of all.",
+        answer: "This is the best option of all.",
+        focus: "superlative for a group"
+      }
+    ],
+    relatedTopics: [
+      "Articles and Determiners",
+      "Key Structure Differences",
+      "Common Prepositions",
+      "Reported Speech"
+    ]
   }
 ];
 

@@ -197,6 +197,31 @@ const grammarTopics: GrammarTopic[] = [
     hasFullExplanation: true
   },
   {
+    id: "comparatives-and-superlatives",
+    slug: "comparatives-and-superlatives",
+    title: "Comparatives and Superlatives",
+    section: "core-grammar",
+    summary:
+      "Choose -er, more, the -est, and the most to compare things or identify the highest degree.",
+    keyIdeas: [
+      "Use comparatives with than.",
+      "Use superlatives with the.",
+      "Irregular forms include better and the best."
+    ],
+    examples: [
+      "This option is faster than the old one.",
+      "This is the most useful example.",
+      "This option is as useful as the old one."
+    ],
+    commonMistakes: [
+      "This is more faster than that. → This is faster than that.",
+      "This is better that the old version. → This is better than the old version."
+    ],
+    relatedTopics: ["Articles and Determiners", "Key Structure Differences"],
+    fullExplanationPath: "/core-grammar/comparatives-and-superlatives",
+    hasFullExplanation: true
+  },
+  {
     id: "polite-requests",
     slug: "polite-requests",
     title: "Polite Requests",
@@ -270,15 +295,21 @@ describe("cheatsheet search", () => {
     expect(matchesGrammarTopic(grammarTopics[6], "told me")).toBe(true);
     expect(matchesGrammarTopic(grammarTopics[6], "asked if")).toBe(true);
     expect(matchesGrammarTopic(grammarTopics[6], "statement word order")).toBe(true);
-    expect(matchesGrammarTopic(grammarTopics[7], "polite")).toBe(true);
-    expect(matchesGrammarTopic(grammarTopics[7], "softer")).toBe(true);
-    expect(matchesGrammarTopic(grammarTopics[7], "could you help")).toBe(true);
+    expect(matchesGrammarTopic(grammarTopics[7], "comparatives")).toBe(true);
+    expect(matchesGrammarTopic(grammarTopics[7], "superlatives")).toBe(true);
+    expect(matchesGrammarTopic(grammarTopics[7], "faster than")).toBe(true);
+    expect(matchesGrammarTopic(grammarTopics[7], "the most useful")).toBe(true);
+    expect(matchesGrammarTopic(grammarTopics[7], "better")).toBe(true);
+    expect(matchesGrammarTopic(grammarTopics[7], "as useful as")).toBe(true);
+    expect(matchesGrammarTopic(grammarTopics[8], "polite")).toBe(true);
+    expect(matchesGrammarTopic(grammarTopics[8], "softer")).toBe(true);
+    expect(matchesGrammarTopic(grammarTopics[8], "could you help")).toBe(true);
   });
 
   it("filters grammar topics by section and full explanation availability", () => {
     expect(filterGrammarTopics(grammarTopics, { section: "modal-verbs" })).toHaveLength(2);
-    expect(filterGrammarTopics(grammarTopics, { section: "core-grammar" })).toHaveLength(6);
+    expect(filterGrammarTopics(grammarTopics, { section: "core-grammar" })).toHaveLength(7);
     expect(filterGrammarTopics(grammarTopics, { hasFullExplanation: false })).toHaveLength(1);
-    expect(filterGrammarTopics(grammarTopics, { hasFullExplanation: true })).toHaveLength(7);
+    expect(filterGrammarTopics(grammarTopics, { hasFullExplanation: true })).toHaveLength(8);
   });
 });

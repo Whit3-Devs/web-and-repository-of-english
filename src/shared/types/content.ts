@@ -681,6 +681,39 @@ export type GrammarTopicReportedSpeechFullExplanation = {
   relatedTopics: string[];
 };
 
+export type GrammarTopicComparisonPatternCard = {
+  title: string;
+  pattern: string;
+  use: string;
+  examples: string[];
+  commonTrap: string;
+};
+
+export type GrammarTopicIrregularComparisonRow = {
+  adjective: string;
+  comparative: string;
+  superlative: string;
+  example: string;
+};
+
+export type GrammarTopicComparativesSuperlativesFullExplanation = {
+  contentType: "comparatives-superlatives";
+  slug: string;
+  title: string;
+  section: GrammarTopicSection;
+  overview: string;
+  whatItDoes: string[];
+  decisionRules: string[];
+  comparativePatterns: GrammarTopicComparisonPatternCard[];
+  superlativePatterns: GrammarTopicComparisonPatternCard[];
+  irregularForms: GrammarTopicIrregularComparisonRow[];
+  equalityLessPatterns: GrammarTopicComparisonPatternCard[];
+  commonMistakes: GrammarTopicFullExplanationMistake[];
+  quickMemory: string[];
+  practiceItems: GrammarTopicFullExplanationPracticeItem[];
+  relatedTopics: string[];
+};
+
 export type GrammarTopicModalCard = {
   title: string;
   modal: string;
@@ -735,4 +768,5 @@ export type GrammarTopicFullExplanation =
   | GrammarTopicGerundsInfinitivesFullExplanation
   | GrammarTopicPassiveVoiceFullExplanation
   | GrammarTopicReportedSpeechFullExplanation
+  | GrammarTopicComparativesSuperlativesFullExplanation
   | GrammarTopicModalTopicFullExplanation;

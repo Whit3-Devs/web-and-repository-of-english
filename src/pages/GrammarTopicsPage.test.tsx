@@ -34,6 +34,7 @@ describe("Grammar topic pages", () => {
     expect(screen.getByText("Gerunds and Infinitives")).toBeTruthy();
     expect(screen.getByText("Passive Voice")).toBeTruthy();
     expect(screen.getByText("Reported Speech")).toBeTruthy();
+    expect(screen.getByText("Comparatives and Superlatives")).toBeTruthy();
   });
 
   it("renders placeholder detail routes for irregular verb pages that are not migrated yet", () => {
@@ -714,6 +715,47 @@ describe("Grammar topic pages", () => {
       screen.getAllByText("She told me that she was busy.").length
     ).toBeGreaterThan(0);
     expect(screen.getByText("Report the question: Where does she work?")).toBeTruthy();
+  });
+
+  it("renders full explanation content for Comparatives and Superlatives", () => {
+    render(
+      <MemoryRouter initialEntries={["/core-grammar/comparatives-and-superlatives"]}>
+        <Routes>
+          <Route
+            path="/core-grammar/:slug"
+            element={
+              <GrammarTopicDetailPage
+                section="core-grammar"
+                backPath="/core-grammar"
+                backLabel="Core Grammar"
+              />
+            }
+          />
+        </Routes>
+      </MemoryRouter>
+    );
+
+    expect(
+      screen.getByRole("heading", { name: "Comparatives and Superlatives" })
+    ).toBeTruthy();
+    expect(screen.getByText("Available now")).toBeTruthy();
+    expect(screen.getByText("Comparative patterns")).toBeTruthy();
+    expect(screen.getByText("Superlative patterns")).toBeTruthy();
+    expect(screen.getByText("Irregular forms")).toBeTruthy();
+    expect(screen.getByText("Equality and less")).toBeTruthy();
+    expect(screen.getByText("Short adjective comparative")).toBeTruthy();
+    expect(screen.getByText("Long adjective comparative")).toBeTruthy();
+    expect(screen.getByText("Short adjective superlative")).toBeTruthy();
+    expect(screen.getByText("Long adjective superlative")).toBeTruthy();
+    expect(screen.getByText("better")).toBeTruthy();
+    expect(screen.getByText("the best")).toBeTruthy();
+    expect(screen.getByText("Common mistakes")).toBeTruthy();
+    expect(screen.getByText("Micro practice")).toBeTruthy();
+    expect(screen.getByText("This is more faster than that.")).toBeTruthy();
+    expect(screen.getAllByText("This is faster than that.").length).toBeGreaterThan(0);
+    expect(
+      screen.getByText("Complete the sentence: This option is as ___ as the old one.")
+    ).toBeTruthy();
   });
 
   it("renders full explanation content for Question Builder Cheat Sheet", () => {

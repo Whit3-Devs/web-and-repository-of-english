@@ -4,6 +4,7 @@ import { findGrammarTopic } from "../data/grammarTopics";
 import type {
   GrammarTopicArticlesDeterminersFullExplanation,
   GrammarTopicAuxiliaryContractionTable,
+  GrammarTopicComparativesSuperlativesFullExplanation,
   GrammarTopicConditionalsOverviewFullExplanation,
   GrammarTopicEnglishAuxiliariesFullExplanation,
   GrammarTopicEmbeddedWhClausesFullExplanation,
@@ -135,6 +136,8 @@ export function GrammarTopicDetailPage({
           <PassiveVoiceContent explanation={fullExplanation} />
         ) : fullExplanation.contentType === "reported-speech" ? (
           <ReportedSpeechContent explanation={fullExplanation} />
+        ) : fullExplanation.contentType === "comparatives-superlatives" ? (
+          <ComparativesSuperlativesContent explanation={fullExplanation} />
         ) : (
           <PronounsPossessivesContent explanation={fullExplanation} />
         )}
@@ -1353,6 +1356,54 @@ function ReportedSpeechContent({
   );
 }
 
+function ComparativesSuperlativesContent({
+  explanation
+}: {
+  explanation: GrammarTopicComparativesSuperlativesFullExplanation;
+}) {
+  return (
+    <>
+      <div className="mt-8 grid gap-6 md:grid-cols-2">
+        <ContentSection
+          title="What this page helps you compare"
+          items={explanation.whatItDoes}
+        />
+        <ContentSection
+          title="Decision rules"
+          items={explanation.decisionRules}
+          variant="highlight"
+        />
+      </div>
+
+      <ComparisonPatternSection
+        title="Comparative patterns"
+        cards={explanation.comparativePatterns}
+      />
+
+      <ComparisonPatternSection
+        title="Superlative patterns"
+        cards={explanation.superlativePatterns}
+      />
+
+      <IrregularComparisonTable rows={explanation.irregularForms} />
+
+      <ComparisonPatternSection
+        title="Equality and less"
+        cards={explanation.equalityLessPatterns}
+      />
+
+      <MistakesSection mistakes={explanation.commonMistakes} />
+
+      <PracticeSection items={explanation.practiceItems} />
+
+      <div className="mt-8 grid gap-6 md:grid-cols-2">
+        <ContentSection title="Quick memory" items={explanation.quickMemory} variant="amber" />
+        <ContentSection title="Related topics" items={explanation.relatedTopics} />
+      </div>
+    </>
+  );
+}
+
 function SideBySideExamples({
   rows
 }: {
@@ -1535,6 +1586,87 @@ function ReportedSpeechTenseShiftTable({
                   {row.directForm}
                 </td>
                 <td className="px-4 py-4 text-slate-700">{row.reportedForm}</td>
+                <td className="px-4 py-4 text-slate-700">{row.example}</td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
+    </div>
+  );
+}
+
+function ComparisonPatternSection({
+  title,
+  cards
+}: {
+  title: string;
+  cards: GrammarTopicComparativesSuperlativesFullExplanation["comparativePatterns"];
+}) {
+  return (
+    <div className="mt-8 rounded-3xl bg-slate-50 p-6">
+      <h3 className="text-xl font-black text-slate-950">{title}</h3>
+      <div className="mt-4 grid gap-4 md:grid-cols-2">
+        {cards.map((card) => (
+          <div key={card.title} className="rounded-2xl bg-white p-4 shadow-sm">
+            <h4 className="font-bold text-slate-900">{card.title}</h4>
+            <p className="mt-3 rounded-2xl bg-slate-100 p-3 font-semibold text-slate-900">
+              {card.pattern}
+            </p>
+            <p className="mt-4 text-slate-700">{card.use}</p>
+            <div className="mt-4 rounded-2xl bg-blue-50 p-4">
+              <p className="text-sm font-semibold uppercase tracking-wide text-blue-700">
+                Examples
+              </p>
+              <ul className="mt-2 space-y-2 text-sm text-blue-950">
+                {card.examples.map((example) => (
+                  <li key={example}>• {example}</li>
+                ))}
+              </ul>
+            </div>
+            <div className="mt-4 rounded-2xl bg-rose-50 p-4">
+              <p className="text-sm font-semibold uppercase tracking-wide text-rose-700">
+                Common trap
+              </p>
+              <p className="mt-1 text-rose-950">{card.commonTrap}</p>
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  );
+}
+
+function IrregularComparisonTable({
+  rows
+}: {
+  rows: GrammarTopicComparativesSuperlativesFullExplanation["irregularForms"];
+}) {
+  return (
+    <div className="mt-8 overflow-hidden rounded-3xl border border-slate-200">
+      <div className="bg-slate-950 px-6 py-4">
+        <h3 className="text-xl font-black text-white">Irregular forms</h3>
+      </div>
+      <div className="overflow-x-auto bg-white">
+        <table className="min-w-full divide-y divide-slate-200 text-sm">
+          <thead className="bg-slate-50">
+            <tr>
+              {["Adjective", "Comparative", "Superlative", "Example"].map((heading) => (
+                <th
+                  key={heading}
+                  className="px-4 py-3 text-left font-bold uppercase tracking-wide text-slate-700"
+                >
+                  {heading}
+                </th>
+              ))}
+            </tr>
+          </thead>
+          <tbody className="divide-y divide-slate-200">
+            {rows.map((row) => (
+              <tr key={row.adjective}>
+                <td className="px-4 py-4 font-bold text-slate-950">{row.adjective}</td>
+                <td className="px-4 py-4 text-slate-700">{row.comparative}</td>
+                <td className="px-4 py-4 text-slate-700">{row.superlative}</td>
                 <td className="px-4 py-4 text-slate-700">{row.example}</td>
               </tr>
             ))}

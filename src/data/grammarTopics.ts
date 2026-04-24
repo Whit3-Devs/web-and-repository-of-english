@@ -506,6 +506,39 @@ export const grammarTopics: GrammarTopic[] = [
     hasFullExplanation: true
   },
   {
+    id: "comparatives-and-superlatives",
+    slug: "comparatives-and-superlatives",
+    title: "Comparatives and Superlatives",
+    section: "core-grammar",
+    summary:
+      "Use -er, more, the -est, and the most to compare two things or identify the highest degree in a group.",
+    keyIdeas: [
+      "Use adjective + -er + than for many short adjectives.",
+      "Use more + adjective + than for longer adjectives.",
+      "Use the + adjective + -est or the most + adjective for superlatives.",
+      "Learn irregular forms like good, better, the best and bad, worse, the worst."
+    ],
+    examples: [
+      "This option is faster than the old one.",
+      "This explanation is more useful than the previous one.",
+      "This is the fastest solution.",
+      "That was the most reliable version."
+    ],
+    commonMistakes: [
+      "This is more faster than that. → This is faster than that.",
+      "This is more easy than before. → This is easier than before.",
+      "This is the most fastest option. → This is the fastest option.",
+      "This is better that the old version. → This is better than the old version."
+    ],
+    relatedTopics: [
+      "Articles and Determiners",
+      "Key Structure Differences",
+      "Adjectives and Adverbs"
+    ],
+    fullExplanationPath: "/core-grammar/comparatives-and-superlatives",
+    hasFullExplanation: true
+  },
+  {
     id: "key-structure-differences",
     slug: "key-structure-differences",
     title: "Key Structure Differences",
