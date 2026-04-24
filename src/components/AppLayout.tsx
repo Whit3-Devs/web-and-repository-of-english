@@ -1,8 +1,12 @@
 import { useEffect } from "react";
-import { NavLink, Outlet, matchPath, useLocation } from "react-router-dom";
+import { Link, NavLink, Outlet, matchPath, useLocation } from "react-router-dom";
 import { findGrammarTopic } from "../data/grammarTopics";
 import { findIrregularVerbBySlug } from "../data/irregularVerbs";
 import { findVerbTenseBySlug } from "../data/verbTenses";
+
+const githubRepositoryUrl =
+  "https://github.com/Whit3-Devs/web-and-repository-of-english";
+const githubOrganizationUrl = "https://github.com/Whit3-Devs/";
 
 const navItems = [
   { to: "/", label: "Home" },
@@ -16,42 +20,113 @@ export function AppLayout() {
   useDocumentTitle();
 
   return (
-    <div className="min-h-screen bg-slate-50">
-      <header className="border-b border-slate-200 bg-white">
-        <div className="mx-auto flex max-w-6xl flex-col gap-4 px-6 py-5 md:flex-row md:items-center md:justify-between">
-          <div>
-            <p className="text-sm font-semibold uppercase tracking-[0.3em] text-blue-600">
+    <div className="flex min-h-screen flex-col bg-slate-50">
+      <header className="border-b border-slate-200 bg-white/95 shadow-sm">
+        <div className="mx-auto flex max-w-6xl flex-col gap-5 px-6 py-5 lg:flex-row lg:items-center lg:justify-between">
+          <Link
+            to="/"
+            className="group w-fit rounded-2xl outline-none transition focus-visible:ring-4 focus-visible:ring-blue-100"
+          >
+            <p className="text-sm font-semibold uppercase tracking-[0.3em] text-blue-600 group-hover:text-blue-700">
               English Cheatsheet
             </p>
-            <h1 className="text-2xl font-bold text-slate-950">
+            <h1 className="mt-1 text-2xl font-bold text-slate-950">
               Your English, organized and ready
             </h1>
-          </div>
+          </Link>
 
-          <nav className="flex flex-wrap gap-2">
-            {navItems.map((item) => (
-              <NavLink
-                key={item.to}
-                to={item.to}
-                className={({ isActive }) =>
-                  [
-                    "rounded-full px-4 py-2 text-sm font-medium transition",
-                    isActive
-                      ? "bg-blue-600 text-white"
-                      : "bg-slate-100 text-slate-700 hover:bg-slate-200"
-                  ].join(" ")
-                }
-              >
-                {item.label}
-              </NavLink>
-            ))}
-          </nav>
+          <div className="space-y-2">
+            <p className="text-xs font-bold uppercase tracking-[0.25em] text-slate-400">
+              Study sections
+            </p>
+            <nav aria-label="Study sections" className="flex flex-wrap gap-2">
+              {navItems.map((item) => (
+                <NavLink
+                  key={item.to}
+                  to={item.to}
+                  end={item.to === "/"}
+                  className={({ isActive }) =>
+                    [
+                      "rounded-full px-4 py-2 text-sm font-medium transition focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-blue-100",
+                      isActive
+                        ? "bg-blue-600 text-white shadow-sm"
+                        : "bg-slate-100 text-slate-700 hover:bg-slate-200 hover:text-slate-950"
+                    ].join(" ")
+                  }
+                >
+                  {item.label}
+                </NavLink>
+              ))}
+            </nav>
+          </div>
         </div>
       </header>
 
-      <main className="mx-auto max-w-6xl px-6 py-8">
+      <main className="mx-auto w-full max-w-6xl flex-1 px-6 py-8">
         <Outlet />
       </main>
+
+      <footer className="border-t border-slate-200 bg-white">
+        <div className="mx-auto grid max-w-6xl gap-8 px-6 py-8 text-sm text-slate-600 md:grid-cols-[1.4fr_1fr_1fr]">
+          <section>
+            <p className="text-base font-bold text-slate-950">English Cheatsheet</p>
+            <p className="mt-2 max-w-md leading-6">
+              If this page helped you, you can support it by starring the project on
+              GitHub.
+            </p>
+            <a
+              href={githubRepositoryUrl}
+              target="_blank"
+              rel="noreferrer"
+              className="mt-4 inline-flex w-fit items-center rounded-full border border-slate-200 bg-slate-50 px-4 py-2 font-semibold text-slate-800 transition hover:border-blue-200 hover:bg-blue-50 hover:text-blue-700"
+            >
+              ⭐ Star this project on GitHub
+            </a>
+          </section>
+
+          <section>
+            <p className="font-bold uppercase tracking-[0.2em] text-slate-400">
+              Browse
+            </p>
+            <ul className="mt-3 space-y-2">
+              {navItems.map((item) => (
+                <li key={item.to}>
+                  <Link
+                    to={item.to}
+                    className="font-medium text-slate-700 transition hover:text-blue-700"
+                  >
+                    {item.label}
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </section>
+
+          <section>
+            <p className="font-bold uppercase tracking-[0.2em] text-slate-400">
+              Open source
+            </p>
+            <div className="mt-3 flex flex-col items-start gap-2">
+              <a
+                href={githubOrganizationUrl}
+                target="_blank"
+                rel="noreferrer"
+                className="font-semibold text-slate-700 transition hover:text-blue-700"
+              >
+                Explore more Whit3-Devs projects
+              </a>
+              <a
+                href={githubRepositoryUrl}
+                target="_blank"
+                rel="noreferrer"
+                className="font-semibold text-slate-700 transition hover:text-blue-700"
+              >
+                View repository
+              </a>
+            </div>
+          </section>
+        </div>
+      </footer>
     </div>
   );
 }

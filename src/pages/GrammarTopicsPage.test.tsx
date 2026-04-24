@@ -1,4 +1,4 @@
-import { render, screen } from "@testing-library/react";
+import { render, screen, within } from "@testing-library/react";
 import { MemoryRouter, Route, Routes } from "react-router-dom";
 import { describe, expect, it } from "vitest";
 import { GrammarTopicDetailPage } from "./GrammarTopicDetailPage";
@@ -662,8 +662,42 @@ describe("Grammar topic pages", () => {
       </MemoryRouter>
     );
 
-    expect(screen.getByText("Modal Verbs")).toBeTruthy();
-    expect(screen.getByText("Core Grammar")).toBeTruthy();
+    const navigation = screen.getByRole("navigation", { name: "Study sections" });
+
+    expect(within(navigation).getByText("Modal Verbs")).toBeTruthy();
+    expect(within(navigation).getByText("Core Grammar")).toBeTruthy();
+  });
+
+  it("renders the GitHub calls to action in the footer", () => {
+    render(
+      <MemoryRouter>
+        <Routes>
+          <Route element={<AppLayout />}>
+            <Route index element={<p>Home content</p>} />
+          </Route>
+        </Routes>
+      </MemoryRouter>
+    );
+
+    const githubLink = screen.getByRole("link", {
+      name: "⭐ Star this project on GitHub"
+    });
+
+    expect(githubLink.getAttribute("href")).toBe(
+      "https://github.com/Whit3-Devs/web-and-repository-of-english"
+    );
+    expect(githubLink.getAttribute("target")).toBe("_blank");
+    expect(githubLink.getAttribute("rel")).toBe("noreferrer");
+
+    const moreProjectsLink = screen.getByRole("link", {
+      name: "Explore more Whit3-Devs projects"
+    });
+
+    expect(moreProjectsLink.getAttribute("href")).toBe(
+      "https://github.com/Whit3-Devs/"
+    );
+    expect(moreProjectsLink.getAttribute("target")).toBe("_blank");
+    expect(moreProjectsLink.getAttribute("rel")).toBe("noreferrer");
   });
 });
 
