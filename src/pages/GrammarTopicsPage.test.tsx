@@ -36,6 +36,7 @@ describe("Grammar topic pages", () => {
     expect(screen.getByText("Reported Speech")).toBeTruthy();
     expect(screen.getByText("Comparatives and Superlatives")).toBeTruthy();
     expect(screen.getByText("Adjectives and Adverbs")).toBeTruthy();
+    expect(screen.getByText("Connectors and Discourse Markers")).toBeTruthy();
   });
 
   it("renders placeholder detail routes for irregular verb pages that are not migrated yet", () => {
@@ -793,6 +794,51 @@ describe("Grammar topic pages", () => {
     expect(screen.getByText("It works good.")).toBeTruthy();
     expect(screen.getAllByText("It works well.").length).toBeGreaterThan(0);
     expect(screen.getByText("Complete the sentence: The app loads ___.")).toBeTruthy();
+  });
+
+  it("renders full explanation content for Connectors and Discourse Markers", () => {
+    render(
+      <MemoryRouter initialEntries={["/core-grammar/connectors-and-discourse-markers"]}>
+        <Routes>
+          <Route
+            path="/core-grammar/:slug"
+            element={
+              <GrammarTopicDetailPage
+                section="core-grammar"
+                backPath="/core-grammar"
+                backLabel="Core Grammar"
+              />
+            }
+          />
+        </Routes>
+      </MemoryRouter>
+    );
+
+    expect(
+      screen.getByRole("heading", { name: "Connectors and Discourse Markers" })
+    ).toBeTruthy();
+    expect(screen.getByText("Available now")).toBeTruthy();
+    expect(screen.getByText("What this page helps you communicate")).toBeTruthy();
+    expect(screen.getByText("Connector decision rules")).toBeTruthy();
+    expect(screen.getByText("Connector reference table")).toBeTruthy();
+    expect(screen.getByText("Connector groups")).toBeTruthy();
+    expect(screen.getByText("Punctuation notes")).toBeTruthy();
+    expect(screen.getAllByText("Addition").length).toBeGreaterThan(0);
+    expect(screen.getAllByText("Contrast").length).toBeGreaterThan(0);
+    expect(screen.getByText("Cause and result")).toBeTruthy();
+    expect(screen.getAllByText("Examples").length).toBeGreaterThan(0);
+    expect(screen.getAllByText("Sequencing").length).toBeGreaterThan(0);
+    expect(screen.getByText("Summary and conclusion")).toBeTruthy();
+    expect(screen.getByText("However and therefore")).toBeTruthy();
+    expect(screen.getByText("Common mistakes")).toBeTruthy();
+    expect(screen.getByText("Micro practice")).toBeTruthy();
+    expect(screen.getByText("Although it was late, but we continued.")).toBeTruthy();
+    expect(
+      screen.getAllByText("Although it was late, we continued.").length
+    ).toBeGreaterThan(0);
+    expect(
+      screen.getByText("Complete the sentence: The bug was fixed; ___, the tests passed.")
+    ).toBeTruthy();
   });
 
   it("renders full explanation content for Question Builder Cheat Sheet", () => {

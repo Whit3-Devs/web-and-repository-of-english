@@ -7,6 +7,7 @@ import type {
   GrammarTopicAuxiliaryContractionTable,
   GrammarTopicComparativesSuperlativesFullExplanation,
   GrammarTopicConditionalsOverviewFullExplanation,
+  GrammarTopicConnectorsDiscourseMarkersFullExplanation,
   GrammarTopicEnglishAuxiliariesFullExplanation,
   GrammarTopicEmbeddedWhClausesFullExplanation,
   GrammarTopicFullExplanation,
@@ -141,6 +142,8 @@ export function GrammarTopicDetailPage({
           <ComparativesSuperlativesContent explanation={fullExplanation} />
         ) : fullExplanation.contentType === "adjectives-adverbs" ? (
           <AdjectivesAdverbsContent explanation={fullExplanation} />
+        ) : fullExplanation.contentType === "connectors-discourse-markers" ? (
+          <ConnectorsDiscourseMarkersContent explanation={fullExplanation} />
         ) : (
           <PronounsPossessivesContent explanation={fullExplanation} />
         )}
@@ -1455,6 +1458,43 @@ function AdjectivesAdverbsContent({
   );
 }
 
+function ConnectorsDiscourseMarkersContent({
+  explanation
+}: {
+  explanation: GrammarTopicConnectorsDiscourseMarkersFullExplanation;
+}) {
+  return (
+    <>
+      <div className="mt-8 grid gap-6 md:grid-cols-2">
+        <ContentSection
+          title="What this page helps you communicate"
+          items={explanation.whatItDoes}
+        />
+        <ContentSection
+          title="Connector decision rules"
+          items={explanation.decisionRules}
+          variant="highlight"
+        />
+      </div>
+
+      <ConnectorsReferenceTable rows={explanation.referenceTable} />
+
+      <ConnectorGroupSection cards={explanation.connectorGroups} />
+
+      <ConnectorPunctuationNotes notes={explanation.punctuationNotes} />
+
+      <MistakesSection mistakes={explanation.commonMistakes} />
+
+      <PracticeSection items={explanation.practiceItems} />
+
+      <div className="mt-8 grid gap-6 md:grid-cols-2">
+        <ContentSection title="Quick memory" items={explanation.quickMemory} variant="amber" />
+        <ContentSection title="Related topics" items={explanation.relatedTopics} />
+      </div>
+    </>
+  );
+}
+
 function SideBySideExamples({
   rows
 }: {
@@ -1762,6 +1802,117 @@ function AdjectiveAdverbPatternSection({
               </p>
               <p className="mt-1 text-rose-950">{card.commonTrap}</p>
             </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  );
+}
+
+function ConnectorsReferenceTable({
+  rows
+}: {
+  rows: GrammarTopicConnectorsDiscourseMarkersFullExplanation["referenceTable"];
+}) {
+  return (
+    <div className="mt-8 overflow-hidden rounded-3xl border border-slate-200">
+      <div className="bg-slate-950 px-6 py-4">
+        <h3 className="text-xl font-black text-white">Connector reference table</h3>
+      </div>
+      <div className="overflow-x-auto bg-white">
+        <table className="min-w-full divide-y divide-slate-200 text-sm">
+          <thead className="bg-slate-50">
+            <tr>
+              {["Group", "Connectors", "Use", "Example"].map((heading) => (
+                <th
+                  key={heading}
+                  className="px-4 py-3 text-left font-bold uppercase tracking-wide text-slate-700"
+                >
+                  {heading}
+                </th>
+              ))}
+            </tr>
+          </thead>
+          <tbody className="divide-y divide-slate-200">
+            {rows.map((row) => (
+              <tr key={row.group}>
+                <td className="px-4 py-4 font-bold text-slate-950">{row.group}</td>
+                <td className="px-4 py-4 text-slate-700">{row.connectors}</td>
+                <td className="px-4 py-4 text-slate-700">{row.use}</td>
+                <td className="px-4 py-4 text-slate-700">{row.example}</td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
+    </div>
+  );
+}
+
+function ConnectorGroupSection({
+  cards
+}: {
+  cards: GrammarTopicConnectorsDiscourseMarkersFullExplanation["connectorGroups"];
+}) {
+  return (
+    <div className="mt-8 rounded-3xl bg-slate-50 p-6">
+      <h3 className="text-xl font-black text-slate-950">Connector groups</h3>
+      <div className="mt-4 grid gap-4 md:grid-cols-2">
+        {cards.map((card) => (
+          <div key={card.title} className="rounded-2xl bg-white p-4 shadow-sm">
+            <h4 className="font-bold text-slate-900">{card.title}</h4>
+            <div className="mt-3 flex flex-wrap gap-2">
+              {card.connectors.map((connector) => (
+                <span
+                  key={connector}
+                  className="rounded-full bg-blue-50 px-3 py-1 text-sm font-semibold text-blue-700"
+                >
+                  {connector}
+                </span>
+              ))}
+            </div>
+            <p className="mt-4 text-slate-700">{card.use}</p>
+            <div className="mt-4 rounded-2xl bg-blue-50 p-4">
+              <p className="text-sm font-semibold uppercase tracking-wide text-blue-700">
+                Examples
+              </p>
+              <ul className="mt-2 space-y-2 text-sm text-blue-950">
+                {card.examples.map((example) => (
+                  <li key={example}>• {example}</li>
+                ))}
+              </ul>
+            </div>
+            <div className="mt-4 rounded-2xl bg-amber-50 p-4">
+              <p className="text-sm font-semibold uppercase tracking-wide text-amber-700">
+                Punctuation / position
+              </p>
+              <p className="mt-1 text-amber-950">{card.punctuationNote}</p>
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  );
+}
+
+function ConnectorPunctuationNotes({
+  notes
+}: {
+  notes: GrammarTopicConnectorsDiscourseMarkersFullExplanation["punctuationNotes"];
+}) {
+  return (
+    <div className="mt-8 rounded-3xl bg-amber-50 p-6">
+      <h3 className="text-xl font-black text-amber-950">Punctuation notes</h3>
+      <div className="mt-4 grid gap-4">
+        {notes.map((note) => (
+          <div key={note.title} className="rounded-2xl bg-white p-4 shadow-sm">
+            <h4 className="font-bold text-slate-900">{note.title}</h4>
+            <p className="mt-2 text-slate-700">{note.rule}</p>
+            <ul className="mt-3 space-y-2 text-sm text-slate-700">
+              {note.examples.map((example) => (
+                <li key={example}>• {example}</li>
+              ))}
+            </ul>
           </div>
         ))}
       </div>

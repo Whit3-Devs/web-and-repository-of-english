@@ -747,6 +747,44 @@ export type GrammarTopicAdjectivesAdverbsFullExplanation = {
   relatedTopics: string[];
 };
 
+export type GrammarTopicConnectorReferenceRow = {
+  group: string;
+  connectors: string;
+  use: string;
+  example: string;
+};
+
+export type GrammarTopicConnectorGroupCard = {
+  title: string;
+  connectors: string[];
+  use: string;
+  examples: string[];
+  punctuationNote: string;
+};
+
+export type GrammarTopicConnectorPunctuationNote = {
+  title: string;
+  rule: string;
+  examples: string[];
+};
+
+export type GrammarTopicConnectorsDiscourseMarkersFullExplanation = {
+  contentType: "connectors-discourse-markers";
+  slug: string;
+  title: string;
+  section: GrammarTopicSection;
+  overview: string;
+  whatItDoes: string[];
+  decisionRules: string[];
+  referenceTable: GrammarTopicConnectorReferenceRow[];
+  connectorGroups: GrammarTopicConnectorGroupCard[];
+  punctuationNotes: GrammarTopicConnectorPunctuationNote[];
+  commonMistakes: GrammarTopicFullExplanationMistake[];
+  quickMemory: string[];
+  practiceItems: GrammarTopicFullExplanationPracticeItem[];
+  relatedTopics: string[];
+};
+
 export type GrammarTopicModalCard = {
   title: string;
   modal: string;
@@ -803,4 +841,5 @@ export type GrammarTopicFullExplanation =
   | GrammarTopicReportedSpeechFullExplanation
   | GrammarTopicComparativesSuperlativesFullExplanation
   | GrammarTopicAdjectivesAdverbsFullExplanation
+  | GrammarTopicConnectorsDiscourseMarkersFullExplanation
   | GrammarTopicModalTopicFullExplanation;

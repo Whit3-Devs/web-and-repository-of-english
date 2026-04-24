@@ -572,6 +572,40 @@ export const grammarTopics: GrammarTopic[] = [
     hasFullExplanation: true
   },
   {
+    id: "connectors-and-discourse-markers",
+    slug: "connectors-and-discourse-markers",
+    title: "Connectors and Discourse Markers",
+    section: "core-grammar",
+    summary:
+      "Use connectors like however, therefore, although, and as a result to structure clear technical communication.",
+    keyIdeas: [
+      "Use addition connectors to add another point: also, in addition, moreover.",
+      "Use contrast connectors to show opposition: but, however, although, whereas.",
+      "Use cause/result connectors to explain why something happened or what happened next.",
+      "Punctuation matters: However and therefore usually need commas when they introduce a sentence."
+    ],
+    examples: [
+      "The bug was fixed; therefore, the tests passed.",
+      "Although the build failed, the root cause is clear.",
+      "The UI is responsive. However, the API is still slow.",
+      "We updated the cache; as a result, the page loads faster."
+    ],
+    commonMistakes: [
+      "Although it was late, but we continued. → Although it was late, we continued.",
+      "Because the test failed, so we fixed it. → Because the test failed, we fixed it.",
+      "However the app crashed. → However, the app crashed.",
+      "We fixed the bug therefore the tests passed. → We fixed the bug; therefore, the tests passed."
+    ],
+    relatedTopics: [
+      "Reported Speech",
+      "Passive Voice",
+      "Adjectives and Adverbs",
+      "Key Structure Differences"
+    ],
+    fullExplanationPath: "/core-grammar/connectors-and-discourse-markers",
+    hasFullExplanation: true
+  },
+  {
     id: "key-structure-differences",
     slug: "key-structure-differences",
     title: "Key Structure Differences",

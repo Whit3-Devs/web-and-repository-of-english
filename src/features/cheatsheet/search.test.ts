@@ -247,6 +247,31 @@ const grammarTopics: GrammarTopic[] = [
     hasFullExplanation: true
   },
   {
+    id: "connectors-and-discourse-markers",
+    slug: "connectors-and-discourse-markers",
+    title: "Connectors and Discourse Markers",
+    section: "core-grammar",
+    summary:
+      "Use connectors and discourse markers to structure technical explanations and decisions.",
+    keyIdeas: [
+      "Use however and although for contrast.",
+      "Use therefore and as a result for results.",
+      "Use because, since, so, for example, and finally to organize ideas."
+    ],
+    examples: [
+      "The bug was fixed; therefore, the tests passed.",
+      "Although the build failed, the root cause is clear.",
+      "As a result, the page loads faster."
+    ],
+    commonMistakes: [
+      "Although it was late, but we continued. → Although it was late, we continued.",
+      "However the app crashed. → However, the app crashed."
+    ],
+    relatedTopics: ["Reported Speech", "Passive Voice"],
+    fullExplanationPath: "/core-grammar/connectors-and-discourse-markers",
+    hasFullExplanation: true
+  },
+  {
     id: "polite-requests",
     slug: "polite-requests",
     title: "Polite Requests",
@@ -331,15 +356,21 @@ describe("cheatsheet search", () => {
     expect(matchesGrammarTopic(grammarTopics[8], "quickly")).toBe(true);
     expect(matchesGrammarTopic(grammarTopics[8], "works well")).toBe(true);
     expect(matchesGrammarTopic(grammarTopics[8], "linking verbs")).toBe(true);
-    expect(matchesGrammarTopic(grammarTopics[9], "polite")).toBe(true);
-    expect(matchesGrammarTopic(grammarTopics[9], "softer")).toBe(true);
-    expect(matchesGrammarTopic(grammarTopics[9], "could you help")).toBe(true);
+    expect(matchesGrammarTopic(grammarTopics[9], "connectors")).toBe(true);
+    expect(matchesGrammarTopic(grammarTopics[9], "discourse markers")).toBe(true);
+    expect(matchesGrammarTopic(grammarTopics[9], "however")).toBe(true);
+    expect(matchesGrammarTopic(grammarTopics[9], "therefore")).toBe(true);
+    expect(matchesGrammarTopic(grammarTopics[9], "although")).toBe(true);
+    expect(matchesGrammarTopic(grammarTopics[9], "as a result")).toBe(true);
+    expect(matchesGrammarTopic(grammarTopics[10], "polite")).toBe(true);
+    expect(matchesGrammarTopic(grammarTopics[10], "softer")).toBe(true);
+    expect(matchesGrammarTopic(grammarTopics[10], "could you help")).toBe(true);
   });
 
   it("filters grammar topics by section and full explanation availability", () => {
     expect(filterGrammarTopics(grammarTopics, { section: "modal-verbs" })).toHaveLength(2);
-    expect(filterGrammarTopics(grammarTopics, { section: "core-grammar" })).toHaveLength(8);
+    expect(filterGrammarTopics(grammarTopics, { section: "core-grammar" })).toHaveLength(9);
     expect(filterGrammarTopics(grammarTopics, { hasFullExplanation: false })).toHaveLength(1);
-    expect(filterGrammarTopics(grammarTopics, { hasFullExplanation: true })).toHaveLength(9);
+    expect(filterGrammarTopics(grammarTopics, { hasFullExplanation: true })).toHaveLength(10);
   });
 });

@@ -4511,6 +4511,229 @@ export const grammarTopicFullExplanations: GrammarTopicFullExplanation[] = [
       "English Auxiliaries",
       "Common Prepositions"
     ]
+  },
+  {
+    contentType: "connectors-discourse-markers",
+    slug: "connectors-and-discourse-markers",
+    title: "Connectors and Discourse Markers",
+    section: "core-grammar",
+    overview:
+      "Use connectors and discourse markers to organize ideas, show relationships, and make technical communication easier to follow.",
+    whatItDoes: [
+      "Help you connect ideas in tickets, pull requests, bug reports, and explanations.",
+      "Show whether you need addition, contrast, cause, result, examples, sequence, or summary.",
+      "Make punctuation decisions with however, therefore, although, because, and as a result.",
+      "Prevent over-connected sentences that copy Spanish structure too directly."
+    ],
+    decisionRules: [
+      "If you add another point, use also, in addition, besides, or moreover.",
+      "If you show contrast, use but, however, although, even though, or whereas.",
+      "If you explain the reason, use because or since.",
+      "If you explain the result, use so, therefore, or as a result.",
+      "If you give examples, use for example, for instance, or such as.",
+      "If you organize steps, use first, then, after that, and finally.",
+      "Use only one main connector for one relationship: although or but, because or so."
+    ],
+    referenceTable: [
+      {
+        group: "Addition",
+        connectors: "also, besides, in addition, moreover",
+        use: "Add another related idea.",
+        example: "The fix is small. In addition, it reduces duplication."
+      },
+      {
+        group: "Contrast",
+        connectors: "but, however, although, even though, whereas",
+        use: "Show a difference, limitation, or unexpected result.",
+        example: "The UI is ready. However, the API is still slow."
+      },
+      {
+        group: "Cause / result",
+        connectors: "because, since, so, therefore, as a result",
+        use: "Explain why something happened or what happened next.",
+        example: "The cache was updated; therefore, the page loads faster."
+      },
+      {
+        group: "Examples",
+        connectors: "for example, for instance, such as",
+        use: "Introduce concrete cases.",
+        example: "Use clear labels, such as Save, Cancel, and Retry."
+      },
+      {
+        group: "Sequencing",
+        connectors: "first, then, after that, finally",
+        use: "Order steps in a process.",
+        example: "First, reproduce the bug. Then, check the logs."
+      },
+      {
+        group: "Summary / conclusion",
+        connectors: "overall, in short, to sum up",
+        use: "Close or summarize a message.",
+        example: "Overall, the implementation is simpler and safer."
+      }
+    ],
+    connectorGroups: [
+      {
+        title: "Addition",
+        connectors: ["also", "besides", "in addition", "moreover"],
+        use: "Use these when the second idea supports or extends the first idea.",
+        examples: [
+          "The component is reusable. It also improves consistency.",
+          "In addition, the change removes duplicated logic.",
+          "Moreover, the new version is easier to test."
+        ],
+        punctuationNote: "Also can sit before the main verb; in addition, besides, and moreover often start a new sentence with a comma."
+      },
+      {
+        title: "Contrast",
+        connectors: ["but", "however", "although", "even though", "whereas"],
+        use: "Use these when two ideas are different, opposed, or unexpected together.",
+        examples: [
+          "The UI is responsive, but the API is still slow.",
+          "The UI is responsive. However, the API is still slow.",
+          "Although the build failed, the root cause is clear."
+        ],
+        punctuationNote: "Do not combine although with but. However usually starts a new sentence or follows a semicolon."
+      },
+      {
+        title: "Cause and result",
+        connectors: ["because", "since", "so", "therefore", "as a result"],
+        use: "Use these to explain the reason for a problem or the result of a change.",
+        examples: [
+          "The test failed because the mock returned invalid data.",
+          "The mock returned invalid data, so the test failed.",
+          "We updated the cache; as a result, the page loads faster."
+        ],
+        punctuationNote: "Do not combine because with so. Therefore and as a result often need a semicolon or a new sentence."
+      },
+      {
+        title: "Examples",
+        connectors: ["for example", "for instance", "such as"],
+        use: "Use these when an abstract idea needs concrete evidence.",
+        examples: [
+          "Some actions need confirmation, for example, deleting a project.",
+          "For instance, the user may lose unsaved changes.",
+          "Use clear labels such as Save, Cancel, and Retry."
+        ],
+        punctuationNote: "For example and for instance often take commas. Such as usually appears before the examples inside the sentence."
+      },
+      {
+        title: "Sequencing",
+        connectors: ["first", "then", "after that", "finally"],
+        use: "Use these to describe steps in a process, bug reproduction, or implementation plan.",
+        examples: [
+          "First, reproduce the bug.",
+          "Then, inspect the network request.",
+          "Finally, add a regression test."
+        ],
+        punctuationNote: "When these markers start a sentence, use a comma after them in most technical writing."
+      },
+      {
+        title: "Summary and conclusion",
+        connectors: ["overall", "in short", "to sum up"],
+        use: "Use these to close a message, summarize a decision, or give a final recommendation.",
+        examples: [
+          "Overall, the implementation is safer.",
+          "In short, the bug comes from stale cache data.",
+          "To sum up, we should merge the smaller refactor first."
+        ],
+        punctuationNote: "These markers usually start the final sentence and take a comma."
+      }
+    ],
+    punctuationNotes: [
+      {
+        title: "However and therefore",
+        rule: "Use a comma after however or therefore when they introduce a sentence. Use a semicolon before them when joining two independent clauses.",
+        examples: [
+          "The API is stable. However, the UI still needs work.",
+          "We fixed the bug; therefore, the tests passed."
+        ]
+      },
+      {
+        title: "Although and because",
+        rule: "Although and because create dependent clauses. Do not add but or so for the same relationship.",
+        examples: [
+          "Although it was late, we continued.",
+          "Because the test failed, we fixed the mock."
+        ]
+      },
+      {
+        title: "So vs therefore",
+        rule: "So is common and direct. Therefore is more formal and often better for documentation or decision notes.",
+        examples: [
+          "The endpoint changed, so the test failed.",
+          "The endpoint changed; therefore, the test failed."
+        ]
+      }
+    ],
+    commonMistakes: [
+      {
+        wrong: "Although it was late, but we continued.",
+        correct: "Although it was late, we continued.",
+        reason: "Although already marks contrast, so but is unnecessary."
+      },
+      {
+        wrong: "Because the test failed, so we fixed it.",
+        correct: "Because the test failed, we fixed it.",
+        reason: "Because already introduces the reason, so do not add so for the same relationship."
+      },
+      {
+        wrong: "However the app crashed.",
+        correct: "However, the app crashed.",
+        reason: "However needs a comma when it introduces a sentence."
+      },
+      {
+        wrong: "I like React, besides I use Angular.",
+        correct: "I like React. Besides, I use Angular.",
+        reason: "Besides works better as a sentence connector with a comma."
+      },
+      {
+        wrong: "We fixed the bug therefore the tests passed.",
+        correct: "We fixed the bug; therefore, the tests passed.",
+        reason: "Therefore connects two independent clauses, so use a semicolon or a new sentence."
+      }
+    ],
+    quickMemory: [
+      "Addition = also, in addition, moreover.",
+      "Contrast = but, however, although.",
+      "Reason = because or since.",
+      "Result = so, therefore, as a result.",
+      "Examples = for example, for instance, such as.",
+      "Do not double the connector: although + but, because + so."
+    ],
+    practiceItems: [
+      {
+        prompt: "Correct the sentence: Although it was late, but we continued.",
+        answer: "Although it was late, we continued.",
+        focus: "avoid double contrast connectors"
+      },
+      {
+        prompt: "Complete the sentence: The bug was fixed; ___, the tests passed.",
+        answer: "therefore",
+        focus: "result connector"
+      },
+      {
+        prompt: "Choose the best connector: The UI is ready. ___, the API is still slow.",
+        answer: "However",
+        focus: "contrast connector"
+      },
+      {
+        prompt: "Correct the sentence: Because the test failed, so we fixed it.",
+        answer: "Because the test failed, we fixed it.",
+        focus: "avoid because + so"
+      },
+      {
+        prompt: "Complete the sentence: We updated the cache; ___, the page loads faster.",
+        answer: "as a result",
+        focus: "cause/result connector"
+      }
+    ],
+    relatedTopics: [
+      "Reported Speech",
+      "Passive Voice",
+      "Adjectives and Adverbs",
+      "Key Structure Differences"
+    ]
   }
 ];
 
