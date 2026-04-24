@@ -2,6 +2,7 @@ import type { ReactNode } from "react";
 import { useMemo, useState } from "react";
 import { Link } from "react-router-dom";
 import { FullExplanationLink } from "../components/FullExplanationLink";
+import { verbTenseDecisionMap } from "../data/verbTenseDecisionMap";
 import { SearchInput } from "../components/SearchInput";
 import { verbTenseReferenceTables } from "../data/verbTenseReferenceTables";
 import { verbTenses } from "../data/verbTenses";
@@ -9,13 +10,14 @@ import { filterVerbTenses, matchesVerbTense } from "../features/cheatsheet/searc
 import { useCheatsheetStore } from "../store/useCheatsheetStore";
 import type {
   VerbTense,
+  VerbTenseDecisionMapEntry,
   VerbTenseReferenceFamily,
   VerbTenseReferenceGroup,
   VerbTenseReferenceRow,
   VerbTenseReferenceSection
 } from "../shared/types/content";
 
-type ViewMode = "simplified" | "full";
+type ViewMode = "simplified" | "decision-map" | "full";
 
 const categories: Array<VerbTense["category"] | "all"> = [
   "all",
@@ -30,6 +32,11 @@ const tabs: Array<{ id: ViewMode; label: string; description: string }> = [
     id: "simplified",
     label: "Simplified",
     description: "Fast reference tables to compare tense structures."
+  },
+  {
+    id: "decision-map",
+    label: "Decision Map",
+    description: "Choose the right tense by communicative intention."
   },
   {
     id: "full",
@@ -68,11 +75,21 @@ export function VerbTensesPage() {
       }),
     [searchTerm, selectedCategory]
   );
+  const filteredDecisionEntries = useMemo(
+    () =>
+      filterDecisionEntries(verbTenseDecisionMap, {
+        searchTerm,
+        category: selectedCategory
+      }),
+    [searchTerm, selectedCategory]
+  );
 
   const hasResults =
     viewMode === "full"
       ? filteredVerbTenses.length > 0
-      : filteredReferenceGroups.length > 0;
+      : viewMode === "decision-map"
+        ? filteredDecisionEntries.length > 0
+        : filteredReferenceGroups.length > 0;
 
   return (
     <section className="space-y-6">
@@ -155,6 +172,8 @@ export function VerbTensesPage() {
       >
         {viewMode === "simplified" ? (
           <SimplifiedVerbTensesView groups={filteredReferenceGroups} />
+        ) : viewMode === "decision-map" ? (
+          <DecisionMapView entries={filteredDecisionEntries} />
         ) : (
           <FullVerbTensesView verbTenses={filteredVerbTenses} />
         )}
@@ -166,6 +185,89 @@ export function VerbTensesPage() {
         </p>
       ) : null}
     </section>
+  );
+}
+
+function DecisionMapView({ entries }: { entries: VerbTenseDecisionMapEntry[] }) {
+  return (
+    <div className="grid gap-4">
+      {entries.map((entry) => {
+        const tense = findVerbTenseByDecisionSlug(entry.primaryTenseSlug);
+
+        if (!tense) {
+          return null;
+        }
+
+        return (
+          <article
+            key={entry.id}
+            className="rounded-3xl border border-slate-200 bg-white p-6 shadow-sm"
+          >
+            <div className="flex flex-wrap items-start justify-between gap-3">
+              <div>
+                <h3 className="text-2xl font-bold text-slate-950">{entry.title}</h3>
+                <p className="mt-2 max-w-3xl text-slate-600">{entry.summary}</p>
+              </div>
+              <div className="flex flex-wrap items-center gap-2">
+                {entry.categories.map((category) => (
+                  <span
+                    key={`${entry.id}-${category}`}
+                    className="rounded-full bg-slate-100 px-3 py-1 text-sm font-semibold capitalize text-slate-700"
+                  >
+                    {category}
+                  </span>
+                ))}
+              </div>
+            </div>
+
+            <div className="mt-5 grid gap-4 md:grid-cols-3">
+              <DecisionInfoBlock title="Decision question" value={entry.decisionQuestion} />
+              <DecisionInfoBlock title="Primary tense" value={tense.name} highlight />
+              <DecisionInfoBlock title="Timeline cue" value={entry.timelineCue} />
+            </div>
+
+            <div className="mt-5 grid gap-4 md:grid-cols-2">
+              <ContentList title="Use when" items={entry.useWhen} />
+              <ContentList title="Keywords" items={entry.keywords} />
+            </div>
+
+            <div className="mt-5 rounded-3xl bg-blue-50 p-5">
+              <h4 className="text-lg font-bold text-blue-950">Quick contrast</h4>
+              <div className="mt-3 grid gap-4 md:grid-cols-2">
+                {entry.contrasts.map((contrast) => (
+                  <div key={`${entry.id}-${contrast.label}`} className="rounded-2xl bg-white p-4">
+                    <p className="text-sm font-semibold uppercase tracking-wide text-slate-500">
+                      {contrast.label}
+                    </p>
+                    <p className="mt-2 font-semibold text-slate-950">
+                      Use <span className="text-blue-700">{contrast.useInsteadOf}</span>
+                    </p>
+                    <p className="mt-2 text-sm text-slate-600">{contrast.reason}</p>
+                  </div>
+                ))}
+              </div>
+            </div>
+
+            <div className="mt-5 flex flex-wrap items-center justify-between gap-3 rounded-2xl bg-slate-50 p-4">
+              <div>
+                <p className="text-sm font-semibold uppercase tracking-wide text-slate-500">
+                  Detail route
+                </p>
+                <p className="mt-1 text-slate-700">
+                  Open the full tense page for structure, examples, signals, and mistakes.
+                </p>
+              </div>
+              <Link
+                to={tense.fullExplanationPath}
+                className="rounded-full bg-blue-600 px-4 py-2 text-sm font-bold text-white hover:bg-blue-700"
+              >
+                Open {tense.name} →
+              </Link>
+            </div>
+          </article>
+        );
+      })}
+    </div>
   );
 }
 
@@ -374,12 +476,81 @@ function matchesReferenceRow(row: VerbTenseReferenceRow, searchTerm = "") {
   return searchableContent.includes(normalizedSearchTerm);
 }
 
+function filterDecisionEntries(
+  entries: VerbTenseDecisionMapEntry[],
+  filters: { searchTerm?: string; category?: VerbTense["category"] }
+) {
+  return entries.filter((entry) => {
+    const matchesCategory = filters.category
+      ? entry.categories.includes(filters.category)
+      : true;
+
+    if (!matchesCategory) {
+      return false;
+    }
+
+    const normalizedSearchTerm = filters.searchTerm?.trim().toLowerCase() ?? "";
+
+    if (!normalizedSearchTerm) {
+      return true;
+    }
+
+    const tense = findVerbTenseByDecisionSlug(entry.primaryTenseSlug);
+    const searchableContent = [
+      entry.title,
+      entry.summary,
+      entry.decisionQuestion,
+      entry.timelineCue,
+      ...entry.useWhen,
+      ...entry.keywords,
+      ...entry.categories,
+      ...entry.contrasts.flatMap((contrast) => [
+        contrast.label,
+        contrast.useInsteadOf,
+        contrast.reason
+      ]),
+      tense?.name ?? "",
+      tense?.mainUse ?? "",
+      ...(tense?.signals ?? [])
+    ]
+      .join(" ")
+      .toLowerCase();
+
+    return searchableContent.includes(normalizedSearchTerm);
+  });
+}
+
+function findVerbTenseByDecisionSlug(slug: string) {
+  return verbTenses.find((verbTense) => verbTense.slug === slug);
+}
+
 function TableHead({ children }: { children: string }) {
   return <th className="px-4 py-3 font-bold">{children}</th>;
 }
 
 function TableCell({ children }: { children: ReactNode }) {
   return <td className="px-4 py-3 align-top text-slate-700">{children}</td>;
+}
+
+function DecisionInfoBlock({
+  title,
+  value,
+  highlight = false
+}: {
+  title: string;
+  value: string;
+  highlight?: boolean;
+}) {
+  return (
+    <div className={`rounded-2xl p-4 ${highlight ? "bg-amber-50" : "bg-slate-50"}`}>
+      <h4 className={`font-bold ${highlight ? "text-amber-950" : "text-slate-900"}`}>
+        {title}
+      </h4>
+      <p className={`mt-2 text-sm ${highlight ? "text-amber-900" : "text-slate-600"}`}>
+        {value}
+      </p>
+    </div>
+  );
 }
 
 function InfoSection({ title, value }: { title: string; value: string }) {

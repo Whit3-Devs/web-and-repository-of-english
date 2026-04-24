@@ -14,6 +14,7 @@ describe("Grammar topic pages", () => {
       </MemoryRouter>
     );
 
+    expect(screen.getByText("Modal Verbs Overview")).toBeTruthy();
     expect(screen.getByText("Ability and Permission")).toBeTruthy();
     expect(screen.getByText("Would and Hypotheticals")).toBeTruthy();
   });
@@ -25,6 +26,8 @@ describe("Grammar topic pages", () => {
       </MemoryRouter>
     );
 
+    expect(screen.getByText("Conditionals Overview")).toBeTruthy();
+    expect(screen.getByText("Question Builder Cheat Sheet")).toBeTruthy();
     expect(screen.getByText("WH Questions")).toBeTruthy();
     expect(screen.getByText("Common Prepositions")).toBeTruthy();
   });
@@ -86,6 +89,44 @@ describe("Grammar topic pages", () => {
     expect(
       screen.getByText("Complete the sentence: She can ___ English very well.")
     ).toBeTruthy();
+  });
+
+  it("renders full explanation content for Modal Verbs Overview without micro practice", () => {
+    render(
+      <MemoryRouter initialEntries={["/modal-verbs/modal-verbs-overview"]}>
+        <Routes>
+          <Route
+            path="/modal-verbs/:slug"
+            element={
+              <GrammarTopicDetailPage
+                section="modal-verbs"
+                backPath="/modal-verbs"
+                backLabel="Modal Verbs"
+              />
+            }
+          />
+        </Routes>
+      </MemoryRouter>
+    );
+
+    expect(screen.getByRole("heading", { name: "Modal Verbs Overview" })).toBeTruthy();
+    expect(screen.getByText("Available now")).toBeTruthy();
+    expect(screen.getByText("What this topic helps you express")).toBeTruthy();
+    expect(screen.getByText("Decision rules")).toBeTruthy();
+    expect(screen.getByText("Core rule")).toBeTruthy();
+    expect(screen.getByText("Can / Could / May for ability and permission")).toBeTruthy();
+    expect(screen.getByText("May / Might / Could / Must for possibility")).toBeTruthy();
+    expect(screen.getByText("Should / Ought to / Must for advice and obligation")).toBeTruthy();
+    expect(screen.getByText("Can / Could / Would / May for requests")).toBeTruthy();
+    expect(screen.getByText("Would for hypotheticals and polite preference")).toBeTruthy();
+    expect(screen.getByText("Tone guide: direct, softer, formal, strong")).toBeTruthy();
+    expect(screen.getByText("Can vs Could")).toBeTruthy();
+    expect(screen.getByText("May vs Might")).toBeTruthy();
+    expect(screen.getByText("Should vs Must")).toBeTruthy();
+    expect(screen.getByText("Could vs Would")).toBeTruthy();
+    expect(screen.getByText("Personalized examples")).toBeTruthy();
+    expect(screen.getByText("Quick memory")).toBeTruthy();
+    expect(screen.queryByText("Micro practice")).toBeNull();
   });
 
   it("renders full explanation content for Advice and Obligation", () => {
@@ -512,6 +553,82 @@ describe("Grammar topic pages", () => {
     expect(
       screen.getByText("Choose the best form: I usually work from home, but today I ___.")
     ).toBeTruthy();
+  });
+
+  it("renders full explanation content for Question Builder Cheat Sheet", () => {
+    render(
+      <MemoryRouter initialEntries={["/core-grammar/question-builder-cheat-sheet"]}>
+        <Routes>
+          <Route
+            path="/core-grammar/:slug"
+            element={
+              <GrammarTopicDetailPage
+                section="core-grammar"
+                backPath="/core-grammar"
+                backLabel="Core Grammar"
+              />
+            }
+          />
+        </Routes>
+      </MemoryRouter>
+    );
+
+    expect(
+      screen.getByRole("heading", { name: "Question Builder Cheat Sheet" })
+    ).toBeTruthy();
+    expect(screen.getByText("Available now")).toBeTruthy();
+    expect(screen.getByText("What this cheat sheet helps you build")).toBeTruthy();
+    expect(screen.getByText("Universal question formula")).toBeTruthy();
+    expect(screen.getByText("Fast build steps")).toBeTruthy();
+    expect(screen.getByText("Builder by system")).toBeTruthy();
+    expect(screen.getByText("Do / Does / Did")).toBeTruthy();
+    expect(screen.getByText("Be")).toBeTruthy();
+    expect(screen.getByText("Have")).toBeTruthy();
+    expect(screen.getByText("Modals")).toBeTruthy();
+    expect(screen.getAllByText("Yes/No pattern").length).toBeGreaterThan(0);
+    expect(screen.getAllByText("WH pattern").length).toBeGreaterThan(0);
+    expect(screen.getAllByText("Short answers").length).toBeGreaterThan(0);
+    expect(screen.getByText("Common mistakes")).toBeTruthy();
+    expect(screen.getByText("Quick memory")).toBeTruthy();
+    expect(screen.getByRole("link", { name: "WH Questions" })).toBeTruthy();
+    expect(screen.getByRole("link", { name: "English Auxiliaries" })).toBeTruthy();
+    expect(screen.queryByText("Micro practice")).toBeNull();
+  });
+
+  it("renders full explanation content for Conditionals Overview", () => {
+    render(
+      <MemoryRouter initialEntries={["/core-grammar/conditionals-overview"]}>
+        <Routes>
+          <Route
+            path="/core-grammar/:slug"
+            element={
+              <GrammarTopicDetailPage
+                section="core-grammar"
+                backPath="/core-grammar"
+                backLabel="Core Grammar"
+              />
+            }
+          />
+        </Routes>
+      </MemoryRouter>
+    );
+
+    expect(screen.getByRole("heading", { name: "Conditionals Overview" })).toBeTruthy();
+    expect(screen.getByText("Available now")).toBeTruthy();
+    expect(screen.getByText("What this cheat sheet helps you choose")).toBeTruthy();
+    expect(screen.getByText("Fast decision rules")).toBeTruthy();
+    expect(screen.getByText("Conditionals map")).toBeTruthy();
+    expect(screen.getByText("Zero Conditional")).toBeTruthy();
+    expect(screen.getByText("First Conditional")).toBeTruthy();
+    expect(screen.getByText("Second Conditional")).toBeTruthy();
+    expect(screen.getByText("Third Conditional")).toBeTruthy();
+    expect(screen.getByText("Mixed Conditional")).toBeTruthy();
+    expect(screen.getAllByText("Core pattern").length).toBeGreaterThan(0);
+    expect(screen.getAllByText("Quick contrast").length).toBeGreaterThan(0);
+    expect(screen.getByText("Common mistakes")).toBeTruthy();
+    expect(screen.getByText("Quick memory")).toBeTruthy();
+    expect(screen.getByRole("link", { name: "Would and Hypotheticals" })).toBeTruthy();
+    expect(screen.queryByText("Micro practice")).toBeNull();
   });
 
   it("renders topic not found for an invalid grammar slug", () => {

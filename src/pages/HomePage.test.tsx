@@ -19,7 +19,10 @@ describe("Home page topic directory", () => {
     expect(screen.getByText("Irregular Verbs")).toBeTruthy();
 
     expect(screen.getByRole("link", { name: "Present Simple" })).toBeTruthy();
+    expect(screen.getByRole("link", { name: "Modal Verbs Overview" })).toBeTruthy();
     expect(screen.getByRole("link", { name: "Polite Requests" })).toBeTruthy();
+    expect(screen.getByRole("link", { name: "Conditionals Overview" })).toBeTruthy();
+    expect(screen.getByRole("link", { name: "Question Builder Cheat Sheet" })).toBeTruthy();
     expect(screen.getByRole("link", { name: "WH Questions" })).toBeTruthy();
     expect(screen.getByRole("link", { name: "awake" })).toBeTruthy();
   });
@@ -88,6 +91,26 @@ describe("Home page topic directory", () => {
     expect(document.title).toBe("Key Structure Differences | English Cheatsheet");
   });
 
+  it("uses question builder cheat sheet in the browser tab", () => {
+    render(
+      <MemoryRouter initialEntries={["/core-grammar/question-builder-cheat-sheet"]}>
+        <App />
+      </MemoryRouter>
+    );
+
+    expect(document.title).toBe("Question Builder Cheat Sheet | English Cheatsheet");
+  });
+
+  it("uses conditionals overview in the browser tab", () => {
+    render(
+      <MemoryRouter initialEntries={["/core-grammar/conditionals-overview"]}>
+        <App />
+      </MemoryRouter>
+    );
+
+    expect(document.title).toBe("Conditionals Overview | English Cheatsheet");
+  });
+
   it("uses ability and permission in the browser tab", () => {
     render(
       <MemoryRouter initialEntries={["/modal-verbs/ability-and-permission"]}>
@@ -96,6 +119,16 @@ describe("Home page topic directory", () => {
     );
 
     expect(document.title).toBe("Ability and Permission | English Cheatsheet");
+  });
+
+  it("uses modal verbs overview in the browser tab", () => {
+    render(
+      <MemoryRouter initialEntries={["/modal-verbs/modal-verbs-overview"]}>
+        <App />
+      </MemoryRouter>
+    );
+
+    expect(document.title).toBe("Modal Verbs Overview | English Cheatsheet");
   });
 
   it("uses advice and obligation in the browser tab", () => {

@@ -29,6 +29,7 @@ describe("Verb Tenses pages", () => {
     expect(
       screen.getAllByRole("link", { name: "Present Simple" })[0]?.getAttribute("href")
     ).toBe("/verb-tenses/present-simple");
+    expect(screen.getByRole("tab", { name: /decision map/i })).toBeTruthy();
   });
 
   it("switches to Full and shows available present, past, and future explanations", () => {
@@ -74,6 +75,64 @@ describe("Verb Tenses pages", () => {
 
     expect(screen.getByText("Future Simple")).toBeTruthy();
     expect(screen.queryByText("Present Simple")).toBeNull();
+  });
+
+  it("switches to Decision Map and shows representative present, past, and future decision cards", () => {
+    render(
+      <MemoryRouter>
+        <VerbTensesPage />
+      </MemoryRouter>
+    );
+
+    fireEvent.click(screen.getByRole("tab", { name: /decision map/i }));
+
+    expect(
+      screen.getByText("Use Present Simple for routine, habit, or general truth")
+    ).toBeTruthy();
+    expect(
+      screen.getByText("Use Past Simple for a finished action in the past")
+    ).toBeTruthy();
+    expect(
+      screen.getByText("Use Future Simple for an instant decision, promise, or prediction")
+    ).toBeTruthy();
+    expect(screen.getByRole("link", { name: "Open Present Simple →" })).toBeTruthy();
+  });
+
+  it("shares search and category filters with the Decision Map tab", () => {
+    render(
+      <MemoryRouter>
+        <VerbTensesPage />
+      </MemoryRouter>
+    );
+
+    fireEvent.click(screen.getByRole("tab", { name: /decision map/i }));
+    fireEvent.change(screen.getByLabelText("Search"), {
+      target: { value: "routine" }
+    });
+
+    expect(
+      screen.getByText("Use Present Simple for routine, habit, or general truth")
+    ).toBeTruthy();
+    expect(
+      screen.queryByText("Use Past Simple for a finished action in the past")
+    ).toBeNull();
+
+    fireEvent.change(screen.getByLabelText("Search"), {
+      target: { value: "duration" }
+    });
+    fireEvent.change(screen.getByLabelText("Category"), {
+      target: { value: "perfect" }
+    });
+
+    expect(
+      screen.queryByText("Use Present Simple for routine, habit, or general truth")
+    ).toBeNull();
+    expect(
+      screen.getByText("Use Present Perfect Continuous for duration until now")
+    ).toBeTruthy();
+    expect(
+      screen.getByText("Use Future Perfect Continuous for duration up to a future point")
+    ).toBeTruthy();
   });
 
   it("shows the shared empty state when filters remove all results", () => {

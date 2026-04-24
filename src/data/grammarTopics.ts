@@ -2,6 +2,40 @@ import type { GrammarTopic, GrammarTopicSection } from "../shared/types/content"
 
 export const grammarTopics: GrammarTopic[] = [
   {
+    id: "modal-verbs-overview",
+    slug: "modal-verbs-overview",
+    title: "Modal Verbs Overview",
+    section: "modal-verbs",
+    summary:
+      "Use this overview to choose the right modal by intention, tone, and strength before you open a deeper topic.",
+    keyIdeas: [
+      "Use can, could, and may around ability and permission.",
+      "Use may, might, could, and must to express different levels of possibility or deduction.",
+      "Use should, ought to, and must to move from advice to strong obligation.",
+      "Use could, would, and may to soften requests or sound more formal."
+    ],
+    examples: [
+      "Can I open the window?",
+      "It might rain later.",
+      "You should rest today.",
+      "Would you help me with this?"
+    ],
+    commonMistakes: [
+      "She can speaks English. → She can speak English.",
+      "It might rains later. → It might rain later.",
+      "He musts go now. → He must go now."
+    ],
+    relatedTopics: [
+      "Ability and Permission",
+      "Advice and Obligation",
+      "Possibility and Probability",
+      "Polite Requests",
+      "Would and Hypotheticals"
+    ],
+    fullExplanationPath: "/modal-verbs/modal-verbs-overview",
+    hasFullExplanation: true
+  },
+  {
     id: "ability-and-permission",
     slug: "ability-and-permission",
     title: "Ability and Permission",
@@ -139,6 +173,72 @@ export const grammarTopics: GrammarTopic[] = [
     ],
     relatedTopics: ["Polite Requests", "Advice and Obligation"],
     fullExplanationPath: "/modal-verbs/would-and-hypotheticals",
+    hasFullExplanation: true
+  },
+  {
+    id: "conditionals-overview",
+    slug: "conditionals-overview",
+    title: "Conditionals Overview",
+    section: "core-grammar",
+    summary:
+      "Compare English conditionals fast so you can choose the right if-clause for facts, real future results, unreal present ideas, past regrets, and mixed meanings.",
+    keyIdeas: [
+      "Zero conditional talks about facts and general results.",
+      "First conditional talks about real future possibility.",
+      "Second conditional talks about unreal or imagined present/future situations.",
+      "Third and mixed conditionals help you talk about past unreal situations and their consequences."
+    ],
+    examples: [
+      "If you heat water, it boils.",
+      "If it rains, we will stay home.",
+      "If I had more time, I would study more.",
+      "If I had studied, I would have passed."
+    ],
+    commonMistakes: [
+      "If it will rain, we will stay home. → If it rains, we will stay home.",
+      "If I would have known, I would have called. → If I had known, I would have called.",
+      "If I would be rich, I would travel more. → If I were rich, I would travel more."
+    ],
+    relatedTopics: [
+      "Would and Hypotheticals",
+      "Key Structure Differences",
+      "Verb Tenses"
+    ],
+    fullExplanationPath: "/core-grammar/conditionals-overview",
+    hasFullExplanation: true
+  },
+  {
+    id: "question-builder-cheat-sheet",
+    slug: "question-builder-cheat-sheet",
+    title: "Question Builder Cheat Sheet",
+    section: "core-grammar",
+    summary:
+      "Build English questions fast with the right auxiliary, word order, and short answer pattern.",
+    keyIdeas: [
+      "Start with the question type: yes/no or WH.",
+      "Choose the helper system first: do/does/did, be, have, or a modal.",
+      "After do, does, and did, use the base form of the main verb.",
+      "Short answers repeat the auxiliary, not the whole main verb phrase."
+    ],
+    examples: [
+      "Do you work here?",
+      "Where does she live?",
+      "Have they finished yet?",
+      "Can you help me?"
+    ],
+    commonMistakes: [
+      "What you need? → What do you need?",
+      "Does he works here? → Does he work here?",
+      "Where she is? → Where is she?",
+      "Can you to help me? → Can you help me?"
+    ],
+    relatedTopics: [
+      "WH Questions",
+      "Embedded WH Clauses",
+      "English Auxiliaries",
+      "Polite Requests"
+    ],
+    fullExplanationPath: "/core-grammar/question-builder-cheat-sheet",
     hasFullExplanation: true
   },
   {

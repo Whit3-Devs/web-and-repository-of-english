@@ -3,6 +3,236 @@ import type { GrammarTopicFullExplanation, GrammarTopicSection } from "../shared
 export const grammarTopicFullExplanations: GrammarTopicFullExplanation[] = [
   {
     contentType: "modal-topic",
+    slug: "modal-verbs-overview",
+    title: "Modal Verbs Overview",
+    section: "modal-verbs",
+    overview:
+      "Use this cheat sheet to choose the right modal fast: start from your intention, then adjust for tone, certainty, and strength.",
+    whatItDoes: [
+      "Help you decide which modal fits ability, permission, possibility, advice, obligation, requests, or hypotheticals.",
+      "Show how tone changes from direct to softer to formal.",
+      "Give you one compact bridge page before you jump into a deeper modal topic."
+    ],
+    coreRule: [
+      "Modal choice depends on communicative intention first, then on tone and strength.",
+      "After a modal, use the base form of the main verb.",
+      "Use stronger modals when the meaning is more certain, more obligatory, or less soft.",
+      "Use softer modals when you want more distance, more politeness, or more uncertainty."
+    ],
+    decisionRules: [
+      "If you mean present ability or everyday permission, start with can.",
+      "If you want a softer request, a weaker possibility, or past ability, move toward could.",
+      "If you want formal permission, use may; if you want a weaker possibility, use might.",
+      "If you want advice, use should; if you want stronger pressure, move toward must.",
+      "If you want polite wants, invitations, or hypothetical meaning, use would."
+    ],
+    modalCards: [
+      {
+        title: "Can / Could / May for ability and permission",
+        modal: "can / could / may",
+        mainUse: "Ability and permission",
+        whenToUse:
+          "Use can for present ability and everyday permission, could for past ability or softer permission, and may for formal permission.",
+        tone: "Can = direct; could = softer; may = formal.",
+        structures: {
+          affirmative: "Subject + modal + base verb",
+          negative: "Subject + modal + not + base verb",
+          question: "Modal + subject + base verb?"
+        },
+        contractions: ["can't", "couldn't"],
+        examples: [
+          "I can solve this now.",
+          "Could I leave a little earlier?",
+          "May I ask a question?"
+        ]
+      },
+      {
+        title: "May / Might / Could / Must for possibility",
+        modal: "may / might / could / must",
+        mainUse: "Possibility and deduction",
+        whenToUse:
+          "Use may for neutral possibility, might for weaker possibility, could for one possible option, and must for strong logical deduction.",
+        tone: "May = neutral; might = weaker; could = one option; must = strong conclusion.",
+        structures: {
+          affirmative: "Subject + modal + base verb",
+          negative: "Subject + modal + not + base verb",
+          question: "Modal + subject + base verb?"
+        },
+        contractions: ["couldn't", "mustn't"],
+        examples: [
+          "It may rain later.",
+          "They might be late.",
+          "This could be the problem.",
+          "She must be tired."
+        ]
+      },
+      {
+        title: "Should / Ought to / Must for advice and obligation",
+        modal: "should / ought to / must",
+        mainUse: "Advice, moral duty, strong obligation",
+        whenToUse:
+          "Use should for advice, ought to for slightly more moral or formal advice, and must for strong obligation or prohibition.",
+        tone: "Should = normal advice; ought to = more principled; must = strongest.",
+        structures: {
+          affirmative: "Subject + should / ought to / must + base verb",
+          negative: "Subject + shouldn't / ought not to / must not + base verb",
+          question: "Should / Ought / Must + subject + base verb?"
+        },
+        contractions: ["shouldn't", "mustn't"],
+        examples: [
+          "You should rest.",
+          "We ought to be honest.",
+          "You must wear your badge."
+        ]
+      },
+      {
+        title: "Can / Could / Would / May for requests",
+        modal: "can / could / would / may",
+        mainUse: "Requests and invitations",
+        whenToUse:
+          "Use can for direct everyday requests, could for softer requests, would for polite wants and invitations, and may for very formal permission-style requests.",
+        tone: "Can = direct; could = polite; would = very natural polite request; may = formal.",
+        structures: {
+          affirmative: "Subject + modal + base verb",
+          negative: "Subject + modal + not + base verb",
+          question: "Modal + subject + base verb?"
+        },
+        contractions: ["can't", "couldn't", "wouldn't"],
+        examples: [
+          "Can you help me?",
+          "Could you review this note?",
+          "Would you join us for practice?",
+          "May I come in?"
+        ]
+      },
+      {
+        title: "Would for hypotheticals and polite preference",
+        modal: "would",
+        mainUse: "Hypotheticals, polite wants, preference",
+        whenToUse:
+          "Use would when the meaning moves away from direct reality toward hypothetical result, polite preference, or softer desire.",
+        tone: "Soft, polite, and less direct than plain present forms.",
+        structures: {
+          affirmative: "Subject + would + base verb",
+          negative: "Subject + would not + base verb",
+          question: "Would + subject + base verb?"
+        },
+        contractions: ["wouldn't"],
+        examples: [
+          "I would travel more if I had time.",
+          "I would like to practice more.",
+          "I would rather stay home tonight."
+        ],
+        notes: [
+          "Would often marks distance from direct reality.",
+          "Would like and would rather are very common high-value patterns."
+        ]
+      },
+      {
+        title: "Tone guide: direct, softer, formal, strong",
+        modal: "tone guide",
+        mainUse: "Fast tone map",
+        whenToUse:
+          "Use this card when you already know the situation but need the right level of politeness, certainty, or pressure.",
+        tone: "Direct = can; softer = could; formal = may; strong = must.",
+        structures: {
+          affirmative: "Choose the modal that matches the tone you want",
+          negative: "Keep the same tone logic in negative forms",
+          question: "Use the same tone logic when asking"
+        },
+        examples: [
+          "Can I ask? → direct everyday request",
+          "Could I ask? → softer request",
+          "May I ask? → formal request",
+          "You must leave now. → strong obligation"
+        ]
+      }
+    ],
+    comparisonBlocks: [
+      {
+        title: "Can vs Could",
+        explanation:
+          "Can is more direct and present-focused. Could often sounds softer, more distant, or connected to past ability.",
+        examples: [
+          "Can you help me? → direct everyday request",
+          "Could you help me? → softer and more polite"
+        ],
+        takeaway: "Move from can to could when you want less direct pressure."
+      },
+      {
+        title: "May vs Might",
+        explanation:
+          "May expresses possibility with a neutral tone. Might usually feels weaker, less sure, or more tentative.",
+        examples: [
+          "It may rain later. → possible",
+          "It might rain later. → possible, but weaker"
+        ],
+        takeaway: "Choose might when you want more uncertainty."
+      },
+      {
+        title: "Should vs Must",
+        explanation:
+          "Should recommends. Must pushes much harder and can sound like necessity, rule, or strong obligation.",
+        examples: [
+          "You should review your notes. → advice",
+          "You must submit the form today. → strong obligation"
+        ],
+        takeaway: "Advice and obligation are not the same pressure level."
+      },
+      {
+        title: "Could vs Would",
+        explanation:
+          "Could often softens requests or shows one possible option. Would often marks polite preference, invitation, or hypothetical result.",
+        examples: [
+          "Could you help me? → softer request",
+          "Would you like to join us? → polite invitation"
+        ],
+        takeaway: "Could softens action; would softens intention or moves toward hypothetical meaning."
+      }
+    ],
+    personalizedExamples: [
+      "Can you check this commit message before I push?",
+      "Could you review my English note after lunch?",
+      "It might take longer if we change the structure now.",
+      "You should keep the explanation short and searchable.",
+      "I would rather open the overview first and the deep page later."
+    ],
+    explainedMistakes: [
+      {
+        wrong: "She can speaks English.",
+        correct: "She can speak English.",
+        reason: "After a modal, use the base verb, not the third-person form."
+      },
+      {
+        wrong: "It might rains later.",
+        correct: "It might rain later.",
+        reason: "After might, the main verb stays in base form."
+      },
+      {
+        wrong: "He musts go now.",
+        correct: "He must go now.",
+        reason: "Modal verbs do not take -s in the third person."
+      }
+    ],
+    quickMemory: [
+      "Can = direct ability or permission.",
+      "Could = softer request, past ability, or weaker option.",
+      "May = formal permission or neutral possibility.",
+      "Might = weaker possibility.",
+      "Should = advice; must = strong obligation or strong deduction.",
+      "Would = polite preference, invitation, or hypothetical result."
+    ],
+    practiceItems: [],
+    relatedTopics: [
+      "Ability and Permission",
+      "Advice and Obligation",
+      "Possibility and Probability",
+      "Polite Requests",
+      "Would and Hypotheticals"
+    ]
+  },
+  {
+    contentType: "modal-topic",
     slug: "ability-and-permission",
     title: "Ability and Permission",
     section: "modal-verbs",
@@ -1547,6 +1777,271 @@ export const grammarTopicFullExplanations: GrammarTopicFullExplanation[] = [
       "After a preposition, a verb usually becomes verb-ing."
     ],
     relatedTopics: ["Key Structure Differences", "WH Questions", "English Auxiliaries"]
+  },
+  {
+    contentType: "conditionals-overview",
+    slug: "conditionals-overview",
+    title: "Conditionals Overview",
+    section: "core-grammar",
+    overview:
+      "Use this overview to compare English conditionals quickly: start from the kind of situation you mean, then choose the if-clause and result pattern that matches reality, time, and consequence.",
+    whatItDoes: [
+      "Help you choose between factual, real future, unreal present/future, unreal past, and mixed-result conditionals.",
+      "Show the core pattern of each conditional without turning the page into a long theory lesson.",
+      "Give you quick contrasts so you stop mixing first, second, third, and mixed forms."
+    ],
+    decisionRules: [
+      "If the result is always true or generally true, start with the zero conditional.",
+      "If the future result is still real and possible, start with the first conditional.",
+      "If the situation is imagined, unlikely, or unreal now, move to the second conditional.",
+      "If you are imagining a different past, use the third conditional.",
+      "If the unreal past changes a present result, use a mixed conditional."
+    ],
+    conditionalCards: [
+      {
+        title: "Zero Conditional",
+        conditionalType: "zero conditional",
+        mainUse: "Facts, rules, and general results",
+        pattern: "If + present simple, present simple",
+        meaning:
+          "This conditional describes something that is generally true whenever the condition happens.",
+        examples: [
+          "If you heat water, it boils.",
+          "If I don't sleep well, I feel tired."
+        ],
+        contrast:
+          "Do not use it for one possible future result. If the result is a real future possibility, move to the first conditional."
+      },
+      {
+        title: "First Conditional",
+        conditionalType: "first conditional",
+        mainUse: "Real future possibility and likely result",
+        pattern: "If + present simple, will + base verb",
+        meaning:
+          "This conditional talks about a future situation that is still possible and a result that can really happen.",
+        examples: [
+          "If it rains, we will stay home.",
+          "If you study tonight, you will feel more prepared tomorrow."
+        ],
+        contrast:
+          "Do not put will in the if-clause. If the situation is unreal or imagined now, move to the second conditional."
+      },
+      {
+        title: "Second Conditional",
+        conditionalType: "second conditional",
+        mainUse: "Unreal present/future, imagination, advice with distance",
+        pattern: "If + past simple, would + base verb",
+        meaning:
+          "This conditional talks about an imagined present or future situation that is not real or not likely now.",
+        examples: [
+          "If I had more time, I would study more.",
+          "If she were here, she would know what to do."
+        ],
+        contrast:
+          "Do not use it for a real future possibility. If the condition was unreal in the past, move to the third conditional."
+      },
+      {
+        title: "Third Conditional",
+        conditionalType: "third conditional",
+        mainUse: "Unreal past and past regret",
+        pattern: "If + past perfect, would have + past participle",
+        meaning:
+          "This conditional imagines a different past and a different past result that did not happen.",
+        examples: [
+          "If I had studied, I would have passed.",
+          "If they had left earlier, they would have caught the bus."
+        ],
+        contrast:
+          "Do not use it for unreal present meaning. If the unreal past affects the present result, move to a mixed conditional."
+      },
+      {
+        title: "Mixed Conditional",
+        conditionalType: "mixed conditional",
+        mainUse: "Unreal past cause with present result",
+        pattern: "If + past perfect, would + base verb",
+        meaning:
+          "This conditional connects an unreal past situation to a present consequence that is true now.",
+        examples: [
+          "If I had gone to bed earlier, I would feel better now.",
+          "If she had accepted the offer, she would work in Madrid now."
+        ],
+        contrast:
+          "Keep it only when the cause belongs to the past but the result belongs to the present. If both parts belong to the past, use the third conditional."
+      }
+    ],
+    commonMistakes: [
+      {
+        wrong: "If it will rain, we will stay home.",
+        correct: "If it rains, we will stay home.",
+        reason: "In the first conditional, the if-clause normally uses Present Simple, not will."
+      },
+      {
+        wrong: "If I would have known, I would have called.",
+        correct: "If I had known, I would have called.",
+        reason: "In the third conditional, the if-clause uses past perfect, not would have."
+      },
+      {
+        wrong: "If I would be rich, I would travel more.",
+        correct: "If I were rich, I would travel more.",
+        reason: "In the second conditional, the if-clause uses Past Simple; were is the standard high-value form here."
+      },
+      {
+        wrong: "If you heat water, it will boil.",
+        correct: "If you heat water, it boils.",
+        reason: "When the result is a general fact, zero conditional is the clearer choice."
+      }
+    ],
+    quickMemory: [
+      "Zero = fact → present + present.",
+      "First = real future → present + will.",
+      "Second = unreal now → past + would.",
+      "Third = unreal past → past perfect + would have + past participle.",
+      "Mixed = unreal past cause + present result."
+    ],
+    relatedTopicLinks: [
+      { title: "Would and Hypotheticals", path: "/modal-verbs/would-and-hypotheticals" },
+      { title: "Key Structure Differences", path: "/core-grammar/key-structure-differences" },
+      { title: "Present Simple", path: "/verb-tenses/present-simple" }
+    ]
+  },
+  {
+    contentType: "question-builder",
+    slug: "question-builder-cheat-sheet",
+    title: "Question Builder Cheat Sheet",
+    section: "core-grammar",
+    overview:
+      "Use this builder when you want the correct English question fast: choose the helper first, keep the right word order, and avoid the most common mistakes.",
+    whatItDoes: [
+      "Help you build yes/no and WH questions without guessing the auxiliary.",
+      "Show the core order for do/does/did, be, have, and modal questions.",
+      "Give you quick short-answer patterns so you can respond naturally."
+    ],
+    universalFormula: [
+      "Yes/No question = auxiliary + subject + main verb/complement?",
+      "WH question = question word + auxiliary + subject + main verb/complement?",
+      "If be is the main verb, move be before the subject.",
+      "If you use do / does / did, the main verb goes back to base form."
+    ],
+    decisionSteps: [
+      "Step 1: Decide if you want a yes/no question or a WH question.",
+      "Step 2: Choose the helper system: do/does/did, be, have, or a modal.",
+      "Step 3: Put the auxiliary before the subject.",
+      "Step 4: Keep the main verb in the form required by that helper.",
+      "Step 5: For short answers, repeat the auxiliary, not the whole question."
+    ],
+    builderCards: [
+      {
+        title: "Do / Does / Did",
+        yesNoPattern: "Do/Does/Did + subject + base verb + complement?",
+        whPattern: "WH word + do/does/did + subject + base verb + complement?",
+        use: "Use this system for Present Simple and Past Simple when there is no other auxiliary.",
+        examples: [
+          "Do you work here?",
+          "Does she like coffee?",
+          "Why did they leave early?"
+        ],
+        shortAnswers: ["Yes, I do. / No, I don't.", "Yes, she does. / No, she doesn't."],
+        notes: [
+          "After does and did, use the base verb: work, go, like.",
+          "Do not keep -s or past form on the main verb."
+        ]
+      },
+      {
+        title: "Be",
+        yesNoPattern: "Am/Is/Are/Was/Were + subject + complement?",
+        whPattern: "WH word + am/is/are/was/were + subject + complement?",
+        use: "Use be when be is the main verb or when the tense already uses be.",
+        examples: [
+          "Are you ready?",
+          "Where is she?",
+          "Why were they waiting?"
+        ],
+        shortAnswers: ["Yes, I am. / No, I'm not.", "Yes, they were. / No, they weren't."],
+        notes: [
+          "Do not add do/does/did with be in normal question building.",
+          "Move be before the subject."
+        ]
+      },
+      {
+        title: "Have",
+        yesNoPattern: "Have/Has/Had + subject + past participle + complement?",
+        whPattern: "WH word + have/has/had + subject + past participle + complement?",
+        use: "Use have when the tense is perfect.",
+        examples: [
+          "Have you finished?",
+          "Has he called yet?",
+          "What had they prepared before the meeting?"
+        ],
+        shortAnswers: ["Yes, I have. / No, I haven't.", "Yes, he has. / No, he hasn't."],
+        notes: [
+          "After have/has/had, use the past participle.",
+          "Do not replace have with do in perfect questions."
+        ]
+      },
+      {
+        title: "Modals",
+        yesNoPattern: "Can/Could/Should/Would/May/Might/Must + subject + base verb?",
+        whPattern: "WH word + modal + subject + base verb?",
+        use: "Use the modal itself as the helper for ability, permission, advice, requests, possibility, and hypotheticals.",
+        examples: [
+          "Can you help me?",
+          "Why should we wait?",
+          "What would you choose?"
+        ],
+        shortAnswers: ["Yes, I can. / No, I can't.", "Yes, we should. / No, we shouldn't."],
+        notes: [
+          "After a modal, use the base verb.",
+          "Do not add to after the modal in normal question building."
+        ]
+      }
+    ],
+    shortAnswerRules: [
+      "Repeat the auxiliary in the answer: Do you work here? → Yes, I do.",
+      "With be, answer with be: Is she ready? → Yes, she is.",
+      "With have, answer with have: Have they finished? → No, they haven't.",
+      "With modals, answer with the same modal: Can you stay? → No, I can't."
+    ],
+    commonMistakes: [
+      {
+        wrong: "What you need?",
+        correct: "What do you need?",
+        reason: "In Present Simple WH questions, add do when there is no other auxiliary."
+      },
+      {
+        wrong: "Does he works here?",
+        correct: "Does he work here?",
+        reason: "After does, the main verb returns to the base form."
+      },
+      {
+        wrong: "Where she is?",
+        correct: "Where is she?",
+        reason: "With be, move the be verb before the subject."
+      },
+      {
+        wrong: "Can you to help me?",
+        correct: "Can you help me?",
+        reason: "After a modal, use the base verb without to."
+      },
+      {
+        wrong: "Has she finish the task?",
+        correct: "Has she finished the task?",
+        reason: "After have/has, use the past participle."
+      }
+    ],
+    quickMemory: [
+      "Choose the helper first, not the WH word first.",
+      "Do/does/did + base verb.",
+      "Be moves before the subject by itself.",
+      "Have + past participle.",
+      "Modal + base verb.",
+      "Short answers repeat the auxiliary."
+    ],
+    relatedTopicLinks: [
+      { title: "WH Questions", path: "/core-grammar/wh-questions" },
+      { title: "Embedded WH Clauses", path: "/core-grammar/embedded-wh-clauses" },
+      { title: "English Auxiliaries", path: "/core-grammar/english-auxiliaries" },
+      { title: "Polite Requests", path: "/modal-verbs/polite-requests" }
+    ]
   },
   {
     contentType: "wh-questions",

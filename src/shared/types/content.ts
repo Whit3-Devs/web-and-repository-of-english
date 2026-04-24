@@ -47,6 +47,25 @@ export type VerbTenseReferenceGroup = {
   tables: VerbTenseReferenceTable[];
 };
 
+export type VerbTenseDecisionMapContrast = {
+  label: string;
+  useInsteadOf: string;
+  reason: string;
+};
+
+export type VerbTenseDecisionMapEntry = {
+  id: string;
+  title: string;
+  primaryTenseSlug: string;
+  summary: string;
+  decisionQuestion: string;
+  useWhen: string[];
+  timelineCue: string;
+  keywords: string[];
+  categories: Array<VerbTense["category"]>;
+  contrasts: VerbTenseDecisionMapContrast[];
+};
+
 export type VerbTenseFullExplanationFamily = "present" | "past" | "future";
 
 export type VerbTenseFullExplanationComparison = {
@@ -111,6 +130,20 @@ export type IrregularVerb = {
   hasFullExplanation: boolean;
   frequency: IrregularVerbFrequency;
   category: string;
+};
+
+export type IrregularVerbPatternFamily = "aaa" | "abb" | "aba" | "abc" | "mixed";
+
+export type IrregularVerbPatternDefinition = {
+  key: IrregularVerbPatternFamily;
+  code: "AAA" | "ABB" | "ABA" | "ABC" | "MIXED";
+  title: string;
+  memoryLabel: string;
+  explanation: string;
+};
+
+export type IrregularVerbPatternGroup = IrregularVerbPatternDefinition & {
+  verbs: IrregularVerb[];
 };
 
 export type GrammarTopicSection = "modal-verbs" | "core-grammar";
@@ -245,6 +278,21 @@ export type GrammarTopicQuestionSideBySideExample = {
   wh: string;
 };
 
+export type GrammarTopicQuestionBuilderCard = {
+  title: string;
+  yesNoPattern: string;
+  whPattern: string;
+  use: string;
+  examples: string[];
+  shortAnswers?: string[];
+  notes?: string[];
+};
+
+export type GrammarTopicRelatedTopicLink = {
+  title: string;
+  path: string;
+};
+
 export type GrammarTopicWhQuestionsFullExplanation = {
   contentType: "wh-questions";
   slug: string;
@@ -262,6 +310,46 @@ export type GrammarTopicWhQuestionsFullExplanation = {
   quickMemory: string[];
   practiceItems: GrammarTopicFullExplanationPracticeItem[];
   relatedTopics: string[];
+};
+
+export type GrammarTopicQuestionBuilderFullExplanation = {
+  contentType: "question-builder";
+  slug: string;
+  title: string;
+  section: GrammarTopicSection;
+  overview: string;
+  whatItDoes: string[];
+  universalFormula: string[];
+  decisionSteps: string[];
+  builderCards: GrammarTopicQuestionBuilderCard[];
+  shortAnswerRules: string[];
+  commonMistakes: GrammarTopicFullExplanationMistake[];
+  quickMemory: string[];
+  relatedTopicLinks: GrammarTopicRelatedTopicLink[];
+};
+
+export type GrammarTopicConditionalCard = {
+  title: string;
+  conditionalType: string;
+  mainUse: string;
+  pattern: string;
+  meaning: string;
+  examples: string[];
+  contrast: string;
+};
+
+export type GrammarTopicConditionalsOverviewFullExplanation = {
+  contentType: "conditionals-overview";
+  slug: string;
+  title: string;
+  section: GrammarTopicSection;
+  overview: string;
+  whatItDoes: string[];
+  decisionRules: string[];
+  conditionalCards: GrammarTopicConditionalCard[];
+  commonMistakes: GrammarTopicFullExplanationMistake[];
+  quickMemory: string[];
+  relatedTopicLinks: GrammarTopicRelatedTopicLink[];
 };
 
 export type GrammarTopicEmbeddedDirectComparison = {
@@ -497,6 +585,8 @@ export type GrammarTopicModalTopicFullExplanation = {
 
 export type GrammarTopicFullExplanation =
   | GrammarTopicPrepositionsFullExplanation
+  | GrammarTopicQuestionBuilderFullExplanation
+  | GrammarTopicConditionalsOverviewFullExplanation
   | GrammarTopicWhQuestionsFullExplanation
   | GrammarTopicEmbeddedWhClausesFullExplanation
   | GrammarTopicEnglishAuxiliariesFullExplanation

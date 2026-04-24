@@ -3,9 +3,12 @@ import { findGrammarTopicFullExplanationBySlug } from "../data/grammarTopicFullE
 import { findGrammarTopic } from "../data/grammarTopics";
 import type {
   GrammarTopicAuxiliaryContractionTable,
+  GrammarTopicConditionalsOverviewFullExplanation,
   GrammarTopicEnglishAuxiliariesFullExplanation,
   GrammarTopicEmbeddedWhClausesFullExplanation,
   GrammarTopicFullExplanation,
+  GrammarTopicFullExplanationPracticeItem,
+  GrammarTopicQuestionBuilderFullExplanation,
   GrammarTopicModalTopicFullExplanation,
   GrammarTopicPrepositionsFullExplanation,
   GrammarTopicPronounsPossessivesFullExplanation,
@@ -106,6 +109,10 @@ export function GrammarTopicDetailPage({
 
         {fullExplanation.contentType === "prepositions" ? (
           <PrepositionsContent explanation={fullExplanation} />
+        ) : fullExplanation.contentType === "conditionals-overview" ? (
+          <ConditionalsOverviewContent explanation={fullExplanation} />
+        ) : fullExplanation.contentType === "question-builder" ? (
+          <QuestionBuilderContent explanation={fullExplanation} />
         ) : fullExplanation.contentType === "modal-topic" ? (
           <ModalTopicContent explanation={fullExplanation} />
         ) : fullExplanation.contentType === "wh-questions" ? (
@@ -381,6 +388,190 @@ function ModalTopicContent({
       <div className="mt-8 grid gap-6 md:grid-cols-2">
         <ContentSection title="Quick memory" items={explanation.quickMemory} variant="amber" />
         <ContentSection title="Related topics" items={explanation.relatedTopics} />
+      </div>
+    </>
+  );
+}
+
+function QuestionBuilderContent({
+  explanation
+}: {
+  explanation: GrammarTopicQuestionBuilderFullExplanation;
+}) {
+  return (
+    <>
+      <div className="mt-8 grid gap-6 md:grid-cols-2">
+        <ContentSection
+          title="What this cheat sheet helps you build"
+          items={explanation.whatItDoes}
+        />
+        <ContentSection
+          title="Universal question formula"
+          items={explanation.universalFormula}
+          variant="highlight"
+        />
+      </div>
+
+      <div className="mt-8">
+        <ContentSection
+          title="Fast build steps"
+          items={explanation.decisionSteps}
+          variant="amber"
+        />
+      </div>
+
+      <div className="mt-8 rounded-3xl bg-blue-50 p-6">
+        <h3 className="text-xl font-black text-blue-950">Builder by system</h3>
+        <div className="mt-4 grid gap-4 md:grid-cols-2">
+          {explanation.builderCards.map((card) => (
+            <div key={card.title} className="rounded-2xl bg-white p-5 shadow-sm">
+              <h4 className="text-xl font-black text-slate-950">{card.title}</h4>
+              <div className="mt-4 grid gap-3">
+                <StructureSnippet
+                  title="Yes/No pattern"
+                  structure={card.yesNoPattern}
+                  variant="question"
+                />
+                <StructureSnippet
+                  title="WH pattern"
+                  structure={card.whPattern}
+                  variant="question"
+                />
+              </div>
+              <p className="mt-4 text-slate-700">{card.use}</p>
+              <div className="mt-4 rounded-2xl bg-slate-50 p-4">
+                <p className="text-sm font-semibold uppercase tracking-wide text-slate-500">
+                  Examples
+                </p>
+                <ul className="mt-2 space-y-2 text-sm text-slate-700">
+                  {card.examples.map((example) => (
+                    <li key={example}>• {example}</li>
+                  ))}
+                </ul>
+              </div>
+              {card.shortAnswers?.length ? (
+                <div className="mt-4 rounded-2xl bg-emerald-50 p-4">
+                  <p className="text-sm font-semibold uppercase tracking-wide text-emerald-700">
+                    Short answers
+                  </p>
+                  <ul className="mt-2 space-y-2 text-sm text-emerald-950">
+                    {card.shortAnswers.map((answer) => (
+                      <li key={answer}>• {answer}</li>
+                    ))}
+                  </ul>
+                </div>
+              ) : null}
+              {card.notes?.length ? (
+                <div className="mt-4 rounded-2xl bg-violet-50 p-4">
+                  <p className="text-sm font-semibold uppercase tracking-wide text-violet-700">
+                    Notes
+                  </p>
+                  <ul className="mt-2 space-y-2 text-sm text-violet-950">
+                    {card.notes.map((note) => (
+                      <li key={note}>• {note}</li>
+                    ))}
+                  </ul>
+                </div>
+              ) : null}
+            </div>
+          ))}
+        </div>
+      </div>
+
+      <div className="mt-8">
+        <ContentSection
+          title="Short answers"
+          items={explanation.shortAnswerRules}
+          variant="amber"
+        />
+      </div>
+
+      <MistakesSection mistakes={explanation.commonMistakes} />
+
+      <div className="mt-8 grid gap-6 md:grid-cols-2">
+        <ContentSection title="Quick memory" items={explanation.quickMemory} variant="amber" />
+        <RelatedTopicLinksSection links={explanation.relatedTopicLinks} />
+      </div>
+    </>
+  );
+}
+
+function ConditionalsOverviewContent({
+  explanation
+}: {
+  explanation: GrammarTopicConditionalsOverviewFullExplanation;
+}) {
+  return (
+    <>
+      <div className="mt-8 grid gap-6 md:grid-cols-2">
+        <ContentSection
+          title="What this cheat sheet helps you choose"
+          items={explanation.whatItDoes}
+        />
+        <ContentSection
+          title="Fast decision rules"
+          items={explanation.decisionRules}
+          variant="highlight"
+        />
+      </div>
+
+      <div className="mt-8 rounded-3xl bg-blue-50 p-6">
+        <h3 className="text-xl font-black text-blue-950">Conditionals map</h3>
+        <div className="mt-4 grid gap-4 md:grid-cols-2">
+          {explanation.conditionalCards.map((card) => (
+            <div key={card.title} className="rounded-2xl bg-white p-5 shadow-sm">
+              <div className="flex flex-wrap items-center gap-3">
+                <h4 className="text-xl font-black text-slate-950">{card.title}</h4>
+                <span className="rounded-full bg-blue-100 px-3 py-1 text-xs font-bold text-blue-800">
+                  {card.conditionalType}
+                </span>
+              </div>
+
+              <p className="mt-4 text-sm font-semibold uppercase tracking-wide text-slate-500">
+                Main use
+              </p>
+              <p className="mt-1 text-slate-900">{card.mainUse}</p>
+
+              <div className="mt-4">
+                <StructureSnippet
+                  title="Core pattern"
+                  structure={card.pattern}
+                  variant="question"
+                />
+              </div>
+
+              <p className="mt-4 text-sm font-semibold uppercase tracking-wide text-slate-500">
+                Meaning
+              </p>
+              <p className="mt-1 text-slate-700">{card.meaning}</p>
+
+              <div className="mt-4 rounded-2xl bg-slate-50 p-4">
+                <p className="text-sm font-semibold uppercase tracking-wide text-slate-500">
+                  Examples
+                </p>
+                <ul className="mt-2 space-y-2 text-sm text-slate-700">
+                  {card.examples.map((example) => (
+                    <li key={example}>• {example}</li>
+                  ))}
+                </ul>
+              </div>
+
+              <div className="mt-4 rounded-2xl bg-amber-50 p-4">
+                <p className="text-sm font-semibold uppercase tracking-wide text-amber-700">
+                  Quick contrast
+                </p>
+                <p className="mt-2 text-sm text-amber-950">{card.contrast}</p>
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+
+      <MistakesSection mistakes={explanation.commonMistakes} />
+
+      <div className="mt-8 grid gap-6 md:grid-cols-2">
+        <ContentSection title="Quick memory" items={explanation.quickMemory} variant="amber" />
+        <RelatedTopicLinksSection links={explanation.relatedTopicLinks} />
       </div>
     </>
   );
@@ -1192,7 +1383,7 @@ function StructureCard({ table }: { table: GrammarTopicQuestionStructureTable })
 function PracticeSection({
   items
 }: {
-  items: GrammarTopicFullExplanation["practiceItems"];
+  items: GrammarTopicFullExplanationPracticeItem[] | undefined;
 }) {
   if (!items?.length) {
     return null;
@@ -1368,6 +1559,29 @@ function ListBlock({ title, items }: { title: string; items: string[] }) {
           <li key={item}>• {item}</li>
         ))}
       </ul>
+    </div>
+  );
+}
+
+function RelatedTopicLinksSection({
+  links
+}: {
+  links: GrammarTopicQuestionBuilderFullExplanation["relatedTopicLinks"];
+}) {
+  return (
+    <div className="rounded-3xl bg-slate-50 p-6">
+      <h3 className="text-xl font-black text-slate-950">Related topics</h3>
+      <div className="mt-4 flex flex-wrap gap-3">
+        {links.map((link) => (
+          <Link
+            key={link.path}
+            to={link.path}
+            className="rounded-full border border-slate-200 bg-white px-4 py-2 text-sm font-medium text-slate-700 transition hover:border-blue-200 hover:bg-blue-50 hover:text-blue-700"
+          >
+            {link.title}
+          </Link>
+        ))}
+      </div>
     </div>
   );
 }

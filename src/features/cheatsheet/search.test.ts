@@ -52,6 +52,59 @@ const irregularVerbs: IrregularVerb[] = [
 
 const grammarTopics: GrammarTopic[] = [
   {
+    id: "modal-verbs-overview",
+    slug: "modal-verbs-overview",
+    title: "Modal Verbs Overview",
+    section: "modal-verbs",
+    summary: "Choose the right modal by intention, tone, and strength.",
+    keyIdeas: ["Use may, might, could, should, must, and would by communicative goal."],
+    examples: ["Could you help me?", "It might rain later."],
+    commonMistakes: ["He musts go. → He must go."],
+    relatedTopics: ["Polite Requests", "Advice and Obligation"],
+    fullExplanationPath: "/modal-verbs/modal-verbs-overview",
+    hasFullExplanation: true
+  },
+  {
+    id: "conditionals-overview",
+    slug: "conditionals-overview",
+    title: "Conditionals Overview",
+    section: "core-grammar",
+    summary: "Choose the right if-clause for facts, real future, unreal present, unreal past, and mixed results.",
+    keyIdeas: [
+      "Zero conditional talks about facts.",
+      "Third and mixed conditionals help with unreal past meanings."
+    ],
+    examples: [
+      "If you heat water, it boils.",
+      "If I had studied, I would have passed."
+    ],
+    commonMistakes: [
+      "If it will rain, we will stay home. → If it rains, we will stay home."
+    ],
+    relatedTopics: ["Would and Hypotheticals", "Key Structure Differences"],
+    fullExplanationPath: "/core-grammar/conditionals-overview",
+    hasFullExplanation: true
+  },
+  {
+    id: "question-builder-cheat-sheet",
+    slug: "question-builder-cheat-sheet",
+    title: "Question Builder Cheat Sheet",
+    section: "core-grammar",
+    summary: "Build English questions with the right auxiliary and word order.",
+    keyIdeas: [
+      "Use do/does/did when there is no other auxiliary.",
+      "Short answers repeat the auxiliary."
+    ],
+    examples: ["What do you need?", "Does he work here?", "Can you help me?"],
+    commonMistakes: [
+      "What you need? → What do you need?",
+      "Does he works here? → Does he work here?"
+    ],
+    relatedTopics: ["WH Questions", "English Auxiliaries"],
+    fullExplanationPath: "/core-grammar/question-builder-cheat-sheet",
+    hasFullExplanation: true
+  },
+  {
     id: "polite-requests",
     slug: "polite-requests",
     title: "Polite Requests",
@@ -97,15 +150,24 @@ describe("cheatsheet search", () => {
   });
 
   it("matches grammar topics by title, summary, examples and key ideas", () => {
-    expect(matchesGrammarTopic(grammarTopics[0], "polite")).toBe(true);
-    expect(matchesGrammarTopic(grammarTopics[0], "softer")).toBe(true);
-    expect(matchesGrammarTopic(grammarTopics[0], "could you help")).toBe(true);
+    expect(matchesGrammarTopic(grammarTopics[0], "overview")).toBe(true);
+    expect(matchesGrammarTopic(grammarTopics[0], "strength")).toBe(true);
+    expect(matchesGrammarTopic(grammarTopics[0], "might rain")).toBe(true);
+    expect(matchesGrammarTopic(grammarTopics[1], "conditional")).toBe(true);
+    expect(matchesGrammarTopic(grammarTopics[1], "if i had studied")).toBe(true);
+    expect(matchesGrammarTopic(grammarTopics[1], "mixed")).toBe(true);
+    expect(matchesGrammarTopic(grammarTopics[2], "builder")).toBe(true);
+    expect(matchesGrammarTopic(grammarTopics[2], "does he work")).toBe(true);
+    expect(matchesGrammarTopic(grammarTopics[2], "auxiliary")).toBe(true);
+    expect(matchesGrammarTopic(grammarTopics[3], "polite")).toBe(true);
+    expect(matchesGrammarTopic(grammarTopics[3], "softer")).toBe(true);
+    expect(matchesGrammarTopic(grammarTopics[3], "could you help")).toBe(true);
   });
 
   it("filters grammar topics by section and full explanation availability", () => {
-    expect(filterGrammarTopics(grammarTopics, { section: "modal-verbs" })).toHaveLength(1);
-    expect(filterGrammarTopics(grammarTopics, { section: "core-grammar" })).toHaveLength(0);
+    expect(filterGrammarTopics(grammarTopics, { section: "modal-verbs" })).toHaveLength(2);
+    expect(filterGrammarTopics(grammarTopics, { section: "core-grammar" })).toHaveLength(2);
     expect(filterGrammarTopics(grammarTopics, { hasFullExplanation: false })).toHaveLength(1);
-    expect(filterGrammarTopics(grammarTopics, { hasFullExplanation: true })).toHaveLength(0);
+    expect(filterGrammarTopics(grammarTopics, { hasFullExplanation: true })).toHaveLength(3);
   });
 });
