@@ -3355,6 +3355,785 @@ export const grammarTopicFullExplanations: GrammarTopicFullExplanation[] = [
       "English Auxiliaries",
       "WH Questions"
     ]
+  },
+  {
+    contentType: "articles-determiners",
+    slug: "articles-and-determiners",
+    title: "Articles and Determiners",
+    section: "core-grammar",
+    overview:
+      "Use this page to choose the right word before a noun: a, an, the, zero article, or a determiner such as some, any, much, many, few, little, this, or those.",
+    whatItDoes: [
+      "Help you decide if a noun needs a, an, the, or no article.",
+      "Separate singular countable nouns from plural and uncountable nouns.",
+      "Choose practical determiners for quantity, distance, and sentence type.",
+      "Fix common Spanish-speaker mistakes caused by translating articles too directly."
+    ],
+    articleDecisionRules: [
+      "If the noun is singular and countable, it usually needs a determiner: a, an, the, this, my, one, or another noun marker.",
+      "Use a before a consonant sound and an before a vowel sound when the thing is one item and not specific yet.",
+      "Use the when the listener knows exactly which person, thing, place, or idea you mean.",
+      "Use zero article when you talk about plural nouns in general or uncountable nouns in general.",
+      "Do not use a or an with uncountable nouns like advice, information, homework, money, or furniture."
+    ],
+    articleReferenceTable: [
+      {
+        determiner: "a",
+        use: "One nonspecific singular countable noun before a consonant sound.",
+        pattern: "a + singular countable noun",
+        example: "I need a notebook."
+      },
+      {
+        determiner: "an",
+        use: "One nonspecific singular countable noun before a vowel sound.",
+        pattern: "an + singular countable noun",
+        example: "She has an idea."
+      },
+      {
+        determiner: "the",
+        use: "A specific noun that is already known, unique, or clear from context.",
+        pattern: "the + noun",
+        example: "The notebook on my desk is blue."
+      },
+      {
+        determiner: "zero article",
+        use: "General plural nouns or general uncountable nouns.",
+        pattern: "plural noun / uncountable noun",
+        example: "Developers need practice. / Life is hard sometimes."
+      }
+    ],
+    countableUncountableGuidance: [
+      "Countable nouns can be singular or plural: a question, two questions, many questions.",
+      "Uncountable nouns do not use a or an directly: advice, information, homework, money, furniture.",
+      "Use a piece of, a bit of, or some when you need to quantify an uncountable noun.",
+      "Use many with plural countable nouns and much with uncountable nouns.",
+      "Use a lot of with both plural countable nouns and uncountable nouns in everyday English."
+    ],
+    determinerCards: [
+      {
+        title: "This / That / These / Those",
+        mainUse: "Point to nouns by distance and number.",
+        rule:
+          "Use this and that with singular nouns. Use these and those with plural nouns.",
+        examples: [
+          "This problem is important.",
+          "That file is outdated.",
+          "These examples are useful.",
+          "Those tests are failing."
+        ],
+        commonTrap: "Do not say this examples. Use these examples."
+      },
+      {
+        title: "Some / Any / No",
+        mainUse: "Talk about indefinite quantity in statements, questions, and negatives.",
+        rule:
+          "Use some in affirmative statements and offers. Use any in negatives and general questions. Use no to make the noun phrase negative.",
+        examples: [
+          "I have some ideas.",
+          "Do you have any questions?",
+          "I don't have any questions.",
+          "There is no problem."
+        ],
+        commonTrap: "Do not say I don't have some questions. Use any after don't."
+      },
+      {
+        title: "Much / Many / A lot of",
+        mainUse: "Choose quantity words according to countability.",
+        rule:
+          "Use many with plural countable nouns, much with uncountable nouns, and a lot of with both.",
+        examples: [
+          "There are many people here.",
+          "I don't have much time.",
+          "We have a lot of examples.",
+          "She has a lot of experience."
+        ],
+        commonTrap: "Do not say much people. People is plural countable, so use many people."
+      },
+      {
+        title: "Few / A few / Little / A little",
+        mainUse: "Show small quantity with positive or negative feeling.",
+        rule:
+          "Use few and a few with plural countable nouns. Use little and a little with uncountable nouns.",
+        examples: [
+          "I have a few questions.",
+          "Few people understood the rule.",
+          "We have a little time.",
+          "There is little information available."
+        ],
+        commonTrap:
+          "A few and a little sound more positive than few and little, because they mean some is available."
+      }
+    ],
+    commonMistakes: [
+      {
+        wrong: "I need an advice.",
+        correct: "I need advice.",
+        reason:
+          "Advice is uncountable in English, so it does not take a or an directly."
+      },
+      {
+        wrong: "The life is hard.",
+        correct: "Life is hard.",
+        reason:
+          "Use zero article when you talk about an abstract idea in general."
+      },
+      {
+        wrong: "She has car.",
+        correct: "She has a car.",
+        reason:
+          "Car is a singular countable noun, so it needs a determiner."
+      },
+      {
+        wrong: "I don't have some questions.",
+        correct: "I don't have any questions.",
+        reason:
+          "Use any in most negative sentences."
+      },
+      {
+        wrong: "There are much people.",
+        correct: "There are many people.",
+        reason:
+          "People is plural and countable, so many is the correct quantity word."
+      }
+    ],
+    quickMemory: [
+      "Singular countable noun? Do not leave it alone: use a, an, the, this, my, one, or another determiner.",
+      "A / an = one nonspecific item.",
+      "The = specific, known, unique, or clear from context.",
+      "Zero article = general plural nouns and general uncountable nouns.",
+      "Some / any depends on sentence type: some for affirmative and offers, any for negatives and general questions.",
+      "Many = plural countable; much = uncountable; a lot of = both."
+    ],
+    practiceItems: [
+      {
+        prompt: "Choose the correct sentence: I need an advice / I need advice.",
+        answer: "I need advice.",
+        focus: "uncountable noun without a/an"
+      },
+      {
+        prompt: "Complete the sentence: She has ___ idea.",
+        answer: "an",
+        focus: "a/an before vowel sound"
+      },
+      {
+        prompt: "Complete the question: Do you have ___ questions?",
+        answer: "any",
+        focus: "any in general questions"
+      },
+      {
+        prompt: "Correct the sentence: There are much people in the room.",
+        answer: "There are many people in the room.",
+        focus: "many with plural countable nouns"
+      },
+      {
+        prompt: "Choose the general statement: The life is hard / Life is hard.",
+        answer: "Life is hard.",
+        focus: "zero article for general abstract nouns"
+      }
+    ],
+    relatedTopics: [
+      "Key Structure Differences",
+      "Common Prepositions",
+      "Pronouns, Possessives, Object Forms, and Reflexives",
+      "Question Builder Cheat Sheet"
+    ]
+  },
+  {
+    contentType: "gerunds-infinitives",
+    slug: "gerunds-and-infinitives",
+    title: "Gerunds and Infinitives",
+    section: "core-grammar",
+    overview:
+      "Use this page to decide when the next verb should be verb + -ing or to + base verb, and when the choice changes the meaning of the sentence.",
+    whatItDoes: [
+      "Help you choose between gerund and infinitive patterns after common verbs.",
+      "Show practical groups instead of forcing you to memorize a giant list.",
+      "Explain verbs that accept both forms with similar meaning.",
+      "Warn you about verbs where the form changes the meaning."
+    ],
+    decisionRules: [
+      "If the first verb is enjoy, avoid, finish, suggest, keep, or mind, use verb + -ing.",
+      "If the first verb is want, need, decide, plan, hope, or learn, use to + base verb.",
+      "With like, love, hate, prefer, start, and begin, both forms are often possible with similar meaning.",
+      "With stop, remember, try, and forget, changing the form can change the meaning.",
+      "Do not translate directly from Spanish; learn the pattern that the first English verb controls."
+    ],
+    patternCards: [
+      {
+        title: "Verb + -ing",
+        pattern: "subject + verb + verb-ing",
+        use: "Use this after verbs that treat the second action like an activity or experience.",
+        commonVerbs: ["enjoy", "avoid", "finish", "suggest", "keep", "mind"],
+        examples: [
+          "I enjoy learning English.",
+          "She avoided answering the question.",
+          "We finished reviewing the lesson.",
+          "He suggested practicing every day."
+        ],
+        commonTrap: "Do not say enjoy to learn or suggest to review."
+      },
+      {
+        title: "Verb + to + base verb",
+        pattern: "subject + verb + to + base verb",
+        use: "Use this after verbs that point toward a goal, plan, decision, need, or intention.",
+        commonVerbs: ["want", "need", "decide", "plan", "hope", "learn"],
+        examples: [
+          "I want to improve my speaking.",
+          "We need to review this rule.",
+          "She decided to study tonight.",
+          "They hope to travel next year."
+        ],
+        commonTrap: "Do not say want improving or need reviewing when the meaning is intention or necessity."
+      },
+      {
+        title: "Both forms with similar meaning",
+        pattern: "verb + -ing / verb + to + base verb",
+        use: "Some preference and start verbs accept both forms without a big practical difference.",
+        commonVerbs: ["like", "love", "hate", "prefer", "start", "begin"],
+        examples: [
+          "I like reading.",
+          "I like to read before bed.",
+          "She started working at nine.",
+          "She started to work at nine."
+        ],
+        commonTrap: "Similar does not mean always identical, but both forms are usually safe for a first practical pass."
+      }
+    ],
+    meaningChangeCards: [
+      {
+        title: "Stop",
+        firstPattern: "stop + verb-ing",
+        firstMeaning: "Quit or end the activity.",
+        firstExample: "I stopped smoking.",
+        secondPattern: "stop + to + base verb",
+        secondMeaning: "Pause one activity in order to do another.",
+        secondExample: "I stopped to drink coffee."
+      },
+      {
+        title: "Remember",
+        firstPattern: "remember + verb-ing",
+        firstMeaning: "Have a memory of a past action.",
+        firstExample: "I remember meeting her.",
+        secondPattern: "remember + to + base verb",
+        secondMeaning: "Not forget to do a future or necessary action.",
+        secondExample: "Remember to send the email."
+      },
+      {
+        title: "Try",
+        firstPattern: "try + verb-ing",
+        firstMeaning: "Experiment with a method to see if it works.",
+        firstExample: "Try restarting the app.",
+        secondPattern: "try + to + base verb",
+        secondMeaning: "Make an effort to do something difficult.",
+        secondExample: "I tried to fix the bug."
+      },
+      {
+        title: "Forget",
+        firstPattern: "forget + verb-ing",
+        firstMeaning: "Not remember a past action.",
+        firstExample: "I will never forget visiting that city.",
+        secondPattern: "forget + to + base verb",
+        secondMeaning: "Fail to do a necessary action.",
+        secondExample: "I forgot to save the file."
+      }
+    ],
+    commonMistakes: [
+      {
+        wrong: "I enjoy to learn English.",
+        correct: "I enjoy learning English.",
+        reason: "Enjoy is followed by verb + -ing."
+      },
+      {
+        wrong: "I want improving my English.",
+        correct: "I want to improve my English.",
+        reason: "Want is followed by to + base verb."
+      },
+      {
+        wrong: "She suggested to review the lesson.",
+        correct: "She suggested reviewing the lesson.",
+        reason: "Suggest is followed by verb + -ing when another verb follows directly."
+      },
+      {
+        wrong: "I stopped to smoke. / I stopped smoking.",
+        correct: "These forms are both possible, but they mean different things.",
+        reason:
+          "Stopped smoking means quit smoking. Stopped to smoke means paused another activity in order to smoke."
+      }
+    ],
+    quickMemory: [
+      "Enjoy / avoid / finish / suggest / keep / mind + verb-ing.",
+      "Want / need / decide / plan / hope / learn + to + base verb.",
+      "Like / love / hate / prefer / start / begin can usually take both forms.",
+      "Stop, remember, try, and forget are dangerous because the form can change the meaning.",
+      "The first verb controls the second verb pattern."
+    ],
+    practiceItems: [
+      {
+        prompt: "Correct the sentence: I enjoy to learn English.",
+        answer: "I enjoy learning English.",
+        focus: "enjoy + verb-ing"
+      },
+      {
+        prompt: "Complete the sentence: I want ___ my speaking.",
+        answer: "to improve",
+        focus: "want + to + base verb"
+      },
+      {
+        prompt: "Choose the correct form: She suggested review / reviewing the lesson.",
+        answer: "reviewing",
+        focus: "suggest + verb-ing"
+      },
+      {
+        prompt: "Explain the difference: I stopped working / I stopped to work.",
+        answer:
+          "I stopped working = I ended the work. I stopped to work = I paused another activity in order to work.",
+        focus: "meaning change with stop"
+      },
+      {
+        prompt: "Complete the sentence: Remember ___ the email before lunch.",
+        answer: "to send",
+        focus: "remember + to + base verb for a necessary action"
+      }
+    ],
+    relatedTopics: [
+      "Key Structure Differences",
+      "Common Prepositions",
+      "Verb Tenses",
+      "Question Builder Cheat Sheet"
+    ]
+  },
+  {
+    contentType: "passive-voice",
+    slug: "passive-voice",
+    title: "Passive Voice",
+    section: "core-grammar",
+    overview:
+      "Use passive voice when the action, result, process, or affected thing matters more than the person who did it.",
+    whatItDoes: [
+      "Help you describe technical processes, bugs, updates, and results clearly.",
+      "Move attention from the actor to the thing affected by the action.",
+      "Sound natural in documentation when the actor is unknown, obvious, or not important.",
+      "Build passive forms with be, past participles, and modal verbs."
+    ],
+    decisionRules: [
+      "Use active voice when the actor is important: The developer fixed the bug.",
+      "Use passive voice when the result is more important: The bug was fixed.",
+      "Use passive voice when the actor is unknown or obvious: The file was deleted.",
+      "Use by only when the actor adds useful information.",
+      "Avoid passive voice when it hides responsibility that the reader needs."
+    ],
+    coreStructure: [
+      "Subject + be + past participle",
+      "The subject receives the action; it does not perform the action.",
+      "Change be to match the tense: is, are, was, were, has been, have been, will be.",
+      "Keep the main verb as a past participle: updated, fixed, generated, reviewed, changed."
+    ],
+    activeVsPassive: [
+      {
+        active: "The developer fixed the bug.",
+        passive: "The bug was fixed by the developer.",
+        whyPassiveWorks:
+          "Use passive if the important information is the bug status, not the developer."
+      },
+      {
+        active: "The system generates the report automatically.",
+        passive: "The report is generated automatically.",
+        whyPassiveWorks:
+          "Use passive in process descriptions where the output matters more than the system as actor."
+      },
+      {
+        active: "Someone updated the file.",
+        passive: "The file was updated.",
+        whyPassiveWorks:
+          "Use passive when the actor is unknown or not useful for the sentence."
+      }
+    ],
+    passivePatterns: [
+      {
+        title: "Present Simple Passive",
+        structure: "am / is / are + past participle",
+        use: "Use it for regular processes, documentation, and current general behavior.",
+        examples: [
+          "The report is generated automatically.",
+          "These files are stored locally.",
+          "The form is validated before submission."
+        ]
+      },
+      {
+        title: "Past Simple Passive",
+        structure: "was / were + past participle",
+        use: "Use it for completed actions where the result or affected thing matters.",
+        examples: [
+          "The file was updated.",
+          "The bug was fixed yesterday.",
+          "The tests were reviewed after the change."
+        ]
+      },
+      {
+        title: "Present Perfect Passive",
+        structure: "has / have been + past participle",
+        use: "Use it for completed changes connected to the present state.",
+        examples: [
+          "The issue has been resolved.",
+          "The dependencies have been installed.",
+          "The documentation has been updated."
+        ]
+      },
+      {
+        title: "Future Passive",
+        structure: "will be + past participle",
+        use: "Use it for future actions where the future result matters more than the actor.",
+        examples: [
+          "The release will be deployed tomorrow.",
+          "The page will be reviewed later.",
+          "The configuration will be changed next week."
+        ]
+      }
+    ],
+    modalPassivePatterns: [
+      {
+        title: "Can be",
+        structure: "can be + past participle",
+        use: "Use it to say something is possible or allowed.",
+        examples: [
+          "This option can be used here.",
+          "The value can be changed later."
+        ]
+      },
+      {
+        title: "Must be",
+        structure: "must be + past participle",
+        use: "Use it for strong necessity or strict requirements.",
+        examples: [
+          "The bug must be fixed before release.",
+          "All fields must be completed."
+        ]
+      },
+      {
+        title: "Should be",
+        structure: "should be + past participle",
+        use: "Use it for recommendations, reviews, and expected process steps.",
+        examples: [
+          "The pull request should be reviewed.",
+          "The explanation should be simplified."
+        ]
+      },
+      {
+        title: "Cannot be",
+        structure: "cannot be + past participle",
+        use: "Use it when something is impossible or not allowed.",
+        examples: [
+          "This setting cannot be changed.",
+          "The file cannot be deleted while the app is running."
+        ]
+      }
+    ],
+    byAgentRules: [
+      "Use by when the actor matters: The bug was fixed by the frontend team.",
+      "Skip by when the actor is unknown: The file was deleted.",
+      "Skip by when the actor is obvious: The form is validated before submission.",
+      "Skip by someone unless the sentence truly needs it; it usually adds noise.",
+      "In technical writing, passive is useful when the process or result is the main point."
+    ],
+    commonMistakes: [
+      {
+        wrong: "The bug fixed yesterday.",
+        correct: "The bug was fixed yesterday.",
+        reason: "Passive voice needs a form of be before the past participle."
+      },
+      {
+        wrong: "The file was update.",
+        correct: "The file was updated.",
+        reason: "After be, use the past participle, not the base verb."
+      },
+      {
+        wrong: "The report is generate automatically.",
+        correct: "The report is generated automatically.",
+        reason: "Present passive uses is or are plus the past participle."
+      },
+      {
+        wrong: "This can used here.",
+        correct: "This can be used here.",
+        reason: "Modal passive needs modal + be + past participle."
+      }
+    ],
+    quickMemory: [
+      "Passive voice = be + past participle.",
+      "Active focuses on who does the action.",
+      "Passive focuses on what receives the action or what result happened.",
+      "Modal passive = modal + be + past participle.",
+      "Use by only when the actor matters.",
+      "In technical English, passive is common for processes, results, bugs, and documentation."
+    ],
+    practiceItems: [
+      {
+        prompt: "Correct the sentence: The bug fixed yesterday.",
+        answer: "The bug was fixed yesterday.",
+        focus: "past simple passive"
+      },
+      {
+        prompt: "Complete the sentence: The report ___ automatically.",
+        answer: "is generated",
+        focus: "present simple passive"
+      },
+      {
+        prompt: "Make it passive: The developer updated the file.",
+        answer: "The file was updated by the developer.",
+        focus: "active to passive transformation"
+      },
+      {
+        prompt: "Complete the modal passive: This option can ___ here.",
+        answer: "be used",
+        focus: "modal + be + past participle"
+      },
+      {
+        prompt: "Choose the cleaner technical sentence: The system validates the form / The form is validated before submission.",
+        answer: "The form is validated before submission.",
+        focus: "process-focused passive"
+      }
+    ],
+    relatedTopics: [
+      "English Auxiliaries",
+      "Verb Tenses",
+      "Modal Verbs",
+      "Key Structure Differences"
+    ]
+  },
+  {
+    contentType: "reported-speech",
+    slug: "reported-speech",
+    title: "Reported Speech",
+    section: "core-grammar",
+    overview:
+      "Use reported speech to explain what someone said, asked, requested, or instructed without repeating their exact words.",
+    whatItDoes: [
+      "Help you summarize meeting comments, feedback, user requests, and team decisions.",
+      "Report statements with said, told, explained, mentioned, or promised.",
+      "Report WH and yes/no questions with statement word order.",
+      "Report requests and instructions with to + base verb or not to + base verb."
+    ],
+    decisionRules: [
+      "Use said that when you report a statement without naming the listener.",
+      "Use told + person + that when you mention who received the message.",
+      "Use asked + WH word + statement order for reported WH questions.",
+      "Use asked + if/whether + statement order for reported yes/no questions.",
+      "Use asked/told + person + to + base verb for requests and instructions.",
+      "Shift tense back when the report is separated from the original moment, but keep the tense if the information is still true or immediate."
+    ],
+    directVsReported: [
+      {
+        direct: "She said, \"I am busy.\"",
+        reported: "She said that she was busy.",
+        note: "The quote becomes a that-clause, and am changes to was."
+      },
+      {
+        direct: "He asked, \"Where does she work?\"",
+        reported: "He asked where she worked.",
+        note: "The reported question uses statement word order, not question order."
+      },
+      {
+        direct: "They asked, \"Do you need help?\"",
+        reported: "They asked if I needed help.",
+        note: "Yes/no questions use if or whether."
+      },
+      {
+        direct: "She said, \"Please review the file.\"",
+        reported: "She asked me to review the file.",
+        note: "Requests use asked + person + to + base verb."
+      }
+    ],
+    reportingVerbCards: [
+      {
+        verb: "say",
+        pattern: "say / said + that + clause",
+        use: "Use say when the listener is not the focus.",
+        examples: [
+          "She said that she was busy.",
+          "They said that the release was ready."
+        ],
+        commonTrap: "Do not say She said me. Use She told me."
+      },
+      {
+        verb: "tell",
+        pattern: "tell / told + person + that + clause",
+        use: "Use tell when you mention who received the message.",
+        examples: [
+          "She told me that she was busy.",
+          "He told the team that the bug was fixed."
+        ],
+        commonTrap: "Tell usually needs a person after it."
+      },
+      {
+        verb: "ask",
+        pattern: "ask / asked + question word or if/whether + statement order",
+        use: "Use ask to report questions.",
+        examples: [
+          "He asked where she worked.",
+          "They asked if I needed help."
+        ]
+      },
+      {
+        verb: "explain / mention / promise",
+        pattern: "verb + that + clause",
+        use: "Use these verbs to report purpose, extra information, or commitment.",
+        examples: [
+          "She explained that the file was outdated.",
+          "He mentioned that the tests were failing.",
+          "They promised that the issue would be fixed."
+        ]
+      },
+      {
+        verb: "suggest",
+        pattern: "suggested + verb-ing / suggested that + clause",
+        use: "Use suggest to report recommendations or proposed actions.",
+        examples: [
+          "She suggested reviewing the lesson.",
+          "He suggested that we update the documentation."
+        ],
+        commonTrap: "Do not say suggested to review when the second verb follows directly."
+      }
+    ],
+    statementPatterns: [
+      {
+        direct: "Direct: \"I am busy.\"",
+        reported: "Reported: She said that she was busy.",
+        note: "Use subject + said/told/explained + that + clause."
+      },
+      {
+        direct: "Direct: \"The bug is fixed.\"",
+        reported: "Reported: He told me that the bug was fixed.",
+        note: "Use told + person when the listener matters."
+      },
+      {
+        direct: "Direct: \"We will review it.\"",
+        reported: "Reported: They said that they would review it.",
+        note: "Will often shifts to would in reported speech."
+      }
+    ],
+    questionPatterns: [
+      {
+        direct: "Direct: \"Where does she work?\"",
+        reported: "Reported: He asked where she worked.",
+        note: "Reported WH questions use statement word order."
+      },
+      {
+        direct: "Direct: \"Do you need help?\"",
+        reported: "Reported: He asked if I needed help.",
+        note: "Reported yes/no questions use if or whether."
+      },
+      {
+        direct: "Direct: \"Can you reproduce the bug?\"",
+        reported: "Reported: She asked whether I could reproduce the bug.",
+        note: "Can often shifts to could."
+      }
+    ],
+    requestInstructionPatterns: [
+      {
+        direct: "Direct: \"Please review the file.\"",
+        reported: "Reported: She asked me to review the file.",
+        note: "Polite requests often become asked + person + to + base verb."
+      },
+      {
+        direct: "Direct: \"Don't change this setting.\"",
+        reported: "Reported: He told me not to change that setting.",
+        note: "Negative instructions use not to + base verb."
+      },
+      {
+        direct: "Direct: \"Send the report before lunch.\"",
+        reported: "Reported: They told me to send the report before lunch.",
+        note: "Direct instructions often become told + person + to + base verb."
+      }
+    ],
+    tenseShiftGuide: [
+      {
+        directForm: "am / is / are",
+        reportedForm: "was / were",
+        example: "\"I am busy\" → She said that she was busy."
+      },
+      {
+        directForm: "do / does questions",
+        reportedForm: "statement order with past simple",
+        example: "\"Where does she work?\" → He asked where she worked."
+      },
+      {
+        directForm: "will",
+        reportedForm: "would",
+        example: "\"We will review it\" → They said that they would review it."
+      },
+      {
+        directForm: "can",
+        reportedForm: "could",
+        example: "\"Can you help?\" → She asked if I could help."
+      },
+      {
+        directForm: "still true / immediate report",
+        reportedForm: "tense can stay the same",
+        example: "\"The app is offline\" → He said that the app is offline."
+      }
+    ],
+    commonMistakes: [
+      {
+        wrong: "She said me that she was busy.",
+        correct: "She told me that she was busy.",
+        reason: "Use told + person, not said + person."
+      },
+      {
+        wrong: "He asked where did she work.",
+        correct: "He asked where she worked.",
+        reason: "Reported questions use statement word order."
+      },
+      {
+        wrong: "They asked me review the file.",
+        correct: "They asked me to review the file.",
+        reason: "Requests use asked + person + to + base verb."
+      },
+      {
+        wrong: "He told me don't change it.",
+        correct: "He told me not to change it.",
+        reason: "Negative reported instructions use not to + base verb."
+      }
+    ],
+    quickMemory: [
+      "Say = report the message; tell = report the message to a person.",
+      "Reported statements often use said/told/explained + that + clause.",
+      "Reported questions use statement word order.",
+      "Yes/no reported questions use if or whether.",
+      "Requests and instructions use to + base verb; negative instructions use not to + base verb.",
+      "Backshift tense when the report is separated from the original moment, but do not force it when the information is still true."
+    ],
+    practiceItems: [
+      {
+        prompt: "Correct the sentence: She said me that she was busy.",
+        answer: "She told me that she was busy.",
+        focus: "say vs tell"
+      },
+      {
+        prompt: "Report the question: Where does she work?",
+        answer: "He asked where she worked.",
+        focus: "reported WH question with statement word order"
+      },
+      {
+        prompt: "Report the yes/no question: Do you need help?",
+        answer: "He asked if I needed help.",
+        focus: "asked if/whether"
+      },
+      {
+        prompt: "Report the request: Please review the file.",
+        answer: "She asked me to review the file.",
+        focus: "asked + person + to + base verb"
+      },
+      {
+        prompt: "Correct the sentence: He told me don't change it.",
+        answer: "He told me not to change it.",
+        focus: "negative reported instruction"
+      }
+    ],
+    relatedTopics: [
+      "WH Questions",
+      "Embedded WH Clauses",
+      "English Auxiliaries",
+      "Gerunds and Infinitives"
+    ]
   }
 ];
 

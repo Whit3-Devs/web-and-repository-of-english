@@ -376,6 +376,136 @@ export const grammarTopics: GrammarTopic[] = [
     hasFullExplanation: true
   },
   {
+    id: "articles-and-determiners",
+    slug: "articles-and-determiners",
+    title: "Articles and Determiners",
+    section: "core-grammar",
+    summary:
+      "Use a, an, the, zero article, and common determiners to make nouns specific, general, countable, or uncountable.",
+    keyIdeas: [
+      "Use a or an with one singular countable noun when the listener does not know the exact item yet.",
+      "Use the when the noun is specific, already known, or clear from context.",
+      "Use zero article for general plural nouns and general uncountable nouns.",
+      "Choose determiners like some, any, much, many, few, and little according to countability and sentence type."
+    ],
+    examples: [
+      "I need a notebook.",
+      "The notebook on my desk is blue.",
+      "Life is hard sometimes.",
+      "Do you have any questions?"
+    ],
+    commonMistakes: [
+      "I need an advice. → I need advice.",
+      "The life is hard. → Life is hard.",
+      "She has car. → She has a car.",
+      "There are much people. → There are many people."
+    ],
+    relatedTopics: ["Key Structure Differences", "Common Prepositions", "Pronouns, Possessives, Object Forms, and Reflexives"],
+    fullExplanationPath: "/core-grammar/articles-and-determiners",
+    hasFullExplanation: true
+  },
+  {
+    id: "gerunds-and-infinitives",
+    slug: "gerunds-and-infinitives",
+    title: "Gerunds and Infinitives",
+    section: "core-grammar",
+    summary:
+      "Use verb + -ing and verb + to + base verb patterns after common verbs, and notice when the form changes the meaning.",
+    keyIdeas: [
+      "Use verb + -ing after verbs like enjoy, avoid, finish, suggest, keep, and mind.",
+      "Use verb + to + base verb after verbs like want, need, decide, plan, hope, and learn.",
+      "Some verbs can take both forms with a similar meaning, like like, love, hate, prefer, start, and begin.",
+      "Some verbs change meaning depending on the form: stop doing is not the same as stop to do."
+    ],
+    examples: [
+      "I enjoy learning English.",
+      "I want to improve my speaking.",
+      "I like reading, and I like to read before bed.",
+      "I stopped working to drink coffee."
+    ],
+    commonMistakes: [
+      "I enjoy to learn English. → I enjoy learning English.",
+      "I want improving my English. → I want to improve my English.",
+      "She suggested to review the lesson. → She suggested reviewing the lesson.",
+      "I stopped to smoke. / I stopped smoking. → These sentences have different meanings."
+    ],
+    relatedTopics: [
+      "Key Structure Differences",
+      "Articles and Determiners",
+      "Common Prepositions"
+    ],
+    fullExplanationPath: "/core-grammar/gerunds-and-infinitives",
+    hasFullExplanation: true
+  },
+  {
+    id: "passive-voice",
+    slug: "passive-voice",
+    title: "Passive Voice",
+    section: "core-grammar",
+    summary:
+      "Use passive voice when the action, result, process, or affected thing matters more than who performed the action.",
+    keyIdeas: [
+      "Build passive voice with be + past participle.",
+      "Use passive when the actor is unknown, obvious, unimportant, or less important than the result.",
+      "Use modal passive forms like can be used, must be fixed, and should be reviewed.",
+      "Use by only when the actor adds useful information."
+    ],
+    examples: [
+      "The file was updated.",
+      "The bug was fixed yesterday.",
+      "The report is generated automatically.",
+      "This option can be used here."
+    ],
+    commonMistakes: [
+      "The bug fixed yesterday. → The bug was fixed yesterday.",
+      "The file was update. → The file was updated.",
+      "The report is generate automatically. → The report is generated automatically.",
+      "This can used here. → This can be used here."
+    ],
+    relatedTopics: [
+      "English Auxiliaries",
+      "Verb Tenses",
+      "Gerunds and Infinitives",
+      "Key Structure Differences"
+    ],
+    fullExplanationPath: "/core-grammar/passive-voice",
+    hasFullExplanation: true
+  },
+  {
+    id: "reported-speech",
+    slug: "reported-speech",
+    title: "Reported Speech",
+    section: "core-grammar",
+    summary:
+      "Use reported speech to explain what someone said, asked, requested, or instructed without quoting their exact words.",
+    keyIdeas: [
+      "Use said, told, explained, mentioned, or promised to report statements.",
+      "Use asked plus statement word order to report WH questions.",
+      "Use asked if or asked whether to report yes/no questions.",
+      "Use asked me to or told me not to for requests and instructions."
+    ],
+    examples: [
+      "She said that she was busy.",
+      "He asked where she worked.",
+      "They asked if I needed help.",
+      "She asked me to review the file."
+    ],
+    commonMistakes: [
+      "She said me that she was busy. → She told me that she was busy.",
+      "He asked where did she work. → He asked where she worked.",
+      "They asked me review the file. → They asked me to review the file.",
+      "He told me don't change it. → He told me not to change it."
+    ],
+    relatedTopics: [
+      "WH Questions",
+      "Embedded WH Clauses",
+      "English Auxiliaries",
+      "Key Structure Differences"
+    ],
+    fullExplanationPath: "/core-grammar/reported-speech",
+    hasFullExplanation: true
+  },
+  {
     id: "key-structure-differences",
     slug: "key-structure-differences",
     title: "Key Structure Differences",

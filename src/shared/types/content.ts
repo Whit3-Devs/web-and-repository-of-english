@@ -542,6 +542,145 @@ export type GrammarTopicStructureDifferencesFullExplanation = {
   relatedTopics: string[];
 };
 
+export type GrammarTopicArticleReferenceRow = {
+  determiner: string;
+  use: string;
+  pattern: string;
+  example: string;
+};
+
+export type GrammarTopicDeterminerCard = {
+  title: string;
+  mainUse: string;
+  rule: string;
+  examples: string[];
+  commonTrap: string;
+};
+
+export type GrammarTopicArticlesDeterminersFullExplanation = {
+  contentType: "articles-determiners";
+  slug: string;
+  title: string;
+  section: GrammarTopicSection;
+  overview: string;
+  whatItDoes: string[];
+  articleDecisionRules: string[];
+  articleReferenceTable: GrammarTopicArticleReferenceRow[];
+  countableUncountableGuidance: string[];
+  determinerCards: GrammarTopicDeterminerCard[];
+  commonMistakes: GrammarTopicFullExplanationMistake[];
+  quickMemory: string[];
+  practiceItems: GrammarTopicFullExplanationPracticeItem[];
+  relatedTopics: string[];
+};
+
+export type GrammarTopicGerundInfinitivePatternCard = {
+  title: string;
+  pattern: string;
+  use: string;
+  commonVerbs: string[];
+  examples: string[];
+  commonTrap: string;
+};
+
+export type GrammarTopicGerundInfinitiveMeaningChangeCard = {
+  title: string;
+  firstPattern: string;
+  firstMeaning: string;
+  firstExample: string;
+  secondPattern: string;
+  secondMeaning: string;
+  secondExample: string;
+};
+
+export type GrammarTopicGerundsInfinitivesFullExplanation = {
+  contentType: "gerunds-infinitives";
+  slug: string;
+  title: string;
+  section: GrammarTopicSection;
+  overview: string;
+  whatItDoes: string[];
+  decisionRules: string[];
+  patternCards: GrammarTopicGerundInfinitivePatternCard[];
+  meaningChangeCards: GrammarTopicGerundInfinitiveMeaningChangeCard[];
+  commonMistakes: GrammarTopicFullExplanationMistake[];
+  quickMemory: string[];
+  practiceItems: GrammarTopicFullExplanationPracticeItem[];
+  relatedTopics: string[];
+};
+
+export type GrammarTopicPassivePatternCard = {
+  title: string;
+  structure: string;
+  use: string;
+  examples: string[];
+};
+
+export type GrammarTopicPassiveActiveComparison = {
+  active: string;
+  passive: string;
+  whyPassiveWorks: string;
+};
+
+export type GrammarTopicPassiveVoiceFullExplanation = {
+  contentType: "passive-voice";
+  slug: string;
+  title: string;
+  section: GrammarTopicSection;
+  overview: string;
+  whatItDoes: string[];
+  decisionRules: string[];
+  coreStructure: string[];
+  activeVsPassive: GrammarTopicPassiveActiveComparison[];
+  passivePatterns: GrammarTopicPassivePatternCard[];
+  modalPassivePatterns: GrammarTopicPassivePatternCard[];
+  byAgentRules: string[];
+  commonMistakes: GrammarTopicFullExplanationMistake[];
+  quickMemory: string[];
+  practiceItems: GrammarTopicFullExplanationPracticeItem[];
+  relatedTopics: string[];
+};
+
+export type GrammarTopicReportedSpeechDirectPair = {
+  direct: string;
+  reported: string;
+  note: string;
+};
+
+export type GrammarTopicReportingVerbCard = {
+  verb: string;
+  pattern: string;
+  use: string;
+  examples: string[];
+  commonTrap?: string;
+};
+
+export type GrammarTopicReportedSpeechTenseShiftRow = {
+  directForm: string;
+  reportedForm: string;
+  example: string;
+};
+
+export type GrammarTopicReportedSpeechFullExplanation = {
+  contentType: "reported-speech";
+  slug: string;
+  title: string;
+  section: GrammarTopicSection;
+  overview: string;
+  whatItDoes: string[];
+  decisionRules: string[];
+  directVsReported: GrammarTopicReportedSpeechDirectPair[];
+  reportingVerbCards: GrammarTopicReportingVerbCard[];
+  statementPatterns: GrammarTopicReportedSpeechDirectPair[];
+  questionPatterns: GrammarTopicReportedSpeechDirectPair[];
+  requestInstructionPatterns: GrammarTopicReportedSpeechDirectPair[];
+  tenseShiftGuide: GrammarTopicReportedSpeechTenseShiftRow[];
+  commonMistakes: GrammarTopicFullExplanationMistake[];
+  quickMemory: string[];
+  practiceItems: GrammarTopicFullExplanationPracticeItem[];
+  relatedTopics: string[];
+};
+
 export type GrammarTopicModalCard = {
   title: string;
   modal: string;
@@ -592,4 +731,8 @@ export type GrammarTopicFullExplanation =
   | GrammarTopicEnglishAuxiliariesFullExplanation
   | GrammarTopicPronounsPossessivesFullExplanation
   | GrammarTopicStructureDifferencesFullExplanation
+  | GrammarTopicArticlesDeterminersFullExplanation
+  | GrammarTopicGerundsInfinitivesFullExplanation
+  | GrammarTopicPassiveVoiceFullExplanation
+  | GrammarTopicReportedSpeechFullExplanation
   | GrammarTopicModalTopicFullExplanation;

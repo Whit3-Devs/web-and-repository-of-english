@@ -57,6 +57,10 @@ This audit maps the original Obsidian source material into the app content that 
 | `Core Grammar/Common Prepositions.md` | Normalized into app data + archived source | Core Grammar |
 | `Core Grammar/Key Structure Differences.md` | Normalized into app data + archived source | Core Grammar |
 | `Core Grammar/Frequent Modal Verbs.md` | Archived source / future restructure candidate | Modal Verbs / Core Grammar bridge |
+| New authored topic: `Articles and Determiners` | Authored directly in app data | Core Grammar |
+| New authored topic: `Gerunds and Infinitives` | Authored directly in app data | Core Grammar |
+| New authored topic: `Passive Voice` | Authored directly in app data | Core Grammar |
+| New authored topic: `Reported Speech` | Authored directly in app data | Core Grammar |
 
 ## Implementation Notes
 
@@ -64,3 +68,7 @@ This audit maps the original Obsidian source material into the app content that 
 - Home is intended to work as a topic directory, not only as a section launcher.
 - Detail routes may still show `Full explanation coming soon`, but their navigation structure is already stable.
 - Archived Obsidian material remains available for future topic-by-topic deep migrations under `docs/archive/obsidian-info/`.
+- `Articles and Determiners` is a new authored topic, not a migrated Obsidian source file.
+- `Gerunds and Infinitives` is a new authored topic, not a migrated Obsidian source file.
+- `Passive Voice` is a new authored topic, not a migrated Obsidian source file.
+- `Reported Speech` is a new authored topic, not a migrated Obsidian source file.

@@ -105,6 +105,98 @@ const grammarTopics: GrammarTopic[] = [
     hasFullExplanation: true
   },
   {
+    id: "articles-and-determiners",
+    slug: "articles-and-determiners",
+    title: "Articles and Determiners",
+    section: "core-grammar",
+    summary:
+      "Choose a, an, the, zero article, and determiners for countable and uncountable nouns.",
+    keyIdeas: [
+      "Use a or an with one singular countable noun.",
+      "Use some, any, much, many, few, and little according to countability."
+    ],
+    examples: ["I need advice.", "Do you have any questions?"],
+    commonMistakes: ["There are much people. → There are many people."],
+    relatedTopics: ["Key Structure Differences", "Common Prepositions"],
+    fullExplanationPath: "/core-grammar/articles-and-determiners",
+    hasFullExplanation: true
+  },
+  {
+    id: "gerunds-and-infinitives",
+    slug: "gerunds-and-infinitives",
+    title: "Gerunds and Infinitives",
+    section: "core-grammar",
+    summary:
+      "Choose verb + -ing or to + base verb after common verbs, including meaning-change patterns.",
+    keyIdeas: [
+      "Use gerunds after enjoy, avoid, finish, suggest, keep, and mind.",
+      "Use infinitives after want, need, decide, plan, hope, and learn.",
+      "Stop doing and stop to do have different meanings."
+    ],
+    examples: [
+      "I enjoy learning English.",
+      "I want to improve my speaking.",
+      "I stopped working to drink coffee."
+    ],
+    commonMistakes: [
+      "I enjoy to learn English. → I enjoy learning English.",
+      "I want improving my English. → I want to improve my English."
+    ],
+    relatedTopics: ["Key Structure Differences", "Common Prepositions"],
+    fullExplanationPath: "/core-grammar/gerunds-and-infinitives",
+    hasFullExplanation: true
+  },
+  {
+    id: "passive-voice",
+    slug: "passive-voice",
+    title: "Passive Voice",
+    section: "core-grammar",
+    summary:
+      "Use passive voice when the action, result, or affected thing matters more than the actor.",
+    keyIdeas: [
+      "Passive voice uses be plus past participle.",
+      "Modal passive forms include can be used, must be fixed, and should be reviewed.",
+      "Use passive when the bug was fixed and the result matters more than the actor."
+    ],
+    examples: [
+      "The bug was fixed yesterday.",
+      "This option can be used here.",
+      "The report is generated automatically."
+    ],
+    commonMistakes: [
+      "The file was update. → The file was updated.",
+      "This can used here. → This can be used here."
+    ],
+    relatedTopics: ["English Auxiliaries", "Verb Tenses"],
+    fullExplanationPath: "/core-grammar/passive-voice",
+    hasFullExplanation: true
+  },
+  {
+    id: "reported-speech",
+    slug: "reported-speech",
+    title: "Reported Speech",
+    section: "core-grammar",
+    summary:
+      "Report what someone said, asked, requested, or instructed without quoting exact words.",
+    keyIdeas: [
+      "Use said that and told me that for reported statements.",
+      "Use asked if or asked whether for yes/no questions.",
+      "Reported questions use statement word order."
+    ],
+    examples: [
+      "She said that she was busy.",
+      "He asked if I needed help.",
+      "He asked where she worked."
+    ],
+    commonMistakes: [
+      "She said me that she was busy. → She told me that she was busy.",
+      "He asked where did she work. → He asked where she worked."
+    ],
+    relatedTopics: ["WH Questions", "Embedded WH Clauses"],
+    fullExplanationPath: "/core-grammar/reported-speech",
+    hasFullExplanation: true
+  },
+  {
     id: "polite-requests",
     slug: "polite-requests",
     title: "Polite Requests",
@@ -159,15 +251,34 @@ describe("cheatsheet search", () => {
     expect(matchesGrammarTopic(grammarTopics[2], "builder")).toBe(true);
     expect(matchesGrammarTopic(grammarTopics[2], "does he work")).toBe(true);
     expect(matchesGrammarTopic(grammarTopics[2], "auxiliary")).toBe(true);
-    expect(matchesGrammarTopic(grammarTopics[3], "polite")).toBe(true);
-    expect(matchesGrammarTopic(grammarTopics[3], "softer")).toBe(true);
-    expect(matchesGrammarTopic(grammarTopics[3], "could you help")).toBe(true);
+    expect(matchesGrammarTopic(grammarTopics[3], "articles")).toBe(true);
+    expect(matchesGrammarTopic(grammarTopics[3], "determiners")).toBe(true);
+    expect(matchesGrammarTopic(grammarTopics[3], "some")).toBe(true);
+    expect(matchesGrammarTopic(grammarTopics[3], "uncountable")).toBe(true);
+    expect(matchesGrammarTopic(grammarTopics[4], "gerunds")).toBe(true);
+    expect(matchesGrammarTopic(grammarTopics[4], "infinitives")).toBe(true);
+    expect(matchesGrammarTopic(grammarTopics[4], "enjoy learning")).toBe(true);
+    expect(matchesGrammarTopic(grammarTopics[4], "want to improve")).toBe(true);
+    expect(matchesGrammarTopic(grammarTopics[4], "stop doing")).toBe(true);
+    expect(matchesGrammarTopic(grammarTopics[5], "passive")).toBe(true);
+    expect(matchesGrammarTopic(grammarTopics[5], "bug was fixed")).toBe(true);
+    expect(matchesGrammarTopic(grammarTopics[5], "be used")).toBe(true);
+    expect(matchesGrammarTopic(grammarTopics[5], "past participle")).toBe(true);
+    expect(matchesGrammarTopic(grammarTopics[5], "modal passive")).toBe(true);
+    expect(matchesGrammarTopic(grammarTopics[6], "reported speech")).toBe(true);
+    expect(matchesGrammarTopic(grammarTopics[6], "said that")).toBe(true);
+    expect(matchesGrammarTopic(grammarTopics[6], "told me")).toBe(true);
+    expect(matchesGrammarTopic(grammarTopics[6], "asked if")).toBe(true);
+    expect(matchesGrammarTopic(grammarTopics[6], "statement word order")).toBe(true);
+    expect(matchesGrammarTopic(grammarTopics[7], "polite")).toBe(true);
+    expect(matchesGrammarTopic(grammarTopics[7], "softer")).toBe(true);
+    expect(matchesGrammarTopic(grammarTopics[7], "could you help")).toBe(true);
   });
 
   it("filters grammar topics by section and full explanation availability", () => {
     expect(filterGrammarTopics(grammarTopics, { section: "modal-verbs" })).toHaveLength(2);
-    expect(filterGrammarTopics(grammarTopics, { section: "core-grammar" })).toHaveLength(2);
+    expect(filterGrammarTopics(grammarTopics, { section: "core-grammar" })).toHaveLength(6);
     expect(filterGrammarTopics(grammarTopics, { hasFullExplanation: false })).toHaveLength(1);
-    expect(filterGrammarTopics(grammarTopics, { hasFullExplanation: true })).toHaveLength(3);
+    expect(filterGrammarTopics(grammarTopics, { hasFullExplanation: true })).toHaveLength(7);
   });
 });

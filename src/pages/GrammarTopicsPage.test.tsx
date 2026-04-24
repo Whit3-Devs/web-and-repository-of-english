@@ -30,6 +30,10 @@ describe("Grammar topic pages", () => {
     expect(screen.getByText("Question Builder Cheat Sheet")).toBeTruthy();
     expect(screen.getByText("WH Questions")).toBeTruthy();
     expect(screen.getByText("Common Prepositions")).toBeTruthy();
+    expect(screen.getByText("Articles and Determiners")).toBeTruthy();
+    expect(screen.getByText("Gerunds and Infinitives")).toBeTruthy();
+    expect(screen.getByText("Passive Voice")).toBeTruthy();
+    expect(screen.getByText("Reported Speech")).toBeTruthy();
   });
 
   it("renders placeholder detail routes for irregular verb pages that are not migrated yet", () => {
@@ -553,6 +557,163 @@ describe("Grammar topic pages", () => {
     expect(
       screen.getByText("Choose the best form: I usually work from home, but today I ___.")
     ).toBeTruthy();
+  });
+
+  it("renders full explanation content for Articles and Determiners", () => {
+    render(
+      <MemoryRouter initialEntries={["/core-grammar/articles-and-determiners"]}>
+        <Routes>
+          <Route
+            path="/core-grammar/:slug"
+            element={
+              <GrammarTopicDetailPage
+                section="core-grammar"
+                backPath="/core-grammar"
+                backLabel="Core Grammar"
+              />
+            }
+          />
+        </Routes>
+      </MemoryRouter>
+    );
+
+    expect(
+      screen.getByRole("heading", { name: "Articles and Determiners" })
+    ).toBeTruthy();
+    expect(screen.getByText("Available now")).toBeTruthy();
+    expect(screen.getByText("Article reference table")).toBeTruthy();
+    expect(screen.getByText("Article decision rules")).toBeTruthy();
+    expect(screen.getByText("Countable vs uncountable nouns")).toBeTruthy();
+    expect(screen.getByText("Determiner guide")).toBeTruthy();
+    expect(screen.getByText("This / That / These / Those")).toBeTruthy();
+    expect(screen.getByText("Some / Any / No")).toBeTruthy();
+    expect(screen.getByText("Much / Many / A lot of")).toBeTruthy();
+    expect(screen.getByText("Few / A few / Little / A little")).toBeTruthy();
+    expect(screen.getByText("Common mistakes")).toBeTruthy();
+    expect(screen.getByText("Micro practice")).toBeTruthy();
+    expect(screen.getByText("I need an advice.")).toBeTruthy();
+    expect(screen.getAllByText("I need advice.").length).toBeGreaterThan(0);
+    expect(
+      screen.getByText("Complete the question: Do you have ___ questions?")
+    ).toBeTruthy();
+  });
+
+  it("renders full explanation content for Gerunds and Infinitives", () => {
+    render(
+      <MemoryRouter initialEntries={["/core-grammar/gerunds-and-infinitives"]}>
+        <Routes>
+          <Route
+            path="/core-grammar/:slug"
+            element={
+              <GrammarTopicDetailPage
+                section="core-grammar"
+                backPath="/core-grammar"
+                backLabel="Core Grammar"
+              />
+            }
+          />
+        </Routes>
+      </MemoryRouter>
+    );
+
+    expect(
+      screen.getByRole("heading", { name: "Gerunds and Infinitives" })
+    ).toBeTruthy();
+    expect(screen.getByText("Available now")).toBeTruthy();
+    expect(screen.getByText("Core decision rules")).toBeTruthy();
+    expect(screen.getByText("Practical patterns")).toBeTruthy();
+    expect(screen.getByText("Verb + -ing")).toBeTruthy();
+    expect(screen.getByText("Verb + to + base verb")).toBeTruthy();
+    expect(screen.getByText("Both forms with similar meaning")).toBeTruthy();
+    expect(screen.getByText("Meaning-change patterns")).toBeTruthy();
+    expect(screen.getByText("stop + verb-ing")).toBeTruthy();
+    expect(screen.getByText("stop + to + base verb")).toBeTruthy();
+    expect(screen.getByText("Common mistakes")).toBeTruthy();
+    expect(screen.getByText("Micro practice")).toBeTruthy();
+    expect(screen.getByText("I enjoy to learn English.")).toBeTruthy();
+    expect(screen.getAllByText("I enjoy learning English.").length).toBeGreaterThan(0);
+    expect(
+      screen.getByText("Complete the sentence: I want ___ my speaking.")
+    ).toBeTruthy();
+  });
+
+  it("renders full explanation content for Passive Voice", () => {
+    render(
+      <MemoryRouter initialEntries={["/core-grammar/passive-voice"]}>
+        <Routes>
+          <Route
+            path="/core-grammar/:slug"
+            element={
+              <GrammarTopicDetailPage
+                section="core-grammar"
+                backPath="/core-grammar"
+                backLabel="Core Grammar"
+              />
+            }
+          />
+        </Routes>
+      </MemoryRouter>
+    );
+
+    expect(screen.getByRole("heading", { name: "Passive Voice" })).toBeTruthy();
+    expect(screen.getByText("Available now")).toBeTruthy();
+    expect(screen.getByText("Active vs passive")).toBeTruthy();
+    expect(screen.getByText("Active vs passive decision rules")).toBeTruthy();
+    expect(screen.getByText("Core passive structure")).toBeTruthy();
+    expect(screen.getByText("Practical passive patterns")).toBeTruthy();
+    expect(screen.getByText("Present Simple Passive")).toBeTruthy();
+    expect(screen.getByText("Past Simple Passive")).toBeTruthy();
+    expect(screen.getByText("Present Perfect Passive")).toBeTruthy();
+    expect(screen.getByText("Future Passive")).toBeTruthy();
+    expect(screen.getByText("Modal passive")).toBeTruthy();
+    expect(screen.getByText("can be + past participle")).toBeTruthy();
+    expect(screen.getByText("must be + past participle")).toBeTruthy();
+    expect(screen.getByText("Agent with by")).toBeTruthy();
+    expect(screen.getByText("Common mistakes")).toBeTruthy();
+    expect(screen.getByText("Micro practice")).toBeTruthy();
+    expect(screen.getByText("The bug fixed yesterday.")).toBeTruthy();
+    expect(screen.getAllByText("The bug was fixed yesterday.").length).toBeGreaterThan(0);
+    expect(
+      screen.getByText("Complete the modal passive: This option can ___ here.")
+    ).toBeTruthy();
+  });
+
+  it("renders full explanation content for Reported Speech", () => {
+    render(
+      <MemoryRouter initialEntries={["/core-grammar/reported-speech"]}>
+        <Routes>
+          <Route
+            path="/core-grammar/:slug"
+            element={
+              <GrammarTopicDetailPage
+                section="core-grammar"
+                backPath="/core-grammar"
+                backLabel="Core Grammar"
+              />
+            }
+          />
+        </Routes>
+      </MemoryRouter>
+    );
+
+    expect(screen.getByRole("heading", { name: "Reported Speech" })).toBeTruthy();
+    expect(screen.getByText("Available now")).toBeTruthy();
+    expect(screen.getByText("Direct vs reported speech")).toBeTruthy();
+    expect(screen.getByText("Reporting verbs")).toBeTruthy();
+    expect(screen.getByText("Statement patterns")).toBeTruthy();
+    expect(screen.getByText("Reported questions")).toBeTruthy();
+    expect(screen.getByText("Requests and instructions")).toBeTruthy();
+    expect(screen.getByText("Practical tense shift guide")).toBeTruthy();
+    expect(screen.getByText("say")).toBeTruthy();
+    expect(screen.getByText("tell")).toBeTruthy();
+    expect(screen.getByText("ask")).toBeTruthy();
+    expect(screen.getByText("Common mistakes")).toBeTruthy();
+    expect(screen.getByText("Micro practice")).toBeTruthy();
+    expect(screen.getByText("She said me that she was busy.")).toBeTruthy();
+    expect(
+      screen.getAllByText("She told me that she was busy.").length
+    ).toBeGreaterThan(0);
+    expect(screen.getByText("Report the question: Where does she work?")).toBeTruthy();
   });
 
   it("renders full explanation content for Question Builder Cheat Sheet", () => {

@@ -2,18 +2,22 @@ import { Link, useParams } from "react-router-dom";
 import { findGrammarTopicFullExplanationBySlug } from "../data/grammarTopicFullExplanations";
 import { findGrammarTopic } from "../data/grammarTopics";
 import type {
+  GrammarTopicArticlesDeterminersFullExplanation,
   GrammarTopicAuxiliaryContractionTable,
   GrammarTopicConditionalsOverviewFullExplanation,
   GrammarTopicEnglishAuxiliariesFullExplanation,
   GrammarTopicEmbeddedWhClausesFullExplanation,
   GrammarTopicFullExplanation,
   GrammarTopicFullExplanationPracticeItem,
+  GrammarTopicGerundsInfinitivesFullExplanation,
+  GrammarTopicPassiveVoiceFullExplanation,
   GrammarTopicQuestionBuilderFullExplanation,
   GrammarTopicModalTopicFullExplanation,
   GrammarTopicPrepositionsFullExplanation,
   GrammarTopicPronounsPossessivesFullExplanation,
   GrammarTopicQuestionSideBySideExample,
   GrammarTopicQuestionStructureTable,
+  GrammarTopicReportedSpeechFullExplanation,
   GrammarTopicSection,
   GrammarTopicStructureDifferencesFullExplanation,
   GrammarTopicWhQuestionsFullExplanation
@@ -123,6 +127,14 @@ export function GrammarTopicDetailPage({
           <EnglishAuxiliariesContent explanation={fullExplanation} />
         ) : fullExplanation.contentType === "structure-differences" ? (
           <StructureDifferencesContent explanation={fullExplanation} />
+        ) : fullExplanation.contentType === "articles-determiners" ? (
+          <ArticlesDeterminersContent explanation={fullExplanation} />
+        ) : fullExplanation.contentType === "gerunds-infinitives" ? (
+          <GerundsInfinitivesContent explanation={fullExplanation} />
+        ) : fullExplanation.contentType === "passive-voice" ? (
+          <PassiveVoiceContent explanation={fullExplanation} />
+        ) : fullExplanation.contentType === "reported-speech" ? (
+          <ReportedSpeechContent explanation={fullExplanation} />
         ) : (
           <PronounsPossessivesContent explanation={fullExplanation} />
         )}
@@ -1008,6 +1020,339 @@ function StructureDifferencesContent({
   );
 }
 
+function ArticlesDeterminersContent({
+  explanation
+}: {
+  explanation: GrammarTopicArticlesDeterminersFullExplanation;
+}) {
+  return (
+    <>
+      <div className="mt-8 grid gap-6 md:grid-cols-2">
+        <ContentSection
+          title="What this page helps you decide"
+          items={explanation.whatItDoes}
+        />
+        <ContentSection
+          title="Article decision rules"
+          items={explanation.articleDecisionRules}
+          variant="highlight"
+        />
+      </div>
+
+      <ArticlesReferenceTable rows={explanation.articleReferenceTable} />
+
+      <div className="mt-8 grid gap-6 md:grid-cols-2">
+        <ContentSection
+          title="Countable vs uncountable nouns"
+          items={explanation.countableUncountableGuidance}
+          variant="amber"
+        />
+        <ContentSection title="Quick memory" items={explanation.quickMemory} />
+      </div>
+
+      <div className="mt-8 rounded-3xl bg-blue-50 p-6">
+        <h3 className="text-xl font-black text-blue-950">Determiner guide</h3>
+        <div className="mt-4 grid gap-4 md:grid-cols-2">
+          {explanation.determinerCards.map((card) => (
+            <div key={card.title} className="rounded-2xl bg-white p-4 shadow-sm">
+              <h4 className="font-bold text-slate-900">{card.title}</h4>
+              <p className="mt-3 text-sm font-semibold uppercase tracking-wide text-slate-500">
+                Main use
+              </p>
+              <p className="mt-1 text-slate-700">{card.mainUse}</p>
+              <p className="mt-4 text-sm font-semibold uppercase tracking-wide text-slate-500">
+                Rule
+              </p>
+              <p className="mt-1 text-slate-700">{card.rule}</p>
+              <div className="mt-4 rounded-2xl bg-slate-50 p-4">
+                <p className="text-sm font-semibold uppercase tracking-wide text-slate-500">
+                  Examples
+                </p>
+                <ul className="mt-2 space-y-2 text-sm text-slate-700">
+                  {card.examples.map((example) => (
+                    <li key={example}>• {example}</li>
+                  ))}
+                </ul>
+              </div>
+              <div className="mt-4 rounded-2xl bg-rose-50 p-4">
+                <p className="text-sm font-semibold uppercase tracking-wide text-rose-700">
+                  Common trap
+                </p>
+                <p className="mt-1 text-rose-950">{card.commonTrap}</p>
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+
+      <MistakesSection mistakes={explanation.commonMistakes} />
+
+      <PracticeSection items={explanation.practiceItems} />
+
+      <div className="mt-8">
+        <ContentSection title="Related topics" items={explanation.relatedTopics} />
+      </div>
+    </>
+  );
+}
+
+function GerundsInfinitivesContent({
+  explanation
+}: {
+  explanation: GrammarTopicGerundsInfinitivesFullExplanation;
+}) {
+  return (
+    <>
+      <div className="mt-8 grid gap-6 md:grid-cols-2">
+        <ContentSection
+          title="What this page helps you decide"
+          items={explanation.whatItDoes}
+        />
+        <ContentSection
+          title="Core decision rules"
+          items={explanation.decisionRules}
+          variant="highlight"
+        />
+      </div>
+
+      <div className="mt-8 rounded-3xl bg-blue-50 p-6">
+        <h3 className="text-xl font-black text-blue-950">Practical patterns</h3>
+        <div className="mt-4 grid gap-4 md:grid-cols-3">
+          {explanation.patternCards.map((card) => (
+            <div key={card.title} className="rounded-2xl bg-white p-4 shadow-sm">
+              <h4 className="font-bold text-slate-900">{card.title}</h4>
+              <p className="mt-3 rounded-2xl bg-slate-50 p-3 font-semibold text-slate-900">
+                {card.pattern}
+              </p>
+              <p className="mt-4 text-slate-700">{card.use}</p>
+              <div className="mt-4 rounded-2xl bg-emerald-50 p-4">
+                <p className="text-sm font-semibold uppercase tracking-wide text-emerald-700">
+                  Common verbs
+                </p>
+                <p className="mt-1 text-emerald-950">{card.commonVerbs.join(", ")}</p>
+              </div>
+              <div className="mt-4 rounded-2xl bg-slate-50 p-4">
+                <p className="text-sm font-semibold uppercase tracking-wide text-slate-500">
+                  Examples
+                </p>
+                <ul className="mt-2 space-y-2 text-sm text-slate-700">
+                  {card.examples.map((example) => (
+                    <li key={example}>• {example}</li>
+                  ))}
+                </ul>
+              </div>
+              <div className="mt-4 rounded-2xl bg-rose-50 p-4">
+                <p className="text-sm font-semibold uppercase tracking-wide text-rose-700">
+                  Common trap
+                </p>
+                <p className="mt-1 text-rose-950">{card.commonTrap}</p>
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+
+      <div className="mt-8 rounded-3xl bg-violet-50 p-6">
+        <h3 className="text-xl font-black text-violet-950">
+          Meaning-change patterns
+        </h3>
+        <div className="mt-4 grid gap-4 md:grid-cols-2">
+          {explanation.meaningChangeCards.map((card) => (
+            <div key={card.title} className="rounded-2xl bg-white p-4 shadow-sm">
+              <h4 className="font-bold text-slate-900">{card.title}</h4>
+              <div className="mt-4 grid gap-4">
+                <div className="rounded-2xl border border-blue-200 bg-blue-50 p-4">
+                  <p className="font-semibold text-blue-900">{card.firstPattern}</p>
+                  <p className="mt-2 text-blue-950">{card.firstMeaning}</p>
+                  <p className="mt-3 text-slate-700">{card.firstExample}</p>
+                </div>
+                <div className="rounded-2xl border border-violet-200 bg-violet-50 p-4">
+                  <p className="font-semibold text-violet-900">{card.secondPattern}</p>
+                  <p className="mt-2 text-violet-950">{card.secondMeaning}</p>
+                  <p className="mt-3 text-slate-700">{card.secondExample}</p>
+                </div>
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+
+      <MistakesSection mistakes={explanation.commonMistakes} />
+
+      <PracticeSection items={explanation.practiceItems} />
+
+      <div className="mt-8 grid gap-6 md:grid-cols-2">
+        <ContentSection title="Quick memory" items={explanation.quickMemory} variant="amber" />
+        <ContentSection title="Related topics" items={explanation.relatedTopics} />
+      </div>
+    </>
+  );
+}
+
+function PassiveVoiceContent({
+  explanation
+}: {
+  explanation: GrammarTopicPassiveVoiceFullExplanation;
+}) {
+  return (
+    <>
+      <div className="mt-8 grid gap-6 md:grid-cols-2">
+        <ContentSection
+          title="What passive voice helps you express"
+          items={explanation.whatItDoes}
+        />
+        <ContentSection
+          title="Active vs passive decision rules"
+          items={explanation.decisionRules}
+          variant="highlight"
+        />
+      </div>
+
+      <div className="mt-8">
+        <ContentSection
+          title="Core passive structure"
+          items={explanation.coreStructure}
+          variant="amber"
+        />
+      </div>
+
+      <div className="mt-8 rounded-3xl bg-blue-50 p-6">
+        <h3 className="text-xl font-black text-blue-950">Active vs passive</h3>
+        <div className="mt-4 grid gap-4">
+          {explanation.activeVsPassive.map((comparison) => (
+            <div key={comparison.passive} className="rounded-2xl bg-white p-4 shadow-sm">
+              <div className="grid gap-4 md:grid-cols-2">
+                <div className="rounded-2xl border border-emerald-200 bg-emerald-50 p-4">
+                  <p className="text-sm font-semibold uppercase tracking-wide text-emerald-700">
+                    Active
+                  </p>
+                  <p className="mt-2 text-emerald-950">{comparison.active}</p>
+                </div>
+                <div className="rounded-2xl border border-blue-200 bg-blue-50 p-4">
+                  <p className="text-sm font-semibold uppercase tracking-wide text-blue-700">
+                    Passive
+                  </p>
+                  <p className="mt-2 text-blue-950">{comparison.passive}</p>
+                </div>
+              </div>
+              <p className="mt-4 text-slate-700">{comparison.whyPassiveWorks}</p>
+            </div>
+          ))}
+        </div>
+      </div>
+
+      <PassivePatternSection
+        title="Practical passive patterns"
+        cards={explanation.passivePatterns}
+      />
+
+      <PassivePatternSection
+        title="Modal passive"
+        cards={explanation.modalPassivePatterns}
+      />
+
+      <div className="mt-8">
+        <ContentSection title="Agent with by" items={explanation.byAgentRules} />
+      </div>
+
+      <MistakesSection mistakes={explanation.commonMistakes} />
+
+      <PracticeSection items={explanation.practiceItems} />
+
+      <div className="mt-8 grid gap-6 md:grid-cols-2">
+        <ContentSection title="Quick memory" items={explanation.quickMemory} variant="amber" />
+        <ContentSection title="Related topics" items={explanation.relatedTopics} />
+      </div>
+    </>
+  );
+}
+
+function ReportedSpeechContent({
+  explanation
+}: {
+  explanation: GrammarTopicReportedSpeechFullExplanation;
+}) {
+  return (
+    <>
+      <div className="mt-8 grid gap-6 md:grid-cols-2">
+        <ContentSection
+          title="What reported speech helps you communicate"
+          items={explanation.whatItDoes}
+        />
+        <ContentSection
+          title="Core decision rules"
+          items={explanation.decisionRules}
+          variant="highlight"
+        />
+      </div>
+
+      <ReportedSpeechPairSection
+        title="Direct vs reported speech"
+        pairs={explanation.directVsReported}
+      />
+
+      <div className="mt-8 rounded-3xl bg-blue-50 p-6">
+        <h3 className="text-xl font-black text-blue-950">Reporting verbs</h3>
+        <div className="mt-4 grid gap-4 md:grid-cols-2">
+          {explanation.reportingVerbCards.map((card) => (
+            <div key={card.verb} className="rounded-2xl bg-white p-4 shadow-sm">
+              <h4 className="font-bold text-slate-900">{card.verb}</h4>
+              <p className="mt-3 rounded-2xl bg-slate-50 p-3 font-semibold text-slate-900">
+                {card.pattern}
+              </p>
+              <p className="mt-4 text-slate-700">{card.use}</p>
+              <div className="mt-4 rounded-2xl bg-blue-50 p-4">
+                <p className="text-sm font-semibold uppercase tracking-wide text-blue-700">
+                  Examples
+                </p>
+                <ul className="mt-2 space-y-2 text-sm text-blue-950">
+                  {card.examples.map((example) => (
+                    <li key={example}>• {example}</li>
+                  ))}
+                </ul>
+              </div>
+              {card.commonTrap ? (
+                <div className="mt-4 rounded-2xl bg-rose-50 p-4">
+                  <p className="text-sm font-semibold uppercase tracking-wide text-rose-700">
+                    Common trap
+                  </p>
+                  <p className="mt-1 text-rose-950">{card.commonTrap}</p>
+                </div>
+              ) : null}
+            </div>
+          ))}
+        </div>
+      </div>
+
+      <ReportedSpeechPairSection
+        title="Statement patterns"
+        pairs={explanation.statementPatterns}
+      />
+
+      <ReportedSpeechPairSection
+        title="Reported questions"
+        pairs={explanation.questionPatterns}
+      />
+
+      <ReportedSpeechPairSection
+        title="Requests and instructions"
+        pairs={explanation.requestInstructionPatterns}
+      />
+
+      <ReportedSpeechTenseShiftTable rows={explanation.tenseShiftGuide} />
+
+      <MistakesSection mistakes={explanation.commonMistakes} />
+
+      <PracticeSection items={explanation.practiceItems} />
+
+      <div className="mt-8 grid gap-6 md:grid-cols-2">
+        <ContentSection title="Quick memory" items={explanation.quickMemory} variant="amber" />
+        <ContentSection title="Related topics" items={explanation.relatedTopics} />
+      </div>
+    </>
+  );
+}
+
 function SideBySideExamples({
   rows
 }: {
@@ -1038,6 +1383,159 @@ function SideBySideExamples({
                 <td className="px-4 py-4 font-bold text-slate-950">{row.tense}</td>
                 <td className="px-4 py-4 text-slate-700">{row.yesNo}</td>
                 <td className="px-4 py-4 text-slate-700">{row.wh}</td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
+    </div>
+  );
+}
+
+function ArticlesReferenceTable({
+  rows
+}: {
+  rows: GrammarTopicArticlesDeterminersFullExplanation["articleReferenceTable"];
+}) {
+  return (
+    <div className="mt-8 overflow-hidden rounded-3xl border border-slate-200">
+      <div className="bg-slate-950 px-6 py-4">
+        <h3 className="text-xl font-black text-white">Article reference table</h3>
+      </div>
+      <div className="overflow-x-auto bg-white">
+        <table className="min-w-full divide-y divide-slate-200 text-sm">
+          <thead className="bg-slate-50">
+            <tr>
+              {["Determiner", "Use", "Pattern", "Example"].map((heading) => (
+                <th
+                  key={heading}
+                  className="px-4 py-3 text-left font-bold uppercase tracking-wide text-slate-700"
+                >
+                  {heading}
+                </th>
+              ))}
+            </tr>
+          </thead>
+          <tbody className="divide-y divide-slate-200">
+            {rows.map((row) => (
+              <tr key={`${row.determiner}-${row.example}`}>
+                <td className="px-4 py-4 font-bold text-slate-950">
+                  {row.determiner}
+                </td>
+                <td className="px-4 py-4 text-slate-700">{row.use}</td>
+                <td className="px-4 py-4 text-slate-700">{row.pattern}</td>
+                <td className="px-4 py-4 text-slate-700">{row.example}</td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
+    </div>
+  );
+}
+
+function PassivePatternSection({
+  title,
+  cards
+}: {
+  title: string;
+  cards: GrammarTopicPassiveVoiceFullExplanation["passivePatterns"];
+}) {
+  return (
+    <div className="mt-8 rounded-3xl bg-slate-50 p-6">
+      <h3 className="text-xl font-black text-slate-950">{title}</h3>
+      <div className="mt-4 grid gap-4 md:grid-cols-2">
+        {cards.map((card) => (
+          <div key={card.title} className="rounded-2xl bg-white p-4 shadow-sm">
+            <h4 className="font-bold text-slate-900">{card.title}</h4>
+            <p className="mt-3 rounded-2xl bg-slate-100 p-3 font-semibold text-slate-900">
+              {card.structure}
+            </p>
+            <p className="mt-4 text-slate-700">{card.use}</p>
+            <div className="mt-4 rounded-2xl bg-blue-50 p-4">
+              <p className="text-sm font-semibold uppercase tracking-wide text-blue-700">
+                Examples
+              </p>
+              <ul className="mt-2 space-y-2 text-sm text-blue-950">
+                {card.examples.map((example) => (
+                  <li key={example}>• {example}</li>
+                ))}
+              </ul>
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  );
+}
+
+function ReportedSpeechPairSection({
+  title,
+  pairs
+}: {
+  title: string;
+  pairs: GrammarTopicReportedSpeechFullExplanation["directVsReported"];
+}) {
+  return (
+    <div className="mt-8 rounded-3xl bg-slate-50 p-6">
+      <h3 className="text-xl font-black text-slate-950">{title}</h3>
+      <div className="mt-4 grid gap-4">
+        {pairs.map((pair) => (
+          <div key={`${title}-${pair.direct}`} className="rounded-2xl bg-white p-4 shadow-sm">
+            <div className="grid gap-4 md:grid-cols-2">
+              <div className="rounded-2xl border border-emerald-200 bg-emerald-50 p-4">
+                <p className="text-sm font-semibold uppercase tracking-wide text-emerald-700">
+                  Direct
+                </p>
+                <p className="mt-2 text-emerald-950">{pair.direct}</p>
+              </div>
+              <div className="rounded-2xl border border-blue-200 bg-blue-50 p-4">
+                <p className="text-sm font-semibold uppercase tracking-wide text-blue-700">
+                  Reported
+                </p>
+                <p className="mt-2 text-blue-950">{pair.reported}</p>
+              </div>
+            </div>
+            <p className="mt-4 text-slate-700">{pair.note}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  );
+}
+
+function ReportedSpeechTenseShiftTable({
+  rows
+}: {
+  rows: GrammarTopicReportedSpeechFullExplanation["tenseShiftGuide"];
+}) {
+  return (
+    <div className="mt-8 overflow-hidden rounded-3xl border border-slate-200">
+      <div className="bg-slate-950 px-6 py-4">
+        <h3 className="text-xl font-black text-white">Practical tense shift guide</h3>
+      </div>
+      <div className="overflow-x-auto bg-white">
+        <table className="min-w-full divide-y divide-slate-200 text-sm">
+          <thead className="bg-slate-50">
+            <tr>
+              {["Direct form", "Reported form", "Example"].map((heading) => (
+                <th
+                  key={heading}
+                  className="px-4 py-3 text-left font-bold uppercase tracking-wide text-slate-700"
+                >
+                  {heading}
+                </th>
+              ))}
+            </tr>
+          </thead>
+          <tbody className="divide-y divide-slate-200">
+            {rows.map((row) => (
+              <tr key={`${row.directForm}-${row.reportedForm}`}>
+                <td className="px-4 py-4 font-bold text-slate-950">
+                  {row.directForm}
+                </td>
+                <td className="px-4 py-4 text-slate-700">{row.reportedForm}</td>
+                <td className="px-4 py-4 text-slate-700">{row.example}</td>
               </tr>
             ))}
           </tbody>
