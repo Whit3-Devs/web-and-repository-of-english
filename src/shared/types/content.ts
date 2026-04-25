@@ -816,6 +816,43 @@ export type GrammarTopicPracticalWritingPatternsFullExplanation = {
   relatedTopics: string[];
 };
 
+export type GrammarTopicPhrasalVerbReferenceRow = {
+  phrasalVerb: string;
+  meaning: string;
+  pattern: string;
+  example: string;
+};
+
+export type GrammarTopicPhrasalVerbGroupCard = {
+  title: string;
+  situation: string;
+  phrasalVerbs: GrammarTopicPhrasalVerbReferenceRow[];
+  usageNote: string;
+};
+
+export type GrammarTopicPhrasalVerbUsageNote = {
+  title: string;
+  rule: string;
+  examples: string[];
+};
+
+export type GrammarTopicPhrasalVerbsFullExplanation = {
+  contentType: "phrasal-verbs";
+  slug: string;
+  title: string;
+  section: GrammarTopicSection;
+  overview: string;
+  whatItDoes: string[];
+  decisionRules: string[];
+  referenceTable: GrammarTopicPhrasalVerbReferenceRow[];
+  phrasalVerbGroups: GrammarTopicPhrasalVerbGroupCard[];
+  usageNotes: GrammarTopicPhrasalVerbUsageNote[];
+  commonMistakes: GrammarTopicFullExplanationMistake[];
+  quickMemory: string[];
+  practiceItems: GrammarTopicFullExplanationPracticeItem[];
+  relatedTopics: string[];
+};
+
 export type GrammarTopicModalCard = {
   title: string;
   modal: string;
@@ -874,4 +911,5 @@ export type GrammarTopicFullExplanation =
   | GrammarTopicAdjectivesAdverbsFullExplanation
   | GrammarTopicConnectorsDiscourseMarkersFullExplanation
   | GrammarTopicPracticalWritingPatternsFullExplanation
+  | GrammarTopicPhrasalVerbsFullExplanation
   | GrammarTopicModalTopicFullExplanation;

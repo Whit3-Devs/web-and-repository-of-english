@@ -14,6 +14,7 @@ import type {
   GrammarTopicFullExplanationPracticeItem,
   GrammarTopicGerundsInfinitivesFullExplanation,
   GrammarTopicPassiveVoiceFullExplanation,
+  GrammarTopicPhrasalVerbsFullExplanation,
   GrammarTopicPracticalWritingPatternsFullExplanation,
   GrammarTopicQuestionBuilderFullExplanation,
   GrammarTopicModalTopicFullExplanation,
@@ -147,6 +148,8 @@ export function GrammarTopicDetailPage({
           <ConnectorsDiscourseMarkersContent explanation={fullExplanation} />
         ) : fullExplanation.contentType === "practical-writing-patterns" ? (
           <PracticalWritingPatternsContent explanation={fullExplanation} />
+        ) : fullExplanation.contentType === "phrasal-verbs" ? (
+          <PhrasalVerbsContent explanation={fullExplanation} />
         ) : (
           <PronounsPossessivesContent explanation={fullExplanation} />
         )}
@@ -1533,6 +1536,43 @@ function PracticalWritingPatternsContent({
   );
 }
 
+function PhrasalVerbsContent({
+  explanation
+}: {
+  explanation: GrammarTopicPhrasalVerbsFullExplanation;
+}) {
+  return (
+    <>
+      <div className="mt-8 grid gap-6 md:grid-cols-2">
+        <ContentSection
+          title="What this page helps you understand and say"
+          items={explanation.whatItDoes}
+        />
+        <ContentSection
+          title="Phrasal verb decision rules"
+          items={explanation.decisionRules}
+          variant="highlight"
+        />
+      </div>
+
+      <PhrasalVerbsReferenceTable rows={explanation.referenceTable} />
+
+      <PhrasalVerbGroupSection cards={explanation.phrasalVerbGroups} />
+
+      <PhrasalVerbUsageNotes notes={explanation.usageNotes} />
+
+      <MistakesSection mistakes={explanation.commonMistakes} />
+
+      <PracticeSection items={explanation.practiceItems} />
+
+      <div className="mt-8 grid gap-6 md:grid-cols-2">
+        <ContentSection title="Quick memory" items={explanation.quickMemory} variant="amber" />
+        <ContentSection title="Related topics" items={explanation.relatedTopics} />
+      </div>
+    </>
+  );
+}
+
 function SideBySideExamples({
   rows
 }: {
@@ -2037,6 +2077,111 @@ function WritingPatternGroupSection({
               </p>
               <p className="mt-1 text-amber-950">{card.toneNote}</p>
             </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  );
+}
+
+function PhrasalVerbsReferenceTable({
+  rows
+}: {
+  rows: GrammarTopicPhrasalVerbsFullExplanation["referenceTable"];
+}) {
+  return (
+    <div className="mt-8 overflow-hidden rounded-3xl border border-slate-200">
+      <div className="bg-slate-950 px-6 py-4">
+        <h3 className="text-xl font-black text-white">Phrasal verbs reference table</h3>
+      </div>
+      <div className="overflow-x-auto bg-white">
+        <table className="min-w-full divide-y divide-slate-200 text-sm">
+          <thead className="bg-slate-50">
+            <tr>
+              {["Phrasal verb", "Meaning", "Pattern", "Example"].map((heading) => (
+                <th
+                  key={heading}
+                  className="px-4 py-3 text-left font-bold uppercase tracking-wide text-slate-700"
+                >
+                  {heading}
+                </th>
+              ))}
+            </tr>
+          </thead>
+          <tbody className="divide-y divide-slate-200">
+            {rows.map((row) => (
+              <tr key={row.phrasalVerb}>
+                <td className="px-4 py-4 font-bold text-slate-950">{row.phrasalVerb}</td>
+                <td className="px-4 py-4 text-slate-700">{row.meaning}</td>
+                <td className="px-4 py-4 text-slate-700">{row.pattern}</td>
+                <td className="px-4 py-4 text-slate-700">{row.example}</td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
+    </div>
+  );
+}
+
+function PhrasalVerbGroupSection({
+  cards
+}: {
+  cards: GrammarTopicPhrasalVerbsFullExplanation["phrasalVerbGroups"];
+}) {
+  return (
+    <div className="mt-8 rounded-3xl bg-slate-50 p-6">
+      <h3 className="text-xl font-black text-slate-950">Phrasal verb groups</h3>
+      <div className="mt-4 grid gap-4">
+        {cards.map((card) => (
+          <div key={card.title} className="rounded-2xl bg-white p-4 shadow-sm">
+            <h4 className="font-bold text-slate-900">{card.title}</h4>
+            <p className="mt-2 text-slate-700">{card.situation}</p>
+            <div className="mt-4 grid gap-3 md:grid-cols-2">
+              {card.phrasalVerbs.map((item) => (
+                <div key={item.phrasalVerb} className="rounded-2xl border border-slate-200 p-4">
+                  <p className="font-bold text-blue-700">{item.phrasalVerb}</p>
+                  <p className="mt-2 text-sm text-slate-700">{item.meaning}</p>
+                  <p className="mt-3 rounded-2xl bg-slate-100 p-3 text-sm font-semibold text-slate-900">
+                    {item.pattern}
+                  </p>
+                  <p className="mt-3 text-sm text-slate-700">{item.example}</p>
+                </div>
+              ))}
+            </div>
+            <div className="mt-4 rounded-2xl bg-amber-50 p-4">
+              <p className="text-sm font-semibold uppercase tracking-wide text-amber-700">
+                Usage note
+              </p>
+              <p className="mt-1 text-amber-950">{card.usageNote}</p>
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  );
+}
+
+function PhrasalVerbUsageNotes({
+  notes
+}: {
+  notes: GrammarTopicPhrasalVerbsFullExplanation["usageNotes"];
+}) {
+  return (
+    <div className="mt-8 rounded-3xl bg-amber-50 p-6">
+      <h3 className="text-xl font-black text-amber-950">
+        Separable / inseparable and meaning notes
+      </h3>
+      <div className="mt-4 grid gap-4">
+        {notes.map((note) => (
+          <div key={note.title} className="rounded-2xl bg-white p-4 shadow-sm">
+            <h4 className="font-bold text-slate-900">{note.title}</h4>
+            <p className="mt-2 text-slate-700">{note.rule}</p>
+            <ul className="mt-3 space-y-2 text-sm text-slate-700">
+              {note.examples.map((example) => (
+                <li key={example}>• {example}</li>
+              ))}
+            </ul>
           </div>
         ))}
       </div>

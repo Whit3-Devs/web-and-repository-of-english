@@ -65,6 +65,7 @@ This audit maps the original Obsidian source material into the app content that 
 | New authored topic: `Adjectives and Adverbs` | Authored directly in app data | Core Grammar |
 | New authored topic: `Connectors and Discourse Markers` | Authored directly in app data | Core Grammar |
 | New authored topic: `Practical Writing Patterns` | Authored directly in app data | Core Grammar |
+| New authored topic: `Phrasal Verbs` | Authored directly in app data | Core Grammar |
 
 ## Implementation Notes
 
@@ -80,3 +81,4 @@ This audit maps the original Obsidian source material into the app content that 
 - `Adjectives and Adverbs` is a new authored topic, not a migrated Obsidian source file.
 - `Connectors and Discourse Markers` is a new authored topic, not a migrated Obsidian source file.
 - `Practical Writing Patterns` is a new authored topic, not a migrated Obsidian source file.
+- `Phrasal Verbs` is a new authored topic, not a migrated Obsidian source file.

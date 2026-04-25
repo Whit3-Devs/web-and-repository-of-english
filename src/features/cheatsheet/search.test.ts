@@ -297,6 +297,32 @@ const grammarTopics: GrammarTopic[] = [
     hasFullExplanation: true
   },
   {
+    id: "phrasal-verbs",
+    slug: "phrasal-verbs",
+    title: "Phrasal Verbs",
+    section: "core-grammar",
+    summary:
+      "Use common work-related phrasal verbs for debugging, planning, reviews, and technical conversations.",
+    keyIdeas: [
+      "Use work on for tasks.",
+      "Use look into and figure out for debugging.",
+      "Use follow up on and set up in technical communication."
+    ],
+    examples: [
+      "I’m working on the validation task.",
+      "I’ll look into this issue after standup.",
+      "We need to figure out why the request fails.",
+      "We need to set up the new environment."
+    ],
+    commonMistakes: [
+      "I’m working in this task. → I’m working on this task.",
+      "I will look this issue. → I will look into this issue."
+    ],
+    relatedTopics: ["Practical Writing Patterns", "Common Prepositions"],
+    fullExplanationPath: "/core-grammar/phrasal-verbs",
+    hasFullExplanation: true
+  },
+  {
     id: "polite-requests",
     slug: "polite-requests",
     title: "Polite Requests",
@@ -393,15 +419,21 @@ describe("cheatsheet search", () => {
     expect(matchesGrammarTopic(grammarTopics[10], "could you clarify")).toBe(true);
     expect(matchesGrammarTopic(grammarTopics[10], "status update")).toBe(true);
     expect(matchesGrammarTopic(grammarTopics[10], "I suggest using")).toBe(true);
-    expect(matchesGrammarTopic(grammarTopics[11], "polite")).toBe(true);
-    expect(matchesGrammarTopic(grammarTopics[11], "softer")).toBe(true);
-    expect(matchesGrammarTopic(grammarTopics[11], "could you help")).toBe(true);
+    expect(matchesGrammarTopic(grammarTopics[11], "phrasal verbs")).toBe(true);
+    expect(matchesGrammarTopic(grammarTopics[11], "work on")).toBe(true);
+    expect(matchesGrammarTopic(grammarTopics[11], "look into")).toBe(true);
+    expect(matchesGrammarTopic(grammarTopics[11], "follow up")).toBe(true);
+    expect(matchesGrammarTopic(grammarTopics[11], "figure out")).toBe(true);
+    expect(matchesGrammarTopic(grammarTopics[11], "set up")).toBe(true);
+    expect(matchesGrammarTopic(grammarTopics[12], "polite")).toBe(true);
+    expect(matchesGrammarTopic(grammarTopics[12], "softer")).toBe(true);
+    expect(matchesGrammarTopic(grammarTopics[12], "could you help")).toBe(true);
   });
 
   it("filters grammar topics by section and full explanation availability", () => {
     expect(filterGrammarTopics(grammarTopics, { section: "modal-verbs" })).toHaveLength(2);
-    expect(filterGrammarTopics(grammarTopics, { section: "core-grammar" })).toHaveLength(10);
+    expect(filterGrammarTopics(grammarTopics, { section: "core-grammar" })).toHaveLength(11);
     expect(filterGrammarTopics(grammarTopics, { hasFullExplanation: false })).toHaveLength(1);
-    expect(filterGrammarTopics(grammarTopics, { hasFullExplanation: true })).toHaveLength(11);
+    expect(filterGrammarTopics(grammarTopics, { hasFullExplanation: true })).toHaveLength(12);
   });
 });

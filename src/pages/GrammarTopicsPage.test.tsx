@@ -38,6 +38,7 @@ describe("Grammar topic pages", () => {
     expect(screen.getByText("Adjectives and Adverbs")).toBeTruthy();
     expect(screen.getByText("Connectors and Discourse Markers")).toBeTruthy();
     expect(screen.getByText("Practical Writing Patterns")).toBeTruthy();
+    expect(screen.getByText("Phrasal Verbs")).toBeTruthy();
   });
 
   it("renders placeholder detail routes for irregular verb pages that are not migrated yet", () => {
@@ -876,6 +877,44 @@ describe("Grammar topic pages", () => {
     expect(screen.getByText("I have a doubt.")).toBeTruthy();
     expect(screen.getAllByText("I have a question.").length).toBeGreaterThan(0);
     expect(screen.getByText("Correct the sentence: I suggest to use this.")).toBeTruthy();
+  });
+
+  it("renders full explanation content for Phrasal Verbs", () => {
+    render(
+      <MemoryRouter initialEntries={["/core-grammar/phrasal-verbs"]}>
+        <Routes>
+          <Route
+            path="/core-grammar/:slug"
+            element={
+              <GrammarTopicDetailPage
+                section="core-grammar"
+                backPath="/core-grammar"
+                backLabel="Core Grammar"
+              />
+            }
+          />
+        </Routes>
+      </MemoryRouter>
+    );
+
+    expect(screen.getByRole("heading", { name: "Phrasal Verbs" })).toBeTruthy();
+    expect(screen.getByText("Available now")).toBeTruthy();
+    expect(screen.getByText("What this page helps you understand and say")).toBeTruthy();
+    expect(screen.getByText("Phrasal verb decision rules")).toBeTruthy();
+    expect(screen.getByText("Phrasal verbs reference table")).toBeTruthy();
+    expect(screen.getByText("Phrasal verb groups")).toBeTruthy();
+    expect(screen.getByText("Work / progress")).toBeTruthy();
+    expect(screen.getByText("Problems / debugging")).toBeTruthy();
+    expect(screen.getByText("Changes / implementation")).toBeTruthy();
+    expect(screen.getByText("Communication")).toBeTruthy();
+    expect(screen.getByText("Separable / inseparable and meaning notes")).toBeTruthy();
+    expect(screen.getByText("Separable vs inseparable")).toBeTruthy();
+    expect(screen.getByText("Literal vs idiomatic meaning")).toBeTruthy();
+    expect(screen.getByText("Common mistakes")).toBeTruthy();
+    expect(screen.getByText("Micro practice")).toBeTruthy();
+    expect(screen.getByText("I’m working in this task.")).toBeTruthy();
+    expect(screen.getAllByText("I’m working on this task.").length).toBeGreaterThan(0);
+    expect(screen.getByText("Complete the sentence: I’ll ___ this issue after standup.")).toBeTruthy();
   });
 
   it("renders full explanation content for Question Builder Cheat Sheet", () => {

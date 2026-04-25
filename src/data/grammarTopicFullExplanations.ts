@@ -4930,6 +4930,321 @@ export const grammarTopicFullExplanations: GrammarTopicFullExplanation[] = [
       "Gerunds and Infinitives",
       "Polite Requests"
     ]
+  },
+  {
+    contentType: "phrasal-verbs",
+    slug: "phrasal-verbs",
+    title: "Phrasal Verbs",
+    section: "core-grammar",
+    overview:
+      "Use practical work-related phrasal verbs to sound more natural in technical conversations, PR comments, standups, debugging, planning, and delivery.",
+    whatItDoes: [
+      "Help you understand common verb + particle chunks like work on, look into, and set up.",
+      "Give you the phrasal verbs that appear often in developer communication.",
+      "Show when a phrasal verb is literal, idiomatic, separable, or inseparable.",
+      "Prevent preposition mistakes like working in a task and look this issue."
+    ],
+    decisionRules: [
+      "If you talk about a task in progress, use work on.",
+      "If you investigate a problem, use look into or figure out.",
+      "If you continue communication after something, use follow up on.",
+      "If you prepare a tool, account, or environment, use set up.",
+      "If you review a document, log, or process, use go over or go through.",
+      "Learn phrasal verbs as full chunks because the particle often changes the meaning."
+    ],
+    referenceTable: [
+      {
+        phrasalVerb: "work on",
+        meaning: "spend time doing a task",
+        pattern: "work on + noun",
+        example: "I’m working on the validation task."
+      },
+      {
+        phrasalVerb: "look into",
+        meaning: "investigate",
+        pattern: "look into + issue/problem",
+        example: "I’ll look into this issue after standup."
+      },
+      {
+        phrasalVerb: "follow up on",
+        meaning: "continue or check after a previous action",
+        pattern: "follow up on + topic",
+        example: "Let’s follow up on this bug tomorrow."
+      },
+      {
+        phrasalVerb: "set up",
+        meaning: "prepare or configure",
+        pattern: "set up + tool/environment",
+        example: "We need to set up the new environment."
+      },
+      {
+        phrasalVerb: "figure out",
+        meaning: "understand or solve",
+        pattern: "figure out + what/how/why",
+        example: "We need to figure out why the request fails."
+      },
+      {
+        phrasalVerb: "go over",
+        meaning: "review together",
+        pattern: "go over + document/details",
+        example: "Let’s go over the release notes."
+      }
+    ],
+    phrasalVerbGroups: [
+      {
+        title: "Work / progress",
+        situation: "Use these in standups, planning, and delivery updates.",
+        phrasalVerbs: [
+          {
+            phrasalVerb: "work on",
+            meaning: "spend time doing a task",
+            pattern: "work on + task",
+            example: "I’m working on the checkout flow."
+          },
+          {
+            phrasalVerb: "follow up",
+            meaning: "continue after a previous message or action",
+            pattern: "follow up on + topic",
+            example: "I’ll follow up on the API question."
+          },
+          {
+            phrasalVerb: "move forward",
+            meaning: "continue progress",
+            pattern: "move forward with + plan",
+            example: "We can move forward with this approach."
+          },
+          {
+            phrasalVerb: "wrap up",
+            meaning: "finish",
+            pattern: "wrap up + task/discussion",
+            example: "Let’s wrap up the review today."
+          }
+        ],
+        usageNote: "Use work on, not work in, when you mean a task or feature."
+      },
+      {
+        title: "Problems / debugging",
+        situation: "Use these when investigating bugs and unexpected behavior.",
+        phrasalVerbs: [
+          {
+            phrasalVerb: "run into",
+            meaning: "encounter a problem",
+            pattern: "run into + problem",
+            example: "I ran into an issue with the auth flow."
+          },
+          {
+            phrasalVerb: "figure out",
+            meaning: "understand or solve",
+            pattern: "figure out + cause/solution",
+            example: "We need to figure out why the test is flaky."
+          },
+          {
+            phrasalVerb: "look into",
+            meaning: "investigate",
+            pattern: "look into + issue",
+            example: "I’ll look into the production error."
+          },
+          {
+            phrasalVerb: "break down",
+            meaning: "stop working or separate into parts",
+            pattern: "break down / break down + topic",
+            example: "Let’s break down the problem into smaller cases."
+          }
+        ],
+        usageNote: "Look into means investigate; do not say look this issue."
+      },
+      {
+        title: "Changes / implementation",
+        situation: "Use these when preparing, changing, releasing, or disabling something.",
+        phrasalVerbs: [
+          {
+            phrasalVerb: "set up",
+            meaning: "prepare or configure",
+            pattern: "set up + environment/tool",
+            example: "I set up the local database."
+          },
+          {
+            phrasalVerb: "clean up",
+            meaning: "improve by removing unnecessary parts",
+            pattern: "clean up + code/file",
+            example: "We should clean up this component."
+          },
+          {
+            phrasalVerb: "roll out",
+            meaning: "release gradually",
+            pattern: "roll out + feature",
+            example: "We’ll roll out the new dashboard next week."
+          },
+          {
+            phrasalVerb: "turn off",
+            meaning: "disable",
+            pattern: "turn off + feature/setting",
+            example: "Turn off the flag if the error returns."
+          }
+        ],
+        usageNote: "Set up, clean up, and turn off can be separable with object pronouns: set it up, clean it up, turn it off."
+      },
+      {
+        title: "Communication",
+        situation: "Use these in PR reviews, meetings, and async discussions.",
+        phrasalVerbs: [
+          {
+            phrasalVerb: "bring up",
+            meaning: "mention a topic",
+            pattern: "bring up + topic",
+            example: "Thanks for bringing up the accessibility issue."
+          },
+          {
+            phrasalVerb: "point out",
+            meaning: "highlight or mention",
+            pattern: "point out + detail",
+            example: "She pointed out a missing test case."
+          },
+          {
+            phrasalVerb: "go over",
+            meaning: "review together",
+            pattern: "go over + details",
+            example: "Let’s go over the acceptance criteria."
+          },
+          {
+            phrasalVerb: "get back to",
+            meaning: "reply later",
+            pattern: "get back to + person",
+            example: "I’ll get back to you after I check the logs."
+          }
+        ],
+        usageNote: "Get back to someone means reply later; it does not mean physically return."
+      },
+      {
+        title: "Learning / review",
+        situation: "Use these when reviewing docs, catching up, and learning new patterns.",
+        phrasalVerbs: [
+          {
+            phrasalVerb: "catch up",
+            meaning: "reach the current level of information",
+            pattern: "catch up on + topic",
+            example: "I need to catch up on the latest changes."
+          },
+          {
+            phrasalVerb: "go through",
+            meaning: "review carefully from start to finish",
+            pattern: "go through + document/list",
+            example: "I’ll go through the migration notes."
+          },
+          {
+            phrasalVerb: "pick up",
+            meaning: "learn naturally over time",
+            pattern: "pick up + skill/pattern",
+            example: "You pick up these phrases by reading PRs."
+          },
+          {
+            phrasalVerb: "come across",
+            meaning: "find by chance",
+            pattern: "come across + thing",
+            example: "I came across a similar bug last month."
+          }
+        ],
+        usageNote: "Catch up usually needs on when you mention the topic: catch up on the changes."
+      }
+    ],
+    usageNotes: [
+      {
+        title: "Separable vs inseparable",
+        rule: "Some phrasal verbs can split around an object, especially set up, clean up, turn off, and point out. Others usually stay together, like look into, run into, and get back to.",
+        examples: [
+          "Set it up before the demo.",
+          "I’ll look into it after standup.",
+          "She pointed out the missing test."
+        ]
+      },
+      {
+        title: "Literal vs idiomatic meaning",
+        rule: "Some phrasal verbs are literal, but many work expressions are idiomatic. Learn the full chunk, not only the base verb.",
+        examples: [
+          "Turn off the feature means disable it.",
+          "Run into a problem means encounter a problem.",
+          "Figure out the issue means understand or solve it."
+        ]
+      },
+      {
+        title: "Phrasal verb or normal verb",
+        rule: "Some normal verbs do not need a particle. Discuss means talk about, so do not say discuss about.",
+        examples: [
+          "Let’s discuss it.",
+          "Let’s talk about it.",
+          "Can you explain what happened to me?"
+        ]
+      }
+    ],
+    commonMistakes: [
+      {
+        wrong: "I’m working in this task.",
+        correct: "I’m working on this task.",
+        reason: "Use work on for tasks, features, and problems."
+      },
+      {
+        wrong: "I will look this issue.",
+        correct: "I will look into this issue.",
+        reason: "Look into means investigate."
+      },
+      {
+        wrong: "Let’s discuss about it.",
+        correct: "Let’s discuss it. / Let’s talk about it.",
+        reason: "Discuss does not take about; talk does."
+      },
+      {
+        wrong: "I need to follow this bug.",
+        correct: "I need to follow up on this bug.",
+        reason: "Follow up on means continue checking or communicating about a topic."
+      },
+      {
+        wrong: "Can you explain me what happened?",
+        correct: "Can you explain what happened to me?",
+        reason: "Explain takes the thing first, then to + person."
+      }
+    ],
+    quickMemory: [
+      "Task = work on.",
+      "Investigate = look into.",
+      "Solve/understand = figure out.",
+      "Continue after = follow up on.",
+      "Prepare/configure = set up.",
+      "Review carefully = go through.",
+      "Reply later = get back to."
+    ],
+    practiceItems: [
+      {
+        prompt: "Correct the sentence: I’m working in this task.",
+        answer: "I’m working on this task.",
+        focus: "work on + task"
+      },
+      {
+        prompt: "Complete the sentence: I’ll ___ this issue after standup.",
+        answer: "look into",
+        focus: "investigation phrasal verb"
+      },
+      {
+        prompt: "Correct the sentence: Let’s discuss about it.",
+        answer: "Let’s discuss it. / Let’s talk about it.",
+        focus: "discuss vs talk about"
+      },
+      {
+        prompt: "Complete the sentence: We need to ___ why the test is flaky.",
+        answer: "figure out",
+        focus: "understand or solve"
+      },
+      {
+        prompt: "Rewrite with a phrasal verb: prepare the environment.",
+        answer: "set up the environment",
+        focus: "set up"
+      }
+    ],
+    relatedTopics: [
+      "Practical Writing Patterns",
+      "Connectors and Discourse Markers",
+      "Common Prepositions",
+      "Gerunds and Infinitives"
+    ]
   }
 ];
 

@@ -641,6 +641,41 @@ export const grammarTopics: GrammarTopic[] = [
     hasFullExplanation: true
   },
   {
+    id: "phrasal-verbs",
+    slug: "phrasal-verbs",
+    title: "Phrasal Verbs",
+    section: "core-grammar",
+    summary:
+      "Understand and use common work-related phrasal verbs for debugging, planning, reviews, and technical conversations.",
+    keyIdeas: [
+      "Phrasal verbs combine a verb with a particle: look into, set up, follow up.",
+      "Many work phrasal verbs are idiomatic, so learn them as complete chunks.",
+      "Use work on for tasks, look into for investigation, and follow up on for continuing communication.",
+      "Some phrasal verbs are separable, but many professional ones stay together."
+    ],
+    examples: [
+      "I’m working on the validation task.",
+      "I’ll look into this issue after standup.",
+      "Let’s follow up on this bug tomorrow.",
+      "We need to set up the new environment."
+    ],
+    commonMistakes: [
+      "I’m working in this task. → I’m working on this task.",
+      "I will look this issue. → I will look into this issue.",
+      "Let’s discuss about it. → Let’s discuss it. / Let’s talk about it.",
+      "I need to follow this bug. → I need to follow up on this bug.",
+      "Can you explain me what happened? → Can you explain what happened to me?"
+    ],
+    relatedTopics: [
+      "Practical Writing Patterns",
+      "Connectors and Discourse Markers",
+      "Common Prepositions",
+      "Gerunds and Infinitives"
+    ],
+    fullExplanationPath: "/core-grammar/phrasal-verbs",
+    hasFullExplanation: true
+  },
+  {
     id: "key-structure-differences",
     slug: "key-structure-differences",
     title: "Key Structure Differences",
