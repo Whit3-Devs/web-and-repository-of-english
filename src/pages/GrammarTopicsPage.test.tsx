@@ -1030,6 +1030,20 @@ describe("Grammar topic pages", () => {
     expect(within(navigation).getByText("Core Grammar")).toBeTruthy();
   });
 
+  it("shows the theme toggle in the app header", () => {
+    render(
+      <MemoryRouter>
+        <Routes>
+          <Route element={<AppLayout />}>
+            <Route index element={<p>Home content</p>} />
+          </Route>
+        </Routes>
+      </MemoryRouter>
+    );
+
+    expect(screen.getByRole("button", { name: /switch to .* mode/i })).toBeTruthy();
+  });
+
   it("renders the GitHub calls to action in the footer", () => {
     render(
       <MemoryRouter>

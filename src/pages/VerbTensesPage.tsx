@@ -94,18 +94,18 @@ export function VerbTensesPage() {
   return (
     <section className="space-y-6">
       <div>
-        <p className="text-sm font-semibold uppercase tracking-[0.3em] text-blue-600">
+        <p className="text-sm font-semibold uppercase tracking-[0.3em] text-blue-600 dark:text-blue-300">
           Grammar
         </p>
-        <h2 className="mt-2 text-3xl font-black text-slate-950">Verb Tenses</h2>
-        <p className="mt-2 max-w-2xl text-slate-600">
+        <h2 className="mt-2 text-3xl font-black text-slate-950 dark:text-slate-50">Verb Tenses</h2>
+        <p className="mt-2 max-w-2xl text-slate-600 dark:text-slate-400 dark:text-slate-500">
           Switch between a quick comparison mode and a detailed study mode. Use
           Simplified when you want a fast reference, and Full when you want more
           explanation and context.
         </p>
       </div>
 
-      <div className="rounded-3xl border border-slate-200 bg-white p-3 shadow-sm">
+      <div className="rounded-3xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-900 p-3 shadow-sm">
         <div
           role="tablist"
           aria-label="Verb tense view mode"
@@ -125,8 +125,8 @@ export function VerbTensesPage() {
                 onClick={() => setViewMode(tab.id)}
                 className={`rounded-2xl border px-4 py-4 text-left transition ${
                   isActive
-                    ? "border-blue-500 bg-blue-50 text-blue-950 shadow-sm"
-                    : "border-slate-200 bg-white text-slate-700 hover:border-slate-300"
+                    ? "border-blue-500 bg-blue-50 dark:bg-blue-950/40 text-blue-950 dark:text-blue-100 shadow-sm"
+                    : "border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-900 text-slate-700 dark:text-slate-300 hover:border-slate-300 dark:hover:border-slate-500 dark:border-slate-600"
                 }`}
               >
                 <span className="block text-sm font-black uppercase tracking-[0.2em]">
@@ -139,11 +139,11 @@ export function VerbTensesPage() {
         </div>
       </div>
 
-      <div className="grid gap-4 rounded-3xl border border-slate-200 bg-white p-5 shadow-sm md:grid-cols-[1fr_auto] md:items-end">
+      <div className="grid gap-4 rounded-3xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-900 p-5 shadow-sm md:grid-cols-[1fr_auto] md:items-end">
         <SearchInput value={searchTerm} onChange={setSearchTerm} />
 
         <label className="block">
-          <span className="mb-2 block text-sm font-semibold text-slate-700">
+          <span className="mb-2 block text-sm font-semibold text-slate-700 dark:text-slate-300">
             Category
           </span>
           <select
@@ -154,7 +154,7 @@ export function VerbTensesPage() {
                 event.target.value === "all" ? undefined : event.target.value
               )
             }
-            className="w-full rounded-2xl border border-slate-200 bg-white px-4 py-3 text-slate-900 shadow-sm outline-none focus:border-blue-500 focus:ring-4 focus:ring-blue-100 md:w-48"
+            className="w-full rounded-2xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-900 px-4 py-3 text-slate-900 dark:text-slate-100 shadow-sm outline-none focus:border-blue-500 focus:ring-4 focus:ring-blue-100 dark:focus:ring-blue-950 md:w-48"
           >
             {categories.map((category) => (
               <option key={category} value={category}>
@@ -180,7 +180,7 @@ export function VerbTensesPage() {
       </div>
 
       {!hasResults ? (
-        <p className="rounded-3xl border border-dashed border-slate-300 p-8 text-center text-slate-500">
+        <p className="rounded-3xl border border-dashed border-slate-300 dark:border-slate-600 p-8 text-center text-slate-500 dark:text-slate-400 dark:text-slate-500">
           No verb tenses found with those filters.
         </p>
       ) : null}
@@ -201,18 +201,18 @@ function DecisionMapView({ entries }: { entries: VerbTenseDecisionMapEntry[] }) 
         return (
           <article
             key={entry.id}
-            className="rounded-3xl border border-slate-200 bg-white p-6 shadow-sm"
+            className="rounded-3xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-900 p-6 shadow-sm"
           >
             <div className="flex flex-wrap items-start justify-between gap-3">
               <div>
-                <h3 className="text-2xl font-bold text-slate-950">{entry.title}</h3>
-                <p className="mt-2 max-w-3xl text-slate-600">{entry.summary}</p>
+                <h3 className="text-2xl font-bold text-slate-950 dark:text-slate-50">{entry.title}</h3>
+                <p className="mt-2 max-w-3xl text-slate-600 dark:text-slate-400 dark:text-slate-500">{entry.summary}</p>
               </div>
               <div className="flex flex-wrap items-center gap-2">
                 {entry.categories.map((category) => (
                   <span
                     key={`${entry.id}-${category}`}
-                    className="rounded-full bg-slate-100 px-3 py-1 text-sm font-semibold capitalize text-slate-700"
+                    className="rounded-full bg-slate-100 dark:bg-slate-800 px-3 py-1 text-sm font-semibold capitalize text-slate-700 dark:text-slate-300"
                   >
                     {category}
                   </span>
@@ -231,29 +231,29 @@ function DecisionMapView({ entries }: { entries: VerbTenseDecisionMapEntry[] }) 
               <ContentList title="Keywords" items={entry.keywords} />
             </div>
 
-            <div className="mt-5 rounded-3xl bg-blue-50 p-5">
-              <h4 className="text-lg font-bold text-blue-950">Quick contrast</h4>
+            <div className="mt-5 rounded-3xl bg-blue-50 dark:bg-blue-950/40 p-5">
+              <h4 className="text-lg font-bold text-blue-950 dark:text-blue-100">Quick contrast</h4>
               <div className="mt-3 grid gap-4 md:grid-cols-2">
                 {entry.contrasts.map((contrast) => (
-                  <div key={`${entry.id}-${contrast.label}`} className="rounded-2xl bg-white p-4">
-                    <p className="text-sm font-semibold uppercase tracking-wide text-slate-500">
+                  <div key={`${entry.id}-${contrast.label}`} className="rounded-2xl bg-white dark:bg-slate-900 p-4">
+                    <p className="text-sm font-semibold uppercase tracking-wide text-slate-500 dark:text-slate-400 dark:text-slate-500">
                       {contrast.label}
                     </p>
-                    <p className="mt-2 font-semibold text-slate-950">
-                      Use <span className="text-blue-700">{contrast.useInsteadOf}</span>
+                    <p className="mt-2 font-semibold text-slate-950 dark:text-slate-50">
+                      Use <span className="text-blue-700 dark:text-blue-300">{contrast.useInsteadOf}</span>
                     </p>
-                    <p className="mt-2 text-sm text-slate-600">{contrast.reason}</p>
+                    <p className="mt-2 text-sm text-slate-600 dark:text-slate-400 dark:text-slate-500">{contrast.reason}</p>
                   </div>
                 ))}
               </div>
             </div>
 
-            <div className="mt-5 flex flex-wrap items-center justify-between gap-3 rounded-2xl bg-slate-50 p-4">
+            <div className="mt-5 flex flex-wrap items-center justify-between gap-3 rounded-2xl bg-slate-50 dark:bg-slate-800 p-4">
               <div>
-                <p className="text-sm font-semibold uppercase tracking-wide text-slate-500">
+                <p className="text-sm font-semibold uppercase tracking-wide text-slate-500 dark:text-slate-400 dark:text-slate-500">
                   Detail route
                 </p>
-                <p className="mt-1 text-slate-700">
+                <p className="mt-1 text-slate-700 dark:text-slate-300">
                   Open the full tense page for structure, examples, signals, and mistakes.
                 </p>
               </div>
@@ -277,15 +277,15 @@ function FullVerbTensesView({ verbTenses }: { verbTenses: VerbTense[] }) {
       {verbTenses.map((verbTense) => (
         <article
           key={verbTense.id}
-          className="rounded-3xl border border-slate-200 bg-white p-6 shadow-sm"
+          className="rounded-3xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-900 p-6 shadow-sm"
         >
           <div className="flex flex-wrap items-start justify-between gap-3">
             <div>
-              <h3 className="text-2xl font-bold text-slate-950">{verbTense.name}</h3>
-              <p className="mt-2 text-slate-600">{verbTense.summary}</p>
+              <h3 className="text-2xl font-bold text-slate-950 dark:text-slate-50">{verbTense.name}</h3>
+              <p className="mt-2 text-slate-600 dark:text-slate-400 dark:text-slate-500">{verbTense.summary}</p>
             </div>
             <div className="flex flex-wrap items-center gap-2">
-              <span className="rounded-full bg-slate-100 px-3 py-1 text-sm font-semibold capitalize text-slate-700">
+              <span className="rounded-full bg-slate-100 dark:bg-slate-800 px-3 py-1 text-sm font-semibold capitalize text-slate-700 dark:text-slate-300">
                 {verbTense.category}
               </span>
               <FullExplanationLink
@@ -296,17 +296,17 @@ function FullVerbTensesView({ verbTenses }: { verbTenses: VerbTense[] }) {
           </div>
 
           <dl className="mt-5 grid gap-3 md:grid-cols-3">
-            <div className="rounded-2xl bg-emerald-50 p-4">
-              <dt className="font-bold text-emerald-900">Affirmative</dt>
-              <dd className="mt-1 text-emerald-800">{verbTense.structures.affirmative}</dd>
+            <div className="rounded-2xl bg-emerald-50 dark:bg-emerald-950/40 p-4">
+              <dt className="font-bold text-emerald-900 dark:text-emerald-100">Affirmative</dt>
+              <dd className="mt-1 text-emerald-800 dark:text-emerald-200">{verbTense.structures.affirmative}</dd>
             </div>
-            <div className="rounded-2xl bg-rose-50 p-4">
-              <dt className="font-bold text-rose-900">Negative</dt>
-              <dd className="mt-1 text-rose-800">{verbTense.structures.negative}</dd>
+            <div className="rounded-2xl bg-rose-50 dark:bg-rose-950/40 p-4">
+              <dt className="font-bold text-rose-900 dark:text-rose-100">Negative</dt>
+              <dd className="mt-1 text-rose-800 dark:text-rose-200">{verbTense.structures.negative}</dd>
             </div>
-            <div className="rounded-2xl bg-blue-50 p-4">
-              <dt className="font-bold text-blue-900">Interrogative</dt>
-              <dd className="mt-1 text-blue-800">
+            <div className="rounded-2xl bg-blue-50 dark:bg-blue-950/40 p-4">
+              <dt className="font-bold text-blue-900 dark:text-blue-100">Interrogative</dt>
+              <dd className="mt-1 text-blue-800 dark:text-blue-200">
                 {verbTense.structures.interrogative}
               </dd>
             </div>
@@ -338,17 +338,17 @@ function SimplifiedVerbTensesView({
       {groups.map((group) => (
         <section
           key={group.family}
-          className="rounded-3xl border border-slate-200 bg-white p-6 shadow-sm"
+          className="rounded-3xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-900 p-6 shadow-sm"
         >
           <div className="flex flex-wrap items-center justify-between gap-3">
             <div>
-              <h3 className="text-2xl font-bold text-slate-950">{group.title}</h3>
-              <p className="mt-2 text-slate-600">
+              <h3 className="text-2xl font-bold text-slate-950 dark:text-slate-50">{group.title}</h3>
+              <p className="mt-2 text-slate-600 dark:text-slate-400 dark:text-slate-500">
                 Comparative reference for affirmative, negative, and question
                 forms.
               </p>
             </div>
-            <span className="rounded-full bg-slate-100 px-3 py-1 text-sm font-semibold capitalize text-slate-700">
+            <span className="rounded-full bg-slate-100 dark:bg-slate-800 px-3 py-1 text-sm font-semibold capitalize text-slate-700 dark:text-slate-300">
               {group.family}
             </span>
           </div>
@@ -356,12 +356,12 @@ function SimplifiedVerbTensesView({
           <div className="mt-5 space-y-5">
             {group.tables.map((table) => (
               <div key={table.section}>
-                <h4 className="text-lg font-bold text-slate-900">
+                <h4 className="text-lg font-bold text-slate-900 dark:text-slate-100">
                   {sectionLabels[table.section]}
                 </h4>
-                <div className="mt-3 overflow-x-auto rounded-2xl border border-slate-200">
+                <div className="mt-3 overflow-x-auto rounded-2xl border border-slate-200 dark:border-slate-700">
                   <table className="min-w-full border-collapse text-sm">
-                    <thead className="bg-slate-50 text-left text-slate-700">
+                    <thead className="bg-slate-50 dark:bg-slate-800 text-left text-slate-700 dark:text-slate-300">
                       <tr>
                         <TableHead>Tense</TableHead>
                         <TableHead>Auxiliary</TableHead>
@@ -373,11 +373,11 @@ function SimplifiedVerbTensesView({
                     </thead>
                     <tbody>
                       {table.rows.map((row) => (
-                        <tr key={`${table.section}-${row.tenseSlug}`} className="border-t border-slate-200">
+                        <tr key={`${table.section}-${row.tenseSlug}`} className="border-t border-slate-200 dark:border-slate-700">
                           <TableCell>
                             <Link
                               to={`/verb-tenses/${row.tenseSlug}`}
-                              className="font-semibold text-blue-700 underline-offset-4 hover:underline"
+                              className="font-semibold text-blue-700 dark:text-blue-300 underline-offset-4 hover:underline"
                             >
                               {row.tenseName}
                             </Link>
@@ -396,9 +396,9 @@ function SimplifiedVerbTensesView({
             ))}
           </div>
 
-          <div className="mt-5 rounded-2xl bg-slate-50 p-4">
-            <h4 className="font-bold text-slate-900">Quick memory</h4>
-            <ul className="mt-2 space-y-2 text-sm text-slate-600">
+          <div className="mt-5 rounded-2xl bg-slate-50 dark:bg-slate-800 p-4">
+            <h4 className="font-bold text-slate-900 dark:text-slate-100">Quick memory</h4>
+            <ul className="mt-2 space-y-2 text-sm text-slate-600 dark:text-slate-400 dark:text-slate-500">
               {group.quickMemory.map((item) => (
                 <li key={item}>• {item}</li>
               ))}
@@ -529,7 +529,7 @@ function TableHead({ children }: { children: string }) {
 }
 
 function TableCell({ children }: { children: ReactNode }) {
-  return <td className="px-4 py-3 align-top text-slate-700">{children}</td>;
+  return <td className="px-4 py-3 align-top text-slate-700 dark:text-slate-300">{children}</td>;
 }
 
 function DecisionInfoBlock({
@@ -542,11 +542,11 @@ function DecisionInfoBlock({
   highlight?: boolean;
 }) {
   return (
-    <div className={`rounded-2xl p-4 ${highlight ? "bg-amber-50" : "bg-slate-50"}`}>
-      <h4 className={`font-bold ${highlight ? "text-amber-950" : "text-slate-900"}`}>
+    <div className={`rounded-2xl p-4 ${highlight ? "bg-amber-50 dark:bg-amber-950/40" : "bg-slate-50 dark:bg-slate-800"}`}>
+      <h4 className={`font-bold ${highlight ? "text-amber-950 dark:text-amber-100" : "text-slate-900 dark:text-slate-100"}`}>
         {title}
       </h4>
-      <p className={`mt-2 text-sm ${highlight ? "text-amber-900" : "text-slate-600"}`}>
+      <p className={`mt-2 text-sm ${highlight ? "text-amber-900 dark:text-amber-100" : "text-slate-600 dark:text-slate-400 dark:text-slate-500"}`}>
         {value}
       </p>
     </div>
@@ -556,8 +556,8 @@ function DecisionInfoBlock({
 function InfoSection({ title, value }: { title: string; value: string }) {
   return (
     <div>
-      <h4 className="font-bold text-slate-900">{title}</h4>
-      <p className="mt-2 text-sm text-slate-600">{value}</p>
+      <h4 className="font-bold text-slate-900 dark:text-slate-100">{title}</h4>
+      <p className="mt-2 text-sm text-slate-600 dark:text-slate-400 dark:text-slate-500">{value}</p>
     </div>
   );
 }
@@ -565,8 +565,8 @@ function InfoSection({ title, value }: { title: string; value: string }) {
 function ContentList({ title, items }: { title: string; items: string[] }) {
   return (
     <div>
-      <h4 className="font-bold text-slate-900">{title}</h4>
-      <ul className="mt-2 space-y-2 text-sm text-slate-600">
+      <h4 className="font-bold text-slate-900 dark:text-slate-100">{title}</h4>
+      <ul className="mt-2 space-y-2 text-sm text-slate-600 dark:text-slate-400 dark:text-slate-500">
         {items.map((item) => (
           <li key={item}>• {item}</li>
         ))}

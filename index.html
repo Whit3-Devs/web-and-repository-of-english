@@ -8,6 +8,17 @@
       content="A focused English reference for grammar, verb tenses, modal verbs, irregular verbs, and practical usage patterns."
     />
     <meta name="theme-color" content="#0f46ff" />
+    <script>
+      (() => {
+        try {
+          const theme = localStorage.getItem("english-cheatsheet-theme");
+
+          document.documentElement.classList.toggle("dark", theme !== "light");
+        } catch {
+          document.documentElement.classList.add("dark");
+        }
+      })();
+    </script>
     <link rel="canonical" href="https://english-cheatsheet-and-explanations.vercel.app" />
     <link rel="icon" href="/favicon.ico" sizes="any" />
     <link rel="icon" type="image/png" href="/favicon-32x32.png" sizes="32x32" />

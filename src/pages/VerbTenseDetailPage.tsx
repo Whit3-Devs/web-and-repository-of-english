@@ -11,12 +11,12 @@ export function VerbTenseDetailPage() {
 
   if (!verbTense) {
     return (
-      <section className="rounded-3xl border border-dashed border-slate-300 bg-white p-8 text-center">
-        <p className="text-sm font-semibold uppercase tracking-[0.3em] text-blue-600">
+      <section className="rounded-3xl border border-dashed border-slate-300 dark:border-slate-600 bg-white dark:bg-slate-900 p-8 text-center">
+        <p className="text-sm font-semibold uppercase tracking-[0.3em] text-blue-600 dark:text-blue-300">
           Verb Tenses
         </p>
-        <h2 className="mt-2 text-3xl font-black text-slate-950">Topic not found</h2>
-        <p className="mt-3 text-slate-600">
+        <h2 className="mt-2 text-3xl font-black text-slate-950 dark:text-slate-50">Topic not found</h2>
+        <p className="mt-3 text-slate-600 dark:text-slate-400 dark:text-slate-500">
           The requested verb tense does not exist in the current cheatsheet data.
         </p>
         <Link
@@ -34,24 +34,24 @@ export function VerbTenseDetailPage() {
       <section className="space-y-6">
         <Link
           to="/verb-tenses"
-          className="text-sm font-bold text-blue-700 hover:text-blue-900"
+          className="text-sm font-bold text-blue-700 dark:text-blue-300 hover:text-blue-900 dark:hover:text-blue-100 dark:text-blue-100"
         >
           ← Back to Verb Tenses
         </Link>
 
-        <article className="rounded-3xl border border-slate-200 bg-white p-8 shadow-sm">
+        <article className="rounded-3xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-900 p-8 shadow-sm">
           <div className="flex flex-wrap items-start justify-between gap-4">
             <div>
-              <p className="text-sm font-semibold uppercase tracking-[0.3em] text-blue-600">
+              <p className="text-sm font-semibold uppercase tracking-[0.3em] text-blue-600 dark:text-blue-300">
                 Full explanation
               </p>
-              <h2 className="mt-2 text-4xl font-black text-slate-950">
+              <h2 className="mt-2 text-4xl font-black text-slate-950 dark:text-slate-50">
                 {verbTense.name}
               </h2>
-              <p className="mt-4 max-w-3xl text-lg text-slate-600">{verbTense.summary}</p>
+              <p className="mt-4 max-w-3xl text-lg text-slate-600 dark:text-slate-400 dark:text-slate-500">{verbTense.summary}</p>
             </div>
 
-            <span className="rounded-full bg-amber-50 px-4 py-2 text-sm font-bold text-amber-700">
+            <span className="rounded-full bg-amber-50 dark:bg-amber-950/40 px-4 py-2 text-sm font-bold text-amber-700 dark:text-amber-300">
               Coming soon
             </span>
           </div>
@@ -62,11 +62,11 @@ export function VerbTenseDetailPage() {
             <InfoBlock title="Question" value={verbTense.structures.interrogative} />
           </div>
 
-          <div className="mt-8 rounded-3xl bg-slate-50 p-6">
-            <h3 className="text-xl font-black text-slate-950">
+          <div className="mt-8 rounded-3xl bg-slate-50 dark:bg-slate-800 p-6">
+            <h3 className="text-xl font-black text-slate-950 dark:text-slate-50">
               Full explanation coming soon
             </h3>
-            <p className="mt-2 text-slate-600">
+            <p className="mt-2 text-slate-600 dark:text-slate-400 dark:text-slate-500">
               This route is ready so each topic can get a deeper explanation later
               without changing the cheatsheet navigation again.
             </p>
@@ -78,25 +78,25 @@ export function VerbTenseDetailPage() {
 
   return (
     <section className="space-y-6">
-      <Link to="/verb-tenses" className="text-sm font-bold text-blue-700 hover:text-blue-900">
+      <Link to="/verb-tenses" className="text-sm font-bold text-blue-700 dark:text-blue-300 hover:text-blue-900 dark:hover:text-blue-100 dark:text-blue-100">
         ← Back to Verb Tenses
       </Link>
 
-      <article className="rounded-3xl border border-slate-200 bg-white p-8 shadow-sm">
+      <article className="rounded-3xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-900 p-8 shadow-sm">
         <div className="flex flex-wrap items-start justify-between gap-4">
           <div>
-            <p className="text-sm font-semibold uppercase tracking-[0.3em] text-blue-600">
+            <p className="text-sm font-semibold uppercase tracking-[0.3em] text-blue-600 dark:text-blue-300">
               Full explanation
             </p>
-            <h2 className="mt-2 text-4xl font-black text-slate-950">
+            <h2 className="mt-2 text-4xl font-black text-slate-950 dark:text-slate-50">
               {fullExplanation.title}
             </h2>
-            <p className="mt-4 max-w-3xl text-lg text-slate-600">
+            <p className="mt-4 max-w-3xl text-lg text-slate-600 dark:text-slate-400 dark:text-slate-500">
               {fullExplanation.overview}
             </p>
           </div>
 
-          <span className="rounded-full bg-emerald-50 px-4 py-2 text-sm font-bold text-emerald-700">
+          <span className="rounded-full bg-emerald-50 dark:bg-emerald-950/40 px-4 py-2 text-sm font-bold text-emerald-700 dark:text-emerald-300">
             Available now
           </span>
         </div>
@@ -132,8 +132,8 @@ export function VerbTenseDetailPage() {
 
         <div className="mt-8 grid gap-4 md:grid-cols-2">
           <InfoBlock title="Mental model / timeline" value={fullExplanation.mentalModel} />
-          <div className="rounded-3xl bg-slate-50 p-6">
-            <h3 className="text-xl font-black text-slate-950">Timeline</h3>
+          <div className="rounded-3xl bg-slate-50 dark:bg-slate-800 p-6">
+            <h3 className="text-xl font-black text-slate-950 dark:text-slate-50">Timeline</h3>
             <pre className="mt-3 overflow-x-auto whitespace-pre-wrap rounded-2xl bg-slate-950 p-4 text-sm text-slate-100">
               {fullExplanation.timelineText}
             </pre>
@@ -168,9 +168,9 @@ export function VerbTenseDetailPage() {
             </h3>
             <div className="mt-4 grid gap-4 md:grid-cols-2">
               {fullExplanation.confusionExamples.map((item) => (
-                <div key={item.title} className="rounded-2xl bg-white p-4 shadow-sm">
-                  <h4 className="font-bold text-slate-900">{item.title}</h4>
-                  <ul className="mt-3 space-y-2 text-slate-700">
+                <div key={item.title} className="rounded-2xl bg-white dark:bg-slate-900 p-4 shadow-sm">
+                  <h4 className="font-bold text-slate-900 dark:text-slate-100">{item.title}</h4>
+                  <ul className="mt-3 space-y-2 text-slate-700 dark:text-slate-300">
                     {item.examples.map((example) => (
                       <li key={example}>• {example}</li>
                     ))}
@@ -184,7 +184,7 @@ export function VerbTenseDetailPage() {
           </div>
         ) : null}
 
-        <div className="mt-8 rounded-3xl bg-rose-50 p-6">
+        <div className="mt-8 rounded-3xl bg-rose-50 dark:bg-rose-950/40 p-6">
           <h3 className="text-xl font-black text-rose-950">
             {fullExplanation.explainedMistakes?.length
               ? "Explained mistakes"
@@ -192,15 +192,15 @@ export function VerbTenseDetailPage() {
           </h3>
           <div className="mt-4 grid gap-4 md:grid-cols-2">
             {getMistakeItems(fullExplanation).map((mistake) => (
-              <div key={mistake.wrong} className="rounded-2xl bg-white p-4 shadow-sm">
-                <p className="font-semibold text-rose-800">Wrong</p>
-                <p className="mt-1 text-slate-700">{mistake.wrong}</p>
-                <p className="mt-3 font-semibold text-emerald-700">Correct</p>
-                <p className="mt-1 text-slate-700">{mistake.correct}</p>
+              <div key={mistake.wrong} className="rounded-2xl bg-white dark:bg-slate-900 p-4 shadow-sm">
+                <p className="font-semibold text-rose-800 dark:text-rose-200">Wrong</p>
+                <p className="mt-1 text-slate-700 dark:text-slate-300">{mistake.wrong}</p>
+                <p className="mt-3 font-semibold text-emerald-700 dark:text-emerald-300">Correct</p>
+                <p className="mt-1 text-slate-700 dark:text-slate-300">{mistake.correct}</p>
                 {mistake.reason ? (
                   <>
-                    <p className="mt-3 font-semibold text-blue-700">Why</p>
-                    <p className="mt-1 text-slate-700">{mistake.reason}</p>
+                    <p className="mt-3 font-semibold text-blue-700 dark:text-blue-300">Why</p>
+                    <p className="mt-1 text-slate-700 dark:text-slate-300">{mistake.reason}</p>
                   </>
                 ) : null}
               </div>
@@ -208,13 +208,13 @@ export function VerbTenseDetailPage() {
           </div>
         </div>
 
-        <div className="mt-8 rounded-3xl bg-blue-50 p-6">
-          <h3 className="text-xl font-black text-blue-950">Compare with...</h3>
+        <div className="mt-8 rounded-3xl bg-blue-50 dark:bg-blue-950/40 p-6">
+          <h3 className="text-xl font-black text-blue-950 dark:text-blue-100">Compare with...</h3>
           <div className="mt-4 grid gap-4 md:grid-cols-2">
             {fullExplanation.comparisons.map((comparison) => (
-              <div key={comparison.title} className="rounded-2xl bg-white p-4 shadow-sm">
-                <h4 className="font-bold text-slate-900">{comparison.title}</h4>
-                <p className="mt-2 text-slate-600">{comparison.explanation}</p>
+              <div key={comparison.title} className="rounded-2xl bg-white dark:bg-slate-900 p-4 shadow-sm">
+                <h4 className="font-bold text-slate-900 dark:text-slate-100">{comparison.title}</h4>
+                <p className="mt-2 text-slate-600 dark:text-slate-400 dark:text-slate-500">{comparison.explanation}</p>
               </div>
             ))}
           </div>
@@ -254,27 +254,27 @@ function getInfoBlockStyles(title: string) {
   switch (title) {
     case "Affirmative":
       return {
-        container: "bg-emerald-50",
-        title: "text-emerald-900",
-        body: "text-emerald-800"
+        container: "bg-emerald-50 dark:bg-emerald-950/40",
+        title: "text-emerald-900 dark:text-emerald-100",
+        body: "text-emerald-800 dark:text-emerald-200"
       };
     case "Negative":
       return {
-        container: "bg-rose-50",
-        title: "text-rose-900",
-        body: "text-rose-800"
+        container: "bg-rose-50 dark:bg-rose-950/40",
+        title: "text-rose-900 dark:text-rose-100",
+        body: "text-rose-800 dark:text-rose-200"
       };
     case "Question":
       return {
-        container: "bg-blue-50",
-        title: "text-blue-900",
-        body: "text-blue-800"
+        container: "bg-blue-50 dark:bg-blue-950/40",
+        title: "text-blue-900 dark:text-blue-100",
+        body: "text-blue-800 dark:text-blue-200"
       };
     default:
       return {
-        container: "bg-slate-50",
-        title: "text-slate-900",
-        body: "text-slate-600"
+        container: "bg-slate-50 dark:bg-slate-800",
+        title: "text-slate-900 dark:text-slate-100",
+        body: "text-slate-600 dark:text-slate-400 dark:text-slate-500"
       };
   }
 }
@@ -321,15 +321,15 @@ function getContentSectionStyles(variant: "default" | "highlight" | "indigo" | "
       };
     case "amber":
       return {
-        container: "bg-amber-50",
-        title: "text-amber-950",
-        body: "text-amber-900"
+        container: "bg-amber-50 dark:bg-amber-950/40",
+        title: "text-amber-950 dark:text-amber-100",
+        body: "text-amber-900 dark:text-amber-100"
       };
     default:
       return {
-        container: "bg-slate-50",
-        title: "text-slate-950",
-        body: "text-slate-600"
+        container: "bg-slate-50 dark:bg-slate-800",
+        title: "text-slate-950 dark:text-slate-50",
+        body: "text-slate-600 dark:text-slate-400 dark:text-slate-500"
       };
   }
 }

@@ -73,14 +73,14 @@ export function HomePage() {
         {sections.map((section) => (
           <section
             key={section.title}
-            className="rounded-3xl border border-slate-200 bg-white p-6 shadow-sm"
+            className="rounded-3xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-900 p-6 shadow-sm"
           >
             <div className="flex flex-wrap items-start justify-between gap-4">
               <div>
-                <h3 className="text-2xl font-black text-slate-950">{section.title}</h3>
-                <p className="mt-2 max-w-3xl text-slate-600">{section.description}</p>
+                <h3 className="text-2xl font-black text-slate-950 dark:text-slate-50">{section.title}</h3>
+                <p className="mt-2 max-w-3xl text-slate-600 dark:text-slate-400 dark:text-slate-500">{section.description}</p>
               </div>
-              <span className="rounded-full bg-blue-50 px-3 py-1 text-sm font-bold text-blue-700">
+              <span className="rounded-full bg-blue-50 dark:bg-blue-950/40 px-3 py-1 text-sm font-bold text-blue-700 dark:text-blue-300">
                 {section.count}
               </span>
             </div>
@@ -90,7 +90,7 @@ export function HomePage() {
                 <Link
                   key={`${section.title}-${topic.label}`}
                   to={topic.to}
-                  className="rounded-full border border-slate-200 bg-slate-50 px-4 py-2 text-sm font-medium text-slate-700 transition hover:border-blue-200 hover:bg-blue-50 hover:text-blue-700"
+                  className="rounded-full border border-slate-200 dark:border-slate-700 bg-slate-50 dark:bg-slate-800 px-4 py-2 text-sm font-medium text-slate-700 dark:text-slate-300 transition hover:border-blue-200 dark:border-blue-800 hover:bg-blue-50 dark:hover:bg-blue-950/60 dark:bg-blue-950/40 hover:text-blue-700 dark:hover:text-blue-200 dark:text-blue-300"
                 >
                   {topic.label}
                 </Link>
@@ -100,7 +100,7 @@ export function HomePage() {
             <div className="mt-5">
               <Link
                 to={section.viewAllPath}
-                className="text-sm font-bold text-blue-700 hover:text-blue-900"
+                className="text-sm font-bold text-blue-700 dark:text-blue-300 hover:text-blue-900 dark:hover:text-blue-100 dark:text-blue-100"
               >
                 {section.viewAllLabel} →
               </Link>

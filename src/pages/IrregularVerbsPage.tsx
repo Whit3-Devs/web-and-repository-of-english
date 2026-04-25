@@ -60,19 +60,19 @@ export function IrregularVerbsPage() {
   return (
     <section className="space-y-6">
       <div>
-        <p className="text-sm font-semibold uppercase tracking-[0.3em] text-blue-600">
+        <p className="text-sm font-semibold uppercase tracking-[0.3em] text-blue-600 dark:text-blue-300">
           Verbs
         </p>
-        <h2 className="mt-2 text-3xl font-black text-slate-950">
+        <h2 className="mt-2 text-3xl font-black text-slate-950 dark:text-slate-50">
           Irregular Verbs
         </h2>
-        <p className="mt-2 max-w-2xl text-slate-600">
+        <p className="mt-2 max-w-2xl text-slate-600 dark:text-slate-400 dark:text-slate-500">
           Search by infinitive, past simple, past participle, category, or example.
           Use Table for lookup and By Pattern for memorization.
         </p>
       </div>
 
-      <div className="rounded-3xl border border-slate-200 bg-white p-3 shadow-sm">
+      <div className="rounded-3xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-900 p-3 shadow-sm">
         <div
           role="tablist"
           aria-label="Irregular verbs view mode"
@@ -92,8 +92,8 @@ export function IrregularVerbsPage() {
                 onClick={() => setViewMode(tab.id)}
                 className={`rounded-2xl border px-4 py-4 text-left transition ${
                   isActive
-                    ? "border-blue-500 bg-blue-50 text-blue-950 shadow-sm"
-                    : "border-slate-200 bg-white text-slate-700 hover:border-slate-300"
+                    ? "border-blue-500 bg-blue-50 dark:bg-blue-950/40 text-blue-950 dark:text-blue-100 shadow-sm"
+                    : "border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-900 text-slate-700 dark:text-slate-300 hover:border-slate-300 dark:hover:border-slate-500 dark:border-slate-600"
                 }`}
               >
                 <span className="block text-sm font-black uppercase tracking-[0.2em]">
@@ -106,7 +106,7 @@ export function IrregularVerbsPage() {
         </div>
       </div>
 
-      <div className="grid gap-4 rounded-3xl border border-slate-200 bg-white p-5 shadow-sm md:grid-cols-[1fr_auto] md:items-end">
+      <div className="grid gap-4 rounded-3xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-900 p-5 shadow-sm md:grid-cols-[1fr_auto] md:items-end">
         <SearchInput
           value={searchTerm}
           onChange={setSearchTerm}
@@ -114,7 +114,7 @@ export function IrregularVerbsPage() {
         />
 
         <label className="block">
-          <span className="mb-2 block text-sm font-semibold text-slate-700">
+          <span className="mb-2 block text-sm font-semibold text-slate-700 dark:text-slate-300">
             Frequency
           </span>
           <select
@@ -125,7 +125,7 @@ export function IrregularVerbsPage() {
                 event.target.value === "all" ? undefined : event.target.value
               )
             }
-            className="w-full rounded-2xl border border-slate-200 bg-white px-4 py-3 text-slate-900 shadow-sm outline-none focus:border-blue-500 focus:ring-4 focus:ring-blue-100 md:w-48"
+            className="w-full rounded-2xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-900 px-4 py-3 text-slate-900 dark:text-slate-100 shadow-sm outline-none focus:border-blue-500 focus:ring-4 focus:ring-blue-100 dark:focus:ring-blue-950 md:w-48"
           >
             {frequencies.map((frequency) => (
               <option key={frequency} value={frequency}>
@@ -145,7 +145,7 @@ export function IrregularVerbsPage() {
       </div>
 
       {!hasResults ? (
-        <p className="rounded-3xl border border-dashed border-slate-300 p-8 text-center text-slate-500">
+        <p className="rounded-3xl border border-dashed border-slate-300 dark:border-slate-600 p-8 text-center text-slate-500 dark:text-slate-400 dark:text-slate-500">
           No irregular verbs found with those filters.
         </p>
       ) : null}
@@ -159,8 +159,8 @@ function IrregularVerbsTableView({
   filteredIrregularVerbs: typeof irregularVerbs;
 }) {
   return (
-    <div className="overflow-hidden rounded-3xl border border-slate-200 bg-white shadow-sm">
-      <div className="grid grid-cols-5 gap-4 bg-slate-100 px-5 py-3 text-sm font-bold uppercase tracking-wide text-slate-600">
+    <div className="overflow-hidden rounded-3xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-900 shadow-sm">
+      <div className="grid grid-cols-5 gap-4 bg-slate-100 dark:bg-slate-800 px-5 py-3 text-sm font-bold uppercase tracking-wide text-slate-600 dark:text-slate-400 dark:text-slate-500">
         <span>Infinitive</span>
         <span>Past</span>
         <span>Participle</span>
@@ -171,18 +171,18 @@ function IrregularVerbsTableView({
       {filteredIrregularVerbs.map((verb) => (
         <article
           key={verb.id}
-          className="grid grid-cols-1 gap-2 border-t border-slate-100 px-5 py-4 text-slate-700 md:grid-cols-5 md:gap-4"
+          className="grid grid-cols-1 gap-2 border-t border-slate-100 dark:border-slate-800 px-5 py-4 text-slate-700 dark:text-slate-300 md:grid-cols-5 md:gap-4"
         >
           <Link
             to={verb.fullExplanationPath}
-            className="font-bold text-slate-950 underline decoration-slate-300 underline-offset-4 hover:text-blue-700"
+            className="font-bold text-slate-950 dark:text-slate-50 underline decoration-slate-300 dark:decoration-slate-600 underline-offset-4 hover:text-blue-700 dark:hover:text-blue-200 dark:text-blue-300"
           >
             {verb.infinitive}
           </Link>
           <span>{verb.pastSimple}</span>
           <span>{verb.pastParticiple}</span>
           <span className="capitalize">{verb.category}</span>
-          <span className="text-slate-500">{verb.example}</span>
+          <span className="text-slate-500 dark:text-slate-400 dark:text-slate-500">{verb.example}</span>
         </article>
       ))}
     </div>
@@ -199,25 +199,25 @@ function IrregularVerbPatternView({
       {groups.map((group) => (
         <section
           key={group.key}
-          className="rounded-3xl border border-slate-200 bg-white p-6 shadow-sm"
+          className="rounded-3xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-900 p-6 shadow-sm"
         >
           <div className="flex flex-wrap items-start justify-between gap-3">
             <div>
-              <h3 className="text-2xl font-bold text-slate-950">
+              <h3 className="text-2xl font-bold text-slate-950 dark:text-slate-50">
                 {group.code} — {group.title}
               </h3>
-              <p className="mt-2 text-slate-600">{group.explanation}</p>
+              <p className="mt-2 text-slate-600 dark:text-slate-400 dark:text-slate-500">{group.explanation}</p>
             </div>
-            <div className="rounded-2xl bg-amber-50 px-4 py-3 text-right">
-              <p className="text-xs font-semibold uppercase tracking-wide text-amber-700">
+            <div className="rounded-2xl bg-amber-50 dark:bg-amber-950/40 px-4 py-3 text-right">
+              <p className="text-xs font-semibold uppercase tracking-wide text-amber-700 dark:text-amber-300">
                 Memory label
               </p>
-              <p className="mt-1 font-bold text-amber-950">{group.memoryLabel}</p>
+              <p className="mt-1 font-bold text-amber-950 dark:text-amber-100">{group.memoryLabel}</p>
             </div>
           </div>
 
-          <div className="mt-5 overflow-hidden rounded-2xl border border-slate-200">
-            <div className="grid grid-cols-4 gap-4 bg-slate-100 px-5 py-3 text-sm font-bold uppercase tracking-wide text-slate-600">
+          <div className="mt-5 overflow-hidden rounded-2xl border border-slate-200 dark:border-slate-700">
+            <div className="grid grid-cols-4 gap-4 bg-slate-100 dark:bg-slate-800 px-5 py-3 text-sm font-bold uppercase tracking-wide text-slate-600 dark:text-slate-400 dark:text-slate-500">
               <span>Infinitive</span>
               <span>Past</span>
               <span>Participle</span>
@@ -227,11 +227,11 @@ function IrregularVerbPatternView({
             {group.verbs.map((verb) => (
               <article
                 key={`${group.key}-${verb.id}`}
-                className="grid grid-cols-1 gap-2 border-t border-slate-100 px-5 py-4 text-slate-700 md:grid-cols-4 md:gap-4"
+                className="grid grid-cols-1 gap-2 border-t border-slate-100 dark:border-slate-800 px-5 py-4 text-slate-700 dark:text-slate-300 md:grid-cols-4 md:gap-4"
               >
                 <Link
                   to={verb.fullExplanationPath}
-                  className="font-bold text-slate-950 underline decoration-slate-300 underline-offset-4 hover:text-blue-700"
+                  className="font-bold text-slate-950 dark:text-slate-50 underline decoration-slate-300 dark:decoration-slate-600 underline-offset-4 hover:text-blue-700 dark:hover:text-blue-200 dark:text-blue-300"
                 >
                   {verb.infinitive}
                 </Link>

@@ -40,14 +40,14 @@ export function GrammarTopicsPage({ section }: GrammarTopicsPageProps) {
   return (
     <section className="space-y-6">
       <div>
-        <p className="text-sm font-semibold uppercase tracking-[0.3em] text-blue-600">
+        <p className="text-sm font-semibold uppercase tracking-[0.3em] text-blue-600 dark:text-blue-300">
           {copy.eyebrow}
         </p>
-        <h2 className="mt-2 text-3xl font-black text-slate-950">{copy.title}</h2>
-        <p className="mt-2 max-w-3xl text-slate-600">{copy.description}</p>
+        <h2 className="mt-2 text-3xl font-black text-slate-950 dark:text-slate-50">{copy.title}</h2>
+        <p className="mt-2 max-w-3xl text-slate-600 dark:text-slate-400 dark:text-slate-500">{copy.description}</p>
       </div>
 
-      <div className="rounded-3xl border border-slate-200 bg-white p-5 shadow-sm">
+      <div className="rounded-3xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-900 p-5 shadow-sm">
         <SearchInput
           value={searchTerm}
           onChange={setSearchTerm}
@@ -62,7 +62,7 @@ export function GrammarTopicsPage({ section }: GrammarTopicsPageProps) {
       </div>
 
       {filteredTopics.length === 0 ? (
-        <p className="rounded-3xl border border-dashed border-slate-300 p-8 text-center text-slate-500">
+        <p className="rounded-3xl border border-dashed border-slate-300 dark:border-slate-600 p-8 text-center text-slate-500 dark:text-slate-400 dark:text-slate-500">
           No grammar topics found with those filters.
         </p>
       ) : null}
