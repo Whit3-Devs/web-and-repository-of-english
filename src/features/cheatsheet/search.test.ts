@@ -272,6 +272,31 @@ const grammarTopics: GrammarTopic[] = [
     hasFullExplanation: true
   },
   {
+    id: "practical-writing-patterns",
+    slug: "practical-writing-patterns",
+    title: "Practical Writing Patterns",
+    section: "core-grammar",
+    summary:
+      "Use writing patterns for bug reports, PR comments, status updates, and technical explanations.",
+    keyIdeas: [
+      "Use The root cause seems to be for bug report explanations.",
+      "Use Could you clarify for clarification requests.",
+      "Use I suggest using for solution suggestions."
+    ],
+    examples: [
+      "The root cause seems to be stale cache data.",
+      "Could you clarify what should happen when the request fails?",
+      "I suggest using a smaller helper function here."
+    ],
+    commonMistakes: [
+      "I have a doubt. → I have a question.",
+      "I suggest to use this. → I suggest using this."
+    ],
+    relatedTopics: ["Connectors and Discourse Markers", "Reported Speech"],
+    fullExplanationPath: "/core-grammar/practical-writing-patterns",
+    hasFullExplanation: true
+  },
+  {
     id: "polite-requests",
     slug: "polite-requests",
     title: "Polite Requests",
@@ -362,15 +387,21 @@ describe("cheatsheet search", () => {
     expect(matchesGrammarTopic(grammarTopics[9], "therefore")).toBe(true);
     expect(matchesGrammarTopic(grammarTopics[9], "although")).toBe(true);
     expect(matchesGrammarTopic(grammarTopics[9], "as a result")).toBe(true);
-    expect(matchesGrammarTopic(grammarTopics[10], "polite")).toBe(true);
-    expect(matchesGrammarTopic(grammarTopics[10], "softer")).toBe(true);
-    expect(matchesGrammarTopic(grammarTopics[10], "could you help")).toBe(true);
+    expect(matchesGrammarTopic(grammarTopics[10], "writing patterns")).toBe(true);
+    expect(matchesGrammarTopic(grammarTopics[10], "bug report")).toBe(true);
+    expect(matchesGrammarTopic(grammarTopics[10], "root cause")).toBe(true);
+    expect(matchesGrammarTopic(grammarTopics[10], "could you clarify")).toBe(true);
+    expect(matchesGrammarTopic(grammarTopics[10], "status update")).toBe(true);
+    expect(matchesGrammarTopic(grammarTopics[10], "I suggest using")).toBe(true);
+    expect(matchesGrammarTopic(grammarTopics[11], "polite")).toBe(true);
+    expect(matchesGrammarTopic(grammarTopics[11], "softer")).toBe(true);
+    expect(matchesGrammarTopic(grammarTopics[11], "could you help")).toBe(true);
   });
 
   it("filters grammar topics by section and full explanation availability", () => {
     expect(filterGrammarTopics(grammarTopics, { section: "modal-verbs" })).toHaveLength(2);
-    expect(filterGrammarTopics(grammarTopics, { section: "core-grammar" })).toHaveLength(9);
+    expect(filterGrammarTopics(grammarTopics, { section: "core-grammar" })).toHaveLength(10);
     expect(filterGrammarTopics(grammarTopics, { hasFullExplanation: false })).toHaveLength(1);
-    expect(filterGrammarTopics(grammarTopics, { hasFullExplanation: true })).toHaveLength(10);
+    expect(filterGrammarTopics(grammarTopics, { hasFullExplanation: true })).toHaveLength(11);
   });
 });

@@ -37,6 +37,7 @@ describe("Grammar topic pages", () => {
     expect(screen.getByText("Comparatives and Superlatives")).toBeTruthy();
     expect(screen.getByText("Adjectives and Adverbs")).toBeTruthy();
     expect(screen.getByText("Connectors and Discourse Markers")).toBeTruthy();
+    expect(screen.getByText("Practical Writing Patterns")).toBeTruthy();
   });
 
   it("renders placeholder detail routes for irregular verb pages that are not migrated yet", () => {
@@ -839,6 +840,42 @@ describe("Grammar topic pages", () => {
     expect(
       screen.getByText("Complete the sentence: The bug was fixed; ___, the tests passed.")
     ).toBeTruthy();
+  });
+
+  it("renders full explanation content for Practical Writing Patterns", () => {
+    render(
+      <MemoryRouter initialEntries={["/core-grammar/practical-writing-patterns"]}>
+        <Routes>
+          <Route
+            path="/core-grammar/:slug"
+            element={
+              <GrammarTopicDetailPage
+                section="core-grammar"
+                backPath="/core-grammar"
+                backLabel="Core Grammar"
+              />
+            }
+          />
+        </Routes>
+      </MemoryRouter>
+    );
+
+    expect(screen.getByRole("heading", { name: "Practical Writing Patterns" })).toBeTruthy();
+    expect(screen.getByText("Available now")).toBeTruthy();
+    expect(screen.getByText("What this page helps you write")).toBeTruthy();
+    expect(screen.getByText("Writing pattern decision rules")).toBeTruthy();
+    expect(screen.getByText("Writing patterns reference table")).toBeTruthy();
+    expect(screen.getByText("Writing pattern groups")).toBeTruthy();
+    expect(screen.getByText("Problem reporting patterns")).toBeTruthy();
+    expect(screen.getByText("Solution suggestion patterns")).toBeTruthy();
+    expect(screen.getByText("Clarification patterns")).toBeTruthy();
+    expect(screen.getByText("Status update patterns")).toBeTruthy();
+    expect(screen.getByText("Polite disagreement patterns")).toBeTruthy();
+    expect(screen.getByText("Common mistakes")).toBeTruthy();
+    expect(screen.getByText("Micro practice")).toBeTruthy();
+    expect(screen.getByText("I have a doubt.")).toBeTruthy();
+    expect(screen.getAllByText("I have a question.").length).toBeGreaterThan(0);
+    expect(screen.getByText("Correct the sentence: I suggest to use this.")).toBeTruthy();
   });
 
   it("renders full explanation content for Question Builder Cheat Sheet", () => {

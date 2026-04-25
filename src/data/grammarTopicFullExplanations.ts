@@ -4734,6 +4734,202 @@ export const grammarTopicFullExplanations: GrammarTopicFullExplanation[] = [
       "Adjectives and Adverbs",
       "Key Structure Differences"
     ]
+  },
+  {
+    contentType: "practical-writing-patterns",
+    slug: "practical-writing-patterns",
+    title: "Practical Writing Patterns",
+    section: "core-grammar",
+    overview:
+      "Use practical writing patterns to communicate clearly in tickets, PR comments, bug reports, status updates, and technical explanations.",
+    whatItDoes: [
+      "Give you reusable sentence frames for common developer communication.",
+      "Help you report problems, explain root causes, suggest fixes, and ask clarifying questions.",
+      "Make your writing clearer without sounding too direct or too vague.",
+      "Prevent common Spanish-speaker mistakes like I have a doubt and explain me this."
+    ],
+    decisionRules: [
+      "If you report a problem, start with The issue is that, This happens when, or I noticed that.",
+      "If you explain cause or result, use This causes, As a result, or The root cause seems to be.",
+      "If you suggest a fix, use I suggest using, We could, or A safer approach would be.",
+      "If you need more information, use Could you clarify, Do you mean that, or Can you confirm whether.",
+      "If you give a status update, use I’ve finished, I’m currently working on, or The next step is.",
+      "If you disagree politely, validate first, then explain the concern."
+    ],
+    referenceTable: [
+      {
+        goal: "Report a problem",
+        pattern: "The issue is that...",
+        example: "The issue is that the modal closes before the request finishes.",
+        useWhen: "You need to state the main problem clearly."
+      },
+      {
+        goal: "Explain root cause",
+        pattern: "The root cause seems to be...",
+        example: "The root cause seems to be stale cache data.",
+        useWhen: "You are not 100% certain but have a strong hypothesis."
+      },
+      {
+        goal: "Suggest a solution",
+        pattern: "I suggest using...",
+        example: "I suggest using a smaller helper function here.",
+        useWhen: "You want to recommend an approach without sounding aggressive."
+      },
+      {
+        goal: "Ask for clarification",
+        pattern: "Could you clarify...?",
+        example: "Could you clarify what should happen when the request fails?",
+        useWhen: "The requirement or expected behavior is not clear."
+      },
+      {
+        goal: "Give a status update",
+        pattern: "I’m currently working on...",
+        example: "I’m currently working on the validation errors.",
+        useWhen: "You need to say what is in progress."
+      },
+      {
+        goal: "Disagree politely",
+        pattern: "I see your point, but...",
+        example: "I see your point, but I’m concerned about the edge cases.",
+        useWhen: "You disagree and want to keep the discussion constructive."
+      }
+    ],
+    patternGroups: [
+      {
+        title: "Problem reporting patterns",
+        situation: "Use these in bug reports, tickets, and PR comments.",
+        patterns: ["The issue is that...", "This happens when...", "I noticed that..."],
+        examples: [
+          "The issue is that the form submits twice.",
+          "This happens when the user clicks Save before the data loads.",
+          "I noticed that the error message disappears too quickly."
+        ],
+        toneNote: "Start with the observable problem before explaining why it matters."
+      },
+      {
+        title: "Cause and result patterns",
+        situation: "Use these to explain bugs, behavior changes, and technical decisions.",
+        patterns: ["This causes...", "As a result,...", "The root cause seems to be..."],
+        examples: [
+          "This causes the page to render stale data.",
+          "As a result, the user sees the old status.",
+          "The root cause seems to be an outdated cache key."
+        ],
+        toneNote: "Use seems to be when you are making a careful technical hypothesis."
+      },
+      {
+        title: "Solution suggestion patterns",
+        situation: "Use these when proposing implementation changes.",
+        patterns: ["I suggest using...", "We could...", "A safer approach would be..."],
+        examples: [
+          "I suggest using a guard clause here.",
+          "We could extract this logic into a helper.",
+          "A safer approach would be to validate the input before saving."
+        ],
+        toneNote: "Use would be or could when you want a collaborative tone."
+      },
+      {
+        title: "Clarification patterns",
+        situation: "Use these when requirements, comments, or expected behavior are unclear.",
+        patterns: ["Could you clarify...?", "Do you mean that...?", "Can you confirm whether...?"],
+        examples: [
+          "Could you clarify what should happen when the request fails?",
+          "Do you mean that this button should be disabled for all users?",
+          "Can you confirm whether this case needs a fallback?"
+        ],
+        toneNote: "These patterns are direct enough for work, but still polite."
+      },
+      {
+        title: "Status update patterns",
+        situation: "Use these in standups, async updates, and handoffs.",
+        patterns: ["I’ve finished...", "I’m currently working on...", "The next step is..."],
+        examples: [
+          "I’ve finished the validation changes.",
+          "I’m currently working on the failing test.",
+          "The next step is to verify the empty state."
+        ],
+        toneNote: "Good status updates separate done, doing, and next."
+      },
+      {
+        title: "Polite disagreement patterns",
+        situation: "Use these in reviews and design discussions.",
+        patterns: ["I see your point, but...", "I’d approach it differently because...", "One concern is..."],
+        examples: [
+          "I see your point, but I’m concerned about the loading state.",
+          "I’d approach it differently because this version duplicates the logic.",
+          "One concern is that this may break keyboard navigation."
+        ],
+        toneNote: "Acknowledge first, then explain the technical reason. That is how you disagree like a professional."
+      }
+    ],
+    commonMistakes: [
+      {
+        wrong: "I have a doubt.",
+        correct: "I have a question.",
+        reason: "In professional English, question is the natural word for asking something."
+      },
+      {
+        wrong: "Explain me this.",
+        correct: "Explain this to me.",
+        reason: "Explain takes the thing first, then to + person."
+      },
+      {
+        wrong: "I suggest to use this.",
+        correct: "I suggest using this.",
+        reason: "Suggest is followed by a gerund, not to + verb."
+      },
+      {
+        wrong: "Can you explain me the issue?",
+        correct: "Can you explain the issue to me?",
+        reason: "Use explain + thing + to + person."
+      },
+      {
+        wrong: "I am agree.",
+        correct: "I agree.",
+        reason: "Agree is a verb, so it does not need be."
+      }
+    ],
+    quickMemory: [
+      "Problem: The issue is that...",
+      "Cause: The root cause seems to be...",
+      "Result: As a result,...",
+      "Suggestion: I suggest using...",
+      "Clarification: Could you clarify...?",
+      "Disagreement: I see your point, but..."
+    ],
+    practiceItems: [
+      {
+        prompt: "Correct the sentence: I have a doubt.",
+        answer: "I have a question.",
+        focus: "natural professional wording"
+      },
+      {
+        prompt: "Complete the pattern: The root cause seems to be ___.",
+        answer: "stale cache data",
+        focus: "root cause explanation"
+      },
+      {
+        prompt: "Correct the sentence: I suggest to use this.",
+        answer: "I suggest using this.",
+        focus: "suggest + gerund"
+      },
+      {
+        prompt: "Ask politely: clarify what should happen when the request fails.",
+        answer: "Could you clarify what should happen when the request fails?",
+        focus: "clarification request"
+      },
+      {
+        prompt: "Write a status update with next step.",
+        answer: "I’ve finished the validation changes. The next step is to verify the empty state.",
+        focus: "status update structure"
+      }
+    ],
+    relatedTopics: [
+      "Connectors and Discourse Markers",
+      "Reported Speech",
+      "Gerunds and Infinitives",
+      "Polite Requests"
+    ]
   }
 ];
 

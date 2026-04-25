@@ -785,6 +785,37 @@ export type GrammarTopicConnectorsDiscourseMarkersFullExplanation = {
   relatedTopics: string[];
 };
 
+export type GrammarTopicWritingPatternCard = {
+  title: string;
+  situation: string;
+  patterns: string[];
+  examples: string[];
+  toneNote: string;
+};
+
+export type GrammarTopicWritingReferenceRow = {
+  goal: string;
+  pattern: string;
+  example: string;
+  useWhen: string;
+};
+
+export type GrammarTopicPracticalWritingPatternsFullExplanation = {
+  contentType: "practical-writing-patterns";
+  slug: string;
+  title: string;
+  section: GrammarTopicSection;
+  overview: string;
+  whatItDoes: string[];
+  decisionRules: string[];
+  referenceTable: GrammarTopicWritingReferenceRow[];
+  patternGroups: GrammarTopicWritingPatternCard[];
+  commonMistakes: GrammarTopicFullExplanationMistake[];
+  quickMemory: string[];
+  practiceItems: GrammarTopicFullExplanationPracticeItem[];
+  relatedTopics: string[];
+};
+
 export type GrammarTopicModalCard = {
   title: string;
   modal: string;
@@ -842,4 +873,5 @@ export type GrammarTopicFullExplanation =
   | GrammarTopicComparativesSuperlativesFullExplanation
   | GrammarTopicAdjectivesAdverbsFullExplanation
   | GrammarTopicConnectorsDiscourseMarkersFullExplanation
+  | GrammarTopicPracticalWritingPatternsFullExplanation
   | GrammarTopicModalTopicFullExplanation;

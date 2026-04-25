@@ -606,6 +606,41 @@ export const grammarTopics: GrammarTopic[] = [
     hasFullExplanation: true
   },
   {
+    id: "practical-writing-patterns",
+    slug: "practical-writing-patterns",
+    title: "Practical Writing Patterns",
+    section: "core-grammar",
+    summary:
+      "Use ready-made English patterns for bug reports, PR comments, status updates, and technical explanations.",
+    keyIdeas: [
+      "Use clear problem patterns like The issue is that and This happens when.",
+      "Explain cause and result with The root cause seems to be, This causes, and As a result.",
+      "Suggest solutions with I suggest using, We could, and A safer approach would be.",
+      "Ask for clarification politely with Could you clarify and Can you confirm whether."
+    ],
+    examples: [
+      "The issue is that the modal closes before the request finishes.",
+      "The root cause seems to be stale cache data.",
+      "I suggest using a smaller helper function here.",
+      "Could you clarify what should happen when the request fails?"
+    ],
+    commonMistakes: [
+      "I have a doubt. → I have a question.",
+      "Explain me this. → Explain this to me.",
+      "I suggest to use this. → I suggest using this.",
+      "Can you explain me the issue? → Can you explain the issue to me?",
+      "I am agree. → I agree."
+    ],
+    relatedTopics: [
+      "Connectors and Discourse Markers",
+      "Reported Speech",
+      "Gerunds and Infinitives",
+      "Polite Requests"
+    ],
+    fullExplanationPath: "/core-grammar/practical-writing-patterns",
+    hasFullExplanation: true
+  },
+  {
     id: "key-structure-differences",
     slug: "key-structure-differences",
     title: "Key Structure Differences",

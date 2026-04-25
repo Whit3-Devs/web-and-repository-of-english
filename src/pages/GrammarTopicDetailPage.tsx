@@ -14,6 +14,7 @@ import type {
   GrammarTopicFullExplanationPracticeItem,
   GrammarTopicGerundsInfinitivesFullExplanation,
   GrammarTopicPassiveVoiceFullExplanation,
+  GrammarTopicPracticalWritingPatternsFullExplanation,
   GrammarTopicQuestionBuilderFullExplanation,
   GrammarTopicModalTopicFullExplanation,
   GrammarTopicPrepositionsFullExplanation,
@@ -144,6 +145,8 @@ export function GrammarTopicDetailPage({
           <AdjectivesAdverbsContent explanation={fullExplanation} />
         ) : fullExplanation.contentType === "connectors-discourse-markers" ? (
           <ConnectorsDiscourseMarkersContent explanation={fullExplanation} />
+        ) : fullExplanation.contentType === "practical-writing-patterns" ? (
+          <PracticalWritingPatternsContent explanation={fullExplanation} />
         ) : (
           <PronounsPossessivesContent explanation={fullExplanation} />
         )}
@@ -1495,6 +1498,41 @@ function ConnectorsDiscourseMarkersContent({
   );
 }
 
+function PracticalWritingPatternsContent({
+  explanation
+}: {
+  explanation: GrammarTopicPracticalWritingPatternsFullExplanation;
+}) {
+  return (
+    <>
+      <div className="mt-8 grid gap-6 md:grid-cols-2">
+        <ContentSection
+          title="What this page helps you write"
+          items={explanation.whatItDoes}
+        />
+        <ContentSection
+          title="Writing pattern decision rules"
+          items={explanation.decisionRules}
+          variant="highlight"
+        />
+      </div>
+
+      <WritingPatternsReferenceTable rows={explanation.referenceTable} />
+
+      <WritingPatternGroupSection cards={explanation.patternGroups} />
+
+      <MistakesSection mistakes={explanation.commonMistakes} />
+
+      <PracticeSection items={explanation.practiceItems} />
+
+      <div className="mt-8 grid gap-6 md:grid-cols-2">
+        <ContentSection title="Quick memory" items={explanation.quickMemory} variant="amber" />
+        <ContentSection title="Related topics" items={explanation.relatedTopics} />
+      </div>
+    </>
+  );
+}
+
 function SideBySideExamples({
   rows
 }: {
@@ -1913,6 +1951,92 @@ function ConnectorPunctuationNotes({
                 <li key={example}>• {example}</li>
               ))}
             </ul>
+          </div>
+        ))}
+      </div>
+    </div>
+  );
+}
+
+function WritingPatternsReferenceTable({
+  rows
+}: {
+  rows: GrammarTopicPracticalWritingPatternsFullExplanation["referenceTable"];
+}) {
+  return (
+    <div className="mt-8 overflow-hidden rounded-3xl border border-slate-200">
+      <div className="bg-slate-950 px-6 py-4">
+        <h3 className="text-xl font-black text-white">Writing patterns reference table</h3>
+      </div>
+      <div className="overflow-x-auto bg-white">
+        <table className="min-w-full divide-y divide-slate-200 text-sm">
+          <thead className="bg-slate-50">
+            <tr>
+              {["Goal", "Pattern", "Example", "Use when"].map((heading) => (
+                <th
+                  key={heading}
+                  className="px-4 py-3 text-left font-bold uppercase tracking-wide text-slate-700"
+                >
+                  {heading}
+                </th>
+              ))}
+            </tr>
+          </thead>
+          <tbody className="divide-y divide-slate-200">
+            {rows.map((row) => (
+              <tr key={row.goal}>
+                <td className="px-4 py-4 font-bold text-slate-950">{row.goal}</td>
+                <td className="px-4 py-4 text-slate-700">{row.pattern}</td>
+                <td className="px-4 py-4 text-slate-700">{row.example}</td>
+                <td className="px-4 py-4 text-slate-700">{row.useWhen}</td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
+    </div>
+  );
+}
+
+function WritingPatternGroupSection({
+  cards
+}: {
+  cards: GrammarTopicPracticalWritingPatternsFullExplanation["patternGroups"];
+}) {
+  return (
+    <div className="mt-8 rounded-3xl bg-slate-50 p-6">
+      <h3 className="text-xl font-black text-slate-950">Writing pattern groups</h3>
+      <div className="mt-4 grid gap-4 md:grid-cols-2">
+        {cards.map((card) => (
+          <div key={card.title} className="rounded-2xl bg-white p-4 shadow-sm">
+            <h4 className="font-bold text-slate-900">{card.title}</h4>
+            <p className="mt-2 text-slate-700">{card.situation}</p>
+            <div className="mt-3 flex flex-wrap gap-2">
+              {card.patterns.map((pattern) => (
+                <span
+                  key={pattern}
+                  className="rounded-full bg-blue-50 px-3 py-1 text-sm font-semibold text-blue-700"
+                >
+                  {pattern}
+                </span>
+              ))}
+            </div>
+            <div className="mt-4 rounded-2xl bg-blue-50 p-4">
+              <p className="text-sm font-semibold uppercase tracking-wide text-blue-700">
+                Examples
+              </p>
+              <ul className="mt-2 space-y-2 text-sm text-blue-950">
+                {card.examples.map((example) => (
+                  <li key={example}>• {example}</li>
+                ))}
+              </ul>
+            </div>
+            <div className="mt-4 rounded-2xl bg-amber-50 p-4">
+              <p className="text-sm font-semibold uppercase tracking-wide text-amber-700">
+                Tone note
+              </p>
+              <p className="mt-1 text-amber-950">{card.toneNote}</p>
+            </div>
           </div>
         ))}
       </div>
