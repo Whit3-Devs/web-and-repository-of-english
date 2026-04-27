@@ -184,23 +184,26 @@ export function VerbTenseDetailPage() {
           </div>
         ) : null}
 
-        <div className="mt-8 rounded-3xl bg-rose-50 dark:bg-rose-950/40 p-6">
-          <h3 className="text-xl font-black text-rose-950">
+        <div className="mt-8 rounded-3xl border border-rose-200 bg-rose-50 p-6 shadow-sm dark:border-rose-500/30 dark:bg-rose-950/20">
+          <h3 className="text-xl font-black text-rose-950 dark:text-rose-100">
             {fullExplanation.explainedMistakes?.length
               ? "Explained mistakes"
               : "Common mistakes"}
           </h3>
           <div className="mt-4 grid gap-4 md:grid-cols-2">
             {getMistakeItems(fullExplanation).map((mistake) => (
-              <div key={mistake.wrong} className="rounded-2xl bg-white dark:bg-slate-900 p-4 shadow-sm">
-                <p className="font-semibold text-rose-800 dark:text-rose-200">Wrong</p>
-                <p className="mt-1 text-slate-700 dark:text-slate-300">{mistake.wrong}</p>
+              <div
+                key={mistake.wrong}
+                className="rounded-2xl border border-rose-100 bg-white p-4 shadow-sm dark:border-slate-700/80 dark:bg-slate-950/70"
+              >
+                <p className="font-semibold text-rose-800 dark:text-rose-300">Wrong</p>
+                <p className="mt-1 text-slate-700 dark:text-slate-100">{mistake.wrong}</p>
                 <p className="mt-3 font-semibold text-emerald-700 dark:text-emerald-300">Correct</p>
-                <p className="mt-1 text-slate-700 dark:text-slate-300">{mistake.correct}</p>
+                <p className="mt-1 text-slate-700 dark:text-slate-100">{mistake.correct}</p>
                 {mistake.reason ? (
                   <>
-                    <p className="mt-3 font-semibold text-blue-700 dark:text-blue-300">Why</p>
-                    <p className="mt-1 text-slate-700 dark:text-slate-300">{mistake.reason}</p>
+                    <p className="mt-3 font-semibold text-blue-700 dark:text-sky-300">Why</p>
+                    <p className="mt-1 text-slate-700 dark:text-slate-100">{mistake.reason}</p>
                   </>
                 ) : null}
               </div>
