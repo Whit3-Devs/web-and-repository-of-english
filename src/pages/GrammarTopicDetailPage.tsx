@@ -1,4 +1,5 @@
 import { Link, useParams } from "react-router-dom";
+import { SemanticCallout } from "../components/SemanticCallout";
 import { findGrammarTopicFullExplanationBySlug } from "../data/grammarTopicFullExplanations";
 import { findGrammarTopic } from "../data/grammarTopics";
 import type {
@@ -225,7 +226,7 @@ function PrepositionsContent({
 
       {explanation.fixedExpressions?.length ? (
         <div className="mt-8 rounded-3xl bg-emerald-50 dark:bg-emerald-950/40 p-6">
-          <h3 className="text-xl font-black text-emerald-950">
+          <h3 className="text-xl font-black text-emerald-950 dark:text-emerald-100">
             Fixed expressions and collocations
           </h3>
           <div className="mt-4 grid gap-4 md:grid-cols-2">
@@ -466,39 +467,30 @@ function QuestionBuilderContent({
                 />
               </div>
               <p className="mt-4 text-slate-700 dark:text-slate-300">{card.use}</p>
-              <div className="mt-4 rounded-2xl bg-slate-50 dark:bg-slate-800 p-4">
-                <p className="text-sm font-semibold uppercase tracking-wide text-slate-500 dark:text-slate-400 dark:text-slate-500">
-                  Examples
-                </p>
-                <ul className="mt-2 space-y-2 text-sm text-slate-700 dark:text-slate-300">
+              <SemanticCallout variant="neutral" title="Examples" className="mt-4">
+                <ul className="space-y-2 text-sm">
                   {card.examples.map((example) => (
                     <li key={example}>• {example}</li>
                   ))}
                 </ul>
-              </div>
+              </SemanticCallout>
               {card.shortAnswers?.length ? (
-                <div className="mt-4 rounded-2xl bg-emerald-50 dark:bg-emerald-950/40 p-4">
-                  <p className="text-sm font-semibold uppercase tracking-wide text-emerald-700 dark:text-emerald-300">
-                    Short answers
-                  </p>
-                  <ul className="mt-2 space-y-2 text-sm text-emerald-950">
+                <SemanticCallout variant="success" title="Short answers" className="mt-4">
+                  <ul className="space-y-2 text-sm">
                     {card.shortAnswers.map((answer) => (
                       <li key={answer}>• {answer}</li>
                     ))}
                   </ul>
-                </div>
+                </SemanticCallout>
               ) : null}
               {card.notes?.length ? (
-                <div className="mt-4 rounded-2xl bg-violet-50 p-4">
-                  <p className="text-sm font-semibold uppercase tracking-wide text-violet-700">
-                    Notes
-                  </p>
-                  <ul className="mt-2 space-y-2 text-sm text-violet-950">
+                <SemanticCallout variant="accent" title="Notes" className="mt-4">
+                  <ul className="space-y-2 text-sm">
                     {card.notes.map((note) => (
                       <li key={note}>• {note}</li>
                     ))}
                   </ul>
-                </div>
+                </SemanticCallout>
               ) : null}
             </div>
           ))}
@@ -832,11 +824,11 @@ function EnglishAuxiliariesContent({
       <MistakesSection mistakes={explanation.commonMistakes} />
 
       <div className="mt-8 rounded-3xl bg-emerald-50 dark:bg-emerald-950/40 p-6">
-        <h3 className="text-xl font-black text-emerald-950">
+        <h3 className="text-xl font-black text-emerald-950 dark:text-emerald-100">
           {explanation.modalLinkBlock.title}
         </h3>
         <p className="mt-2 text-emerald-900 dark:text-emerald-100">{explanation.modalLinkBlock.explanation}</p>
-        <ul className="mt-4 space-y-2 text-sm text-emerald-950">
+        <ul className="mt-4 space-y-2 text-sm text-emerald-950 dark:text-emerald-50">
           {explanation.modalLinkBlock.examples.map((example) => (
             <li key={example}>• {example}</li>
           ))}
@@ -1089,12 +1081,9 @@ function ArticlesDeterminersContent({
                   ))}
                 </ul>
               </div>
-              <div className="mt-4 rounded-2xl bg-rose-50 dark:bg-rose-950/40 p-4">
-                <p className="text-sm font-semibold uppercase tracking-wide text-rose-700">
-                  Common trap
-                </p>
-                <p className="mt-1 text-rose-950">{card.commonTrap}</p>
-              </div>
+              <SemanticCallout variant="danger" title="Common trap" className="mt-4">
+                <p>{card.commonTrap}</p>
+              </SemanticCallout>
             </div>
           ))}
         </div>
@@ -1140,28 +1129,19 @@ function GerundsInfinitivesContent({
                 {card.pattern}
               </p>
               <p className="mt-4 text-slate-700 dark:text-slate-300">{card.use}</p>
-              <div className="mt-4 rounded-2xl bg-emerald-50 dark:bg-emerald-950/40 p-4">
-                <p className="text-sm font-semibold uppercase tracking-wide text-emerald-700 dark:text-emerald-300">
-                  Common verbs
-                </p>
-                <p className="mt-1 text-emerald-950">{card.commonVerbs.join(", ")}</p>
-              </div>
-              <div className="mt-4 rounded-2xl bg-slate-50 dark:bg-slate-800 p-4">
-                <p className="text-sm font-semibold uppercase tracking-wide text-slate-500 dark:text-slate-400 dark:text-slate-500">
-                  Examples
-                </p>
-                <ul className="mt-2 space-y-2 text-sm text-slate-700 dark:text-slate-300">
+              <SemanticCallout variant="success" title="Common verbs" className="mt-4">
+                <p>{card.commonVerbs.join(", ")}</p>
+              </SemanticCallout>
+              <SemanticCallout variant="neutral" title="Examples" className="mt-4">
+                <ul className="space-y-2 text-sm">
                   {card.examples.map((example) => (
                     <li key={example}>• {example}</li>
                   ))}
                 </ul>
-              </div>
-              <div className="mt-4 rounded-2xl bg-rose-50 dark:bg-rose-950/40 p-4">
-                <p className="text-sm font-semibold uppercase tracking-wide text-rose-700">
-                  Common trap
-                </p>
-                <p className="mt-1 text-rose-950">{card.commonTrap}</p>
-              </div>
+              </SemanticCallout>
+              <SemanticCallout variant="danger" title="Common trap" className="mt-4">
+                <p>{card.commonTrap}</p>
+              </SemanticCallout>
             </div>
           ))}
         </div>
@@ -1237,18 +1217,12 @@ function PassiveVoiceContent({
           {explanation.activeVsPassive.map((comparison) => (
             <div key={comparison.passive} className="rounded-2xl bg-white dark:bg-slate-900 p-4 shadow-sm">
               <div className="grid gap-4 md:grid-cols-2">
-                <div className="rounded-2xl border border-emerald-200 bg-emerald-50 dark:bg-emerald-950/40 p-4">
-                  <p className="text-sm font-semibold uppercase tracking-wide text-emerald-700 dark:text-emerald-300">
-                    Active
-                  </p>
-                  <p className="mt-2 text-emerald-950">{comparison.active}</p>
-                </div>
-                <div className="rounded-2xl border border-blue-200 dark:border-blue-800 bg-blue-50 dark:bg-blue-950/40 p-4">
-                  <p className="text-sm font-semibold uppercase tracking-wide text-blue-700 dark:text-blue-300">
-                    Passive
-                  </p>
-                  <p className="mt-2 text-blue-950 dark:text-blue-100">{comparison.passive}</p>
-                </div>
+                <SemanticCallout variant="success" title="Active">
+                  <p>{comparison.active}</p>
+                </SemanticCallout>
+                <SemanticCallout variant="info" title="Passive">
+                  <p>{comparison.passive}</p>
+                </SemanticCallout>
               </div>
               <p className="mt-4 text-slate-700 dark:text-slate-300">{comparison.whyPassiveWorks}</p>
             </div>
@@ -1316,23 +1290,17 @@ function ReportedSpeechContent({
                 {card.pattern}
               </p>
               <p className="mt-4 text-slate-700 dark:text-slate-300">{card.use}</p>
-              <div className="mt-4 rounded-2xl bg-blue-50 dark:bg-blue-950/40 p-4">
-                <p className="text-sm font-semibold uppercase tracking-wide text-blue-700 dark:text-blue-300">
-                  Examples
-                </p>
-                <ul className="mt-2 space-y-2 text-sm text-blue-950 dark:text-blue-100">
+              <SemanticCallout variant="info" title="Examples" className="mt-4">
+                <ul className="space-y-2 text-sm">
                   {card.examples.map((example) => (
                     <li key={example}>• {example}</li>
                   ))}
                 </ul>
-              </div>
+              </SemanticCallout>
               {card.commonTrap ? (
-                <div className="mt-4 rounded-2xl bg-rose-50 dark:bg-rose-950/40 p-4">
-                  <p className="text-sm font-semibold uppercase tracking-wide text-rose-700">
-                    Common trap
-                  </p>
-                  <p className="mt-1 text-rose-950">{card.commonTrap}</p>
-                </div>
+                <SemanticCallout variant="danger" title="Common trap" className="mt-4">
+                  <p>{card.commonTrap}</p>
+                </SemanticCallout>
               ) : null}
             </div>
           ))}
@@ -1703,18 +1671,12 @@ function ReportedSpeechPairSection({
         {pairs.map((pair) => (
           <div key={`${title}-${pair.direct}`} className="rounded-2xl bg-white dark:bg-slate-900 p-4 shadow-sm">
             <div className="grid gap-4 md:grid-cols-2">
-              <div className="rounded-2xl border border-emerald-200 bg-emerald-50 dark:bg-emerald-950/40 p-4">
-                <p className="text-sm font-semibold uppercase tracking-wide text-emerald-700 dark:text-emerald-300">
-                  Direct
-                </p>
-                <p className="mt-2 text-emerald-950">{pair.direct}</p>
-              </div>
-              <div className="rounded-2xl border border-blue-200 dark:border-blue-800 bg-blue-50 dark:bg-blue-950/40 p-4">
-                <p className="text-sm font-semibold uppercase tracking-wide text-blue-700 dark:text-blue-300">
-                  Reported
-                </p>
-                <p className="mt-2 text-blue-950 dark:text-blue-100">{pair.reported}</p>
-              </div>
+              <SemanticCallout variant="success" title="Direct">
+                <p>{pair.direct}</p>
+              </SemanticCallout>
+              <SemanticCallout variant="info" title="Reported">
+                <p>{pair.reported}</p>
+              </SemanticCallout>
             </div>
             <p className="mt-4 text-slate-700 dark:text-slate-300">{pair.note}</p>
           </div>
@@ -1783,22 +1745,16 @@ function ComparisonPatternSection({
               {card.pattern}
             </p>
             <p className="mt-4 text-slate-700 dark:text-slate-300">{card.use}</p>
-            <div className="mt-4 rounded-2xl bg-blue-50 dark:bg-blue-950/40 p-4">
-              <p className="text-sm font-semibold uppercase tracking-wide text-blue-700 dark:text-blue-300">
-                Examples
-              </p>
-              <ul className="mt-2 space-y-2 text-sm text-blue-950 dark:text-blue-100">
+            <SemanticCallout variant="info" title="Examples" className="mt-4">
+              <ul className="space-y-2 text-sm">
                 {card.examples.map((example) => (
                   <li key={example}>• {example}</li>
                 ))}
               </ul>
-            </div>
-            <div className="mt-4 rounded-2xl bg-rose-50 dark:bg-rose-950/40 p-4">
-              <p className="text-sm font-semibold uppercase tracking-wide text-rose-700">
-                Common trap
-              </p>
-              <p className="mt-1 text-rose-950">{card.commonTrap}</p>
-            </div>
+            </SemanticCallout>
+            <SemanticCallout variant="danger" title="Common trap" className="mt-4">
+              <p>{card.commonTrap}</p>
+            </SemanticCallout>
           </div>
         ))}
       </div>
@@ -1864,22 +1820,16 @@ function AdjectiveAdverbPatternSection({
               {card.pattern}
             </p>
             <p className="mt-4 text-slate-700 dark:text-slate-300">{card.use}</p>
-            <div className="mt-4 rounded-2xl bg-blue-50 dark:bg-blue-950/40 p-4">
-              <p className="text-sm font-semibold uppercase tracking-wide text-blue-700 dark:text-blue-300">
-                Examples
-              </p>
-              <ul className="mt-2 space-y-2 text-sm text-blue-950 dark:text-blue-100">
+            <SemanticCallout variant="info" title="Examples" className="mt-4">
+              <ul className="space-y-2 text-sm">
                 {card.examples.map((example) => (
                   <li key={example}>• {example}</li>
                 ))}
               </ul>
-            </div>
-            <div className="mt-4 rounded-2xl bg-rose-50 dark:bg-rose-950/40 p-4">
-              <p className="text-sm font-semibold uppercase tracking-wide text-rose-700">
-                Common trap
-              </p>
-              <p className="mt-1 text-rose-950">{card.commonTrap}</p>
-            </div>
+            </SemanticCallout>
+            <SemanticCallout variant="danger" title="Common trap" className="mt-4">
+              <p>{card.commonTrap}</p>
+            </SemanticCallout>
           </div>
         ))}
       </div>
@@ -2358,8 +2308,8 @@ function TransformationTable({
 }) {
   return (
     <div className="mt-8 overflow-hidden rounded-3xl border border-slate-200 dark:border-slate-700">
-      <div className="bg-emerald-50 dark:bg-emerald-950/40 px-6 py-4">
-        <h3 className="text-xl font-black text-emerald-950">Transformations</h3>
+      <div className="border-b border-emerald-200 bg-emerald-50 px-6 py-4 dark:border-emerald-500/30 dark:bg-emerald-950/20">
+        <h3 className="text-xl font-black text-emerald-950 dark:text-emerald-100">Transformations</h3>
       </div>
       <div className="overflow-x-auto bg-white dark:bg-slate-900">
         <table className="min-w-full divide-y divide-slate-200 text-sm">
@@ -2521,27 +2471,13 @@ function StructureSnippet({
   structure: string;
   variant: "positive" | "negative" | "question";
 }) {
-  const styles =
-    variant === "positive"
-      ? {
-          container: "border border-emerald-200 bg-emerald-50 dark:bg-emerald-950/40",
-          title: "text-emerald-800 dark:text-emerald-200"
-        }
-      : variant === "negative"
-        ? {
-            container: "border border-rose-200 bg-rose-50 dark:bg-rose-950/40",
-            title: "text-rose-800 dark:text-rose-200"
-          }
-        : {
-            container: "border border-blue-200 dark:border-blue-800 bg-blue-50 dark:bg-blue-950/40",
-            title: "text-blue-800 dark:text-blue-200"
-          };
+  const calloutVariant =
+    variant === "positive" ? "success" : variant === "negative" ? "danger" : "info";
 
   return (
-    <div className={`rounded-2xl p-4 ${styles.container}`}>
-      <p className={`text-sm font-semibold uppercase tracking-wide ${styles.title}`}>{title}</p>
-      <p className="mt-2 font-semibold text-slate-900 dark:text-slate-100">{structure}</p>
-    </div>
+    <SemanticCallout variant={calloutVariant} title={title}>
+      <p className="font-semibold">{structure}</p>
+    </SemanticCallout>
   );
 }
 
