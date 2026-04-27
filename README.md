@@ -11,8 +11,8 @@ English rules easy to find, compare, and review when you need them.
 - Searchable English learning reference.
 - Verb tense cards with simplified tables, full explanations, and a decision map.
 - Modal verb topics with practical examples and common mistakes.
-- Core grammar topics such as prepositions, WH questions, auxiliaries,
-  pronouns, structure differences, question building, and conditionals.
+- Sentence building, grammar foundations, advanced structures, and
+  communication pattern topics for scalable grammar study.
 - Irregular verb table with pattern-based grouping.
 - Direct routes for topic detail pages.
 - Browser tab titles that reflect the current route.
@@ -79,7 +79,10 @@ docs/           Planning and content audit documentation.
 
 - Verb Tenses
 - Modal Verbs
-- Core Grammar
+- Sentence Building
+- Grammar Foundations
+- Advanced Structures
+- Communication Patterns
 - Irregular Verbs
 
 ## Roadmap

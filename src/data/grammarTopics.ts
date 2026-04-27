@@ -1,5 +1,59 @@
 import type { GrammarTopic, GrammarTopicSection } from "../shared/types/content";
 
+export const grammarTopicSectionDetails: Record<
+  GrammarTopicSection,
+  {
+    path: string;
+    label: string;
+    description: string;
+    viewAllLabel: string;
+  }
+> = {
+  "modal-verbs": {
+    path: "/modal-verbs",
+    label: "Modal Verbs",
+    description:
+      "Study modal verbs by communicative intention instead of memorizing random lists.",
+    viewAllLabel: "View all modal verb topics"
+  },
+  "sentence-building": {
+    path: "/sentence-building",
+    label: "Sentence Building",
+    description:
+      "Build English sentences and questions with the right helpers, word order, and structure.",
+    viewAllLabel: "View all sentence building topics"
+  },
+  "grammar-foundations": {
+    path: "/grammar-foundations",
+    label: "Grammar Foundations",
+    description:
+      "Master the sentence pieces you use constantly: pronouns, articles, prepositions, adjectives, and comparisons.",
+    viewAllLabel: "View all grammar foundation topics"
+  },
+  "advanced-structures": {
+    path: "/advanced-structures",
+    label: "Advanced Structures",
+    description:
+      "Use higher-level structures for hypotheticals, passive meaning, reported ideas, and verb pattern choices.",
+    viewAllLabel: "View all advanced structure topics"
+  },
+  "communication-patterns": {
+    path: "/communication-patterns",
+    label: "Communication Patterns",
+    description:
+      "Connect ideas, write clearly, and sound more natural with practical discourse and vocabulary patterns.",
+    viewAllLabel: "View all communication pattern topics"
+  }
+};
+
+export const visibleGrammarTopicSections: GrammarTopicSection[] = [
+  "modal-verbs",
+  "sentence-building",
+  "grammar-foundations",
+  "advanced-structures",
+  "communication-patterns"
+];
+
 export const grammarTopics: GrammarTopic[] = [
   {
     id: "modal-verbs-overview",
@@ -179,7 +233,7 @@ export const grammarTopics: GrammarTopic[] = [
     id: "conditionals-overview",
     slug: "conditionals-overview",
     title: "Conditionals Overview",
-    section: "core-grammar",
+    section: "advanced-structures",
     summary:
       "Compare English conditionals fast so you can choose the right if-clause for facts, real future results, unreal present ideas, past regrets, and mixed meanings.",
     keyIdeas: [
@@ -204,14 +258,14 @@ export const grammarTopics: GrammarTopic[] = [
       "Key Structure Differences",
       "Verb Tenses"
     ],
-    fullExplanationPath: "/core-grammar/conditionals-overview",
+    fullExplanationPath: "/advanced-structures/conditionals-overview",
     hasFullExplanation: true
   },
   {
     id: "question-builder-cheat-sheet",
     slug: "question-builder-cheat-sheet",
     title: "Question Builder Cheat Sheet",
-    section: "core-grammar",
+    section: "sentence-building",
     summary:
       "Build English questions fast with the right auxiliary, word order, and short answer pattern.",
     keyIdeas: [
@@ -238,14 +292,14 @@ export const grammarTopics: GrammarTopic[] = [
       "English Auxiliaries",
       "Polite Requests"
     ],
-    fullExplanationPath: "/core-grammar/question-builder-cheat-sheet",
+    fullExplanationPath: "/sentence-building/question-builder-cheat-sheet",
     hasFullExplanation: true
   },
   {
     id: "wh-questions",
     slug: "wh-questions",
     title: "WH Questions",
-    section: "core-grammar",
+    section: "sentence-building",
     summary:
       "Use WH words to ask for specific information about people, things, places, reasons, time, or manner.",
     keyIdeas: [
@@ -265,14 +319,14 @@ export const grammarTopics: GrammarTopic[] = [
       "Where she works? → Where does she work?"
     ],
     relatedTopics: ["Embedded WH Clauses", "English Auxiliaries"],
-    fullExplanationPath: "/core-grammar/wh-questions",
+    fullExplanationPath: "/sentence-building/wh-questions",
     hasFullExplanation: true
   },
   {
     id: "embedded-wh-clauses",
     slug: "embedded-wh-clauses",
     title: "Embedded WH Clauses",
-    section: "core-grammar",
+    section: "sentence-building",
     summary:
       "Use embedded WH clauses when a WH idea appears inside another sentence instead of acting as a direct question.",
     keyIdeas: [
@@ -290,14 +344,14 @@ export const grammarTopics: GrammarTopic[] = [
       "Can you tell me what do you need? → Can you tell me what you need?"
     ],
     relatedTopics: ["WH Questions", "English Auxiliaries"],
-    fullExplanationPath: "/core-grammar/embedded-wh-clauses",
+    fullExplanationPath: "/sentence-building/embedded-wh-clauses",
     hasFullExplanation: true
   },
   {
     id: "english-auxiliaries",
     slug: "english-auxiliaries",
     title: "English Auxiliaries",
-    section: "core-grammar",
+    section: "sentence-building",
     summary:
       "Use auxiliary verbs to build negatives, questions, tenses, passive voice, and modal meanings.",
     keyIdeas: [
@@ -318,14 +372,14 @@ export const grammarTopics: GrammarTopic[] = [
       "I have went. → I have gone."
     ],
     relatedTopics: ["Verb Tenses", "Modal Verbs"],
-    fullExplanationPath: "/core-grammar/english-auxiliaries",
+    fullExplanationPath: "/sentence-building/english-auxiliaries",
     hasFullExplanation: true
   },
   {
     id: "common-prepositions",
     slug: "common-prepositions",
     title: "Common Prepositions",
-    section: "core-grammar",
+    section: "grammar-foundations",
     summary:
       "Use prepositions to connect nouns or pronouns with ideas such as place, time, movement, cause, or topic.",
     keyIdeas: [
@@ -345,14 +399,14 @@ export const grammarTopics: GrammarTopic[] = [
       "The meeting is in 9. → The meeting is at 9."
     ],
     relatedTopics: ["Key Structure Differences", "WH Questions"],
-    fullExplanationPath: "/core-grammar/common-prepositions",
+    fullExplanationPath: "/grammar-foundations/common-prepositions",
     hasFullExplanation: true
   },
   {
     id: "pronouns-possessives-and-object-forms",
     slug: "pronouns-possessives-and-object-forms",
     title: "Pronouns, Possessives, Object Forms, and Reflexives",
-    section: "core-grammar",
+    section: "grammar-foundations",
     summary:
       "Use subject pronouns, object pronouns, possessive forms, and reflexives according to the function each word has in the sentence.",
     keyIdeas: [
@@ -372,14 +426,14 @@ export const grammarTopics: GrammarTopic[] = [
       "This is hers laptop. → This is her laptop."
     ],
     relatedTopics: ["Common Prepositions", "English Auxiliaries"],
-    fullExplanationPath: "/core-grammar/pronouns-possessives-and-object-forms",
+    fullExplanationPath: "/grammar-foundations/pronouns-possessives-and-object-forms",
     hasFullExplanation: true
   },
   {
     id: "articles-and-determiners",
     slug: "articles-and-determiners",
     title: "Articles and Determiners",
-    section: "core-grammar",
+    section: "grammar-foundations",
     summary:
       "Use a, an, the, zero article, and common determiners to make nouns specific, general, countable, or uncountable.",
     keyIdeas: [
@@ -401,14 +455,14 @@ export const grammarTopics: GrammarTopic[] = [
       "There are much people. → There are many people."
     ],
     relatedTopics: ["Key Structure Differences", "Common Prepositions", "Pronouns, Possessives, Object Forms, and Reflexives"],
-    fullExplanationPath: "/core-grammar/articles-and-determiners",
+    fullExplanationPath: "/grammar-foundations/articles-and-determiners",
     hasFullExplanation: true
   },
   {
     id: "gerunds-and-infinitives",
     slug: "gerunds-and-infinitives",
     title: "Gerunds and Infinitives",
-    section: "core-grammar",
+    section: "advanced-structures",
     summary:
       "Use verb + -ing and verb + to + base verb patterns after common verbs, and notice when the form changes the meaning.",
     keyIdeas: [
@@ -434,14 +488,14 @@ export const grammarTopics: GrammarTopic[] = [
       "Articles and Determiners",
       "Common Prepositions"
     ],
-    fullExplanationPath: "/core-grammar/gerunds-and-infinitives",
+    fullExplanationPath: "/advanced-structures/gerunds-and-infinitives",
     hasFullExplanation: true
   },
   {
     id: "passive-voice",
     slug: "passive-voice",
     title: "Passive Voice",
-    section: "core-grammar",
+    section: "advanced-structures",
     summary:
       "Use passive voice when the action, result, process, or affected thing matters more than who performed the action.",
     keyIdeas: [
@@ -468,14 +522,14 @@ export const grammarTopics: GrammarTopic[] = [
       "Gerunds and Infinitives",
       "Key Structure Differences"
     ],
-    fullExplanationPath: "/core-grammar/passive-voice",
+    fullExplanationPath: "/advanced-structures/passive-voice",
     hasFullExplanation: true
   },
   {
     id: "reported-speech",
     slug: "reported-speech",
     title: "Reported Speech",
-    section: "core-grammar",
+    section: "advanced-structures",
     summary:
       "Use reported speech to explain what someone said, asked, requested, or instructed without quoting their exact words.",
     keyIdeas: [
@@ -502,14 +556,14 @@ export const grammarTopics: GrammarTopic[] = [
       "English Auxiliaries",
       "Key Structure Differences"
     ],
-    fullExplanationPath: "/core-grammar/reported-speech",
+    fullExplanationPath: "/advanced-structures/reported-speech",
     hasFullExplanation: true
   },
   {
     id: "comparatives-and-superlatives",
     slug: "comparatives-and-superlatives",
     title: "Comparatives and Superlatives",
-    section: "core-grammar",
+    section: "grammar-foundations",
     summary:
       "Use -er, more, the -est, and the most to compare two things or identify the highest degree in a group.",
     keyIdeas: [
@@ -535,14 +589,14 @@ export const grammarTopics: GrammarTopic[] = [
       "Key Structure Differences",
       "Adjectives and Adverbs"
     ],
-    fullExplanationPath: "/core-grammar/comparatives-and-superlatives",
+    fullExplanationPath: "/grammar-foundations/comparatives-and-superlatives",
     hasFullExplanation: true
   },
   {
     id: "adjectives-and-adverbs",
     slug: "adjectives-and-adverbs",
     title: "Adjectives and Adverbs",
-    section: "core-grammar",
+    section: "grammar-foundations",
     summary:
       "Choose adjectives for nouns and adverbs for actions, descriptions, and how something happens.",
     keyIdeas: [
@@ -568,14 +622,14 @@ export const grammarTopics: GrammarTopic[] = [
       "Key Structure Differences",
       "English Auxiliaries"
     ],
-    fullExplanationPath: "/core-grammar/adjectives-and-adverbs",
+    fullExplanationPath: "/grammar-foundations/adjectives-and-adverbs",
     hasFullExplanation: true
   },
   {
     id: "connectors-and-discourse-markers",
     slug: "connectors-and-discourse-markers",
     title: "Connectors and Discourse Markers",
-    section: "core-grammar",
+    section: "communication-patterns",
     summary:
       "Use connectors like however, therefore, although, and as a result to structure clear technical communication.",
     keyIdeas: [
@@ -602,14 +656,14 @@ export const grammarTopics: GrammarTopic[] = [
       "Adjectives and Adverbs",
       "Key Structure Differences"
     ],
-    fullExplanationPath: "/core-grammar/connectors-and-discourse-markers",
+    fullExplanationPath: "/communication-patterns/connectors-and-discourse-markers",
     hasFullExplanation: true
   },
   {
     id: "practical-writing-patterns",
     slug: "practical-writing-patterns",
     title: "Practical Writing Patterns",
-    section: "core-grammar",
+    section: "communication-patterns",
     summary:
       "Use ready-made English patterns for bug reports, PR comments, status updates, and technical explanations.",
     keyIdeas: [
@@ -637,14 +691,14 @@ export const grammarTopics: GrammarTopic[] = [
       "Gerunds and Infinitives",
       "Polite Requests"
     ],
-    fullExplanationPath: "/core-grammar/practical-writing-patterns",
+    fullExplanationPath: "/communication-patterns/practical-writing-patterns",
     hasFullExplanation: true
   },
   {
     id: "phrasal-verbs",
     slug: "phrasal-verbs",
     title: "Phrasal Verbs",
-    section: "core-grammar",
+    section: "communication-patterns",
     summary:
       "Understand and use common work-related phrasal verbs for debugging, planning, reviews, and technical conversations.",
     keyIdeas: [
@@ -672,14 +726,14 @@ export const grammarTopics: GrammarTopic[] = [
       "Common Prepositions",
       "Gerunds and Infinitives"
     ],
-    fullExplanationPath: "/core-grammar/phrasal-verbs",
+    fullExplanationPath: "/communication-patterns/phrasal-verbs",
     hasFullExplanation: true
   },
   {
     id: "key-structure-differences",
     slug: "key-structure-differences",
     title: "Key Structure Differences",
-    section: "core-grammar",
+    section: "sentence-building",
     summary:
       "Compare similar English structures so you can choose the right one instead of memorizing isolated formulas.",
     keyIdeas: [
@@ -699,7 +753,7 @@ export const grammarTopics: GrammarTopic[] = [
       "I have seen her yesterday. → I saw her yesterday."
     ],
     relatedTopics: ["Verb Tenses", "Modal Verbs", "Common Prepositions"],
-    fullExplanationPath: "/core-grammar/key-structure-differences",
+    fullExplanationPath: "/sentence-building/key-structure-differences",
     hasFullExplanation: true
   }
 ];
@@ -710,4 +764,8 @@ export function getGrammarTopicsBySection(section: GrammarTopicSection) {
 
 export function findGrammarTopic(section: GrammarTopicSection, slug: string) {
   return grammarTopics.find((topic) => topic.section === section && topic.slug === slug);
+}
+
+export function findGrammarTopicBySlug(slug: string) {
+  return grammarTopics.find((topic) => topic.slug === slug);
 }

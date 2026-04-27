@@ -1,5 +1,9 @@
 import { Link } from "react-router-dom";
-import { getGrammarTopicsBySection } from "../data/grammarTopics";
+import {
+  getGrammarTopicsBySection,
+  grammarTopicSectionDetails,
+  visibleGrammarTopicSections
+} from "../data/grammarTopics";
 import { irregularVerbs } from "../data/irregularVerbs";
 import { verbTenses } from "../data/verbTenses";
 
@@ -17,28 +21,17 @@ const sections = [
     viewAllPath: "/verb-tenses",
     viewAllLabel: "View all verb tenses"
   },
-  {
-    title: "Modal Verbs",
-    description: "Study modal verbs by communicative intention instead of memorizing random lists.",
-    count: getGrammarTopicsBySection("modal-verbs").length,
-    topics: getGrammarTopicsBySection("modal-verbs").map((topic) => ({
+  ...visibleGrammarTopicSections.map((section) => ({
+    title: grammarTopicSectionDetails[section].label,
+    description: grammarTopicSectionDetails[section].description,
+    count: getGrammarTopicsBySection(section).length,
+    topics: getGrammarTopicsBySection(section).map((topic) => ({
       label: topic.title,
       to: topic.fullExplanationPath
     })),
-    viewAllPath: "/modal-verbs",
-    viewAllLabel: "View all modal verb topics"
-  },
-  {
-    title: "Core Grammar",
-    description: "Quick access to the grammar structures that come up all the time.",
-    count: getGrammarTopicsBySection("core-grammar").length,
-    topics: getGrammarTopicsBySection("core-grammar").map((topic) => ({
-      label: topic.title,
-      to: topic.fullExplanationPath
-    })),
-    viewAllPath: "/core-grammar",
-    viewAllLabel: "View all core grammar topics"
-  },
+    viewAllPath: grammarTopicSectionDetails[section].path,
+    viewAllLabel: grammarTopicSectionDetails[section].viewAllLabel
+  })),
   {
     title: "Irregular Verbs",
     description:

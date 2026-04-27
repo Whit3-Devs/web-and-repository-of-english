@@ -1,6 +1,10 @@
 import { useEffect } from "react";
 import { Link, NavLink, Outlet, matchPath, useLocation } from "react-router-dom";
-import { findGrammarTopic } from "../data/grammarTopics";
+import {
+  findGrammarTopic,
+  grammarTopicSectionDetails,
+  visibleGrammarTopicSections
+} from "../data/grammarTopics";
 import { findIrregularVerbBySlug } from "../data/irregularVerbs";
 import { findVerbTenseBySlug } from "../data/verbTenses";
 import { ThemeToggle } from "./ThemeToggle";
@@ -12,8 +16,10 @@ const githubOrganizationUrl = "https://github.com/Whit3-Devs/";
 const navItems = [
   { to: "/", label: "Home" },
   { to: "/verb-tenses", label: "Verb Tenses" },
-  { to: "/modal-verbs", label: "Modal Verbs" },
-  { to: "/core-grammar", label: "Core Grammar" },
+  ...visibleGrammarTopicSections.map((section) => ({
+    to: grammarTopicSectionDetails[section].path,
+    label: grammarTopicSectionDetails[section].label
+  })),
   { to: "/irregular-verbs", label: "Irregular Verbs" }
 ];
 
@@ -155,19 +161,12 @@ function getPageTitle(pathname: string) {
     return findVerbTenseBySlug(verbTenseMatch.params.slug)?.name ?? "Verb Tenses";
   }
 
-  const modalVerbMatch = matchPath("/modal-verbs/:slug", pathname);
-  if (modalVerbMatch?.params.slug) {
-    return (
-      findGrammarTopic("modal-verbs", modalVerbMatch.params.slug)?.title ?? "Modal Verbs"
-    );
-  }
-
-  const coreGrammarMatch = matchPath("/core-grammar/:slug", pathname);
-  if (coreGrammarMatch?.params.slug) {
-    return (
-      findGrammarTopic("core-grammar", coreGrammarMatch.params.slug)?.title ??
-      "Core Grammar"
-    );
+  for (const section of visibleGrammarTopicSections) {
+    const details = grammarTopicSectionDetails[section];
+    const grammarTopicMatch = matchPath(`${details.path}/:slug`, pathname);
+    if (grammarTopicMatch?.params.slug) {
+      return findGrammarTopic(section, grammarTopicMatch.params.slug)?.title ?? details.label;
+    }
   }
 
   const irregularVerbMatch = matchPath("/irregular-verbs/:slug", pathname);
@@ -181,13 +180,15 @@ function getPageTitle(pathname: string) {
   switch (pathname) {
     case "/verb-tenses":
       return "Verb Tenses";
-    case "/modal-verbs":
-      return "Modal Verbs";
-    case "/core-grammar":
-      return "Core Grammar";
     case "/irregular-verbs":
       return "Irregular Verbs";
     default:
+      for (const section of visibleGrammarTopicSections) {
+        const details = grammarTopicSectionDetails[section];
+        if (pathname === details.path) {
+          return details.label;
+        }
+      }
       return "English Cheatsheet";
   }
 }

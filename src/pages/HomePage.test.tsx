@@ -15,15 +15,19 @@ describe("Home page topic directory", () => {
 
     expect(screen.getByText("Verb Tenses")).toBeTruthy();
     expect(screen.getByText("Modal Verbs")).toBeTruthy();
-    expect(screen.getByText("Core Grammar")).toBeTruthy();
+    expect(screen.getByText("Sentence Building")).toBeTruthy();
+    expect(screen.getByText("Grammar Foundations")).toBeTruthy();
+    expect(screen.getByText("Advanced Structures")).toBeTruthy();
+    expect(screen.getByText("Communication Patterns")).toBeTruthy();
     expect(screen.getByText("Irregular Verbs")).toBeTruthy();
 
     expect(screen.getByRole("link", { name: "Present Simple" })).toBeTruthy();
     expect(screen.getByRole("link", { name: "Modal Verbs Overview" })).toBeTruthy();
     expect(screen.getByRole("link", { name: "Polite Requests" })).toBeTruthy();
-    expect(screen.getByRole("link", { name: "Conditionals Overview" })).toBeTruthy();
     expect(screen.getByRole("link", { name: "Question Builder Cheat Sheet" })).toBeTruthy();
     expect(screen.getByRole("link", { name: "WH Questions" })).toBeTruthy();
+    expect(screen.getByRole("link", { name: "Conditionals Overview" })).toBeTruthy();
+    expect(screen.getByRole("link", { name: "Phrasal Verbs" })).toBeTruthy();
     expect(screen.getByRole("link", { name: "awake" })).toBeTruthy();
   });
 
@@ -38,9 +42,10 @@ describe("Home page topic directory", () => {
     expect(
       screen.getByRole("link", { name: "View all modal verb topics →" })
     ).toBeTruthy();
-    expect(
-      screen.getByRole("link", { name: "View all core grammar topics →" })
-    ).toBeTruthy();
+    expect(screen.getByRole("link", { name: "View all sentence building topics →" })).toBeTruthy();
+    expect(screen.getByRole("link", { name: "View all grammar foundation topics →" })).toBeTruthy();
+    expect(screen.getByRole("link", { name: "View all advanced structure topics →" })).toBeTruthy();
+    expect(screen.getByRole("link", { name: "View all communication pattern topics →" })).toBeTruthy();
     expect(
       screen.getByRole("link", { name: "View all irregular verbs →" })
     ).toBeTruthy();
@@ -61,7 +66,7 @@ describe("Home page topic directory", () => {
 
   it("updates the browser tab title based on the current route", () => {
     render(
-      <MemoryRouter initialEntries={["/core-grammar/embedded-wh-clauses"]}>
+      <MemoryRouter initialEntries={["/sentence-building/embedded-wh-clauses"]}>
         <App />
       </MemoryRouter>
     );
@@ -69,9 +74,9 @@ describe("Home page topic directory", () => {
     expect(document.title).toBe("Embedded WH Clauses | English Cheatsheet");
   });
 
-  it("uses the renamed core grammar topic title in the browser tab", () => {
+  it("uses the grammar foundations topic title in the browser tab", () => {
     render(
-      <MemoryRouter initialEntries={["/core-grammar/pronouns-possessives-and-object-forms"]}>
+      <MemoryRouter initialEntries={["/grammar-foundations/pronouns-possessives-and-object-forms"]}>
         <App />
       </MemoryRouter>
     );
@@ -83,7 +88,7 @@ describe("Home page topic directory", () => {
 
   it("uses key structure differences in the browser tab", () => {
     render(
-      <MemoryRouter initialEntries={["/core-grammar/key-structure-differences"]}>
+      <MemoryRouter initialEntries={["/sentence-building/key-structure-differences"]}>
         <App />
       </MemoryRouter>
     );
@@ -93,7 +98,7 @@ describe("Home page topic directory", () => {
 
   it("uses question builder cheat sheet in the browser tab", () => {
     render(
-      <MemoryRouter initialEntries={["/core-grammar/question-builder-cheat-sheet"]}>
+      <MemoryRouter initialEntries={["/sentence-building/question-builder-cheat-sheet"]}>
         <App />
       </MemoryRouter>
     );
@@ -103,12 +108,32 @@ describe("Home page topic directory", () => {
 
   it("uses conditionals overview in the browser tab", () => {
     render(
-      <MemoryRouter initialEntries={["/core-grammar/conditionals-overview"]}>
+      <MemoryRouter initialEntries={["/advanced-structures/conditionals-overview"]}>
         <App />
       </MemoryRouter>
     );
 
     expect(document.title).toBe("Conditionals Overview | English Cheatsheet");
+  });
+
+  it("redirects the old core grammar list route to sentence building", () => {
+    render(
+      <MemoryRouter initialEntries={["/core-grammar"]}>
+        <App />
+      </MemoryRouter>
+    );
+
+    expect(screen.getByRole("heading", { name: "Sentence Building" })).toBeTruthy();
+  });
+
+  it("redirects old core grammar topic routes to their new section", () => {
+    render(
+      <MemoryRouter initialEntries={["/core-grammar/question-builder-cheat-sheet"]}>
+        <App />
+      </MemoryRouter>
+    );
+
+    expect(screen.getByRole("heading", { name: "Question Builder Cheat Sheet" })).toBeTruthy();
   });
 
   it("uses ability and permission in the browser tab", () => {

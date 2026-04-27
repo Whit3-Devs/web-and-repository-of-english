@@ -1306,7 +1306,7 @@ export const grammarTopicFullExplanations: GrammarTopicFullExplanation[] = [
     contentType: "prepositions",
     slug: "common-prepositions",
     title: "Common Prepositions",
-    section: "core-grammar",
+    section: "grammar-foundations",
     overview:
       "Use prepositions to connect nouns, pronouns, or verb-ing forms to ideas such as place, time, movement, cause, topic, means, or company.",
     whatItDoes: [
@@ -1782,7 +1782,7 @@ export const grammarTopicFullExplanations: GrammarTopicFullExplanation[] = [
     contentType: "conditionals-overview",
     slug: "conditionals-overview",
     title: "Conditionals Overview",
-    section: "core-grammar",
+    section: "advanced-structures",
     overview:
       "Use this overview to compare English conditionals quickly: start from the kind of situation you mean, then choose the if-clause and result pattern that matches reality, time, and consequence.",
     whatItDoes: [
@@ -1900,7 +1900,7 @@ export const grammarTopicFullExplanations: GrammarTopicFullExplanation[] = [
     ],
     relatedTopicLinks: [
       { title: "Would and Hypotheticals", path: "/modal-verbs/would-and-hypotheticals" },
-      { title: "Key Structure Differences", path: "/core-grammar/key-structure-differences" },
+      { title: "Key Structure Differences", path: "/sentence-building/key-structure-differences" },
       { title: "Present Simple", path: "/verb-tenses/present-simple" }
     ]
   },
@@ -1908,7 +1908,7 @@ export const grammarTopicFullExplanations: GrammarTopicFullExplanation[] = [
     contentType: "question-builder",
     slug: "question-builder-cheat-sheet",
     title: "Question Builder Cheat Sheet",
-    section: "core-grammar",
+    section: "sentence-building",
     overview:
       "Use this builder when you want the correct English question fast: choose the helper first, keep the right word order, and avoid the most common mistakes.",
     whatItDoes: [
@@ -2037,9 +2037,9 @@ export const grammarTopicFullExplanations: GrammarTopicFullExplanation[] = [
       "Short answers repeat the auxiliary."
     ],
     relatedTopicLinks: [
-      { title: "WH Questions", path: "/core-grammar/wh-questions" },
-      { title: "Embedded WH Clauses", path: "/core-grammar/embedded-wh-clauses" },
-      { title: "English Auxiliaries", path: "/core-grammar/english-auxiliaries" },
+      { title: "WH Questions", path: "/sentence-building/wh-questions" },
+      { title: "Embedded WH Clauses", path: "/sentence-building/embedded-wh-clauses" },
+      { title: "English Auxiliaries", path: "/sentence-building/english-auxiliaries" },
       { title: "Polite Requests", path: "/modal-verbs/polite-requests" }
     ]
   },
@@ -2047,7 +2047,7 @@ export const grammarTopicFullExplanations: GrammarTopicFullExplanation[] = [
     contentType: "wh-questions",
     slug: "wh-questions",
     title: "WH Questions",
-    section: "core-grammar",
+    section: "sentence-building",
     overview:
       "Use WH questions to ask for specific information instead of only getting a yes or no answer.",
     whatItDoes: [
@@ -2296,7 +2296,7 @@ export const grammarTopicFullExplanations: GrammarTopicFullExplanation[] = [
     contentType: "embedded-wh-clauses",
     slug: "embedded-wh-clauses",
     title: "Embedded WH Clauses",
-    section: "core-grammar",
+    section: "sentence-building",
     overview:
       "Use embedded WH clauses when a WH structure appears inside a bigger sentence instead of acting as a direct independent question.",
     whatItDoes: [
@@ -2524,7 +2524,7 @@ export const grammarTopicFullExplanations: GrammarTopicFullExplanation[] = [
     contentType: "english-auxiliaries",
     slug: "english-auxiliaries",
     title: "English Auxiliaries",
-    section: "core-grammar",
+    section: "sentence-building",
     overview:
       "Use auxiliaries to build questions, negatives, continuous forms, perfect forms, and future forms without changing the core meaning of the main verb.",
     whatItDoes: [
@@ -2855,7 +2855,7 @@ export const grammarTopicFullExplanations: GrammarTopicFullExplanation[] = [
     contentType: "pronouns-possessives",
     slug: "pronouns-possessives-and-object-forms",
     title: "Pronouns, Possessives, Object Forms, and Reflexives",
-    section: "core-grammar",
+    section: "grammar-foundations",
     overview:
       "Use different pronoun and possessive forms according to the function the word has in the sentence: subject, object, possession, or reflexive reference.",
     whatItDoes: [
@@ -3083,7 +3083,7 @@ export const grammarTopicFullExplanations: GrammarTopicFullExplanation[] = [
     contentType: "structure-differences",
     slug: "key-structure-differences",
     title: "Key Structure Differences",
-    section: "core-grammar",
+    section: "sentence-building",
     overview:
       "Compare similar English structures so you can choose the right one based on meaning, time reference, and sentence purpose instead of guessing.",
     whatItDoes: [
@@ -3360,7 +3360,7 @@ export const grammarTopicFullExplanations: GrammarTopicFullExplanation[] = [
     contentType: "articles-determiners",
     slug: "articles-and-determiners",
     title: "Articles and Determiners",
-    section: "core-grammar",
+    section: "grammar-foundations",
     overview:
       "Use this page to choose the right word before a noun: a, an, the, zero article, or a determiner such as some, any, much, many, few, little, this, or those.",
     whatItDoes: [
@@ -3542,7 +3542,7 @@ export const grammarTopicFullExplanations: GrammarTopicFullExplanation[] = [
     contentType: "gerunds-infinitives",
     slug: "gerunds-and-infinitives",
     title: "Gerunds and Infinitives",
-    section: "core-grammar",
+    section: "advanced-structures",
     overview:
       "Use this page to decide when the next verb should be verb + -ing or to + base verb, and when the choice changes the meaning of the sentence.",
     whatItDoes: [
@@ -3706,7 +3706,7 @@ export const grammarTopicFullExplanations: GrammarTopicFullExplanation[] = [
     contentType: "passive-voice",
     slug: "passive-voice",
     title: "Passive Voice",
-    section: "core-grammar",
+    section: "advanced-structures",
     overview:
       "Use passive voice when the action, result, process, or affected thing matters more than the person who did it.",
     whatItDoes: [
@@ -3903,7 +3903,7 @@ export const grammarTopicFullExplanations: GrammarTopicFullExplanation[] = [
     contentType: "reported-speech",
     slug: "reported-speech",
     title: "Reported Speech",
-    section: "core-grammar",
+    section: "advanced-structures",
     overview:
       "Use reported speech to explain what someone said, asked, requested, or instructed without repeating their exact words.",
     whatItDoes: [
@@ -4139,7 +4139,7 @@ export const grammarTopicFullExplanations: GrammarTopicFullExplanation[] = [
     contentType: "comparatives-superlatives",
     slug: "comparatives-and-superlatives",
     title: "Comparatives and Superlatives",
-    section: "core-grammar",
+    section: "grammar-foundations",
     overview:
       "Use comparatives to compare two things and superlatives to identify the highest or lowest degree in a group.",
     whatItDoes: [
@@ -4339,7 +4339,7 @@ export const grammarTopicFullExplanations: GrammarTopicFullExplanation[] = [
     contentType: "adjectives-adverbs",
     slug: "adjectives-and-adverbs",
     title: "Adjectives and Adverbs",
-    section: "core-grammar",
+    section: "grammar-foundations",
     overview:
       "Use adjectives to describe nouns and adverbs to describe actions, adjectives, or other adverbs.",
     whatItDoes: [
@@ -4516,7 +4516,7 @@ export const grammarTopicFullExplanations: GrammarTopicFullExplanation[] = [
     contentType: "connectors-discourse-markers",
     slug: "connectors-and-discourse-markers",
     title: "Connectors and Discourse Markers",
-    section: "core-grammar",
+    section: "communication-patterns",
     overview:
       "Use connectors and discourse markers to organize ideas, show relationships, and make technical communication easier to follow.",
     whatItDoes: [
@@ -4739,7 +4739,7 @@ export const grammarTopicFullExplanations: GrammarTopicFullExplanation[] = [
     contentType: "practical-writing-patterns",
     slug: "practical-writing-patterns",
     title: "Practical Writing Patterns",
-    section: "core-grammar",
+    section: "communication-patterns",
     overview:
       "Use practical writing patterns to communicate clearly in tickets, PR comments, bug reports, status updates, and technical explanations.",
     whatItDoes: [
@@ -4935,7 +4935,7 @@ export const grammarTopicFullExplanations: GrammarTopicFullExplanation[] = [
     contentType: "phrasal-verbs",
     slug: "phrasal-verbs",
     title: "Phrasal Verbs",
-    section: "core-grammar",
+    section: "communication-patterns",
     overview:
       "Use practical work-related phrasal verbs to sound more natural in technical conversations, PR comments, standups, debugging, planning, and delivery.",
     whatItDoes: [

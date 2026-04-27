@@ -1,5 +1,10 @@
-import { Navigate, Route, Routes } from "react-router-dom";
+import { Navigate, Route, Routes, useParams } from "react-router-dom";
 import { AppLayout } from "./components/AppLayout";
+import {
+  findGrammarTopicBySlug,
+  grammarTopicSectionDetails,
+  visibleGrammarTopicSections
+} from "./data/grammarTopics";
 import { GrammarTopicDetailPage } from "./pages/GrammarTopicDetailPage";
 import { GrammarTopicsPage } from "./pages/GrammarTopicsPage";
 import { HomePage } from "./pages/HomePage";
@@ -15,32 +20,43 @@ export function App() {
         <Route index element={<HomePage />} />
         <Route path="verb-tenses" element={<VerbTensesPage />} />
         <Route path="verb-tenses/:slug" element={<VerbTenseDetailPage />} />
-        <Route path="modal-verbs" element={<GrammarTopicsPage section="modal-verbs" />} />
-        <Route
-          path="modal-verbs/:slug"
-          element={
-            <GrammarTopicDetailPage
-              section="modal-verbs"
-              backPath="/modal-verbs"
-              backLabel="Modal Verbs"
-            />
-          }
-        />
-        <Route path="core-grammar" element={<GrammarTopicsPage section="core-grammar" />} />
-        <Route
-          path="core-grammar/:slug"
-          element={
-            <GrammarTopicDetailPage
-              section="core-grammar"
-              backPath="/core-grammar"
-              backLabel="Core Grammar"
-            />
-          }
-        />
+        {visibleGrammarTopicSections.map((section) => {
+          const details = grammarTopicSectionDetails[section];
+
+          return (
+            <Route key={section} path={details.path.slice(1)}>
+              <Route index element={<GrammarTopicsPage section={section} />} />
+              <Route
+                path=":slug"
+                element={
+                  <GrammarTopicDetailPage
+                    section={section}
+                    backPath={details.path}
+                    backLabel={details.label}
+                  />
+                }
+              />
+            </Route>
+          );
+        })}
+        <Route path="core-grammar" element={<Navigate to="/sentence-building" replace />} />
+        <Route path="core-grammar/:slug" element={<LegacyCoreGrammarRedirect />} />
         <Route path="irregular-verbs" element={<IrregularVerbsPage />} />
         <Route path="irregular-verbs/:slug" element={<IrregularVerbDetailPage />} />
         <Route path="*" element={<Navigate to="/" replace />} />
       </Route>
     </Routes>
+  );
+}
+
+function LegacyCoreGrammarRedirect() {
+  const { slug } = useParams();
+  const topic = slug ? findGrammarTopicBySlug(slug) : undefined;
+
+  return (
+    <Navigate
+      to={topic ? `${grammarTopicSectionDetails[topic.section].path}/${topic.slug}` : "/sentence-building"}
+      replace
+    />
   );
 }

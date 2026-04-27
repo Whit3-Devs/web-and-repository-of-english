@@ -19,25 +19,25 @@ describe("Grammar topic pages", () => {
     expect(screen.getByText("Would and Hypotheticals")).toBeTruthy();
   });
 
-  it("renders Core Grammar cards", () => {
+  it("renders split grammar section cards", () => {
     render(
       <MemoryRouter>
-        <GrammarTopicsPage section="core-grammar" />
+        <>
+          <GrammarTopicsPage section="sentence-building" />
+          <GrammarTopicsPage section="grammar-foundations" />
+          <GrammarTopicsPage section="advanced-structures" />
+          <GrammarTopicsPage section="communication-patterns" />
+        </>
       </MemoryRouter>
     );
 
-    expect(screen.getByText("Conditionals Overview")).toBeTruthy();
     expect(screen.getByText("Question Builder Cheat Sheet")).toBeTruthy();
     expect(screen.getByText("WH Questions")).toBeTruthy();
     expect(screen.getByText("Common Prepositions")).toBeTruthy();
     expect(screen.getByText("Articles and Determiners")).toBeTruthy();
-    expect(screen.getByText("Gerunds and Infinitives")).toBeTruthy();
+    expect(screen.getByText("Conditionals Overview")).toBeTruthy();
     expect(screen.getByText("Passive Voice")).toBeTruthy();
-    expect(screen.getByText("Reported Speech")).toBeTruthy();
-    expect(screen.getByText("Comparatives and Superlatives")).toBeTruthy();
-    expect(screen.getByText("Adjectives and Adverbs")).toBeTruthy();
     expect(screen.getByText("Connectors and Discourse Markers")).toBeTruthy();
-    expect(screen.getByText("Practical Writing Patterns")).toBeTruthy();
     expect(screen.getByText("Phrasal Verbs")).toBeTruthy();
   });
 
@@ -318,15 +318,15 @@ describe("Grammar topic pages", () => {
 
   it("renders full explanation content for Common Prepositions", () => {
     render(
-      <MemoryRouter initialEntries={["/core-grammar/common-prepositions"]}>
+      <MemoryRouter initialEntries={["/grammar-foundations/common-prepositions"]}>
         <Routes>
           <Route
-            path="/core-grammar/:slug"
+            path="/grammar-foundations/:slug"
             element={
               <GrammarTopicDetailPage
-                section="core-grammar"
-                backPath="/core-grammar"
-                backLabel="Core Grammar"
+                section="grammar-foundations"
+                backPath="/grammar-foundations"
+                backLabel="Grammar Foundations"
               />
             }
           />
@@ -360,15 +360,15 @@ describe("Grammar topic pages", () => {
 
   it("renders full explanation content for WH Questions", () => {
     render(
-      <MemoryRouter initialEntries={["/core-grammar/wh-questions"]}>
+      <MemoryRouter initialEntries={["/sentence-building/wh-questions"]}>
         <Routes>
           <Route
-            path="/core-grammar/:slug"
+            path="/sentence-building/:slug"
             element={
               <GrammarTopicDetailPage
-                section="core-grammar"
-                backPath="/core-grammar"
-                backLabel="Core Grammar"
+                section="sentence-building"
+                backPath="/sentence-building"
+                backLabel="Sentence Building"
               />
             }
           />
@@ -402,15 +402,15 @@ describe("Grammar topic pages", () => {
 
   it("renders full explanation content for Embedded WH Clauses", () => {
     render(
-      <MemoryRouter initialEntries={["/core-grammar/embedded-wh-clauses"]}>
+      <MemoryRouter initialEntries={["/sentence-building/embedded-wh-clauses"]}>
         <Routes>
           <Route
-            path="/core-grammar/:slug"
+            path="/sentence-building/:slug"
             element={
               <GrammarTopicDetailPage
-                section="core-grammar"
-                backPath="/core-grammar"
-                backLabel="Core Grammar"
+                section="sentence-building"
+                backPath="/sentence-building"
+                backLabel="Sentence Building"
               />
             }
           />
@@ -436,15 +436,15 @@ describe("Grammar topic pages", () => {
 
   it("renders full explanation content for English Auxiliaries", () => {
     render(
-      <MemoryRouter initialEntries={["/core-grammar/english-auxiliaries"]}>
+      <MemoryRouter initialEntries={["/sentence-building/english-auxiliaries"]}>
         <Routes>
           <Route
-            path="/core-grammar/:slug"
+            path="/sentence-building/:slug"
             element={
               <GrammarTopicDetailPage
-                section="core-grammar"
-                backPath="/core-grammar"
-                backLabel="Core Grammar"
+                section="sentence-building"
+                backPath="/sentence-building"
+                backLabel="Sentence Building"
               />
             }
           />
@@ -474,15 +474,15 @@ describe("Grammar topic pages", () => {
 
   it("renders full explanation content for Pronouns, Possessives, Object Forms, and Reflexives", () => {
     render(
-      <MemoryRouter initialEntries={["/core-grammar/pronouns-possessives-and-object-forms"]}>
+      <MemoryRouter initialEntries={["/grammar-foundations/pronouns-possessives-and-object-forms"]}>
         <Routes>
           <Route
-            path="/core-grammar/:slug"
+            path="/grammar-foundations/:slug"
             element={
               <GrammarTopicDetailPage
-                section="core-grammar"
-                backPath="/core-grammar"
-                backLabel="Core Grammar"
+                section="grammar-foundations"
+                backPath="/grammar-foundations"
+                backLabel="Grammar Foundations"
               />
             }
           />
@@ -522,15 +522,15 @@ describe("Grammar topic pages", () => {
 
   it("renders full explanation content for Key Structure Differences", () => {
     render(
-      <MemoryRouter initialEntries={["/core-grammar/key-structure-differences"]}>
+      <MemoryRouter initialEntries={["/sentence-building/key-structure-differences"]}>
         <Routes>
           <Route
-            path="/core-grammar/:slug"
+            path="/sentence-building/:slug"
             element={
               <GrammarTopicDetailPage
-                section="core-grammar"
-                backPath="/core-grammar"
-                backLabel="Core Grammar"
+                section="sentence-building"
+                backPath="/sentence-building"
+                backLabel="Sentence Building"
               />
             }
           />
@@ -566,15 +566,15 @@ describe("Grammar topic pages", () => {
 
   it("renders full explanation content for Articles and Determiners", () => {
     render(
-      <MemoryRouter initialEntries={["/core-grammar/articles-and-determiners"]}>
+      <MemoryRouter initialEntries={["/grammar-foundations/articles-and-determiners"]}>
         <Routes>
           <Route
-            path="/core-grammar/:slug"
+            path="/grammar-foundations/:slug"
             element={
               <GrammarTopicDetailPage
-                section="core-grammar"
-                backPath="/core-grammar"
-                backLabel="Core Grammar"
+                section="grammar-foundations"
+                backPath="/grammar-foundations"
+                backLabel="Grammar Foundations"
               />
             }
           />
@@ -605,15 +605,15 @@ describe("Grammar topic pages", () => {
 
   it("renders full explanation content for Gerunds and Infinitives", () => {
     render(
-      <MemoryRouter initialEntries={["/core-grammar/gerunds-and-infinitives"]}>
+      <MemoryRouter initialEntries={["/advanced-structures/gerunds-and-infinitives"]}>
         <Routes>
           <Route
-            path="/core-grammar/:slug"
+            path="/advanced-structures/:slug"
             element={
               <GrammarTopicDetailPage
-                section="core-grammar"
-                backPath="/core-grammar"
-                backLabel="Core Grammar"
+                section="advanced-structures"
+                backPath="/advanced-structures"
+                backLabel="Advanced Structures"
               />
             }
           />
@@ -644,15 +644,15 @@ describe("Grammar topic pages", () => {
 
   it("renders full explanation content for Passive Voice", () => {
     render(
-      <MemoryRouter initialEntries={["/core-grammar/passive-voice"]}>
+      <MemoryRouter initialEntries={["/advanced-structures/passive-voice"]}>
         <Routes>
           <Route
-            path="/core-grammar/:slug"
+            path="/advanced-structures/:slug"
             element={
               <GrammarTopicDetailPage
-                section="core-grammar"
-                backPath="/core-grammar"
-                backLabel="Core Grammar"
+                section="advanced-structures"
+                backPath="/advanced-structures"
+                backLabel="Advanced Structures"
               />
             }
           />
@@ -685,15 +685,15 @@ describe("Grammar topic pages", () => {
 
   it("renders full explanation content for Reported Speech", () => {
     render(
-      <MemoryRouter initialEntries={["/core-grammar/reported-speech"]}>
+      <MemoryRouter initialEntries={["/advanced-structures/reported-speech"]}>
         <Routes>
           <Route
-            path="/core-grammar/:slug"
+            path="/advanced-structures/:slug"
             element={
               <GrammarTopicDetailPage
-                section="core-grammar"
-                backPath="/core-grammar"
-                backLabel="Core Grammar"
+                section="advanced-structures"
+                backPath="/advanced-structures"
+                backLabel="Advanced Structures"
               />
             }
           />
@@ -723,15 +723,15 @@ describe("Grammar topic pages", () => {
 
   it("renders full explanation content for Comparatives and Superlatives", () => {
     render(
-      <MemoryRouter initialEntries={["/core-grammar/comparatives-and-superlatives"]}>
+      <MemoryRouter initialEntries={["/grammar-foundations/comparatives-and-superlatives"]}>
         <Routes>
           <Route
-            path="/core-grammar/:slug"
+            path="/grammar-foundations/:slug"
             element={
               <GrammarTopicDetailPage
-                section="core-grammar"
-                backPath="/core-grammar"
-                backLabel="Core Grammar"
+                section="grammar-foundations"
+                backPath="/grammar-foundations"
+                backLabel="Grammar Foundations"
               />
             }
           />
@@ -764,15 +764,15 @@ describe("Grammar topic pages", () => {
 
   it("renders full explanation content for Adjectives and Adverbs", () => {
     render(
-      <MemoryRouter initialEntries={["/core-grammar/adjectives-and-adverbs"]}>
+      <MemoryRouter initialEntries={["/grammar-foundations/adjectives-and-adverbs"]}>
         <Routes>
           <Route
-            path="/core-grammar/:slug"
+            path="/grammar-foundations/:slug"
             element={
               <GrammarTopicDetailPage
-                section="core-grammar"
-                backPath="/core-grammar"
-                backLabel="Core Grammar"
+                section="grammar-foundations"
+                backPath="/grammar-foundations"
+                backLabel="Grammar Foundations"
               />
             }
           />
@@ -800,15 +800,15 @@ describe("Grammar topic pages", () => {
 
   it("renders full explanation content for Connectors and Discourse Markers", () => {
     render(
-      <MemoryRouter initialEntries={["/core-grammar/connectors-and-discourse-markers"]}>
+      <MemoryRouter initialEntries={["/communication-patterns/connectors-and-discourse-markers"]}>
         <Routes>
           <Route
-            path="/core-grammar/:slug"
+            path="/communication-patterns/:slug"
             element={
               <GrammarTopicDetailPage
-                section="core-grammar"
-                backPath="/core-grammar"
-                backLabel="Core Grammar"
+                section="communication-patterns"
+                backPath="/communication-patterns"
+                backLabel="Communication Patterns"
               />
             }
           />
@@ -845,15 +845,15 @@ describe("Grammar topic pages", () => {
 
   it("renders full explanation content for Practical Writing Patterns", () => {
     render(
-      <MemoryRouter initialEntries={["/core-grammar/practical-writing-patterns"]}>
+      <MemoryRouter initialEntries={["/communication-patterns/practical-writing-patterns"]}>
         <Routes>
           <Route
-            path="/core-grammar/:slug"
+            path="/communication-patterns/:slug"
             element={
               <GrammarTopicDetailPage
-                section="core-grammar"
-                backPath="/core-grammar"
-                backLabel="Core Grammar"
+                section="communication-patterns"
+                backPath="/communication-patterns"
+                backLabel="Communication Patterns"
               />
             }
           />
@@ -881,15 +881,15 @@ describe("Grammar topic pages", () => {
 
   it("renders full explanation content for Phrasal Verbs", () => {
     render(
-      <MemoryRouter initialEntries={["/core-grammar/phrasal-verbs"]}>
+      <MemoryRouter initialEntries={["/communication-patterns/phrasal-verbs"]}>
         <Routes>
           <Route
-            path="/core-grammar/:slug"
+            path="/communication-patterns/:slug"
             element={
               <GrammarTopicDetailPage
-                section="core-grammar"
-                backPath="/core-grammar"
-                backLabel="Core Grammar"
+                section="communication-patterns"
+                backPath="/communication-patterns"
+                backLabel="Communication Patterns"
               />
             }
           />
@@ -919,15 +919,15 @@ describe("Grammar topic pages", () => {
 
   it("renders full explanation content for Question Builder Cheat Sheet", () => {
     render(
-      <MemoryRouter initialEntries={["/core-grammar/question-builder-cheat-sheet"]}>
+      <MemoryRouter initialEntries={["/sentence-building/question-builder-cheat-sheet"]}>
         <Routes>
           <Route
-            path="/core-grammar/:slug"
+            path="/sentence-building/:slug"
             element={
               <GrammarTopicDetailPage
-                section="core-grammar"
-                backPath="/core-grammar"
-                backLabel="Core Grammar"
+                section="sentence-building"
+                backPath="/sentence-building"
+                backLabel="Sentence Building"
               />
             }
           />
@@ -959,15 +959,15 @@ describe("Grammar topic pages", () => {
 
   it("renders full explanation content for Conditionals Overview", () => {
     render(
-      <MemoryRouter initialEntries={["/core-grammar/conditionals-overview"]}>
+      <MemoryRouter initialEntries={["/advanced-structures/conditionals-overview"]}>
         <Routes>
           <Route
-            path="/core-grammar/:slug"
+            path="/advanced-structures/:slug"
             element={
               <GrammarTopicDetailPage
-                section="core-grammar"
-                backPath="/core-grammar"
-                backLabel="Core Grammar"
+                section="advanced-structures"
+                backPath="/advanced-structures"
+                backLabel="Advanced Structures"
               />
             }
           />
@@ -995,15 +995,15 @@ describe("Grammar topic pages", () => {
 
   it("renders topic not found for an invalid grammar slug", () => {
     render(
-      <MemoryRouter initialEntries={["/core-grammar/not-real"]}>
+      <MemoryRouter initialEntries={["/sentence-building/not-real"]}>
         <Routes>
           <Route
-            path="/core-grammar/:slug"
+            path="/sentence-building/:slug"
             element={
               <GrammarTopicDetailPage
-                section="core-grammar"
-                backPath="/core-grammar"
-                backLabel="Core Grammar"
+                section="sentence-building"
+                backPath="/sentence-building"
+                backLabel="Sentence Building"
               />
             }
           />
@@ -1027,7 +1027,10 @@ describe("Grammar topic pages", () => {
     const navigation = screen.getByRole("navigation", { name: "Study sections" });
 
     expect(within(navigation).getByText("Modal Verbs")).toBeTruthy();
-    expect(within(navigation).getByText("Core Grammar")).toBeTruthy();
+    expect(within(navigation).getByText("Sentence Building")).toBeTruthy();
+    expect(within(navigation).getByText("Grammar Foundations")).toBeTruthy();
+    expect(within(navigation).getByText("Advanced Structures")).toBeTruthy();
+    expect(within(navigation).getByText("Communication Patterns")).toBeTruthy();
   });
 
   it("shows the theme toggle in the app header", () => {

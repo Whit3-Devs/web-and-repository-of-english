@@ -146,7 +146,12 @@ export type IrregularVerbPatternGroup = IrregularVerbPatternDefinition & {
   verbs: IrregularVerb[];
 };
 
-export type GrammarTopicSection = "modal-verbs" | "core-grammar";
+export type GrammarTopicSection =
+  | "modal-verbs"
+  | "sentence-building"
+  | "grammar-foundations"
+  | "advanced-structures"
+  | "communication-patterns";
 
 export type GrammarTopic = {
   id: string;

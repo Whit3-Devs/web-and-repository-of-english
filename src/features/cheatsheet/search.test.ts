@@ -68,7 +68,7 @@ const grammarTopics: GrammarTopic[] = [
     id: "conditionals-overview",
     slug: "conditionals-overview",
     title: "Conditionals Overview",
-    section: "core-grammar",
+    section: "advanced-structures",
     summary: "Choose the right if-clause for facts, real future, unreal present, unreal past, and mixed results.",
     keyIdeas: [
       "Zero conditional talks about facts.",
@@ -82,14 +82,14 @@ const grammarTopics: GrammarTopic[] = [
       "If it will rain, we will stay home. → If it rains, we will stay home."
     ],
     relatedTopics: ["Would and Hypotheticals", "Key Structure Differences"],
-    fullExplanationPath: "/core-grammar/conditionals-overview",
+    fullExplanationPath: "/advanced-structures/conditionals-overview",
     hasFullExplanation: true
   },
   {
     id: "question-builder-cheat-sheet",
     slug: "question-builder-cheat-sheet",
     title: "Question Builder Cheat Sheet",
-    section: "core-grammar",
+    section: "sentence-building",
     summary: "Build English questions with the right auxiliary and word order.",
     keyIdeas: [
       "Use do/does/did when there is no other auxiliary.",
@@ -101,14 +101,14 @@ const grammarTopics: GrammarTopic[] = [
       "Does he works here? → Does he work here?"
     ],
     relatedTopics: ["WH Questions", "English Auxiliaries"],
-    fullExplanationPath: "/core-grammar/question-builder-cheat-sheet",
+    fullExplanationPath: "/sentence-building/question-builder-cheat-sheet",
     hasFullExplanation: true
   },
   {
     id: "articles-and-determiners",
     slug: "articles-and-determiners",
     title: "Articles and Determiners",
-    section: "core-grammar",
+    section: "grammar-foundations",
     summary:
       "Choose a, an, the, zero article, and determiners for countable and uncountable nouns.",
     keyIdeas: [
@@ -118,14 +118,14 @@ const grammarTopics: GrammarTopic[] = [
     examples: ["I need advice.", "Do you have any questions?"],
     commonMistakes: ["There are much people. → There are many people."],
     relatedTopics: ["Key Structure Differences", "Common Prepositions"],
-    fullExplanationPath: "/core-grammar/articles-and-determiners",
+    fullExplanationPath: "/grammar-foundations/articles-and-determiners",
     hasFullExplanation: true
   },
   {
     id: "gerunds-and-infinitives",
     slug: "gerunds-and-infinitives",
     title: "Gerunds and Infinitives",
-    section: "core-grammar",
+    section: "advanced-structures",
     summary:
       "Choose verb + -ing or to + base verb after common verbs, including meaning-change patterns.",
     keyIdeas: [
@@ -143,14 +143,14 @@ const grammarTopics: GrammarTopic[] = [
       "I want improving my English. → I want to improve my English."
     ],
     relatedTopics: ["Key Structure Differences", "Common Prepositions"],
-    fullExplanationPath: "/core-grammar/gerunds-and-infinitives",
+    fullExplanationPath: "/advanced-structures/gerunds-and-infinitives",
     hasFullExplanation: true
   },
   {
     id: "passive-voice",
     slug: "passive-voice",
     title: "Passive Voice",
-    section: "core-grammar",
+    section: "advanced-structures",
     summary:
       "Use passive voice when the action, result, or affected thing matters more than the actor.",
     keyIdeas: [
@@ -168,14 +168,14 @@ const grammarTopics: GrammarTopic[] = [
       "This can used here. → This can be used here."
     ],
     relatedTopics: ["English Auxiliaries", "Verb Tenses"],
-    fullExplanationPath: "/core-grammar/passive-voice",
+    fullExplanationPath: "/advanced-structures/passive-voice",
     hasFullExplanation: true
   },
   {
     id: "reported-speech",
     slug: "reported-speech",
     title: "Reported Speech",
-    section: "core-grammar",
+    section: "advanced-structures",
     summary:
       "Report what someone said, asked, requested, or instructed without quoting exact words.",
     keyIdeas: [
@@ -193,14 +193,14 @@ const grammarTopics: GrammarTopic[] = [
       "He asked where did she work. → He asked where she worked."
     ],
     relatedTopics: ["WH Questions", "Embedded WH Clauses"],
-    fullExplanationPath: "/core-grammar/reported-speech",
+    fullExplanationPath: "/advanced-structures/reported-speech",
     hasFullExplanation: true
   },
   {
     id: "comparatives-and-superlatives",
     slug: "comparatives-and-superlatives",
     title: "Comparatives and Superlatives",
-    section: "core-grammar",
+    section: "grammar-foundations",
     summary:
       "Choose -er, more, the -est, and the most to compare things or identify the highest degree.",
     keyIdeas: [
@@ -218,14 +218,14 @@ const grammarTopics: GrammarTopic[] = [
       "This is better that the old version. → This is better than the old version."
     ],
     relatedTopics: ["Articles and Determiners", "Key Structure Differences"],
-    fullExplanationPath: "/core-grammar/comparatives-and-superlatives",
+    fullExplanationPath: "/grammar-foundations/comparatives-and-superlatives",
     hasFullExplanation: true
   },
   {
     id: "adjectives-and-adverbs",
     slug: "adjectives-and-adverbs",
     title: "Adjectives and Adverbs",
-    section: "core-grammar",
+    section: "grammar-foundations",
     summary:
       "Choose adjectives for nouns and adverbs for actions, descriptions, and how something happens.",
     keyIdeas: [
@@ -243,14 +243,14 @@ const grammarTopics: GrammarTopic[] = [
       "This is a quickly solution. → This is a quick solution."
     ],
     relatedTopics: ["Comparatives and Superlatives", "Key Structure Differences"],
-    fullExplanationPath: "/core-grammar/adjectives-and-adverbs",
+    fullExplanationPath: "/grammar-foundations/adjectives-and-adverbs",
     hasFullExplanation: true
   },
   {
     id: "connectors-and-discourse-markers",
     slug: "connectors-and-discourse-markers",
     title: "Connectors and Discourse Markers",
-    section: "core-grammar",
+    section: "communication-patterns",
     summary:
       "Use connectors and discourse markers to structure technical explanations and decisions.",
     keyIdeas: [
@@ -268,14 +268,14 @@ const grammarTopics: GrammarTopic[] = [
       "However the app crashed. → However, the app crashed."
     ],
     relatedTopics: ["Reported Speech", "Passive Voice"],
-    fullExplanationPath: "/core-grammar/connectors-and-discourse-markers",
+    fullExplanationPath: "/communication-patterns/connectors-and-discourse-markers",
     hasFullExplanation: true
   },
   {
     id: "practical-writing-patterns",
     slug: "practical-writing-patterns",
     title: "Practical Writing Patterns",
-    section: "core-grammar",
+    section: "communication-patterns",
     summary:
       "Use writing patterns for bug reports, PR comments, status updates, and technical explanations.",
     keyIdeas: [
@@ -293,14 +293,14 @@ const grammarTopics: GrammarTopic[] = [
       "I suggest to use this. → I suggest using this."
     ],
     relatedTopics: ["Connectors and Discourse Markers", "Reported Speech"],
-    fullExplanationPath: "/core-grammar/practical-writing-patterns",
+    fullExplanationPath: "/communication-patterns/practical-writing-patterns",
     hasFullExplanation: true
   },
   {
     id: "phrasal-verbs",
     slug: "phrasal-verbs",
     title: "Phrasal Verbs",
-    section: "core-grammar",
+    section: "communication-patterns",
     summary:
       "Use common work-related phrasal verbs for debugging, planning, reviews, and technical conversations.",
     keyIdeas: [
@@ -319,7 +319,7 @@ const grammarTopics: GrammarTopic[] = [
       "I will look this issue. → I will look into this issue."
     ],
     relatedTopics: ["Practical Writing Patterns", "Common Prepositions"],
-    fullExplanationPath: "/core-grammar/phrasal-verbs",
+    fullExplanationPath: "/communication-patterns/phrasal-verbs",
     hasFullExplanation: true
   },
   {
@@ -432,7 +432,10 @@ describe("cheatsheet search", () => {
 
   it("filters grammar topics by section and full explanation availability", () => {
     expect(filterGrammarTopics(grammarTopics, { section: "modal-verbs" })).toHaveLength(2);
-    expect(filterGrammarTopics(grammarTopics, { section: "core-grammar" })).toHaveLength(11);
+    expect(filterGrammarTopics(grammarTopics, { section: "sentence-building" })).toHaveLength(1);
+    expect(filterGrammarTopics(grammarTopics, { section: "grammar-foundations" })).toHaveLength(3);
+    expect(filterGrammarTopics(grammarTopics, { section: "advanced-structures" })).toHaveLength(4);
+    expect(filterGrammarTopics(grammarTopics, { section: "communication-patterns" })).toHaveLength(3);
     expect(filterGrammarTopics(grammarTopics, { hasFullExplanation: false })).toHaveLength(1);
     expect(filterGrammarTopics(grammarTopics, { hasFullExplanation: true })).toHaveLength(12);
   });
