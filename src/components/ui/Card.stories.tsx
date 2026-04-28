@@ -62,7 +62,7 @@ export const Interactive: Story = {
           or surfaces that contain links/actions.
         </p>
         <a
-          className="mt-5 inline-flex rounded-full bg-blue-600 px-4 py-2 text-sm font-bold text-white transition-colors hover:bg-blue-700 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-blue-500"
+          className="mt-5 inline-flex rounded-full bg-blue-600 px-4 py-2 text-sm font-bold text-white shadow-sm transition duration-200 ease-out hover:-translate-y-0.5 hover:bg-blue-700 hover:shadow-md focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-blue-100 motion-reduce:transition-none motion-reduce:hover:translate-y-0 dark:focus-visible:ring-blue-950"
           href="#"
         >
           Open topic

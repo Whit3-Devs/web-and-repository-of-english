@@ -149,11 +149,11 @@ function IrregularVerbsTableView({
       {filteredIrregularVerbs.map((verb) => (
         <article
           key={verb.id}
-          className="grid grid-cols-1 gap-2 border-t border-slate-100 dark:border-slate-800 px-5 py-4 text-slate-700 dark:text-slate-300 md:grid-cols-5 md:gap-4"
+          className="grid grid-cols-1 gap-2 border-t border-slate-100 px-5 py-4 text-slate-700 transition-colors duration-200 ease-out hover:bg-slate-50 motion-reduce:transition-none dark:border-slate-800 dark:text-slate-300 dark:hover:bg-slate-800/70 md:grid-cols-5 md:gap-4"
         >
           <Link
             to={verb.fullExplanationPath}
-            className="font-bold text-slate-950 underline decoration-slate-300 underline-offset-4 hover:text-blue-700 dark:text-blue-300 dark:decoration-slate-600 dark:hover:text-blue-200"
+            className="font-bold text-slate-950 underline decoration-slate-300 underline-offset-4 transition duration-200 ease-out hover:text-blue-700 focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-blue-100 motion-reduce:transition-none dark:text-blue-300 dark:decoration-slate-600 dark:hover:text-blue-200 dark:focus-visible:ring-blue-950"
           >
             {verb.infinitive}
           </Link>
@@ -203,11 +203,11 @@ function IrregularVerbPatternView({
               {group.verbs.map((verb) => (
                 <article
                   key={`${group.key}-${verb.id}`}
-                  className="grid grid-cols-1 gap-2 border-t border-slate-100 dark:border-slate-800 px-5 py-4 text-slate-700 dark:text-slate-300 md:grid-cols-4 md:gap-4"
+                  className="grid grid-cols-1 gap-2 border-t border-slate-100 px-5 py-4 text-slate-700 transition-colors duration-200 ease-out hover:bg-slate-50 motion-reduce:transition-none dark:border-slate-800 dark:text-slate-300 dark:hover:bg-slate-800/70 md:grid-cols-4 md:gap-4"
                 >
                   <Link
                     to={verb.fullExplanationPath}
-                    className="font-bold text-slate-950 underline decoration-slate-300 underline-offset-4 hover:text-blue-700 dark:text-blue-300 dark:decoration-slate-600 dark:hover:text-blue-200"
+                    className="font-bold text-slate-950 underline decoration-slate-300 underline-offset-4 transition duration-200 ease-out hover:text-blue-700 focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-blue-100 motion-reduce:transition-none dark:text-blue-300 dark:decoration-slate-600 dark:hover:text-blue-200 dark:focus-visible:ring-blue-950"
                   >
                     {verb.infinitive}
                   </Link>

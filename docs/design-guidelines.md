@@ -47,6 +47,9 @@ Esta app tiene que sentirse como un cuaderno de estudio moderno: clara, editoria
 - Los CTAs tipo botón pueden elevarse suavemente; los links textuales deben limitarse a color/subrayado para no afectar la lectura.
 - Tabs, inputs y selects deben tener hover/focus claros pero quietos: borde, sombra y ring; no desplazar wrappers ni controles de lectura.
 - Los estados activos de tabs deben ser más fuertes que el hover, con `aria-selected` y contraste evidente en light/dark.
+- Navegación principal y links inline usan color, subrayado y focus ring; CTAs, chips y cards navegables pueden sumar sombra/elevación.
+- Filas tabulares pueden usar hover de fondo para seguimiento visual: más oscuro en light mode, más claro en dark mode, sin desplazamiento.
+- La etapa de hover/dinamismo se considera cerrada cuando Storybook y rutas principales pasan smoke visual sin animar contenido informativo.
 
 ## Componentes base
 

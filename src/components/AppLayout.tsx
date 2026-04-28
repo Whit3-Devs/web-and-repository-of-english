@@ -32,12 +32,12 @@ export function AppLayout() {
         <div className="mx-auto flex max-w-6xl flex-col gap-5 px-6 py-5 lg:flex-row lg:items-center lg:justify-between">
           <Link
             to="/"
-            className="group w-fit rounded-2xl outline-none transition focus-visible:ring-4 focus-visible:ring-blue-100 dark:focus-visible:ring-blue-950"
+            className="group w-fit rounded-2xl outline-none transition duration-200 ease-out focus-visible:ring-4 focus-visible:ring-blue-100 motion-reduce:transition-none dark:focus-visible:ring-blue-950"
           >
-            <p className="text-sm font-semibold uppercase tracking-[0.3em] text-blue-600 group-hover:text-blue-700 dark:text-blue-300 dark:group-hover:text-blue-200">
+            <p className="text-sm font-semibold uppercase tracking-[0.3em] text-blue-600 transition duration-200 ease-out group-hover:text-blue-700 motion-reduce:transition-none dark:text-blue-300 dark:group-hover:text-blue-200">
               English Cheatsheet
             </p>
-            <h1 className="mt-1 text-2xl font-bold text-slate-950 dark:text-slate-50">
+            <h1 className="mt-1 text-2xl font-bold text-slate-950 transition duration-200 ease-out group-hover:text-blue-950 motion-reduce:transition-none dark:text-slate-50 dark:group-hover:text-blue-100">
               Your English, organized and ready
             </h1>
           </Link>
@@ -57,10 +57,10 @@ export function AppLayout() {
                   end={item.to === "/"}
                   className={({ isActive }) =>
                     [
-                      "rounded-full px-4 py-2 text-sm font-medium transition focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-blue-100 dark:focus-visible:ring-blue-950",
+                      "rounded-full border px-4 py-2 text-sm font-medium shadow-sm transition duration-200 ease-out focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-blue-100 motion-reduce:transition-none dark:focus-visible:ring-blue-950",
                       isActive
-                        ? "bg-blue-600 text-white shadow-sm dark:bg-blue-400 dark:text-slate-950"
-                        : "bg-slate-100 text-slate-700 hover:bg-slate-200 hover:text-slate-950 dark:bg-slate-900 dark:text-slate-300 dark:hover:bg-slate-800 dark:hover:text-white"
+                        ? "border-blue-600 bg-blue-600 text-white shadow-md dark:border-blue-400 dark:bg-blue-400 dark:text-slate-950"
+                        : "border-transparent bg-slate-100 text-slate-700 hover:border-blue-200 hover:bg-slate-200 hover:text-slate-950 hover:shadow-md dark:bg-slate-900 dark:text-slate-300 dark:hover:border-blue-800 dark:hover:bg-slate-800 dark:hover:text-white"
                     ].join(" ")
                   }
                 >
@@ -90,7 +90,7 @@ export function AppLayout() {
               href={githubRepositoryUrl}
               target="_blank"
               rel="noreferrer"
-              className="mt-4 inline-flex w-fit items-center rounded-full border border-slate-200 bg-slate-50 px-4 py-2 font-semibold text-slate-800 transition hover:border-blue-200 hover:bg-blue-50 hover:text-blue-700 dark:border-slate-700 dark:bg-slate-900 dark:text-slate-200 dark:hover:border-blue-500 dark:hover:bg-slate-800 dark:hover:text-blue-200"
+              className="mt-4 inline-flex w-fit items-center rounded-full border border-slate-200 bg-slate-50 px-4 py-2 font-semibold text-slate-800 shadow-sm transition duration-200 ease-out hover:border-blue-200 hover:bg-blue-50 hover:text-blue-700 hover:shadow-md focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-blue-100 motion-reduce:transition-none dark:border-slate-700 dark:bg-slate-900 dark:text-slate-200 dark:hover:border-blue-500 dark:hover:bg-slate-800 dark:hover:text-blue-200 dark:focus-visible:ring-blue-950"
             >
               ⭐ Star this project on GitHub
             </a>
@@ -105,7 +105,7 @@ export function AppLayout() {
                 <li key={item.to}>
                   <Link
                     to={item.to}
-                    className="font-medium text-slate-700 transition hover:text-blue-700 dark:text-slate-300 dark:hover:text-blue-200"
+                    className="font-medium text-slate-700 underline-offset-4 transition duration-200 ease-out hover:text-blue-700 hover:underline focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-blue-100 motion-reduce:transition-none dark:text-slate-300 dark:hover:text-blue-200 dark:focus-visible:ring-blue-950"
                   >
                     {item.label}
                   </Link>
@@ -123,7 +123,7 @@ export function AppLayout() {
                 href={githubOrganizationUrl}
                 target="_blank"
                 rel="noreferrer"
-                className="font-semibold text-slate-700 transition hover:text-blue-700 dark:text-slate-300 dark:hover:text-blue-200"
+                className="font-semibold text-slate-700 underline-offset-4 transition duration-200 ease-out hover:text-blue-700 hover:underline focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-blue-100 motion-reduce:transition-none dark:text-slate-300 dark:hover:text-blue-200 dark:focus-visible:ring-blue-950"
               >
                 Explore more Whit3-Devs projects
               </a>
@@ -131,7 +131,7 @@ export function AppLayout() {
                 href={githubRepositoryUrl}
                 target="_blank"
                 rel="noreferrer"
-                className="font-semibold text-slate-700 transition hover:text-blue-700 dark:text-slate-300 dark:hover:text-blue-200"
+                className="font-semibold text-slate-700 underline-offset-4 transition duration-200 ease-out hover:text-blue-700 hover:underline focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-blue-100 motion-reduce:transition-none dark:text-slate-300 dark:hover:text-blue-200 dark:focus-visible:ring-blue-950"
               >
                 View repository
               </a>

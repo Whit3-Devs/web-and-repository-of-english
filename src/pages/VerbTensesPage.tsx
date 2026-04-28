@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 import { FullExplanationLink } from "../components/FullExplanationLink";
 import { verbTenseDecisionMap } from "../data/verbTenseDecisionMap";
 import { SearchInput } from "../components/SearchInput";
-import { Badge, Card, EmptyState, FilterSelect, PageHeader, TabOption } from "../components/ui";
+import { ActionLink, Badge, Card, EmptyState, FilterSelect, PageHeader, TabOption } from "../components/ui";
 import { verbTenseReferenceTables } from "../data/verbTenseReferenceTables";
 import { verbTenses } from "../data/verbTenses";
 import { filterVerbTenses, matchesVerbTense } from "../features/cheatsheet/search";
@@ -235,12 +235,12 @@ function DecisionMapView({ entries }: { entries: VerbTenseDecisionMapEntry[] }) 
                     Open the full tense page for structure, examples, signals, and mistakes.
                   </p>
                 </div>
-                <Link
+                <ActionLink
                   to={tense.fullExplanationPath}
-                  className="rounded-full bg-blue-600 px-4 py-2 text-sm font-bold text-white hover:bg-blue-700"
+                  variant="primary"
                 >
                   Open {tense.name} →
-                </Link>
+                </ActionLink>
               </div>
             </Card>
           </article>
@@ -349,11 +349,14 @@ function SimplifiedVerbTensesView({
                       </thead>
                       <tbody>
                         {table.rows.map((row) => (
-                          <tr key={`${table.section}-${row.tenseSlug}`} className="border-t border-slate-200 dark:border-slate-700">
+                          <tr
+                            key={`${table.section}-${row.tenseSlug}`}
+                            className="border-t border-slate-200 transition-colors duration-200 ease-out hover:bg-slate-50 motion-reduce:transition-none dark:border-slate-700 dark:hover:bg-slate-800/70"
+                          >
                             <TableCell>
                               <Link
                                 to={`/verb-tenses/${row.tenseSlug}`}
-                                className="font-semibold text-blue-700 dark:text-blue-300 underline-offset-4 hover:underline"
+                                className="font-semibold text-blue-700 underline-offset-4 transition duration-200 ease-out hover:text-blue-900 hover:underline focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-blue-100 motion-reduce:transition-none dark:text-blue-300 dark:hover:text-blue-100 dark:focus-visible:ring-blue-950"
                               >
                                 {row.tenseName}
                               </Link>
