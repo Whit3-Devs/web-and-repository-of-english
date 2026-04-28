@@ -4,6 +4,7 @@ import { Link } from "react-router-dom";
 import { FullExplanationLink } from "../components/FullExplanationLink";
 import { verbTenseDecisionMap } from "../data/verbTenseDecisionMap";
 import { SearchInput } from "../components/SearchInput";
+import { Badge, Card, EmptyState, PageHeader } from "../components/ui";
 import { verbTenseReferenceTables } from "../data/verbTenseReferenceTables";
 import { verbTenses } from "../data/verbTenses";
 import { filterVerbTenses, matchesVerbTense } from "../features/cheatsheet/search";
@@ -93,19 +94,13 @@ export function VerbTensesPage() {
 
   return (
     <section className="space-y-6">
-      <div>
-        <p className="text-sm font-semibold uppercase tracking-[0.3em] text-blue-600 dark:text-blue-300">
-          Grammar
-        </p>
-        <h2 className="mt-2 text-3xl font-black text-slate-950 dark:text-slate-50">Verb Tenses</h2>
-        <p className="mt-2 max-w-2xl text-slate-600 dark:text-slate-400 dark:text-slate-500">
-          Switch between a quick comparison mode and a detailed study mode. Use
-          Simplified when you want a fast reference, and Full when you want more
-          explanation and context.
-        </p>
-      </div>
+      <PageHeader
+        eyebrow="Grammar"
+        title="Verb Tenses"
+        description="Switch between a quick comparison mode and a detailed study mode. Use Simplified when you want a fast reference, and Full when you want more explanation and context."
+      />
 
-      <div className="rounded-3xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-900 p-3 shadow-sm">
+      <Card padding="sm">
         <div
           role="tablist"
           aria-label="Verb tense view mode"
@@ -137,9 +132,9 @@ export function VerbTensesPage() {
             );
           })}
         </div>
-      </div>
+      </Card>
 
-      <div className="grid gap-4 rounded-3xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-900 p-5 shadow-sm md:grid-cols-[1fr_auto] md:items-end">
+      <Card className="grid gap-4 md:grid-cols-[1fr_auto] md:items-end">
         <SearchInput value={searchTerm} onChange={setSearchTerm} />
 
         <label className="block">
@@ -163,7 +158,7 @@ export function VerbTensesPage() {
             ))}
           </select>
         </label>
-      </div>
+      </Card>
 
       <div
         role="tabpanel"
@@ -180,9 +175,10 @@ export function VerbTensesPage() {
       </div>
 
       {!hasResults ? (
-        <p className="rounded-3xl border border-dashed border-slate-300 dark:border-slate-600 p-8 text-center text-slate-500 dark:text-slate-400 dark:text-slate-500">
-          No verb tenses found with those filters.
-        </p>
+        <EmptyState
+          title="No verb tenses found"
+          description="No verb tenses found with those filters."
+        />
       ) : null}
     </section>
   );
@@ -199,71 +195,71 @@ function DecisionMapView({ entries }: { entries: VerbTenseDecisionMapEntry[] }) 
         }
 
         return (
-          <article
-            key={entry.id}
-            className="rounded-3xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-900 p-6 shadow-sm"
-          >
-            <div className="flex flex-wrap items-start justify-between gap-3">
-              <div>
-                <h3 className="text-2xl font-bold text-slate-950 dark:text-slate-50">{entry.title}</h3>
-                <p className="mt-2 max-w-3xl text-slate-600 dark:text-slate-400 dark:text-slate-500">{entry.summary}</p>
+          <article key={entry.id}>
+            <Card>
+              <div className="flex flex-wrap items-start justify-between gap-3">
+                <div>
+                  <h3 className="text-2xl font-bold text-slate-950 dark:text-slate-50">{entry.title}</h3>
+                  <p className="mt-2 max-w-3xl text-slate-600 dark:text-slate-400">{entry.summary}</p>
+                </div>
+                <div className="flex flex-wrap items-center gap-2">
+                  {entry.categories.map((category) => (
+                    <Badge
+                      key={`${entry.id}-${category}`}
+                      variant="neutral"
+                      className="capitalize"
+                    >
+                      {category}
+                    </Badge>
+                  ))}
+                </div>
               </div>
-              <div className="flex flex-wrap items-center gap-2">
-                {entry.categories.map((category) => (
-                  <span
-                    key={`${entry.id}-${category}`}
-                    className="rounded-full bg-slate-100 dark:bg-slate-800 px-3 py-1 text-sm font-semibold capitalize text-slate-700 dark:text-slate-300"
-                  >
-                    {category}
-                  </span>
-                ))}
+
+              <div className="mt-5 grid gap-4 md:grid-cols-3">
+                <DecisionInfoBlock title="Decision question" value={entry.decisionQuestion} />
+                <DecisionInfoBlock title="Primary tense" value={tense.name} highlight />
+                <DecisionInfoBlock title="Timeline cue" value={entry.timelineCue} />
               </div>
-            </div>
 
-            <div className="mt-5 grid gap-4 md:grid-cols-3">
-              <DecisionInfoBlock title="Decision question" value={entry.decisionQuestion} />
-              <DecisionInfoBlock title="Primary tense" value={tense.name} highlight />
-              <DecisionInfoBlock title="Timeline cue" value={entry.timelineCue} />
-            </div>
-
-            <div className="mt-5 grid gap-4 md:grid-cols-2">
-              <ContentList title="Use when" items={entry.useWhen} />
-              <ContentList title="Keywords" items={entry.keywords} />
-            </div>
-
-            <div className="mt-5 rounded-3xl bg-blue-50 dark:bg-blue-950/40 p-5">
-              <h4 className="text-lg font-bold text-blue-950 dark:text-blue-100">Quick contrast</h4>
-              <div className="mt-3 grid gap-4 md:grid-cols-2">
-                {entry.contrasts.map((contrast) => (
-                  <div key={`${entry.id}-${contrast.label}`} className="rounded-2xl bg-white dark:bg-slate-900 p-4">
-                    <p className="text-sm font-semibold uppercase tracking-wide text-slate-500 dark:text-slate-400 dark:text-slate-500">
-                      {contrast.label}
-                    </p>
-                    <p className="mt-2 font-semibold text-slate-950 dark:text-slate-50">
-                      Use <span className="text-blue-700 dark:text-blue-300">{contrast.useInsteadOf}</span>
-                    </p>
-                    <p className="mt-2 text-sm text-slate-600 dark:text-slate-400 dark:text-slate-500">{contrast.reason}</p>
-                  </div>
-                ))}
+              <div className="mt-5 grid gap-4 md:grid-cols-2">
+                <ContentList title="Use when" items={entry.useWhen} />
+                <ContentList title="Keywords" items={entry.keywords} />
               </div>
-            </div>
 
-            <div className="mt-5 flex flex-wrap items-center justify-between gap-3 rounded-2xl bg-slate-50 dark:bg-slate-800 p-4">
-              <div>
-                <p className="text-sm font-semibold uppercase tracking-wide text-slate-500 dark:text-slate-400 dark:text-slate-500">
-                  Detail route
-                </p>
-                <p className="mt-1 text-slate-700 dark:text-slate-300">
-                  Open the full tense page for structure, examples, signals, and mistakes.
-                </p>
+              <div className="mt-5 rounded-3xl bg-blue-50 dark:bg-blue-950/40 p-5">
+                <h4 className="text-lg font-bold text-blue-950 dark:text-blue-100">Quick contrast</h4>
+                <div className="mt-3 grid gap-4 md:grid-cols-2">
+                  {entry.contrasts.map((contrast) => (
+                    <div key={`${entry.id}-${contrast.label}`} className="rounded-2xl bg-white dark:bg-slate-900 p-4">
+                      <p className="text-sm font-semibold uppercase tracking-wide text-slate-500 dark:text-slate-400">
+                        {contrast.label}
+                      </p>
+                      <p className="mt-2 font-semibold text-slate-950 dark:text-slate-50">
+                        Use <span className="text-blue-700 dark:text-blue-300">{contrast.useInsteadOf}</span>
+                      </p>
+                      <p className="mt-2 text-sm text-slate-600 dark:text-slate-400">{contrast.reason}</p>
+                    </div>
+                  ))}
+                </div>
               </div>
-              <Link
-                to={tense.fullExplanationPath}
-                className="rounded-full bg-blue-600 px-4 py-2 text-sm font-bold text-white hover:bg-blue-700"
-              >
-                Open {tense.name} →
-              </Link>
-            </div>
+
+              <div className="mt-5 flex flex-wrap items-center justify-between gap-3 rounded-2xl bg-slate-50 dark:bg-slate-800 p-4">
+                <div>
+                  <p className="text-sm font-semibold uppercase tracking-wide text-slate-500 dark:text-slate-400">
+                    Detail route
+                  </p>
+                  <p className="mt-1 text-slate-700 dark:text-slate-300">
+                    Open the full tense page for structure, examples, signals, and mistakes.
+                  </p>
+                </div>
+                <Link
+                  to={tense.fullExplanationPath}
+                  className="rounded-full bg-blue-600 px-4 py-2 text-sm font-bold text-white hover:bg-blue-700"
+                >
+                  Open {tense.name} →
+                </Link>
+              </div>
+            </Card>
           </article>
         );
       })}
@@ -275,53 +271,52 @@ function FullVerbTensesView({ verbTenses }: { verbTenses: VerbTense[] }) {
   return (
     <div className="grid gap-4">
       {verbTenses.map((verbTense) => (
-        <article
-          key={verbTense.id}
-          className="rounded-3xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-900 p-6 shadow-sm"
-        >
-          <div className="flex flex-wrap items-start justify-between gap-3">
-            <div>
-              <h3 className="text-2xl font-bold text-slate-950 dark:text-slate-50">{verbTense.name}</h3>
-              <p className="mt-2 text-slate-600 dark:text-slate-400 dark:text-slate-500">{verbTense.summary}</p>
+        <article key={verbTense.id}>
+          <Card>
+            <div className="flex flex-wrap items-start justify-between gap-3">
+              <div>
+                <h3 className="text-2xl font-bold text-slate-950 dark:text-slate-50">{verbTense.name}</h3>
+                <p className="mt-2 text-slate-600 dark:text-slate-400">{verbTense.summary}</p>
+              </div>
+              <div className="flex flex-wrap items-center gap-2">
+                <Badge variant="neutral" className="capitalize">
+                  {verbTense.category}
+                </Badge>
+                <FullExplanationLink
+                  to={verbTense.fullExplanationPath}
+                  available={verbTense.hasFullExplanation}
+                />
+              </div>
             </div>
-            <div className="flex flex-wrap items-center gap-2">
-              <span className="rounded-full bg-slate-100 dark:bg-slate-800 px-3 py-1 text-sm font-semibold capitalize text-slate-700 dark:text-slate-300">
-                {verbTense.category}
-              </span>
-              <FullExplanationLink
-                to={verbTense.fullExplanationPath}
-                available={verbTense.hasFullExplanation}
-              />
-            </div>
-          </div>
 
-          <dl className="mt-5 grid gap-3 md:grid-cols-3">
-            <div className="rounded-2xl bg-emerald-50 dark:bg-emerald-950/40 p-4">
-              <dt className="font-bold text-emerald-900 dark:text-emerald-100">Affirmative</dt>
-              <dd className="mt-1 text-emerald-800 dark:text-emerald-200">{verbTense.structures.affirmative}</dd>
-            </div>
-            <div className="rounded-2xl bg-rose-50 dark:bg-rose-950/40 p-4">
-              <dt className="font-bold text-rose-900 dark:text-rose-100">Negative</dt>
-              <dd className="mt-1 text-rose-800 dark:text-rose-200">{verbTense.structures.negative}</dd>
-            </div>
-            <div className="rounded-2xl bg-blue-50 dark:bg-blue-950/40 p-4">
-              <dt className="font-bold text-blue-900 dark:text-blue-100">Interrogative</dt>
-              <dd className="mt-1 text-blue-800 dark:text-blue-200">
-                {verbTense.structures.interrogative}
-              </dd>
-            </div>
-          </dl>
+            <dl className="mt-5 grid gap-3 md:grid-cols-3">
+              <div className="rounded-2xl bg-emerald-50 dark:bg-emerald-950/40 p-4">
+                <dt className="font-bold text-emerald-900 dark:text-emerald-100">Affirmative</dt>
+                <dd className="mt-1 text-emerald-800 dark:text-emerald-200">{verbTense.structures.affirmative}</dd>
+              </div>
+              <div className="rounded-2xl bg-rose-50 dark:bg-rose-950/40 p-4">
+                <dt className="font-bold text-rose-900 dark:text-rose-100">Negative</dt>
+                <dd className="mt-1 text-rose-800 dark:text-rose-200">{verbTense.structures.negative}</dd>
+              </div>
+              <div className="rounded-2xl bg-blue-50 dark:bg-blue-950/40 p-4">
+                <dt className="font-bold text-blue-900 dark:text-blue-100">Interrogative</dt>
+                <dd className="mt-1 text-blue-800 dark:text-blue-200">
+                  {verbTense.structures.interrogative}
+                </dd>
+              </div>
+            </dl>
 
-          <div className="mt-5 grid gap-4 md:grid-cols-3">
-            <ContentList title="Examples" items={verbTense.examples} />
-            <ContentList title="Signals" items={verbTense.signals} />
-            <ContentList title="Common mistakes" items={verbTense.commonMistakes} />
-          </div>
+            <div className="mt-5 grid gap-4 md:grid-cols-3">
+              <ContentList title="Examples" items={verbTense.examples} />
+              <ContentList title="Signals" items={verbTense.signals} />
+              <ContentList title="Common mistakes" items={verbTense.commonMistakes} />
+            </div>
 
-          <div className="mt-5 grid gap-4 md:grid-cols-2">
-            <InfoSection title="Timeline idea" value={verbTense.timelineIdea} />
-            <InfoSection title="Contrast" value={verbTense.contrast} />
-          </div>
+            <div className="mt-5 grid gap-4 md:grid-cols-2">
+              <InfoSection title="Timeline idea" value={verbTense.timelineIdea} />
+              <InfoSection title="Contrast" value={verbTense.contrast} />
+            </div>
+          </Card>
         </article>
       ))}
     </div>
@@ -336,74 +331,73 @@ function SimplifiedVerbTensesView({
   return (
     <div className="space-y-6">
       {groups.map((group) => (
-        <section
-          key={group.family}
-          className="rounded-3xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-900 p-6 shadow-sm"
-        >
-          <div className="flex flex-wrap items-center justify-between gap-3">
-            <div>
-              <h3 className="text-2xl font-bold text-slate-950 dark:text-slate-50">{group.title}</h3>
-              <p className="mt-2 text-slate-600 dark:text-slate-400 dark:text-slate-500">
-                Comparative reference for affirmative, negative, and question
-                forms.
-              </p>
-            </div>
-            <span className="rounded-full bg-slate-100 dark:bg-slate-800 px-3 py-1 text-sm font-semibold capitalize text-slate-700 dark:text-slate-300">
-              {group.family}
-            </span>
-          </div>
-
-          <div className="mt-5 space-y-5">
-            {group.tables.map((table) => (
-              <div key={table.section}>
-                <h4 className="text-lg font-bold text-slate-900 dark:text-slate-100">
-                  {sectionLabels[table.section]}
-                </h4>
-                <div className="mt-3 overflow-x-auto rounded-2xl border border-slate-200 dark:border-slate-700">
-                  <table className="min-w-full border-collapse text-sm">
-                    <thead className="bg-slate-50 dark:bg-slate-800 text-left text-slate-700 dark:text-slate-300">
-                      <tr>
-                        <TableHead>Tense</TableHead>
-                        <TableHead>Auxiliary</TableHead>
-                        <TableHead>Contraction</TableHead>
-                        <TableHead>Main verb form</TableHead>
-                        <TableHead>Structure</TableHead>
-                        <TableHead>Example</TableHead>
-                      </tr>
-                    </thead>
-                    <tbody>
-                      {table.rows.map((row) => (
-                        <tr key={`${table.section}-${row.tenseSlug}`} className="border-t border-slate-200 dark:border-slate-700">
-                          <TableCell>
-                            <Link
-                              to={`/verb-tenses/${row.tenseSlug}`}
-                              className="font-semibold text-blue-700 dark:text-blue-300 underline-offset-4 hover:underline"
-                            >
-                              {row.tenseName}
-                            </Link>
-                          </TableCell>
-                          <TableCell>{row.auxiliary}</TableCell>
-                          <TableCell>{row.contraction}</TableCell>
-                          <TableCell>{row.mainVerbForm}</TableCell>
-                          <TableCell>{row.structure}</TableCell>
-                          <TableCell>{row.example}</TableCell>
-                        </tr>
-                      ))}
-                    </tbody>
-                  </table>
-                </div>
+        <section key={group.family}>
+          <Card>
+            <div className="flex flex-wrap items-center justify-between gap-3">
+              <div>
+                <h3 className="text-2xl font-bold text-slate-950 dark:text-slate-50">{group.title}</h3>
+                <p className="mt-2 text-slate-600 dark:text-slate-400">
+                  Comparative reference for affirmative, negative, and question
+                  forms.
+                </p>
               </div>
-            ))}
-          </div>
+              <Badge variant="neutral" className="capitalize">
+                {group.family}
+              </Badge>
+            </div>
 
-          <div className="mt-5 rounded-2xl bg-slate-50 dark:bg-slate-800 p-4">
-            <h4 className="font-bold text-slate-900 dark:text-slate-100">Quick memory</h4>
-            <ul className="mt-2 space-y-2 text-sm text-slate-600 dark:text-slate-400 dark:text-slate-500">
-              {group.quickMemory.map((item) => (
-                <li key={item}>• {item}</li>
+            <div className="mt-5 space-y-5">
+              {group.tables.map((table) => (
+                <div key={table.section}>
+                  <h4 className="text-lg font-bold text-slate-900 dark:text-slate-100">
+                    {sectionLabels[table.section]}
+                  </h4>
+                  <div className="mt-3 overflow-x-auto rounded-2xl border border-slate-200 dark:border-slate-700">
+                    <table className="min-w-full border-collapse text-sm">
+                      <thead className="bg-slate-50 dark:bg-slate-800 text-left text-slate-700 dark:text-slate-300">
+                        <tr>
+                          <TableHead>Tense</TableHead>
+                          <TableHead>Auxiliary</TableHead>
+                          <TableHead>Contraction</TableHead>
+                          <TableHead>Main verb form</TableHead>
+                          <TableHead>Structure</TableHead>
+                          <TableHead>Example</TableHead>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        {table.rows.map((row) => (
+                          <tr key={`${table.section}-${row.tenseSlug}`} className="border-t border-slate-200 dark:border-slate-700">
+                            <TableCell>
+                              <Link
+                                to={`/verb-tenses/${row.tenseSlug}`}
+                                className="font-semibold text-blue-700 dark:text-blue-300 underline-offset-4 hover:underline"
+                              >
+                                {row.tenseName}
+                              </Link>
+                            </TableCell>
+                            <TableCell>{row.auxiliary}</TableCell>
+                            <TableCell>{row.contraction}</TableCell>
+                            <TableCell>{row.mainVerbForm}</TableCell>
+                            <TableCell>{row.structure}</TableCell>
+                            <TableCell>{row.example}</TableCell>
+                          </tr>
+                        ))}
+                      </tbody>
+                    </table>
+                  </div>
+                </div>
               ))}
-            </ul>
-          </div>
+            </div>
+
+            <div className="mt-5 rounded-2xl bg-slate-50 dark:bg-slate-800 p-4">
+              <h4 className="font-bold text-slate-900 dark:text-slate-100">Quick memory</h4>
+              <ul className="mt-2 space-y-2 text-sm text-slate-600 dark:text-slate-400">
+                {group.quickMemory.map((item) => (
+                  <li key={item}>• {item}</li>
+                ))}
+              </ul>
+            </div>
+          </Card>
         </section>
       ))}
     </div>
@@ -546,7 +540,7 @@ function DecisionInfoBlock({
       <h4 className={`font-bold ${highlight ? "text-amber-950 dark:text-amber-100" : "text-slate-900 dark:text-slate-100"}`}>
         {title}
       </h4>
-      <p className={`mt-2 text-sm ${highlight ? "text-amber-900 dark:text-amber-100" : "text-slate-600 dark:text-slate-400 dark:text-slate-500"}`}>
+      <p className={`mt-2 text-sm ${highlight ? "text-amber-900 dark:text-amber-100" : "text-slate-600 dark:text-slate-400"}`}>
         {value}
       </p>
     </div>
@@ -557,7 +551,7 @@ function InfoSection({ title, value }: { title: string; value: string }) {
   return (
     <div>
       <h4 className="font-bold text-slate-900 dark:text-slate-100">{title}</h4>
-      <p className="mt-2 text-sm text-slate-600 dark:text-slate-400 dark:text-slate-500">{value}</p>
+      <p className="mt-2 text-sm text-slate-600 dark:text-slate-400">{value}</p>
     </div>
   );
 }
@@ -566,7 +560,7 @@ function ContentList({ title, items }: { title: string; items: string[] }) {
   return (
     <div>
       <h4 className="font-bold text-slate-900 dark:text-slate-100">{title}</h4>
-      <ul className="mt-2 space-y-2 text-sm text-slate-600 dark:text-slate-400 dark:text-slate-500">
+      <ul className="mt-2 space-y-2 text-sm text-slate-600 dark:text-slate-400">
         {items.map((item) => (
           <li key={item}>• {item}</li>
         ))}

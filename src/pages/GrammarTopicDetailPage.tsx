@@ -53,7 +53,7 @@ export function GrammarTopicDetailPage({
           {backLabel}
         </p>
         <h2 className="mt-2 text-3xl font-black text-slate-950 dark:text-slate-50">Topic not found</h2>
-        <p className="mt-3 text-slate-600 dark:text-slate-400 dark:text-slate-500">
+        <p className="mt-3 text-slate-600 dark:text-slate-400">
           The requested topic does not exist in the current cheatsheet data.
         </p>
         <Link
@@ -80,7 +80,7 @@ export function GrammarTopicDetailPage({
                 Full explanation
               </p>
               <h2 className="mt-2 text-4xl font-black text-slate-950 dark:text-slate-50">{topic.title}</h2>
-              <p className="mt-4 max-w-3xl text-lg text-slate-600 dark:text-slate-400 dark:text-slate-500">{topic.summary}</p>
+              <p className="mt-4 max-w-3xl text-lg text-slate-600 dark:text-slate-400">{topic.summary}</p>
             </div>
 
             <span className="rounded-full bg-amber-50 dark:bg-amber-950/40 px-4 py-2 text-sm font-bold text-amber-700 dark:text-amber-300">
@@ -98,7 +98,7 @@ export function GrammarTopicDetailPage({
             <h3 className="text-xl font-black text-slate-950 dark:text-slate-50">
               Full explanation coming soon
             </h3>
-            <p className="mt-2 text-slate-600 dark:text-slate-400 dark:text-slate-500">
+            <p className="mt-2 text-slate-600 dark:text-slate-400">
               This detail route is ready so the deep explanation can be migrated later
               without changing the quick cheatsheet flow.
             </p>
@@ -167,7 +167,7 @@ function Header({ title, overview }: { title: string; overview: string }) {
           Full explanation
         </p>
         <h2 className="mt-2 text-4xl font-black text-slate-950 dark:text-slate-50">{title}</h2>
-        <p className="mt-4 max-w-3xl text-lg text-slate-600 dark:text-slate-400 dark:text-slate-500">{overview}</p>
+        <p className="mt-4 max-w-3xl text-lg text-slate-600 dark:text-slate-400">{overview}</p>
       </div>
 
       <span className="rounded-full bg-emerald-50 dark:bg-emerald-950/40 px-4 py-2 text-sm font-bold text-emerald-700 dark:text-emerald-300">
@@ -205,7 +205,7 @@ function PrepositionsContent({
           {explanation.comparisonBlocks.map((comparison) => (
             <div key={comparison.title} className="rounded-2xl bg-white dark:bg-slate-900 p-4 shadow-sm">
               <h4 className="font-bold text-slate-900 dark:text-slate-100">{comparison.title}</h4>
-              <p className="mt-2 text-slate-600 dark:text-slate-400 dark:text-slate-500">{comparison.explanation}</p>
+              <p className="mt-2 text-slate-600 dark:text-slate-400">{comparison.explanation}</p>
               <ul className="mt-4 space-y-2 text-sm text-slate-700 dark:text-slate-300">
                 {comparison.examples.map((example) => (
                   <li key={example}>• {example}</li>
@@ -314,17 +314,17 @@ function ModalTopicContent({
               </span>
             </div>
 
-            <p className="mt-3 text-sm font-semibold uppercase tracking-wide text-slate-500 dark:text-slate-400 dark:text-slate-500">
+            <p className="mt-3 text-sm font-semibold uppercase tracking-wide text-slate-500 dark:text-slate-400">
               Main use
             </p>
             <p className="mt-1 text-slate-900 dark:text-slate-100">{card.mainUse}</p>
 
-            <p className="mt-4 text-sm font-semibold uppercase tracking-wide text-slate-500 dark:text-slate-400 dark:text-slate-500">
+            <p className="mt-4 text-sm font-semibold uppercase tracking-wide text-slate-500 dark:text-slate-400">
               When to use
             </p>
             <p className="mt-1 text-slate-700 dark:text-slate-300">{card.whenToUse}</p>
 
-            <p className="mt-4 text-sm font-semibold uppercase tracking-wide text-slate-500 dark:text-slate-400 dark:text-slate-500">
+            <p className="mt-4 text-sm font-semibold uppercase tracking-wide text-slate-500 dark:text-slate-400">
               Tone
             </p>
             <p className="mt-1 text-slate-700 dark:text-slate-300">{card.tone}</p>
@@ -349,7 +349,7 @@ function ModalTopicContent({
 
             {card.contractions?.length ? (
               <div className="mt-5 rounded-2xl bg-white dark:bg-slate-900 p-4">
-                <p className="text-sm font-semibold uppercase tracking-wide text-slate-500 dark:text-slate-400 dark:text-slate-500">
+                <p className="text-sm font-semibold uppercase tracking-wide text-slate-500 dark:text-slate-400">
                   Contractions
                 </p>
                 <ul className="mt-2 space-y-2 text-sm text-slate-700 dark:text-slate-300">
@@ -361,7 +361,7 @@ function ModalTopicContent({
             ) : null}
 
             <div className="mt-5 rounded-2xl bg-white dark:bg-slate-900 p-4">
-              <p className="text-sm font-semibold uppercase tracking-wide text-slate-500 dark:text-slate-400 dark:text-slate-500">
+              <p className="text-sm font-semibold uppercase tracking-wide text-slate-500 dark:text-slate-400">
                 Examples
               </p>
               <ul className="mt-2 space-y-2 text-sm text-slate-700 dark:text-slate-300">
@@ -393,7 +393,7 @@ function ModalTopicContent({
           {explanation.comparisonBlocks.map((block) => (
             <div key={block.title} className="rounded-2xl bg-white dark:bg-slate-900 p-4 shadow-sm">
               <h4 className="font-bold text-slate-900 dark:text-slate-100">{block.title}</h4>
-              <p className="mt-2 text-slate-600 dark:text-slate-400 dark:text-slate-500">{block.explanation}</p>
+              <p className="mt-2 text-slate-600 dark:text-slate-400">{block.explanation}</p>
               <ul className="mt-4 space-y-2 text-sm text-slate-700 dark:text-slate-300">
                 {block.examples.map((example) => (
                   <li key={example}>• {example}</li>
@@ -546,7 +546,7 @@ function ConditionalsOverviewContent({
                 </span>
               </div>
 
-              <p className="mt-4 text-sm font-semibold uppercase tracking-wide text-slate-500 dark:text-slate-400 dark:text-slate-500">
+              <p className="mt-4 text-sm font-semibold uppercase tracking-wide text-slate-500 dark:text-slate-400">
                 Main use
               </p>
               <p className="mt-1 text-slate-900 dark:text-slate-100">{card.mainUse}</p>
@@ -559,13 +559,13 @@ function ConditionalsOverviewContent({
                 />
               </div>
 
-              <p className="mt-4 text-sm font-semibold uppercase tracking-wide text-slate-500 dark:text-slate-400 dark:text-slate-500">
+              <p className="mt-4 text-sm font-semibold uppercase tracking-wide text-slate-500 dark:text-slate-400">
                 Meaning
               </p>
               <p className="mt-1 text-slate-700 dark:text-slate-300">{card.meaning}</p>
 
               <div className="mt-4 rounded-2xl bg-slate-50 dark:bg-slate-800 p-4">
-                <p className="text-sm font-semibold uppercase tracking-wide text-slate-500 dark:text-slate-400 dark:text-slate-500">
+                <p className="text-sm font-semibold uppercase tracking-wide text-slate-500 dark:text-slate-400">
                   Examples
                 </p>
                 <ul className="mt-2 space-y-2 text-sm text-slate-700 dark:text-slate-300">
@@ -628,7 +628,7 @@ function WhQuestionsContent({
           {explanation.specialCases.map((item) => (
             <div key={item.title} className="rounded-2xl bg-white dark:bg-slate-900 p-4 shadow-sm">
               <h4 className="font-bold text-slate-900 dark:text-slate-100">{item.title}</h4>
-              <p className="mt-2 text-slate-600 dark:text-slate-400 dark:text-slate-500">{item.explanation}</p>
+              <p className="mt-2 text-slate-600 dark:text-slate-400">{item.explanation}</p>
               <ul className="mt-4 space-y-2 text-sm text-slate-700 dark:text-slate-300">
                 {item.examples.map((example) => (
                   <li key={example}>• {example}</li>
@@ -645,7 +645,7 @@ function WhQuestionsContent({
           {explanation.questionTypeComparisons.map((comparison) => (
             <div key={comparison.title} className="rounded-2xl bg-white dark:bg-slate-900 p-4 shadow-sm">
               <h4 className="font-bold text-slate-900 dark:text-slate-100">{comparison.title}</h4>
-              <p className="mt-2 text-slate-600 dark:text-slate-400 dark:text-slate-500">{comparison.explanation}</p>
+              <p className="mt-2 text-slate-600 dark:text-slate-400">{comparison.explanation}</p>
               <ul className="mt-4 space-y-2 text-sm text-slate-700 dark:text-slate-300">
                 {comparison.examples.map((example) => (
                   <li key={example}>• {example}</li>
@@ -699,7 +699,7 @@ function EmbeddedWhClausesContent({
           {explanation.commonIntroPatterns.map((pattern) => (
             <div key={pattern.pattern} className="rounded-2xl bg-white dark:bg-slate-900 p-4 shadow-sm">
               <h4 className="font-bold text-slate-900 dark:text-slate-100">{pattern.pattern}</h4>
-              <p className="mt-2 text-slate-600 dark:text-slate-400 dark:text-slate-500">{pattern.use}</p>
+              <p className="mt-2 text-slate-600 dark:text-slate-400">{pattern.use}</p>
               <ul className="mt-4 space-y-2 text-sm text-slate-700 dark:text-slate-300">
                 {pattern.examples.map((example) => (
                   <li key={example}>• {example}</li>
@@ -716,7 +716,7 @@ function EmbeddedWhClausesContent({
           {explanation.usageBlocks.map((block) => (
             <div key={block.title} className="rounded-2xl bg-white dark:bg-slate-900 p-4 shadow-sm">
               <h4 className="font-bold text-slate-900 dark:text-slate-100">{block.title}</h4>
-              <p className="mt-2 text-slate-600 dark:text-slate-400 dark:text-slate-500">{block.explanation}</p>
+              <p className="mt-2 text-slate-600 dark:text-slate-400">{block.explanation}</p>
               <ul className="mt-4 space-y-2 text-sm text-slate-700 dark:text-slate-300">
                 {block.examples.map((example) => (
                   <li key={example}>• {example}</li>
@@ -761,14 +761,14 @@ function EnglishAuxiliariesContent({
         {explanation.auxiliaryGroups.map((group) => (
           <div key={group.title} className="rounded-3xl bg-slate-50 dark:bg-slate-800 p-6">
             <h3 className="text-xl font-black text-slate-950 dark:text-slate-50">{group.title}</h3>
-            <p className="mt-2 text-slate-600 dark:text-slate-400 dark:text-slate-500">{group.use}</p>
+            <p className="mt-2 text-slate-600 dark:text-slate-400">{group.use}</p>
             <ul className="mt-4 space-y-2 text-sm text-slate-700 dark:text-slate-300">
               {group.structures.map((structure) => (
                 <li key={structure}>• {structure}</li>
               ))}
             </ul>
             <div className="mt-4 rounded-2xl bg-white dark:bg-slate-900 p-4">
-              <p className="text-sm font-semibold uppercase tracking-wide text-slate-500 dark:text-slate-400 dark:text-slate-500">
+              <p className="text-sm font-semibold uppercase tracking-wide text-slate-500 dark:text-slate-400">
                 Examples
               </p>
               <ul className="mt-2 space-y-2 text-sm text-slate-700 dark:text-slate-300">
@@ -787,7 +787,7 @@ function EnglishAuxiliariesContent({
           {explanation.patternRules.map((rule) => (
             <div key={rule.title} className="rounded-2xl bg-white dark:bg-slate-900 p-4 shadow-sm">
               <h4 className="font-bold text-slate-900 dark:text-slate-100">{rule.title}</h4>
-              <p className="mt-2 text-slate-600 dark:text-slate-400 dark:text-slate-500">{rule.rule}</p>
+              <p className="mt-2 text-slate-600 dark:text-slate-400">{rule.rule}</p>
               <ul className="mt-4 space-y-2 text-sm text-slate-700 dark:text-slate-300">
                 {rule.examples.map((example) => (
                   <li key={example}>• {example}</li>
@@ -810,7 +810,7 @@ function EnglishAuxiliariesContent({
           {explanation.quickComparisons.map((comparison) => (
             <div key={comparison.title} className="rounded-2xl bg-white dark:bg-slate-900 p-4 shadow-sm">
               <h4 className="font-bold text-slate-900 dark:text-slate-100">{comparison.title}</h4>
-              <p className="mt-2 text-slate-600 dark:text-slate-400 dark:text-slate-500">{comparison.explanation}</p>
+              <p className="mt-2 text-slate-600 dark:text-slate-400">{comparison.explanation}</p>
               <ul className="mt-4 space-y-2 text-sm text-slate-700 dark:text-slate-300">
                 {comparison.examples.map((example) => (
                   <li key={example}>• {example}</li>
@@ -863,7 +863,7 @@ function PronounsPossessivesContent({
         {explanation.functionBlocks.map((block) => (
           <div key={block.title} className="rounded-3xl bg-slate-50 dark:bg-slate-800 p-6">
             <h3 className="text-xl font-black text-slate-950 dark:text-slate-50">{block.title}</h3>
-            <p className="mt-2 text-slate-600 dark:text-slate-400 dark:text-slate-500">{block.use}</p>
+            <p className="mt-2 text-slate-600 dark:text-slate-400">{block.use}</p>
             <ul className="mt-4 space-y-2 text-sm text-slate-700 dark:text-slate-300">
               {block.examples.map((example) => (
                 <li key={example}>• {example}</li>
@@ -879,10 +879,10 @@ function PronounsPossessivesContent({
           {explanation.focusWords.map((word) => (
             <div key={word.word} className="rounded-2xl bg-white dark:bg-slate-900 p-4 shadow-sm">
               <h4 className="font-bold text-slate-900 dark:text-slate-100">{word.word}</h4>
-              <p className="mt-1 text-sm font-semibold uppercase tracking-wide text-slate-500 dark:text-slate-400 dark:text-slate-500">
+              <p className="mt-1 text-sm font-semibold uppercase tracking-wide text-slate-500 dark:text-slate-400">
                 {word.type}
               </p>
-              <p className="mt-2 text-slate-600 dark:text-slate-400 dark:text-slate-500">{word.meaningHint}</p>
+              <p className="mt-2 text-slate-600 dark:text-slate-400">{word.meaningHint}</p>
               <ul className="mt-4 space-y-2 text-sm text-slate-700 dark:text-slate-300">
                 {word.examples.map((example) => (
                   <li key={example}>• {example}</li>
@@ -899,7 +899,7 @@ function PronounsPossessivesContent({
           {explanation.contrastBlocks.map((block) => (
             <div key={block.title} className="rounded-2xl bg-white dark:bg-slate-900 p-4 shadow-sm">
               <h4 className="font-bold text-slate-900 dark:text-slate-100">{block.title}</h4>
-              <p className="mt-2 text-slate-600 dark:text-slate-400 dark:text-slate-500">{block.explanation}</p>
+              <p className="mt-2 text-slate-600 dark:text-slate-400">{block.explanation}</p>
               <ul className="mt-4 space-y-2 text-sm text-slate-700 dark:text-slate-300">
                 {block.examples.map((example) => (
                   <li key={example}>• {example}</li>
@@ -982,7 +982,7 @@ function StructureDifferencesContent({
 
             {card.signals?.length ? (
               <div className="mt-5 rounded-2xl bg-white dark:bg-slate-900 p-4">
-                <p className="text-sm font-semibold uppercase tracking-wide text-slate-500 dark:text-slate-400 dark:text-slate-500">
+                <p className="text-sm font-semibold uppercase tracking-wide text-slate-500 dark:text-slate-400">
                   Signals
                 </p>
                 <ul className="mt-2 space-y-2 text-sm text-slate-700 dark:text-slate-300">
@@ -1063,16 +1063,16 @@ function ArticlesDeterminersContent({
           {explanation.determinerCards.map((card) => (
             <div key={card.title} className="rounded-2xl bg-white dark:bg-slate-900 p-4 shadow-sm">
               <h4 className="font-bold text-slate-900 dark:text-slate-100">{card.title}</h4>
-              <p className="mt-3 text-sm font-semibold uppercase tracking-wide text-slate-500 dark:text-slate-400 dark:text-slate-500">
+              <p className="mt-3 text-sm font-semibold uppercase tracking-wide text-slate-500 dark:text-slate-400">
                 Main use
               </p>
               <p className="mt-1 text-slate-700 dark:text-slate-300">{card.mainUse}</p>
-              <p className="mt-4 text-sm font-semibold uppercase tracking-wide text-slate-500 dark:text-slate-400 dark:text-slate-500">
+              <p className="mt-4 text-sm font-semibold uppercase tracking-wide text-slate-500 dark:text-slate-400">
                 Rule
               </p>
               <p className="mt-1 text-slate-700 dark:text-slate-300">{card.rule}</p>
               <div className="mt-4 rounded-2xl bg-slate-50 dark:bg-slate-800 p-4">
-                <p className="text-sm font-semibold uppercase tracking-wide text-slate-500 dark:text-slate-400 dark:text-slate-500">
+                <p className="text-sm font-semibold uppercase tracking-wide text-slate-500 dark:text-slate-400">
                   Examples
                 </p>
                 <ul className="mt-2 space-y-2 text-sm text-slate-700 dark:text-slate-300">
@@ -2212,7 +2212,7 @@ function WhWordTable({
                 <td className="px-4 py-4 text-slate-700 dark:text-slate-300">{row.mainUse}</td>
                 <td className="px-4 py-4 text-slate-700 dark:text-slate-300">{row.questionItAnswers}</td>
                 <td className="px-4 py-4 text-slate-700 dark:text-slate-300">{row.example}</td>
-                <td className="px-4 py-4 text-slate-600 dark:text-slate-400 dark:text-slate-500">{row.note ?? "—"}</td>
+                <td className="px-4 py-4 text-slate-600 dark:text-slate-400">{row.note ?? "—"}</td>
               </tr>
             ))}
           </tbody>
@@ -2488,7 +2488,7 @@ function StructureCard({ table }: { table: GrammarTopicQuestionStructureTable })
       <p className="mt-3 rounded-2xl bg-white dark:bg-slate-900 p-4 font-semibold text-slate-900 dark:text-slate-100">
         {table.pattern}
       </p>
-      <p className="mt-4 text-slate-600 dark:text-slate-400 dark:text-slate-500">{table.use}</p>
+      <p className="mt-4 text-slate-600 dark:text-slate-400">{table.use}</p>
       <ul className="mt-4 space-y-2 text-sm text-slate-700 dark:text-slate-300">
         {table.examples.map((example) => (
           <li key={example}>• {example}</li>
@@ -2514,7 +2514,7 @@ function PracticeSection({
         {items.map((item) => (
           <div key={item.prompt} className="rounded-2xl bg-white dark:bg-slate-900 p-4 shadow-sm">
             <p className="font-semibold text-indigo-900">{item.prompt}</p>
-            <p className="mt-3 text-sm font-semibold uppercase tracking-wide text-slate-500 dark:text-slate-400 dark:text-slate-500">
+            <p className="mt-3 text-sm font-semibold uppercase tracking-wide text-slate-500 dark:text-slate-400">
               Focus
             </p>
             <p className="mt-1 text-slate-700 dark:text-slate-300">{item.focus}</p>
@@ -2661,7 +2661,7 @@ function ReferenceTable({
                 <td className="px-4 py-4 text-slate-700 dark:text-slate-300">{row.use}</td>
                 <td className="px-4 py-4 text-slate-700 dark:text-slate-300">{row.pattern}</td>
                 <td className="px-4 py-4 text-slate-700 dark:text-slate-300">{row.example}</td>
-                <td className="px-4 py-4 text-slate-600 dark:text-slate-400 dark:text-slate-500">{row.note ?? "—"}</td>
+                <td className="px-4 py-4 text-slate-600 dark:text-slate-400">{row.note ?? "—"}</td>
               </tr>
             ))}
           </tbody>
@@ -2675,7 +2675,7 @@ function ListBlock({ title, items }: { title: string; items: string[] }) {
   return (
     <div className="rounded-2xl bg-slate-50 dark:bg-slate-800 p-4">
       <h3 className="font-bold text-slate-900 dark:text-slate-100">{title}</h3>
-      <ul className="mt-2 space-y-2 text-sm text-slate-600 dark:text-slate-400 dark:text-slate-500">
+      <ul className="mt-2 space-y-2 text-sm text-slate-600 dark:text-slate-300">
         {items.map((item) => (
           <li key={item}>• {item}</li>
         ))}
@@ -2748,7 +2748,7 @@ function getContentSectionStyles(variant: "default" | "highlight" | "amber") {
       return {
         container: "bg-slate-50 dark:bg-slate-800",
         title: "text-slate-950 dark:text-slate-50",
-        body: "text-slate-600 dark:text-slate-400 dark:text-slate-500"
+        body: "text-slate-600 dark:text-slate-300"
       };
   }
 }

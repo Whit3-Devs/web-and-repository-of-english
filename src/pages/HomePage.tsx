@@ -1,4 +1,5 @@
 import { Link } from "react-router-dom";
+import { Badge, Card } from "../components/ui";
 import {
   getGrammarTopicsBySection,
   grammarTopicSectionDetails,
@@ -49,7 +50,7 @@ const sections = [
 export function HomePage() {
   return (
     <section className="space-y-8">
-      <div className="rounded-3xl bg-slate-950 p-8 text-white shadow-xl">
+      <Card variant="highlight" padding="lg">
         <p className="text-sm font-semibold uppercase tracking-[0.3em] text-blue-300">
           Study Directory
         </p>
@@ -60,44 +61,41 @@ export function HomePage() {
           Use Home as your fast study map: topics are grouped by section, and each
           item opens its current full explanation route directly.
         </p>
-      </div>
+      </Card>
 
       <div className="grid gap-6">
         {sections.map((section) => (
-          <section
-            key={section.title}
-            className="rounded-3xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-900 p-6 shadow-sm"
-          >
-            <div className="flex flex-wrap items-start justify-between gap-4">
-              <div>
-                <h3 className="text-2xl font-black text-slate-950 dark:text-slate-50">{section.title}</h3>
-                <p className="mt-2 max-w-3xl text-slate-600 dark:text-slate-400 dark:text-slate-500">{section.description}</p>
+          <section key={section.title}>
+            <Card>
+              <div className="flex flex-wrap items-start justify-between gap-4">
+                <div>
+                  <h3 className="text-2xl font-black text-slate-950 dark:text-slate-50">{section.title}</h3>
+                  <p className="mt-2 max-w-3xl text-slate-600 dark:text-slate-400">{section.description}</p>
+                </div>
+                <Badge variant="primary">{section.count}</Badge>
               </div>
-              <span className="rounded-full bg-blue-50 dark:bg-blue-950/40 px-3 py-1 text-sm font-bold text-blue-700 dark:text-blue-300">
-                {section.count}
-              </span>
-            </div>
 
-            <div className="mt-5 flex flex-wrap gap-3">
-              {section.topics.map((topic) => (
+              <div className="mt-5 flex flex-wrap gap-3">
+                {section.topics.map((topic) => (
+                  <Link
+                    key={`${section.title}-${topic.label}`}
+                    to={topic.to}
+                    className="rounded-full border border-slate-200 dark:border-slate-700 bg-slate-50 dark:bg-slate-800 px-4 py-2 text-sm font-medium text-slate-700 dark:text-slate-300 transition hover:border-blue-200 dark:border-blue-800 hover:bg-blue-50 dark:hover:bg-blue-950/60 dark:bg-blue-950/40 hover:text-blue-700 dark:hover:text-blue-200 dark:text-blue-300"
+                  >
+                    {topic.label}
+                  </Link>
+                ))}
+              </div>
+
+              <div className="mt-5">
                 <Link
-                  key={`${section.title}-${topic.label}`}
-                  to={topic.to}
-                  className="rounded-full border border-slate-200 dark:border-slate-700 bg-slate-50 dark:bg-slate-800 px-4 py-2 text-sm font-medium text-slate-700 dark:text-slate-300 transition hover:border-blue-200 dark:border-blue-800 hover:bg-blue-50 dark:hover:bg-blue-950/60 dark:bg-blue-950/40 hover:text-blue-700 dark:hover:text-blue-200 dark:text-blue-300"
+                  to={section.viewAllPath}
+                  className="text-sm font-bold text-blue-700 hover:text-blue-900 dark:text-blue-300 dark:hover:text-blue-100"
                 >
-                  {topic.label}
+                  {section.viewAllLabel} →
                 </Link>
-              ))}
-            </div>
-
-            <div className="mt-5">
-              <Link
-                to={section.viewAllPath}
-                className="text-sm font-bold text-blue-700 dark:text-blue-300 hover:text-blue-900 dark:hover:text-blue-100 dark:text-blue-100"
-              >
-                {section.viewAllLabel} →
-              </Link>
-            </div>
+              </div>
+            </Card>
           </section>
         ))}
       </div>

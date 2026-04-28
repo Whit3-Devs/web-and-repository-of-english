@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
 import { SearchInput } from "../components/SearchInput";
+import { Badge, Card, EmptyState, PageHeader } from "../components/ui";
 import { irregularVerbs } from "../data/irregularVerbs";
 import { getIrregularVerbPatternGroups } from "../data/irregularVerbPatterns";
 import { filterIrregularVerbs } from "../features/cheatsheet/search";
@@ -59,20 +60,13 @@ export function IrregularVerbsPage() {
 
   return (
     <section className="space-y-6">
-      <div>
-        <p className="text-sm font-semibold uppercase tracking-[0.3em] text-blue-600 dark:text-blue-300">
-          Verbs
-        </p>
-        <h2 className="mt-2 text-3xl font-black text-slate-950 dark:text-slate-50">
-          Irregular Verbs
-        </h2>
-        <p className="mt-2 max-w-2xl text-slate-600 dark:text-slate-400 dark:text-slate-500">
-          Search by infinitive, past simple, past participle, category, or example.
-          Use Table for lookup and By Pattern for memorization.
-        </p>
-      </div>
+      <PageHeader
+        eyebrow="Verbs"
+        title="Irregular Verbs"
+        description="Search by infinitive, past simple, past participle, category, or example. Use Table for lookup and By Pattern for memorization."
+      />
 
-      <div className="rounded-3xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-900 p-3 shadow-sm">
+      <Card padding="sm">
         <div
           role="tablist"
           aria-label="Irregular verbs view mode"
@@ -104,9 +98,9 @@ export function IrregularVerbsPage() {
             );
           })}
         </div>
-      </div>
+      </Card>
 
-      <div className="grid gap-4 rounded-3xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-900 p-5 shadow-sm md:grid-cols-[1fr_auto] md:items-end">
+      <Card className="grid gap-4 md:grid-cols-[1fr_auto] md:items-end">
         <SearchInput
           value={searchTerm}
           onChange={setSearchTerm}
@@ -134,7 +128,7 @@ export function IrregularVerbsPage() {
             ))}
           </select>
         </label>
-      </div>
+      </Card>
 
       <div role="tabpanel" id={`${viewMode}-panel`} aria-labelledby={`${viewMode}-tab`}>
         {viewMode === "table" ? (
@@ -145,9 +139,10 @@ export function IrregularVerbsPage() {
       </div>
 
       {!hasResults ? (
-        <p className="rounded-3xl border border-dashed border-slate-300 dark:border-slate-600 p-8 text-center text-slate-500 dark:text-slate-400 dark:text-slate-500">
-          No irregular verbs found with those filters.
-        </p>
+        <EmptyState
+          title="No irregular verbs found"
+          description="No irregular verbs found with those filters."
+        />
       ) : null}
     </section>
   );
@@ -159,8 +154,8 @@ function IrregularVerbsTableView({
   filteredIrregularVerbs: typeof irregularVerbs;
 }) {
   return (
-    <div className="overflow-hidden rounded-3xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-900 shadow-sm">
-      <div className="grid grid-cols-5 gap-4 bg-slate-100 dark:bg-slate-800 px-5 py-3 text-sm font-bold uppercase tracking-wide text-slate-600 dark:text-slate-400 dark:text-slate-500">
+    <Card className="overflow-hidden" padding="sm">
+      <div className="grid grid-cols-5 gap-4 bg-slate-100 px-5 py-3 text-sm font-bold uppercase tracking-wide text-slate-600 dark:bg-slate-800 dark:text-slate-400">
         <span>Infinitive</span>
         <span>Past</span>
         <span>Participle</span>
@@ -182,10 +177,10 @@ function IrregularVerbsTableView({
           <span>{verb.pastSimple}</span>
           <span>{verb.pastParticiple}</span>
           <span className="capitalize">{verb.category}</span>
-          <span className="text-slate-500 dark:text-slate-400 dark:text-slate-500">{verb.example}</span>
+          <span className="text-slate-500 dark:text-slate-400">{verb.example}</span>
         </article>
       ))}
-    </div>
+    </Card>
   );
 }
 
@@ -197,50 +192,51 @@ function IrregularVerbPatternView({
   return (
     <div className="grid gap-4">
       {groups.map((group) => (
-        <section
-          key={group.key}
-          className="rounded-3xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-900 p-6 shadow-sm"
-        >
-          <div className="flex flex-wrap items-start justify-between gap-3">
-            <div>
-              <h3 className="text-2xl font-bold text-slate-950 dark:text-slate-50">
-                {group.code} — {group.title}
-              </h3>
-              <p className="mt-2 text-slate-600 dark:text-slate-400 dark:text-slate-500">{group.explanation}</p>
-            </div>
-            <div className="rounded-2xl bg-amber-50 dark:bg-amber-950/40 px-4 py-3 text-right">
-              <p className="text-xs font-semibold uppercase tracking-wide text-amber-700 dark:text-amber-300">
-                Memory label
-              </p>
-              <p className="mt-1 font-bold text-amber-950 dark:text-amber-100">{group.memoryLabel}</p>
-            </div>
-          </div>
-
-          <div className="mt-5 overflow-hidden rounded-2xl border border-slate-200 dark:border-slate-700">
-            <div className="grid grid-cols-4 gap-4 bg-slate-100 dark:bg-slate-800 px-5 py-3 text-sm font-bold uppercase tracking-wide text-slate-600 dark:text-slate-400 dark:text-slate-500">
-              <span>Infinitive</span>
-              <span>Past</span>
-              <span>Participle</span>
-              <span>Frequency</span>
+        <section key={group.key}>
+          <Card>
+            <div className="flex flex-wrap items-start justify-between gap-3">
+              <div>
+                <h3 className="text-2xl font-bold text-slate-950 dark:text-slate-50">
+                  {group.code} — {group.title}
+                </h3>
+                <p className="mt-2 text-slate-600 dark:text-slate-400">{group.explanation}</p>
+              </div>
+              <div className="rounded-2xl bg-amber-50 dark:bg-amber-950/40 px-4 py-3 text-right">
+                <p className="text-xs font-semibold uppercase tracking-wide text-amber-700 dark:text-amber-300">
+                  Memory label
+                </p>
+                <p className="mt-1 font-bold text-amber-950 dark:text-amber-100">{group.memoryLabel}</p>
+              </div>
             </div>
 
-            {group.verbs.map((verb) => (
-              <article
-                key={`${group.key}-${verb.id}`}
-                className="grid grid-cols-1 gap-2 border-t border-slate-100 dark:border-slate-800 px-5 py-4 text-slate-700 dark:text-slate-300 md:grid-cols-4 md:gap-4"
-              >
-                <Link
-                  to={verb.fullExplanationPath}
-                  className="font-bold text-slate-950 dark:text-slate-50 underline decoration-slate-300 dark:decoration-slate-600 underline-offset-4 hover:text-blue-700 dark:hover:text-blue-200 dark:text-blue-300"
+            <div className="mt-5 overflow-hidden rounded-2xl border border-slate-200 dark:border-slate-700">
+              <div className="grid grid-cols-4 gap-4 bg-slate-100 px-5 py-3 text-sm font-bold uppercase tracking-wide text-slate-600 dark:bg-slate-800 dark:text-slate-400">
+                <span>Infinitive</span>
+                <span>Past</span>
+                <span>Participle</span>
+                <span>Frequency</span>
+              </div>
+
+              {group.verbs.map((verb) => (
+                <article
+                  key={`${group.key}-${verb.id}`}
+                  className="grid grid-cols-1 gap-2 border-t border-slate-100 dark:border-slate-800 px-5 py-4 text-slate-700 dark:text-slate-300 md:grid-cols-4 md:gap-4"
                 >
-                  {verb.infinitive}
-                </Link>
-                <span>{verb.pastSimple}</span>
-                <span>{verb.pastParticiple}</span>
-                <span className="capitalize">{verb.frequency}</span>
-              </article>
-            ))}
-          </div>
+                  <Link
+                    to={verb.fullExplanationPath}
+                    className="font-bold text-slate-950 dark:text-slate-50 underline decoration-slate-300 dark:decoration-slate-600 underline-offset-4 hover:text-blue-700 dark:hover:text-blue-200 dark:text-blue-300"
+                  >
+                    {verb.infinitive}
+                  </Link>
+                  <span>{verb.pastSimple}</span>
+                  <span>{verb.pastParticiple}</span>
+                  <Badge variant="neutral" className="capitalize">
+                    {verb.frequency}
+                  </Badge>
+                </article>
+              ))}
+            </div>
+          </Card>
         </section>
       ))}
     </div>
