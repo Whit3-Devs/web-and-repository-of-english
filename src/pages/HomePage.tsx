@@ -1,5 +1,4 @@
-import { Link } from "react-router-dom";
-import { Badge, Card } from "../components/ui";
+import { ActionLink, Badge, Card, PillLink } from "../components/ui";
 import {
   getGrammarTopicsBySection,
   grammarTopicSectionDetails,
@@ -66,7 +65,7 @@ export function HomePage() {
       <div className="grid gap-6">
         {sections.map((section) => (
           <section key={section.title}>
-            <Card>
+            <Card interactive>
               <div className="flex flex-wrap items-start justify-between gap-4">
                 <div>
                   <h3 className="text-2xl font-black text-slate-950 dark:text-slate-50">{section.title}</h3>
@@ -77,23 +76,22 @@ export function HomePage() {
 
               <div className="mt-5 flex flex-wrap gap-3">
                 {section.topics.map((topic) => (
-                  <Link
+                  <PillLink
                     key={`${section.title}-${topic.label}`}
                     to={topic.to}
-                    className="rounded-full border border-slate-200 dark:border-slate-700 bg-slate-50 dark:bg-slate-800 px-4 py-2 text-sm font-medium text-slate-700 dark:text-slate-300 transition hover:border-blue-200 dark:border-blue-800 hover:bg-blue-50 dark:hover:bg-blue-950/60 dark:bg-blue-950/40 hover:text-blue-700 dark:hover:text-blue-200 dark:text-blue-300"
                   >
                     {topic.label}
-                  </Link>
+                  </PillLink>
                 ))}
               </div>
 
               <div className="mt-5">
-                <Link
+                <ActionLink
                   to={section.viewAllPath}
-                  className="text-sm font-bold text-blue-700 hover:text-blue-900 dark:text-blue-300 dark:hover:text-blue-100"
+                  variant="text"
                 >
                   {section.viewAllLabel} →
-                </Link>
+                </ActionLink>
               </div>
             </Card>
           </section>

@@ -170,7 +170,7 @@ function IrregularVerbsTableView({
         >
           <Link
             to={verb.fullExplanationPath}
-            className="font-bold text-slate-950 dark:text-slate-50 underline decoration-slate-300 dark:decoration-slate-600 underline-offset-4 hover:text-blue-700 dark:hover:text-blue-200 dark:text-blue-300"
+            className="font-bold text-slate-950 underline decoration-slate-300 underline-offset-4 hover:text-blue-700 dark:text-blue-300 dark:decoration-slate-600 dark:hover:text-blue-200"
           >
             {verb.infinitive}
           </Link>
@@ -193,7 +193,7 @@ function IrregularVerbPatternView({
     <div className="grid gap-4">
       {groups.map((group) => (
         <section key={group.key}>
-          <Card>
+          <Card interactive>
             <div className="flex flex-wrap items-start justify-between gap-3">
               <div>
                 <h3 className="text-2xl font-bold text-slate-950 dark:text-slate-50">
@@ -224,7 +224,7 @@ function IrregularVerbPatternView({
                 >
                   <Link
                     to={verb.fullExplanationPath}
-                    className="font-bold text-slate-950 dark:text-slate-50 underline decoration-slate-300 dark:decoration-slate-600 underline-offset-4 hover:text-blue-700 dark:hover:text-blue-200 dark:text-blue-300"
+                    className="font-bold text-slate-950 underline decoration-slate-300 underline-offset-4 hover:text-blue-700 dark:text-blue-300 dark:decoration-slate-600 dark:hover:text-blue-200"
                   >
                     {verb.infinitive}
                   </Link>

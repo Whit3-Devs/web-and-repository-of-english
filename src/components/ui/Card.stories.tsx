@@ -45,3 +45,29 @@ export const Highlight: Story = {
     )
   }
 };
+
+export const Interactive: Story = {
+  args: {
+    interactive: true,
+    children: (
+      <div>
+        <p className="text-sm font-semibold uppercase tracking-[0.3em] text-blue-700 dark:text-blue-300">
+          Study path
+        </p>
+        <h3 className="mt-2 text-xl font-black text-slate-950 dark:text-slate-50">
+          Question Builder Cheat Sheet
+        </h3>
+        <p className="mt-3 text-slate-600 dark:text-slate-400">
+          Use interactive cards for navigable learning blocks, topic previews,
+          or surfaces that contain links/actions.
+        </p>
+        <a
+          className="mt-5 inline-flex rounded-full bg-blue-600 px-4 py-2 text-sm font-bold text-white transition-colors hover:bg-blue-700 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-blue-500"
+          href="#"
+        >
+          Open topic
+        </a>
+      </div>
+    )
+  }
+};

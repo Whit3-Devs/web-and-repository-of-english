@@ -6,6 +6,7 @@ type CardVariant = "default" | "muted" | "highlight";
 
 type CardProps = HTMLAttributes<HTMLDivElement> & {
   children: ReactNode;
+  interactive?: boolean;
   padding?: CardPadding;
   variant?: CardVariant;
 };
@@ -24,8 +25,12 @@ const variantClasses: Record<CardVariant, string> = {
   highlight: "border border-slate-950 bg-slate-950 text-white shadow-xl"
 };
 
+const interactiveClasses =
+  "transition duration-200 ease-out hover:-translate-y-0.5 hover:border-blue-200 hover:shadow-md focus-within:ring-2 focus-within:ring-blue-500/30 dark:hover:border-blue-700 motion-reduce:transition-none motion-reduce:hover:translate-y-0";
+
 export function Card({
   children,
+  interactive = false,
   padding = "md",
   variant = "default",
   className,
@@ -37,6 +42,7 @@ export function Card({
         "rounded-3xl",
         paddingClasses[padding],
         variantClasses[variant],
+        interactive ? interactiveClasses : undefined,
         className
       )}
       {...props}

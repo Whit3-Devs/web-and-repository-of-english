@@ -1,4 +1,5 @@
-import { Link, useParams } from "react-router-dom";
+import { useParams } from "react-router-dom";
+import { ActionLink, BackLink } from "../components/ui";
 import { findIrregularVerbBySlug } from "../data/irregularVerbs";
 
 export function IrregularVerbDetailPage() {
@@ -12,27 +13,23 @@ export function IrregularVerbDetailPage() {
           Irregular Verbs
         </p>
         <h2 className="mt-2 text-3xl font-black text-slate-950 dark:text-slate-50">Topic not found</h2>
-        <p className="mt-3 text-slate-600 dark:text-slate-400 dark:text-slate-500">
+        <p className="mt-3 text-slate-600 dark:text-slate-400">
           The requested irregular verb does not exist in the current cheatsheet data.
         </p>
-        <Link
+        <ActionLink
           to="/irregular-verbs"
-          className="mt-6 inline-flex rounded-full bg-blue-600 px-5 py-3 text-sm font-bold text-white hover:bg-blue-700"
+          variant="primary"
+          className="mt-6"
         >
           Back to Irregular Verbs
-        </Link>
+        </ActionLink>
       </section>
     );
   }
 
   return (
     <section className="space-y-6">
-      <Link
-        to="/irregular-verbs"
-        className="text-sm font-bold text-blue-700 dark:text-blue-300 hover:text-blue-900 dark:hover:text-blue-100 dark:text-blue-100"
-      >
-        ← Back to Irregular Verbs
-      </Link>
+      <BackLink to="/irregular-verbs" label="Back to Irregular Verbs" />
 
       <article className="rounded-3xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-900 p-8 shadow-sm">
         <div className="flex flex-wrap items-start justify-between gap-4">
@@ -43,7 +40,7 @@ export function IrregularVerbDetailPage() {
             <h2 className="mt-2 text-4xl font-black text-slate-950 dark:text-slate-50">
               {irregularVerb.infinitive}
             </h2>
-            <p className="mt-4 max-w-3xl text-lg text-slate-600 dark:text-slate-400 dark:text-slate-500">
+            <p className="mt-4 max-w-3xl text-lg text-slate-600 dark:text-slate-400">
               Quick reference for the base form, simple past, and past participle.
             </p>
           </div>
@@ -69,7 +66,7 @@ export function IrregularVerbDetailPage() {
           <h3 className="text-xl font-black text-slate-950 dark:text-slate-50">
             Full explanation coming soon
           </h3>
-          <p className="mt-2 text-slate-600 dark:text-slate-400 dark:text-slate-500">
+          <p className="mt-2 text-slate-600 dark:text-slate-400">
             This route is ready so each irregular verb can get deeper usage notes later
             without changing the study navigation again.
           </p>
@@ -83,7 +80,7 @@ function InfoBlock({ title, value }: { title: string; value: string }) {
   return (
     <div className="rounded-2xl bg-slate-50 dark:bg-slate-800 p-4">
       <h3 className="font-bold capitalize text-slate-900 dark:text-slate-100">{title}</h3>
-      <p className="mt-1 capitalize text-slate-600 dark:text-slate-400 dark:text-slate-500">{value}</p>
+      <p className="mt-1 capitalize text-slate-600 dark:text-slate-400">{value}</p>
     </div>
   );
 }

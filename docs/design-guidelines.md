@@ -35,13 +35,24 @@ Esta app tiene que sentirse como un cuaderno de estudio moderno: clara, editoria
 - **Inner blocks**: `rounded-2xl` o `rounded-3xl` con fondos suaves (`slate-50`, `blue-50`, `amber-50`, etc.).
 - **Padding**: `p-6` por defecto, `p-8` para artículos o regiones principales.
 
+## Interacciones y movimiento
+
+- Usar hover solo en elementos navegables, clickeables o claramente interactivos.
+- No animar bloques puramente informativos: si no invita a una acción, no debería moverse.
+- Preferir micro-interacciones sutiles: elevación leve, sombra más marcada, cambio de borde o transición de color.
+- Respetar `motion-reduce` en cualquier movimiento o transición.
+- Todo estado interactivo debe tener `focus-visible` o `focus-within` para navegación por teclado.
+- Para superficies interactivas, usar APIs semánticas como `Card interactive` antes que repetir clases de hover en páginas.
+
 ## Componentes base
 
 - `PageHeader`: encabezado de página con `eyebrow`, `title`, `description` y acciones opcionales.
-- `Card`: superficie neutra para agrupar contenido.
+- `Card`: superficie neutra para agrupar contenido; usar `interactive` solo cuando la card contenga una acción o navegación.
 - `SectionCard`: bloque de contenido con título, descripción opcional y variante semántica.
 - `Badge`: estado compacto con variantes semánticas.
 - `BackLink`: navegación secundaria para volver a listados.
+- `ActionLink`: CTA semántico para acciones de navegación importantes (`primary`, `soft`, `text`).
+- `PillLink`: chip navegable para topics, related topics y directorios.
 - `EmptyState`: estado vacío/not found con acción opcional.
 
 ## Reglas Tailwind

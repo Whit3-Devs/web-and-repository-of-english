@@ -1,4 +1,5 @@
-import { Link, useParams } from "react-router-dom";
+import { useParams } from "react-router-dom";
+import { ActionLink, BackLink } from "../components/ui";
 import { findVerbTenseFullExplanationBySlug } from "../data/verbTenseFullExplanations";
 import { findVerbTenseBySlug } from "../data/verbTenses";
 
@@ -16,15 +17,16 @@ export function VerbTenseDetailPage() {
           Verb Tenses
         </p>
         <h2 className="mt-2 text-3xl font-black text-slate-950 dark:text-slate-50">Topic not found</h2>
-        <p className="mt-3 text-slate-600 dark:text-slate-400 dark:text-slate-500">
+        <p className="mt-3 text-slate-600 dark:text-slate-400">
           The requested verb tense does not exist in the current cheatsheet data.
         </p>
-        <Link
+        <ActionLink
           to="/verb-tenses"
-          className="mt-6 inline-flex rounded-full bg-blue-600 px-5 py-3 text-sm font-bold text-white hover:bg-blue-700"
+          variant="primary"
+          className="mt-6"
         >
           Back to Verb Tenses
-        </Link>
+        </ActionLink>
       </section>
     );
   }
@@ -32,12 +34,7 @@ export function VerbTenseDetailPage() {
   if (!fullExplanation) {
     return (
       <section className="space-y-6">
-        <Link
-          to="/verb-tenses"
-          className="text-sm font-bold text-blue-700 dark:text-blue-300 hover:text-blue-900 dark:hover:text-blue-100 dark:text-blue-100"
-        >
-          ← Back to Verb Tenses
-        </Link>
+        <BackLink to="/verb-tenses" label="Back to Verb Tenses" />
 
         <article className="rounded-3xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-900 p-8 shadow-sm">
           <div className="flex flex-wrap items-start justify-between gap-4">
@@ -48,7 +45,7 @@ export function VerbTenseDetailPage() {
               <h2 className="mt-2 text-4xl font-black text-slate-950 dark:text-slate-50">
                 {verbTense.name}
               </h2>
-              <p className="mt-4 max-w-3xl text-lg text-slate-600 dark:text-slate-400 dark:text-slate-500">{verbTense.summary}</p>
+              <p className="mt-4 max-w-3xl text-lg text-slate-600 dark:text-slate-400">{verbTense.summary}</p>
             </div>
 
             <span className="rounded-full bg-amber-50 dark:bg-amber-950/40 px-4 py-2 text-sm font-bold text-amber-700 dark:text-amber-300">
@@ -66,7 +63,7 @@ export function VerbTenseDetailPage() {
             <h3 className="text-xl font-black text-slate-950 dark:text-slate-50">
               Full explanation coming soon
             </h3>
-            <p className="mt-2 text-slate-600 dark:text-slate-400 dark:text-slate-500">
+            <p className="mt-2 text-slate-600 dark:text-slate-400">
               This route is ready so each topic can get a deeper explanation later
               without changing the cheatsheet navigation again.
             </p>
@@ -78,9 +75,7 @@ export function VerbTenseDetailPage() {
 
   return (
     <section className="space-y-6">
-      <Link to="/verb-tenses" className="text-sm font-bold text-blue-700 dark:text-blue-300 hover:text-blue-900 dark:hover:text-blue-100 dark:text-blue-100">
-        ← Back to Verb Tenses
-      </Link>
+      <BackLink to="/verb-tenses" label="Back to Verb Tenses" />
 
       <article className="rounded-3xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-900 p-8 shadow-sm">
         <div className="flex flex-wrap items-start justify-between gap-4">
@@ -91,7 +86,7 @@ export function VerbTenseDetailPage() {
             <h2 className="mt-2 text-4xl font-black text-slate-950 dark:text-slate-50">
               {fullExplanation.title}
             </h2>
-            <p className="mt-4 max-w-3xl text-lg text-slate-600 dark:text-slate-400 dark:text-slate-500">
+            <p className="mt-4 max-w-3xl text-lg text-slate-600 dark:text-slate-400">
               {fullExplanation.overview}
             </p>
           </div>
@@ -217,7 +212,7 @@ export function VerbTenseDetailPage() {
             {fullExplanation.comparisons.map((comparison) => (
               <div key={comparison.title} className="rounded-2xl bg-white dark:bg-slate-900 p-4 shadow-sm">
                 <h4 className="font-bold text-slate-900 dark:text-slate-100">{comparison.title}</h4>
-                <p className="mt-2 text-slate-600 dark:text-slate-400 dark:text-slate-500">{comparison.explanation}</p>
+                <p className="mt-2 text-slate-600 dark:text-slate-400">{comparison.explanation}</p>
               </div>
             ))}
           </div>
@@ -277,7 +272,7 @@ function getInfoBlockStyles(title: string) {
       return {
         container: "bg-slate-50 dark:bg-slate-800",
         title: "text-slate-900 dark:text-slate-100",
-        body: "text-slate-600 dark:text-slate-400 dark:text-slate-500"
+        body: "text-slate-600 dark:text-slate-400"
       };
   }
 }
@@ -332,7 +327,7 @@ function getContentSectionStyles(variant: "default" | "highlight" | "indigo" | "
       return {
         container: "bg-slate-50 dark:bg-slate-800",
         title: "text-slate-950 dark:text-slate-50",
-        body: "text-slate-600 dark:text-slate-400 dark:text-slate-500"
+        body: "text-slate-600 dark:text-slate-400"
       };
   }
 }

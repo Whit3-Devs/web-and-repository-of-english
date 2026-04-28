@@ -1,5 +1,6 @@
-import { Link, useParams } from "react-router-dom";
+import { useParams } from "react-router-dom";
 import { SemanticCallout } from "../components/SemanticCallout";
+import { ActionLink, BackLink, PillLink } from "../components/ui";
 import { findGrammarTopicFullExplanationBySlug } from "../data/grammarTopicFullExplanations";
 import { findGrammarTopic } from "../data/grammarTopics";
 import type {
@@ -56,12 +57,13 @@ export function GrammarTopicDetailPage({
         <p className="mt-3 text-slate-600 dark:text-slate-400">
           The requested topic does not exist in the current cheatsheet data.
         </p>
-        <Link
+        <ActionLink
           to={backPath}
-          className="mt-6 inline-flex rounded-full bg-blue-600 px-5 py-3 text-sm font-bold text-white hover:bg-blue-700"
+          variant="primary"
+          className="mt-6"
         >
           Back to {backLabel}
-        </Link>
+        </ActionLink>
       </section>
     );
   }
@@ -69,9 +71,7 @@ export function GrammarTopicDetailPage({
   if (!fullExplanation) {
     return (
       <section className="space-y-6">
-        <Link to={backPath} className="text-sm font-bold text-blue-700 dark:text-blue-300 hover:text-blue-900 dark:hover:text-blue-100 dark:text-blue-100">
-          ← Back to {backLabel}
-        </Link>
+        <BackLink to={backPath} label={`Back to ${backLabel}`} />
 
         <article className="rounded-3xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-900 p-8 shadow-sm">
           <div className="flex flex-wrap items-start justify-between gap-4">
@@ -110,9 +110,7 @@ export function GrammarTopicDetailPage({
 
   return (
     <section className="space-y-6">
-      <Link to={backPath} className="text-sm font-bold text-blue-700 dark:text-blue-300 hover:text-blue-900 dark:hover:text-blue-100 dark:text-blue-100">
-        ← Back to {backLabel}
-      </Link>
+      <BackLink to={backPath} label={`Back to ${backLabel}`} />
 
       <article className="rounded-3xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-900 p-8 shadow-sm">
         <Header title={fullExplanation.title} overview={fullExplanation.overview} />
@@ -2694,13 +2692,12 @@ function RelatedTopicLinksSection({
       <h3 className="text-xl font-black text-slate-950 dark:text-slate-50">Related topics</h3>
       <div className="mt-4 flex flex-wrap gap-3">
         {links.map((link) => (
-          <Link
+          <PillLink
             key={link.path}
             to={link.path}
-            className="rounded-full border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-900 px-4 py-2 text-sm font-medium text-slate-700 dark:text-slate-300 transition hover:border-blue-200 dark:border-blue-800 hover:bg-blue-50 dark:hover:bg-blue-950/60 dark:bg-blue-950/40 hover:text-blue-700 dark:hover:text-blue-200 dark:text-blue-300"
           >
             {link.title}
-          </Link>
+          </PillLink>
         ))}
       </div>
     </div>

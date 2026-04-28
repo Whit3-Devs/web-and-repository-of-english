@@ -9,7 +9,7 @@ type GrammarTopicCardProps = {
 export function GrammarTopicCard({ topic }: GrammarTopicCardProps) {
   return (
     <article>
-      <Card>
+      <Card interactive>
         <div className="flex flex-wrap items-start justify-between gap-3">
           <div>
             <h3 className="text-2xl font-bold text-slate-950 dark:text-slate-50">{topic.title}</h3>
