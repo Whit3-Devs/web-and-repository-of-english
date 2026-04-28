@@ -66,7 +66,7 @@ export function IrregularVerbDetailPage() {
           <h3 className="text-xl font-black text-slate-950 dark:text-slate-50">
             Full explanation coming soon
           </h3>
-          <p className="mt-2 text-slate-600 dark:text-slate-400">
+          <p className="mt-2 text-slate-600 dark:text-slate-200">
             This route is ready so each irregular verb can get deeper usage notes later
             without changing the study navigation again.
           </p>
@@ -80,7 +80,7 @@ function InfoBlock({ title, value }: { title: string; value: string }) {
   return (
     <div className="rounded-2xl bg-slate-50 dark:bg-slate-800 p-4">
       <h3 className="font-bold capitalize text-slate-900 dark:text-slate-100">{title}</h3>
-      <p className="mt-1 capitalize text-slate-600 dark:text-slate-400">{value}</p>
+      <p className="mt-1 capitalize text-slate-600 dark:text-slate-200">{value}</p>
     </div>
   );
 }

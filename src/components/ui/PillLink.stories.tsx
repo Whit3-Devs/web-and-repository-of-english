@@ -24,3 +24,15 @@ export default meta;
 type Story = StoryObj<typeof meta>;
 
 export const Default: Story = {};
+
+export const Group: Story = {
+  render: () => (
+    <div className="flex flex-wrap gap-3">
+      <PillLink to="/verb-tenses/present-simple">Present Simple</PillLink>
+      <PillLink to="/verb-tenses/present-continuous">Present Continuous</PillLink>
+      <PillLink to="/sentence-building/question-builder-cheat-sheet">
+        Question Builder
+      </PillLink>
+    </div>
+  )
+};

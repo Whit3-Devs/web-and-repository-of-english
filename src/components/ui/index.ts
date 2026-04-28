@@ -3,6 +3,8 @@ export { BackLink } from "./BackLink";
 export { Badge } from "./Badge";
 export { Card } from "./Card";
 export { EmptyState } from "./EmptyState";
+export { FilterSelect } from "./FilterSelect";
 export { PageHeader } from "./PageHeader";
 export { PillLink } from "./PillLink";
 export { SectionCard } from "./SectionCard";
+export { TabOption } from "./TabOption";

@@ -98,7 +98,7 @@ export function GrammarTopicDetailPage({
             <h3 className="text-xl font-black text-slate-950 dark:text-slate-50">
               Full explanation coming soon
             </h3>
-            <p className="mt-2 text-slate-600 dark:text-slate-400">
+            <p className="mt-2 text-slate-600 dark:text-slate-200">
               This detail route is ready so the deep explanation can be migrated later
               without changing the quick cheatsheet flow.
             </p>
@@ -320,12 +320,12 @@ function ModalTopicContent({
             <p className="mt-4 text-sm font-semibold uppercase tracking-wide text-slate-500 dark:text-slate-400">
               When to use
             </p>
-            <p className="mt-1 text-slate-700 dark:text-slate-300">{card.whenToUse}</p>
+            <p className="mt-1 text-slate-700 dark:text-slate-200">{card.whenToUse}</p>
 
             <p className="mt-4 text-sm font-semibold uppercase tracking-wide text-slate-500 dark:text-slate-400">
               Tone
             </p>
-            <p className="mt-1 text-slate-700 dark:text-slate-300">{card.tone}</p>
+            <p className="mt-1 text-slate-700 dark:text-slate-200">{card.tone}</p>
 
             <div className="mt-5 grid gap-4">
               <StructureSnippet
@@ -566,7 +566,7 @@ function ConditionalsOverviewContent({
                 <p className="text-sm font-semibold uppercase tracking-wide text-slate-500 dark:text-slate-400">
                   Examples
                 </p>
-                <ul className="mt-2 space-y-2 text-sm text-slate-700 dark:text-slate-300">
+                <ul className="mt-2 space-y-2 text-sm text-slate-700 dark:text-slate-200">
                   {card.examples.map((example) => (
                     <li key={example}>• {example}</li>
                   ))}
@@ -1073,7 +1073,7 @@ function ArticlesDeterminersContent({
                 <p className="text-sm font-semibold uppercase tracking-wide text-slate-500 dark:text-slate-400">
                   Examples
                 </p>
-                <ul className="mt-2 space-y-2 text-sm text-slate-700 dark:text-slate-300">
+                <ul className="mt-2 space-y-2 text-sm text-slate-700 dark:text-slate-200">
                   {card.examples.map((example) => (
                     <li key={example}>• {example}</li>
                   ))}
@@ -2486,8 +2486,8 @@ function StructureCard({ table }: { table: GrammarTopicQuestionStructureTable })
       <p className="mt-3 rounded-2xl bg-white dark:bg-slate-900 p-4 font-semibold text-slate-900 dark:text-slate-100">
         {table.pattern}
       </p>
-      <p className="mt-4 text-slate-600 dark:text-slate-400">{table.use}</p>
-      <ul className="mt-4 space-y-2 text-sm text-slate-700 dark:text-slate-300">
+      <p className="mt-4 text-slate-600 dark:text-slate-200">{table.use}</p>
+      <ul className="mt-4 space-y-2 text-sm text-slate-700 dark:text-slate-200">
         {table.examples.map((example) => (
           <li key={example}>• {example}</li>
         ))}
@@ -2673,7 +2673,7 @@ function ListBlock({ title, items }: { title: string; items: string[] }) {
   return (
     <div className="rounded-2xl bg-slate-50 dark:bg-slate-800 p-4">
       <h3 className="font-bold text-slate-900 dark:text-slate-100">{title}</h3>
-      <ul className="mt-2 space-y-2 text-sm text-slate-600 dark:text-slate-300">
+      <ul className="mt-2 space-y-2 text-sm text-slate-600 dark:text-slate-200">
         {items.map((item) => (
           <li key={item}>• {item}</li>
         ))}
@@ -2745,7 +2745,7 @@ function getContentSectionStyles(variant: "default" | "highlight" | "amber") {
       return {
         container: "bg-slate-50 dark:bg-slate-800",
         title: "text-slate-950 dark:text-slate-50",
-        body: "text-slate-600 dark:text-slate-300"
+        body: "text-slate-600 dark:text-slate-200"
       };
   }
 }

@@ -63,7 +63,7 @@ export function VerbTenseDetailPage() {
             <h3 className="text-xl font-black text-slate-950 dark:text-slate-50">
               Full explanation coming soon
             </h3>
-            <p className="mt-2 text-slate-600 dark:text-slate-400">
+            <p className="mt-2 text-slate-600 dark:text-slate-200">
               This route is ready so each topic can get a deeper explanation later
               without changing the cheatsheet navigation again.
             </p>
@@ -272,7 +272,7 @@ function getInfoBlockStyles(title: string) {
       return {
         container: "bg-slate-50 dark:bg-slate-800",
         title: "text-slate-900 dark:text-slate-100",
-        body: "text-slate-600 dark:text-slate-400"
+        body: "text-slate-600 dark:text-slate-200"
       };
   }
 }
@@ -327,7 +327,7 @@ function getContentSectionStyles(variant: "default" | "highlight" | "indigo" | "
       return {
         container: "bg-slate-50 dark:bg-slate-800",
         title: "text-slate-950 dark:text-slate-50",
-        body: "text-slate-600 dark:text-slate-400"
+        body: "text-slate-600 dark:text-slate-200"
       };
   }
 }

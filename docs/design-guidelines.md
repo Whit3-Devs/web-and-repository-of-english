@@ -24,9 +24,9 @@ Esta app tiene que sentirse como un cuaderno de estudio moderno: clara, editoria
 - **Eyebrow**: `text-sm font-semibold uppercase tracking-[0.3em]`.
 - **Page title**: `text-3xl` en mobile, `text-4xl` cuando haya espacio, `font-black`.
 - **Section title**: `text-xl font-black`.
-- **Body**: `text-base text-slate-600 dark:text-slate-400`.
-- **Body sobre `dark:bg-slate-800`**: usar `dark:text-slate-300`; `dark:text-slate-500` queda demasiado bajo para contenido de lectura.
-- **Metadata**: `text-sm font-semibold`.
+- **Body**: `text-base text-slate-600 dark:text-slate-400` sobre superficies principales `dark:bg-slate-900`.
+- **Body de lectura sobre `dark:bg-slate-800`**: usar `dark:text-slate-200`; `dark:text-slate-400` queda reservado para metadata/labels y `dark:text-slate-50` para títulos.
+- **Metadata**: `text-sm font-semibold text-slate-500 dark:text-slate-400`.
 
 ## Espaciado y superficies
 
@@ -43,6 +43,10 @@ Esta app tiene que sentirse como un cuaderno de estudio moderno: clara, editoria
 - Respetar `motion-reduce` en cualquier movimiento o transición.
 - Todo estado interactivo debe tener `focus-visible` o `focus-within` para navegación por teclado.
 - Para superficies interactivas, usar APIs semánticas como `Card interactive` antes que repetir clases de hover en páginas.
+- Links y chips navegables pueden usar transición de color, borde, sombra leve y desplazamiento mínimo.
+- Los CTAs tipo botón pueden elevarse suavemente; los links textuales deben limitarse a color/subrayado para no afectar la lectura.
+- Tabs, inputs y selects deben tener hover/focus claros pero quietos: borde, sombra y ring; no desplazar wrappers ni controles de lectura.
+- Los estados activos de tabs deben ser más fuertes que el hover, con `aria-selected` y contraste evidente en light/dark.
 
 ## Componentes base
 

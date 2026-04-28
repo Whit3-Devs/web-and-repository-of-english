@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 import { SearchInput } from "../components/SearchInput";
-import { Badge, Card, EmptyState, PageHeader } from "../components/ui";
+import { Badge, Card, EmptyState, FilterSelect, PageHeader, TabOption } from "../components/ui";
 import { irregularVerbs } from "../data/irregularVerbs";
 import { getIrregularVerbPatternGroups } from "../data/irregularVerbPatterns";
 import { filterIrregularVerbs } from "../features/cheatsheet/search";
@@ -76,25 +76,15 @@ export function IrregularVerbsPage() {
             const isActive = viewMode === tab.id;
 
             return (
-              <button
+              <TabOption
                 key={tab.id}
-                type="button"
-                role="tab"
-                aria-selected={isActive}
-                aria-controls={`${tab.id}-panel`}
+                active={isActive}
+                label={tab.label}
+                description={tab.description}
                 id={`${tab.id}-tab`}
+                panelId={`${tab.id}-panel`}
                 onClick={() => setViewMode(tab.id)}
-                className={`rounded-2xl border px-4 py-4 text-left transition ${
-                  isActive
-                    ? "border-blue-500 bg-blue-50 dark:bg-blue-950/40 text-blue-950 dark:text-blue-100 shadow-sm"
-                    : "border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-900 text-slate-700 dark:text-slate-300 hover:border-slate-300 dark:hover:border-slate-500 dark:border-slate-600"
-                }`}
-              >
-                <span className="block text-sm font-black uppercase tracking-[0.2em]">
-                  {tab.label}
-                </span>
-                <span className="mt-2 block text-sm">{tab.description}</span>
-              </button>
+              />
             );
           })}
         </div>
@@ -107,27 +97,20 @@ export function IrregularVerbsPage() {
           placeholder="Search: go, went, gone, movement..."
         />
 
-        <label className="block">
-          <span className="mb-2 block text-sm font-semibold text-slate-700 dark:text-slate-300">
-            Frequency
-          </span>
-          <select
-            value={selectedFrequency ?? "all"}
-            onChange={(event) =>
-              setFilter(
-                "irregularVerbFrequency",
-                event.target.value === "all" ? undefined : event.target.value
-              )
-            }
-            className="w-full rounded-2xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-900 px-4 py-3 text-slate-900 dark:text-slate-100 shadow-sm outline-none focus:border-blue-500 focus:ring-4 focus:ring-blue-100 dark:focus:ring-blue-950 md:w-48"
-          >
-            {frequencies.map((frequency) => (
-              <option key={frequency} value={frequency}>
-                {frequency}
-              </option>
-            ))}
-          </select>
-        </label>
+        <FilterSelect
+          label="Frequency"
+          value={selectedFrequency ?? "all"}
+          onChange={(value) =>
+            setFilter(
+              "irregularVerbFrequency",
+              value === "all" ? undefined : value
+            )
+          }
+          options={frequencies.map((frequency) => ({
+            value: frequency,
+            label: frequency
+          }))}
+        />
       </Card>
 
       <div role="tabpanel" id={`${viewMode}-panel`} aria-labelledby={`${viewMode}-tab`}>
