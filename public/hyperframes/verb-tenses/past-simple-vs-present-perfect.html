@@ -1,0 +1,482 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Past Simple vs Present Perfect — Visual Lesson</title>
+    <style>
+      :root {
+        color-scheme: dark;
+        --slate-950: #020617;
+        --slate-900: #0f172a;
+        --slate-800: #1e293b;
+        --slate-700: #334155;
+        --slate-300: #cbd5e1;
+        --slate-100: #f1f5f9;
+        --blue-400: #60a5fa;
+        --blue-500: #3b82f6;
+        --emerald-400: #34d399;
+        --emerald-500: #10b981;
+        --rose-400: #fb7185;
+        --rose-500: #f43f5e;
+        --amber-300: #fcd34d;
+        --amber-400: #fbbf24;
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+
+      body {
+        margin: 0;
+        min-height: 100vh;
+        overflow: hidden;
+        background: var(--slate-950);
+        color: white;
+        font-family:
+          Inter,
+          ui-sans-serif,
+          system-ui,
+          -apple-system,
+          BlinkMacSystemFont,
+          "Segoe UI",
+          sans-serif;
+      }
+
+      [data-composition-id="past-simple-vs-present-perfect"] {
+        position: relative;
+        width: 100vw;
+        height: 100vh;
+        min-width: 320px;
+        min-height: 180px;
+        overflow: hidden;
+        background:
+          radial-gradient(circle at 16% 18%, rgba(59, 130, 246, 0.35), transparent 28%),
+          radial-gradient(circle at 82% 24%, rgba(16, 185, 129, 0.28), transparent 30%),
+          linear-gradient(135deg, var(--slate-950), var(--slate-900) 48%, #111827);
+      }
+
+      .scene-content {
+        position: relative;
+        z-index: 2;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        width: 100%;
+        height: 100%;
+        padding: clamp(20px, 3.4vw, 56px);
+        gap: clamp(10px, 1.4vw, 18px);
+      }
+
+      .lesson-label {
+        width: fit-content;
+        border: 1px solid rgba(96, 165, 250, 0.4);
+        border-radius: 999px;
+        background: rgba(15, 23, 42, 0.72);
+        padding: 8px 14px;
+        color: var(--blue-400);
+        font-size: clamp(10px, 1.2vw, 15px);
+        font-weight: 800;
+        letter-spacing: 0.22em;
+        text-transform: uppercase;
+      }
+
+      .hero {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        align-items: center;
+        gap: clamp(18px, 3.2vw, 48px);
+      }
+
+      .headline {
+        margin: 0;
+        max-width: 980px;
+        color: var(--slate-100);
+        font-size: clamp(32px, 5.1vw, 76px);
+        font-weight: 950;
+        letter-spacing: -0.08em;
+        line-height: 0.92;
+      }
+
+      .headline span {
+        color: var(--amber-300);
+      }
+
+      .mistake-card,
+      .recap-card {
+        border: 1px solid rgba(148, 163, 184, 0.22);
+        border-radius: clamp(18px, 3vw, 36px);
+        background: rgba(15, 23, 42, 0.74);
+        box-shadow: 0 28px 90px rgba(2, 6, 23, 0.55);
+        padding: clamp(14px, 1.8vw, 22px);
+        backdrop-filter: blur(18px);
+      }
+
+      .mistake-card p,
+      .recap-card p {
+        margin: 0;
+      }
+
+      .eyebrow {
+        color: var(--rose-400);
+        font-size: clamp(11px, 1.1vw, 15px);
+        font-weight: 900;
+        letter-spacing: 0.18em;
+        text-transform: uppercase;
+      }
+
+      .wrong-sentence {
+        margin-top: 14px !important;
+        color: white;
+        font-size: clamp(20px, 2.4vw, 34px);
+        font-weight: 900;
+        letter-spacing: -0.04em;
+      }
+
+      .why {
+        margin-top: 16px !important;
+        color: var(--slate-300);
+        font-size: clamp(13px, 1.25vw, 18px);
+        line-height: 1.45;
+      }
+
+      .timeline-board {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: clamp(14px, 2vw, 24px);
+      }
+
+      .timeline-row {
+        position: relative;
+        overflow: hidden;
+        border: 1px solid rgba(148, 163, 184, 0.22);
+        border-radius: clamp(18px, 3vw, 32px);
+        background: rgba(15, 23, 42, 0.68);
+        padding: clamp(14px, 1.7vw, 20px);
+      }
+
+      .row-header {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 16px;
+        margin-bottom: 12px;
+      }
+
+      .tense-name {
+        margin: 0;
+        font-size: clamp(20px, 2vw, 30px);
+        font-weight: 950;
+        letter-spacing: -0.04em;
+      }
+
+      .tense-label {
+        border-radius: 999px;
+        padding: 6px 10px;
+        font-size: clamp(9px, 0.9vw, 12px);
+        font-weight: 900;
+        text-transform: uppercase;
+      }
+
+      .past .tense-label {
+        background: rgba(251, 113, 133, 0.16);
+        color: var(--rose-400);
+      }
+
+      .perfect .tense-label {
+        background: rgba(52, 211, 153, 0.16);
+        color: var(--emerald-400);
+      }
+
+      .line {
+        position: relative;
+        height: clamp(48px, 5.4vw, 68px);
+      }
+
+      .line::before {
+        position: absolute;
+        top: 50%;
+        right: 0;
+        left: 0;
+        height: 4px;
+        border-radius: 999px;
+        background: rgba(203, 213, 225, 0.28);
+        content: "";
+        transform: translateY(-50%);
+      }
+
+      .now-marker {
+        position: absolute;
+        top: 10%;
+        right: 12%;
+        bottom: 10%;
+        width: 3px;
+        border-radius: 999px;
+        background: var(--blue-400);
+        box-shadow: 0 0 28px rgba(96, 165, 250, 0.9);
+      }
+
+      .now-marker::after {
+        position: absolute;
+        top: -24px;
+        left: 50%;
+        color: var(--blue-400);
+        font-size: clamp(10px, 1vw, 13px);
+        font-weight: 900;
+        letter-spacing: 0.14em;
+        text-transform: uppercase;
+        content: "now";
+        transform: translateX(-50%);
+      }
+
+      .event-dot {
+        position: absolute;
+        top: 50%;
+        left: 22%;
+        width: clamp(16px, 2vw, 28px);
+        height: clamp(16px, 2vw, 28px);
+        border-radius: 999px;
+        transform: translate(-50%, -50%);
+      }
+
+      .past .event-dot {
+        background: var(--rose-500);
+        box-shadow: 0 0 30px rgba(244, 63, 94, 0.75);
+      }
+
+      .perfect .event-dot {
+        background: var(--emerald-500);
+        box-shadow: 0 0 30px rgba(16, 185, 129, 0.75);
+      }
+
+      .bridge {
+        position: absolute;
+        top: 50%;
+        left: 22%;
+        width: 66%;
+        height: 8px;
+        border-radius: 999px;
+        background: linear-gradient(90deg, var(--emerald-500), var(--blue-400));
+        box-shadow: 0 0 24px rgba(16, 185, 129, 0.45);
+        transform: translateY(-50%);
+      }
+
+      .sentence {
+        margin: 12px 0 0;
+        color: var(--slate-100);
+        font-size: clamp(15px, 1.45vw, 22px);
+        font-weight: 800;
+      }
+
+      .note {
+        margin: 6px 0 0;
+        color: var(--slate-300);
+        font-size: clamp(11px, 1vw, 14px);
+      }
+
+      .recap-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: clamp(12px, 2vw, 20px);
+      }
+
+      .recap-item {
+        border-radius: 20px;
+        padding: clamp(12px, 1.4vw, 16px);
+      }
+
+      .recap-item.past {
+        background: rgba(244, 63, 94, 0.12);
+      }
+
+      .recap-item.perfect {
+        background: rgba(16, 185, 129, 0.12);
+      }
+
+      .recap-item strong {
+        display: block;
+        color: white;
+        font-size: clamp(15px, 1.35vw, 20px);
+      }
+
+      .recap-item span {
+        display: block;
+        margin-top: 8px;
+        color: var(--slate-300);
+        font-size: clamp(11px, 0.95vw, 14px);
+        line-height: 1.4;
+      }
+
+      .glow {
+        position: absolute;
+        width: 42vw;
+        height: 42vw;
+        border-radius: 999px;
+        opacity: 0.28;
+        filter: blur(50px);
+      }
+
+      .glow.one {
+        top: -18vw;
+        left: -8vw;
+        background: var(--blue-500);
+      }
+
+      .glow.two {
+        right: -14vw;
+        bottom: -18vw;
+        background: var(--emerald-500);
+      }
+
+      .preview-controls {
+        position: absolute;
+        top: 22px;
+        right: 22px;
+        z-index: 5;
+        display: flex;
+        gap: 8px;
+      }
+
+      .preview-controls button {
+        border: 1px solid rgba(96, 165, 250, 0.45);
+        border-radius: 999px;
+        background: rgba(2, 6, 23, 0.75);
+        color: var(--slate-100);
+        cursor: pointer;
+        font: inherit;
+        font-size: 12px;
+        font-weight: 800;
+        padding: 8px 12px;
+      }
+
+      @media (max-width: 760px) {
+        .hero,
+        .timeline-board,
+        .recap-grid {
+          grid-template-columns: 1fr;
+        }
+
+        .scene-content {
+          overflow-y: auto;
+        }
+
+        .timeline-board {
+          gap: 12px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div
+      data-composition-id="past-simple-vs-present-perfect"
+      data-width="1920"
+      data-height="1080"
+      data-start="0"
+      data-duration="18"
+      data-track-index="0"
+    >
+      <div class="glow one" aria-hidden="true"></div>
+      <div class="glow two" aria-hidden="true"></div>
+
+      <main class="scene-content">
+        <div class="lesson-label">Verb Tenses · Visual Lesson</div>
+
+        <section class="hero" aria-label="Past Simple versus Present Perfect visual explanation">
+          <div>
+            <h1 class="headline">Past time or <span>present connection?</span></h1>
+          </div>
+
+          <div class="mistake-card">
+            <p class="eyebrow">Common mistake</p>
+            <p class="wrong-sentence">I have seen it yesterday.</p>
+            <p class="why">The word “yesterday” closes the time in the past. That asks for Past Simple, not Present Perfect.</p>
+          </div>
+        </section>
+
+        <section class="timeline-board" aria-label="Timeline comparison">
+          <article class="timeline-row past">
+            <div class="row-header">
+              <h2 class="tense-name">Past Simple</h2>
+              <span class="tense-label">finished past time</span>
+            </div>
+            <div class="line">
+              <span class="event-dot"></span>
+              <span class="now-marker"></span>
+            </div>
+            <p class="sentence">I saw it yesterday.</p>
+            <p class="note">The event is complete and separated from now.</p>
+          </article>
+
+          <article class="timeline-row perfect">
+            <div class="row-header">
+              <h2 class="tense-name">Present Perfect</h2>
+              <span class="tense-label">past connected to now</span>
+            </div>
+            <div class="line">
+              <span class="bridge"></span>
+              <span class="event-dot"></span>
+              <span class="now-marker"></span>
+            </div>
+            <p class="sentence">I have seen it before.</p>
+            <p class="note">The experience matters now; the exact finished time is not the point.</p>
+          </article>
+        </section>
+
+        <section class="recap-card" aria-label="Quick recap">
+          <div class="recap-grid">
+            <p class="recap-item past">
+              <strong>Use Past Simple</strong>
+              <span>when the time is finished: yesterday, last week, in 2024.</span>
+            </p>
+            <p class="recap-item perfect">
+              <strong>Use Present Perfect</strong>
+              <span>when the past creates a result, experience, or connection now.</span>
+            </p>
+          </div>
+        </section>
+      </main>
+
+      <div class="preview-controls" aria-label="Preview controls">
+        <button type="button" data-preview-play>Play lesson</button>
+        <button type="button" data-preview-reset>Reset</button>
+      </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.14.2/dist/gsap.min.js"></script>
+    <script>
+      window.__timelines = window.__timelines || {};
+
+      const gsapLoaded = typeof window.gsap !== "undefined";
+      const tl = gsapLoaded ? gsap.timeline({ paused: true }) : null;
+
+      if (tl) {
+        tl.from(".lesson-label", { y: -24, opacity: 0, duration: 0.45, ease: "power3.out" }, 0)
+        .from(".headline", { y: 52, opacity: 0, duration: 0.65, ease: "power3.out" }, 0.1)
+        .from(".mistake-card", { x: 56, opacity: 0, duration: 0.65, ease: "power3.out" }, 0.28)
+        .from(".wrong-sentence", { color: "#ffffff", duration: 0.25, ease: "power2.out" }, 1.2)
+        .to(".wrong-sentence", { color: "#fb7185", duration: 0.35, ease: "power2.out" }, 1.45)
+        .from(".timeline-row.past", { y: 44, opacity: 0, duration: 0.55, ease: "power3.out" }, 2.15)
+        .from(".timeline-row.past .event-dot", { scale: 0, duration: 0.35, ease: "back.out(1.8)" }, 2.7)
+        .from(".timeline-row.past .now-marker", { scaleY: 0, opacity: 0, duration: 0.35, ease: "power2.out" }, 2.88)
+        .from(".timeline-row.perfect", { y: 44, opacity: 0, duration: 0.55, ease: "power3.out" }, 3.45)
+        .from(".timeline-row.perfect .event-dot", { scale: 0, duration: 0.35, ease: "back.out(1.8)" }, 4.0)
+        .from(".bridge", { scaleX: 0, transformOrigin: "left center", duration: 0.65, ease: "power3.out" }, 4.18)
+        .from(".timeline-row.perfect .now-marker", { scaleY: 0, opacity: 0, duration: 0.35, ease: "power2.out" }, 4.7)
+          .from(".recap-card", { y: 42, opacity: 0, duration: 0.55, ease: "power3.out" }, 5.25)
+          .from(".recap-item", { y: 22, opacity: 0, duration: 0.35, stagger: 0.12, ease: "power2.out" }, 5.65);
+
+        window.__timelines["past-simple-vs-present-perfect"] = tl;
+
+        document.querySelector("[data-preview-play]").addEventListener("click", () => {
+          tl.restart();
+        });
+
+        document.querySelector("[data-preview-reset]").addEventListener("click", () => {
+          tl.pause(0);
+        });
+      } else {
+        document.querySelector(".preview-controls").hidden = true;
+      }
+    </script>
+  </body>
+</html>

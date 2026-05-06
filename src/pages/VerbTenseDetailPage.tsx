@@ -2,6 +2,7 @@ import { useParams } from "react-router-dom";
 import { ActionLink, BackLink } from "../components/ui";
 import { findVerbTenseFullExplanationBySlug } from "../data/verbTenseFullExplanations";
 import { findVerbTenseBySlug } from "../data/verbTenses";
+import { findVerbTenseVisualLessonBySlug } from "../data/verbTenseVisualLessons";
 
 export function VerbTenseDetailPage() {
   const { slug } = useParams();
@@ -9,6 +10,7 @@ export function VerbTenseDetailPage() {
   const fullExplanation = slug
     ? findVerbTenseFullExplanationBySlug(slug)
     : undefined;
+  const visualLesson = slug ? findVerbTenseVisualLessonBySlug(slug) : undefined;
 
   if (!verbTense) {
     return (
@@ -135,6 +137,10 @@ export function VerbTenseDetailPage() {
           </div>
         </div>
 
+        {visualLesson ? (
+          <VisualLessonSection lesson={visualLesson} />
+        ) : null}
+
         <div className="mt-8 grid gap-4 md:grid-cols-3">
           <InfoBlock title="Affirmative" value={fullExplanation.structures.affirmative} />
           <InfoBlock title="Negative" value={fullExplanation.structures.negative} />
@@ -233,6 +239,80 @@ export function VerbTenseDetailPage() {
           <ContentSection title="Related topics" items={fullExplanation.relatedTopics} />
         </div>
       </article>
+    </section>
+  );
+}
+
+function VisualLessonSection({
+  lesson
+}: {
+  lesson: NonNullable<ReturnType<typeof findVerbTenseVisualLessonBySlug>>;
+}) {
+  return (
+    <section className="mt-8 rounded-3xl border border-blue-100 bg-blue-50/70 p-4 shadow-sm dark:border-blue-500/30 dark:bg-blue-950/30 sm:p-6">
+      <div className="flex flex-wrap items-start justify-between gap-4">
+        <div>
+          <p className="text-sm font-semibold uppercase tracking-[0.3em] text-blue-700 dark:text-blue-300">
+            Visual explanation
+          </p>
+          <h3 className="mt-2 text-2xl font-black text-slate-950 dark:text-slate-50">
+            {lesson.title}
+          </h3>
+          <p className="mt-2 max-w-3xl text-slate-700 dark:text-slate-200">
+            {lesson.description}
+          </p>
+        </div>
+
+        <a
+          href={lesson.href}
+          target="_blank"
+          rel="noreferrer"
+          className="hidden rounded-full border border-blue-200 bg-white px-4 py-2 text-sm font-bold text-blue-700 shadow-sm transition duration-200 ease-out hover:-translate-y-0.5 hover:border-blue-300 hover:text-blue-800 hover:shadow-md focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-blue-100 motion-reduce:transform-none motion-reduce:transition-none dark:border-blue-500/40 dark:bg-slate-950/70 dark:text-blue-200 dark:hover:border-blue-400 dark:hover:text-blue-100 dark:focus-visible:ring-blue-950 sm:inline-flex"
+        >
+          Open lesson
+        </a>
+      </div>
+
+      <div className="mt-5 sm:hidden">
+        <div className="rounded-3xl border border-slate-700/70 bg-slate-950 p-5 shadow-inner">
+          <p className="text-xs font-semibold uppercase tracking-[0.3em] text-blue-300">
+            Visual explanation
+          </p>
+          <h4 className="mt-3 text-2xl font-black text-slate-50">
+            {lesson.title}
+          </h4>
+          <p className="mt-3 text-slate-200">{lesson.description}</p>
+
+          <div className="mt-5 grid gap-3">
+            <div className="rounded-2xl bg-rose-950/40 p-4">
+              <p className="font-bold text-rose-100">Past Simple</p>
+              <p className="mt-1 text-sm text-rose-200">Finished past time</p>
+            </div>
+            <div className="rounded-2xl bg-emerald-950/40 p-4">
+              <p className="font-bold text-emerald-100">Present Perfect</p>
+              <p className="mt-1 text-sm text-emerald-200">Past connected to now</p>
+            </div>
+          </div>
+
+          <a
+            href={lesson.href}
+            target="_blank"
+            rel="noreferrer"
+            className="mt-5 inline-flex rounded-full border border-blue-500/40 bg-blue-500/10 px-4 py-2 text-sm font-bold text-blue-200 transition duration-200 ease-out hover:border-blue-300 hover:text-blue-100 focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-blue-950 motion-reduce:transition-none"
+          >
+            Open lesson
+          </a>
+        </div>
+      </div>
+
+      <div className="mt-5 hidden overflow-hidden rounded-3xl border border-slate-200 bg-slate-950 shadow-inner dark:border-slate-700 sm:block">
+        <iframe
+          title={lesson.title}
+          src={lesson.href}
+          className="aspect-[16/10] w-full"
+          loading="lazy"
+        />
+      </div>
     </section>
   );
 }

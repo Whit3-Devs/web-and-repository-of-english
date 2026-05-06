@@ -21,6 +21,14 @@ export type VerbTense = {
   category: "present" | "past" | "future" | "perfect";
 };
 
+export type VerbTenseVisualLesson = {
+  id: string;
+  title: string;
+  description: string;
+  href: string;
+  relatedTenseSlugs: string[];
+};
+
 export type VerbTenseReferenceFamily = "present" | "past" | "future";
 
 export type VerbTenseReferenceSection = "affirmative" | "negative" | "question";

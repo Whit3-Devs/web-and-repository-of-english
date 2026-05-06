@@ -268,6 +268,32 @@ describe("Verb Tenses pages", () => {
     expect(screen.getByText("Available now")).toBeTruthy();
   });
 
+  it("renders the visual lesson for Past Simple and Present Perfect", () => {
+    const entries = ["/verb-tenses/past-simple", "/verb-tenses/present-perfect"];
+
+    for (const entry of entries) {
+      cleanup();
+      render(
+        <MemoryRouter initialEntries={[entry]}>
+          <Routes>
+            <Route path="/verb-tenses/:slug" element={<VerbTenseDetailPage />} />
+          </Routes>
+        </MemoryRouter>
+      );
+
+      expect(screen.getAllByText("Visual explanation").length).toBeGreaterThan(0);
+      expect(screen.getAllByRole("heading", { name: "Past Simple vs Present Perfect" }).length).toBeGreaterThan(0);
+      expect(screen.getByText("Finished past time")).toBeTruthy();
+      expect(screen.getByText("Past connected to now")).toBeTruthy();
+      expect(screen.getAllByRole("link", { name: "Open lesson" }).every((link) =>
+        link.getAttribute("href") === "/hyperframes/verb-tenses/past-simple-vs-present-perfect.html"
+      )).toBe(true);
+      expect(screen.getByTitle("Past Simple vs Present Perfect").getAttribute("src")).toBe(
+        "/hyperframes/verb-tenses/past-simple-vs-present-perfect.html"
+      );
+    }
+  });
+
   it("renders topic not found for an invalid slug", () => {
     render(
       <MemoryRouter initialEntries={["/verb-tenses/not-real"]}>
