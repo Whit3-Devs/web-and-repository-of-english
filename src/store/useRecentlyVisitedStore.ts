@@ -61,6 +61,28 @@ const safeStorage: StateStorage = {
   }
 };
 
+function isRecentlyVisitedEntry(value: unknown): value is RecentlyVisitedEntry {
+  if (!value || typeof value !== "object") {
+    return false;
+  }
+
+  const entry = value as Record<string, unknown>;
+
+  return (
+    typeof entry.path === "string" &&
+    entry.path.startsWith("/") &&
+    typeof entry.title === "string" &&
+    typeof entry.kind === "string" &&
+    Object.prototype.hasOwnProperty.call(recentlyVisitedKindLabels, entry.kind)
+  );
+}
+
+// Stored data is untrusted (older shapes, manual edits): keep only valid
+// entries so a bad value can never crash the Home page on every load.
+function sanitizeEntries(value: unknown): RecentlyVisitedEntry[] {
+  return Array.isArray(value) ? value.filter(isRecentlyVisitedEntry).slice(0, maxEntries) : [];
+}
+
 export const useRecentlyVisitedStore = create<RecentlyVisitedState>()(
   persist(
     (set, get) => ({
@@ -74,7 +96,12 @@ export const useRecentlyVisitedStore = create<RecentlyVisitedState>()(
     }),
     {
       name: recentlyVisitedStorageKey,
-      storage: createJSONStorage(() => safeStorage)
+      storage: createJSONStorage(() => safeStorage),
+      partialize: (state) => ({ entries: state.entries }),
+      merge: (persisted, current) => ({
+        ...current,
+        entries: sanitizeEntries((persisted as { entries?: unknown } | undefined)?.entries)
+      })
     }
   )
 );
