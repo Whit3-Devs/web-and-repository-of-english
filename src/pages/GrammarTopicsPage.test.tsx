@@ -17,6 +17,7 @@ describe("Grammar topic pages", () => {
     expect(screen.getByText("Modal Verbs Overview")).toBeTruthy();
     expect(screen.getByText("Ability and Permission")).toBeTruthy();
     expect(screen.getByText("Would and Hypotheticals")).toBeTruthy();
+    expect(screen.getAllByText("A2").length).toBeGreaterThan(0);
   });
 
   it("renders split grammar section cards", () => {
@@ -76,6 +77,7 @@ describe("Grammar topic pages", () => {
       screen.getByRole("heading", { name: "Ability and Permission" })
     ).toBeTruthy();
     expect(screen.getByText("Available now")).toBeTruthy();
+    expect(screen.getByText("A2")).toBeTruthy();
     expect(screen.getByText("What this topic helps you express")).toBeTruthy();
     expect(screen.getByText("Core rule")).toBeTruthy();
     expect(screen.getByText("Decision rules")).toBeTruthy();

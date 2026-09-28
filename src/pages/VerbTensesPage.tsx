@@ -9,7 +9,9 @@ import { verbTenseReferenceTables } from "../data/verbTenseReferenceTables";
 import { verbTenses } from "../data/verbTenses";
 import { filterVerbTenses, matchesVerbTense } from "../features/cheatsheet/search";
 import { useCheatsheetStore } from "../store/useCheatsheetStore";
+import { cefrLevelOrder, getCefrLevelBadgeVariant } from "../shared/utils/cefrLevel";
 import type {
+  CefrLevel,
   VerbTense,
   VerbTenseDecisionMapEntry,
   VerbTenseReferenceFamily,
@@ -27,6 +29,8 @@ const categories: Array<VerbTense["category"] | "all"> = [
   "future",
   "perfect"
 ];
+
+const levelFilterOptions: Array<CefrLevel | "all"> = ["all", ...cefrLevelOrder];
 
 const tabs: Array<{ id: ViewMode; label: string; description: string }> = [
   {
@@ -62,27 +66,31 @@ export function VerbTensesPage() {
   const selectedCategory = activeFilters.verbTenseCategory as
     | VerbTense["category"]
     | undefined;
+  const selectedLevel = activeFilters.verbTenseLevel as CefrLevel | undefined;
 
   const filteredVerbTenses = filterVerbTenses(verbTenses, {
     searchTerm,
-    category: selectedCategory
+    category: selectedCategory,
+    level: selectedLevel
   });
 
   const filteredReferenceGroups = useMemo(
     () =>
       filterReferenceGroups(verbTenseReferenceTables, {
         searchTerm,
-        category: selectedCategory
+        category: selectedCategory,
+        level: selectedLevel
       }),
-    [searchTerm, selectedCategory]
+    [searchTerm, selectedCategory, selectedLevel]
   );
   const filteredDecisionEntries = useMemo(
     () =>
       filterDecisionEntries(verbTenseDecisionMap, {
         searchTerm,
-        category: selectedCategory
+        category: selectedCategory,
+        level: selectedLevel
       }),
-    [searchTerm, selectedCategory]
+    [searchTerm, selectedCategory, selectedLevel]
   );
 
   const hasResults =
@@ -124,7 +132,7 @@ export function VerbTensesPage() {
         </div>
       </Card>
 
-      <Card className="grid gap-4 md:grid-cols-[1fr_auto] md:items-end">
+      <Card className="grid gap-4 md:grid-cols-[1fr_auto_auto] md:items-end">
         <SearchInput value={searchTerm} onChange={setSearchTerm} />
 
         <FilterSelect
@@ -139,6 +147,18 @@ export function VerbTensesPage() {
           options={categories.map((category) => ({
             value: category,
             label: category
+          }))}
+        />
+
+        <FilterSelect
+          label="Level"
+          value={selectedLevel ?? "all"}
+          onChange={(value) =>
+            setFilter("verbTenseLevel", value === "all" ? undefined : value)
+          }
+          options={levelFilterOptions.map((level) => ({
+            value: level,
+            label: level
           }))}
         />
       </Card>
@@ -195,6 +215,7 @@ function DecisionMapView({ entries }: { entries: VerbTenseDecisionMapEntry[] }) 
                       {category}
                     </Badge>
                   ))}
+                  <Badge variant={getCefrLevelBadgeVariant(tense.level)}>{tense.level}</Badge>
                 </div>
               </div>
 
@@ -264,6 +285,9 @@ function FullVerbTensesView({ verbTenses }: { verbTenses: VerbTense[] }) {
               <div className="flex flex-wrap items-center gap-2">
                 <Badge variant="neutral" className="capitalize">
                   {verbTense.category}
+                </Badge>
+                <Badge variant={getCefrLevelBadgeVariant(verbTense.level)}>
+                  {verbTense.level}
                 </Badge>
                 <FullExplanationLink
                   to={verbTense.fullExplanationPath}
@@ -392,7 +416,7 @@ function SimplifiedVerbTensesView({
 
 function filterReferenceGroups(
   groups: VerbTenseReferenceGroup[],
-  filters: { searchTerm?: string; category?: VerbTense["category"] }
+  filters: { searchTerm?: string; category?: VerbTense["category"]; level?: CefrLevel }
 ) {
   return groups
     .filter((group) => matchesReferenceFamilyCategory(group.family, filters.category))
@@ -401,11 +425,22 @@ function filterReferenceGroups(
       tables: group.tables
         .map((table) => ({
           ...table,
-          rows: table.rows.filter((row) => matchesReferenceRow(row, filters.searchTerm))
+          rows: table.rows.filter(
+            (row) => matchesReferenceRowLevel(row, filters.level) && matchesReferenceRow(row, filters.searchTerm)
+          )
         }))
         .filter((table) => table.rows.length > 0)
     }))
     .filter((group) => group.tables.length > 0);
+}
+
+function matchesReferenceRowLevel(row: VerbTenseReferenceRow, level?: CefrLevel) {
+  if (!level) {
+    return true;
+  }
+
+  const referenceAsVerbTense = verbTenses.find((verbTense) => verbTense.slug === row.tenseSlug);
+  return referenceAsVerbTense?.level === level;
 }
 
 function matchesReferenceFamilyCategory(
@@ -458,7 +493,7 @@ function matchesReferenceRow(row: VerbTenseReferenceRow, searchTerm = "") {
 
 function filterDecisionEntries(
   entries: VerbTenseDecisionMapEntry[],
-  filters: { searchTerm?: string; category?: VerbTense["category"] }
+  filters: { searchTerm?: string; category?: VerbTense["category"]; level?: CefrLevel }
 ) {
   return entries.filter((entry) => {
     const matchesCategory = filters.category
@@ -466,6 +501,14 @@ function filterDecisionEntries(
       : true;
 
     if (!matchesCategory) {
+      return false;
+    }
+
+    const matchesLevel = filters.level
+      ? findVerbTenseByDecisionSlug(entry.primaryTenseSlug)?.level === filters.level
+      : true;
+
+    if (!matchesLevel) {
       return false;
     }
 

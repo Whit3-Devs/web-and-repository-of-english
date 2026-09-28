@@ -24,6 +24,7 @@ export const verbTenses: VerbTense[] = [
     fullExplanationPath: "/verb-tenses/present-simple",
     hasFullExplanation: true,
     category: "present",
+    level: "A1",
   },
   {
     id: "present-continuous",
@@ -46,6 +47,7 @@ export const verbTenses: VerbTense[] = [
     fullExplanationPath: "/verb-tenses/present-continuous",
     hasFullExplanation: true,
     category: "present",
+    level: "A1",
   },
   {
     id: "present-perfect",
@@ -68,6 +70,7 @@ export const verbTenses: VerbTense[] = [
     fullExplanationPath: "/verb-tenses/present-perfect",
     hasFullExplanation: true,
     category: "present",
+    level: "A2",
   },
   {
     id: "present-perfect-continuous",
@@ -90,6 +93,7 @@ export const verbTenses: VerbTense[] = [
     fullExplanationPath: "/verb-tenses/present-perfect-continuous",
     hasFullExplanation: true,
     category: "present",
+    level: "B1",
   },
   {
     id: "past-simple",
@@ -112,6 +116,7 @@ export const verbTenses: VerbTense[] = [
     fullExplanationPath: "/verb-tenses/past-simple",
     hasFullExplanation: true,
     category: "past",
+    level: "A2",
   },
   {
     id: "past-continuous",
@@ -134,6 +139,7 @@ export const verbTenses: VerbTense[] = [
     fullExplanationPath: "/verb-tenses/past-continuous",
     hasFullExplanation: true,
     category: "past",
+    level: "A2",
   },
   {
     id: "past-perfect",
@@ -156,6 +162,7 @@ export const verbTenses: VerbTense[] = [
     fullExplanationPath: "/verb-tenses/past-perfect",
     hasFullExplanation: true,
     category: "past",
+    level: "B1",
   },
   {
     id: "past-perfect-continuous",
@@ -178,6 +185,7 @@ export const verbTenses: VerbTense[] = [
     fullExplanationPath: "/verb-tenses/past-perfect-continuous",
     hasFullExplanation: true,
     category: "past",
+    level: "B2",
   },
   {
     id: "future-simple",
@@ -200,6 +208,7 @@ export const verbTenses: VerbTense[] = [
     fullExplanationPath: "/verb-tenses/future-simple",
     hasFullExplanation: true,
     category: "future",
+    level: "A2",
   },
   {
     id: "future-continuous",
@@ -222,6 +231,7 @@ export const verbTenses: VerbTense[] = [
     fullExplanationPath: "/verb-tenses/future-continuous",
     hasFullExplanation: true,
     category: "future",
+    level: "B2",
   },
   {
     id: "future-perfect",
@@ -244,6 +254,7 @@ export const verbTenses: VerbTense[] = [
     fullExplanationPath: "/verb-tenses/future-perfect",
     hasFullExplanation: true,
     category: "future",
+    level: "B2",
   },
   {
     id: "future-perfect-continuous",
@@ -266,6 +277,7 @@ export const verbTenses: VerbTense[] = [
     fullExplanationPath: "/verb-tenses/future-perfect-continuous",
     hasFullExplanation: true,
     category: "future",
+    level: "C1",
   },
   {
     id: "future-going-to",
@@ -288,6 +300,7 @@ export const verbTenses: VerbTense[] = [
     fullExplanationPath: "/verb-tenses/future-going-to",
     hasFullExplanation: true,
     category: "future",
+    level: "A2",
   },
 ];
 

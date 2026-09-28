@@ -1,3 +1,5 @@
+export type CefrLevel = "A1" | "A2" | "B1" | "B2" | "C1";
+
 export type VerbTense = {
   id: string;
   slug: string;
@@ -19,6 +21,7 @@ export type VerbTense = {
   fullExplanationPath: string;
   hasFullExplanation: boolean;
   category: "present" | "past" | "future" | "perfect";
+  level: CefrLevel;
 };
 
 export type VerbTenseVisualLesson = {
@@ -178,6 +181,7 @@ export type GrammarTopic = {
   relatedTopics: string[];
   fullExplanationPath: string;
   hasFullExplanation: boolean;
+  level: CefrLevel;
 };
 
 export type GrammarTopicFullExplanationTableGroup =

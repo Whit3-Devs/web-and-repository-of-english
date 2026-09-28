@@ -30,7 +30,8 @@ const verbTenses: VerbTense[] = [
     relatedTopics: ["Present Continuous"],
     fullExplanationPath: "/verb-tenses/present-simple",
     hasFullExplanation: false,
-    category: "present"
+    category: "present",
+    level: "A1"
   }
 ];
 
@@ -65,7 +66,8 @@ const grammarTopics: GrammarTopic[] = [
     commonMistakes: ["He musts go. → He must go."],
     relatedTopics: ["Polite Requests", "Advice and Obligation"],
     fullExplanationPath: "/modal-verbs/modal-verbs-overview",
-    hasFullExplanation: true
+    hasFullExplanation: true,
+    level: "A2"
   },
   {
     id: "conditionals-overview",
@@ -86,7 +88,8 @@ const grammarTopics: GrammarTopic[] = [
     ],
     relatedTopics: ["Would and Hypotheticals", "Key Structure Differences"],
     fullExplanationPath: "/advanced-structures/conditionals-overview",
-    hasFullExplanation: true
+    hasFullExplanation: true,
+    level: "B1"
   },
   {
     id: "question-builder-cheat-sheet",
@@ -105,7 +108,8 @@ const grammarTopics: GrammarTopic[] = [
     ],
     relatedTopics: ["WH Questions", "English Auxiliaries"],
     fullExplanationPath: "/sentence-building/question-builder-cheat-sheet",
-    hasFullExplanation: true
+    hasFullExplanation: true,
+    level: "A1"
   },
   {
     id: "articles-and-determiners",
@@ -122,7 +126,8 @@ const grammarTopics: GrammarTopic[] = [
     commonMistakes: ["There are much people. → There are many people."],
     relatedTopics: ["Key Structure Differences", "Common Prepositions"],
     fullExplanationPath: "/grammar-foundations/articles-and-determiners",
-    hasFullExplanation: true
+    hasFullExplanation: true,
+    level: "A1"
   },
   {
     id: "gerunds-and-infinitives",
@@ -147,7 +152,8 @@ const grammarTopics: GrammarTopic[] = [
     ],
     relatedTopics: ["Key Structure Differences", "Common Prepositions"],
     fullExplanationPath: "/advanced-structures/gerunds-and-infinitives",
-    hasFullExplanation: true
+    hasFullExplanation: true,
+    level: "B1"
   },
   {
     id: "passive-voice",
@@ -172,7 +178,8 @@ const grammarTopics: GrammarTopic[] = [
     ],
     relatedTopics: ["English Auxiliaries", "Verb Tenses"],
     fullExplanationPath: "/advanced-structures/passive-voice",
-    hasFullExplanation: true
+    hasFullExplanation: true,
+    level: "B1"
   },
   {
     id: "reported-speech",
@@ -197,7 +204,8 @@ const grammarTopics: GrammarTopic[] = [
     ],
     relatedTopics: ["WH Questions", "Embedded WH Clauses"],
     fullExplanationPath: "/advanced-structures/reported-speech",
-    hasFullExplanation: true
+    hasFullExplanation: true,
+    level: "B1"
   },
   {
     id: "comparatives-and-superlatives",
@@ -222,7 +230,8 @@ const grammarTopics: GrammarTopic[] = [
     ],
     relatedTopics: ["Articles and Determiners", "Key Structure Differences"],
     fullExplanationPath: "/grammar-foundations/comparatives-and-superlatives",
-    hasFullExplanation: true
+    hasFullExplanation: true,
+    level: "A2"
   },
   {
     id: "adjectives-and-adverbs",
@@ -247,7 +256,8 @@ const grammarTopics: GrammarTopic[] = [
     ],
     relatedTopics: ["Comparatives and Superlatives", "Key Structure Differences"],
     fullExplanationPath: "/grammar-foundations/adjectives-and-adverbs",
-    hasFullExplanation: true
+    hasFullExplanation: true,
+    level: "A2"
   },
   {
     id: "connectors-and-discourse-markers",
@@ -272,7 +282,8 @@ const grammarTopics: GrammarTopic[] = [
     ],
     relatedTopics: ["Reported Speech", "Passive Voice"],
     fullExplanationPath: "/communication-patterns/connectors-and-discourse-markers",
-    hasFullExplanation: true
+    hasFullExplanation: true,
+    level: "B2"
   },
   {
     id: "practical-writing-patterns",
@@ -297,7 +308,8 @@ const grammarTopics: GrammarTopic[] = [
     ],
     relatedTopics: ["Connectors and Discourse Markers", "Reported Speech"],
     fullExplanationPath: "/communication-patterns/practical-writing-patterns",
-    hasFullExplanation: true
+    hasFullExplanation: true,
+    level: "B1"
   },
   {
     id: "phrasal-verbs",
@@ -323,7 +335,8 @@ const grammarTopics: GrammarTopic[] = [
     ],
     relatedTopics: ["Practical Writing Patterns", "Common Prepositions"],
     fullExplanationPath: "/communication-patterns/phrasal-verbs",
-    hasFullExplanation: true
+    hasFullExplanation: true,
+    level: "B1"
   },
   {
     id: "polite-requests",
@@ -336,7 +349,8 @@ const grammarTopics: GrammarTopic[] = [
     commonMistakes: ["Could you to help me? → Could you help me?"],
     relatedTopics: ["Would and Hypotheticals"],
     fullExplanationPath: "/modal-verbs/polite-requests",
-    hasFullExplanation: false
+    hasFullExplanation: false,
+    level: "A2"
   }
 ];
 

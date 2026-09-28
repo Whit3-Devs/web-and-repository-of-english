@@ -1,10 +1,12 @@
 import { useParams } from "react-router-dom";
 import { RelatedTopicsSection } from "../components/RelatedTopicsSection";
 import { SemanticCallout } from "../components/SemanticCallout";
-import { ActionLink, BackLink, PillLink } from "../components/ui";
+import { ActionLink, Badge, BackLink, PillLink } from "../components/ui";
 import { findGrammarTopicFullExplanationBySlug } from "../data/grammarTopicFullExplanations";
 import { findGrammarTopic } from "../data/grammarTopics";
+import { getCefrLevelBadgeVariant } from "../shared/utils/cefrLevel";
 import type {
+  CefrLevel,
   GrammarTopicAdjectivesAdverbsFullExplanation,
   GrammarTopicArticlesDeterminersFullExplanation,
   GrammarTopicAuxiliaryContractionTable,
@@ -84,9 +86,12 @@ export function GrammarTopicDetailPage({
               <p className="mt-4 max-w-3xl text-lg text-slate-600 dark:text-slate-400">{topic.summary}</p>
             </div>
 
-            <span className="rounded-full bg-amber-50 dark:bg-amber-950/40 px-4 py-2 text-sm font-bold text-amber-700 dark:text-amber-300">
-              Coming soon
-            </span>
+            <div className="flex flex-wrap items-center gap-2">
+              <Badge variant={getCefrLevelBadgeVariant(topic.level)}>{topic.level}</Badge>
+              <span className="rounded-full bg-amber-50 dark:bg-amber-950/40 px-4 py-2 text-sm font-bold text-amber-700 dark:text-amber-300">
+                Coming soon
+              </span>
+            </div>
           </div>
 
           <div className="mt-8 grid gap-4 md:grid-cols-3">
@@ -114,7 +119,7 @@ export function GrammarTopicDetailPage({
       <BackLink to={backPath} label={`Back to ${backLabel}`} />
 
       <article className="rounded-3xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-900 p-8 shadow-sm">
-        <Header title={fullExplanation.title} overview={fullExplanation.overview} />
+        <Header title={fullExplanation.title} overview={fullExplanation.overview} level={topic.level} />
 
         {fullExplanation.contentType === "prepositions" ? (
           <PrepositionsContent explanation={fullExplanation} />
@@ -158,7 +163,15 @@ export function GrammarTopicDetailPage({
   );
 }
 
-function Header({ title, overview }: { title: string; overview: string }) {
+function Header({
+  title,
+  overview,
+  level
+}: {
+  title: string;
+  overview: string;
+  level: CefrLevel;
+}) {
   return (
     <div className="flex flex-wrap items-start justify-between gap-4">
       <div>
@@ -169,9 +182,12 @@ function Header({ title, overview }: { title: string; overview: string }) {
         <p className="mt-4 max-w-3xl text-lg text-slate-600 dark:text-slate-400">{overview}</p>
       </div>
 
-      <span className="rounded-full bg-emerald-50 dark:bg-emerald-950/40 px-4 py-2 text-sm font-bold text-emerald-700 dark:text-emerald-300">
-        Available now
-      </span>
+      <div className="flex flex-wrap items-center gap-2">
+        <Badge variant={getCefrLevelBadgeVariant(level)}>{level}</Badge>
+        <span className="rounded-full bg-emerald-50 dark:bg-emerald-950/40 px-4 py-2 text-sm font-bold text-emerald-700 dark:text-emerald-300">
+          Available now
+        </span>
+      </div>
     </div>
   );
 }

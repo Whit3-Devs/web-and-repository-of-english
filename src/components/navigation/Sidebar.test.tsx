@@ -34,6 +34,7 @@ describe("Sidebar", () => {
 
     const activeLink = screen.getByRole("link", { name: "Present Perfect" });
     expect(activeLink.getAttribute("aria-current")).toBe("page");
+    expect(within(activeLink).getByText("A2")).toBeTruthy();
 
     const modalVerbsButton = screen.getByRole("button", { name: /modal verbs/i });
     expect(modalVerbsButton.getAttribute("aria-expanded")).toBe("false");
@@ -85,6 +86,9 @@ describe("Sidebar", () => {
     expect(screen.queryByRole("button", { name: /modal verbs/i })).toBeNull();
     expect(screen.queryByRole("link", { name: "Home" })).toBeNull();
     expect(screen.getByText(/topics found/)).toBeTruthy();
+
+    // Level chips are hidden while filtering to keep matched rows tidy.
+    expect(screen.queryByText("A2")).toBeNull();
   });
 
   it("shows an empty state and clears the filter through the clear button", () => {

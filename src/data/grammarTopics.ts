@@ -87,7 +87,8 @@ export const grammarTopics: GrammarTopic[] = [
       "Would and Hypotheticals"
     ],
     fullExplanationPath: "/modal-verbs/modal-verbs-overview",
-    hasFullExplanation: true
+    hasFullExplanation: true,
+    level: "A2"
   },
   {
     id: "ability-and-permission",
@@ -115,7 +116,8 @@ export const grammarTopics: GrammarTopic[] = [
     ],
     relatedTopics: ["Polite Requests", "Possibility and Probability"],
     fullExplanationPath: "/modal-verbs/ability-and-permission",
-    hasFullExplanation: true
+    hasFullExplanation: true,
+    level: "A2"
   },
   {
     id: "advice-and-obligation",
@@ -143,7 +145,8 @@ export const grammarTopics: GrammarTopic[] = [
     ],
     relatedTopics: ["Ability and Permission", "Possibility and Probability"],
     fullExplanationPath: "/modal-verbs/advice-and-obligation",
-    hasFullExplanation: true
+    hasFullExplanation: true,
+    level: "A2"
   },
   {
     id: "possibility-and-probability",
@@ -171,7 +174,8 @@ export const grammarTopics: GrammarTopic[] = [
     ],
     relatedTopics: ["Advice and Obligation", "Ability and Permission"],
     fullExplanationPath: "/modal-verbs/possibility-and-probability",
-    hasFullExplanation: true
+    hasFullExplanation: true,
+    level: "B1"
   },
   {
     id: "polite-requests",
@@ -199,7 +203,8 @@ export const grammarTopics: GrammarTopic[] = [
     ],
     relatedTopics: ["Would and Hypotheticals", "Ability and Permission"],
     fullExplanationPath: "/modal-verbs/polite-requests",
-    hasFullExplanation: true
+    hasFullExplanation: true,
+    level: "A2"
   },
   {
     id: "would-and-hypotheticals",
@@ -227,7 +232,8 @@ export const grammarTopics: GrammarTopic[] = [
     ],
     relatedTopics: ["Polite Requests", "Advice and Obligation"],
     fullExplanationPath: "/modal-verbs/would-and-hypotheticals",
-    hasFullExplanation: true
+    hasFullExplanation: true,
+    level: "B1"
   },
   {
     id: "conditionals-overview",
@@ -259,7 +265,8 @@ export const grammarTopics: GrammarTopic[] = [
       "Verb Tenses"
     ],
     fullExplanationPath: "/advanced-structures/conditionals-overview",
-    hasFullExplanation: true
+    hasFullExplanation: true,
+    level: "B1"
   },
   {
     id: "question-builder-cheat-sheet",
@@ -293,7 +300,8 @@ export const grammarTopics: GrammarTopic[] = [
       "Polite Requests"
     ],
     fullExplanationPath: "/sentence-building/question-builder-cheat-sheet",
-    hasFullExplanation: true
+    hasFullExplanation: true,
+    level: "A1"
   },
   {
     id: "wh-questions",
@@ -320,7 +328,8 @@ export const grammarTopics: GrammarTopic[] = [
     ],
     relatedTopics: ["Embedded WH Clauses", "English Auxiliaries"],
     fullExplanationPath: "/sentence-building/wh-questions",
-    hasFullExplanation: true
+    hasFullExplanation: true,
+    level: "A1"
   },
   {
     id: "embedded-wh-clauses",
@@ -345,7 +354,8 @@ export const grammarTopics: GrammarTopic[] = [
     ],
     relatedTopics: ["WH Questions", "English Auxiliaries"],
     fullExplanationPath: "/sentence-building/embedded-wh-clauses",
-    hasFullExplanation: true
+    hasFullExplanation: true,
+    level: "B1"
   },
   {
     id: "english-auxiliaries",
@@ -373,7 +383,8 @@ export const grammarTopics: GrammarTopic[] = [
     ],
     relatedTopics: ["Verb Tenses", "Modal Verbs"],
     fullExplanationPath: "/sentence-building/english-auxiliaries",
-    hasFullExplanation: true
+    hasFullExplanation: true,
+    level: "A1"
   },
   {
     id: "common-prepositions",
@@ -400,7 +411,8 @@ export const grammarTopics: GrammarTopic[] = [
     ],
     relatedTopics: ["Key Structure Differences", "WH Questions"],
     fullExplanationPath: "/grammar-foundations/common-prepositions",
-    hasFullExplanation: true
+    hasFullExplanation: true,
+    level: "A1"
   },
   {
     id: "pronouns-possessives-and-object-forms",
@@ -427,7 +439,8 @@ export const grammarTopics: GrammarTopic[] = [
     ],
     relatedTopics: ["Common Prepositions", "English Auxiliaries"],
     fullExplanationPath: "/grammar-foundations/pronouns-possessives-and-object-forms",
-    hasFullExplanation: true
+    hasFullExplanation: true,
+    level: "A1"
   },
   {
     id: "articles-and-determiners",
@@ -456,7 +469,8 @@ export const grammarTopics: GrammarTopic[] = [
     ],
     relatedTopics: ["Key Structure Differences", "Common Prepositions", "Pronouns, Possessives, Object Forms, and Reflexives"],
     fullExplanationPath: "/grammar-foundations/articles-and-determiners",
-    hasFullExplanation: true
+    hasFullExplanation: true,
+    level: "A1"
   },
   {
     id: "gerunds-and-infinitives",
@@ -489,7 +503,8 @@ export const grammarTopics: GrammarTopic[] = [
       "Common Prepositions"
     ],
     fullExplanationPath: "/advanced-structures/gerunds-and-infinitives",
-    hasFullExplanation: true
+    hasFullExplanation: true,
+    level: "B1"
   },
   {
     id: "passive-voice",
@@ -523,7 +538,8 @@ export const grammarTopics: GrammarTopic[] = [
       "Key Structure Differences"
     ],
     fullExplanationPath: "/advanced-structures/passive-voice",
-    hasFullExplanation: true
+    hasFullExplanation: true,
+    level: "B1"
   },
   {
     id: "reported-speech",
@@ -557,7 +573,8 @@ export const grammarTopics: GrammarTopic[] = [
       "Key Structure Differences"
     ],
     fullExplanationPath: "/advanced-structures/reported-speech",
-    hasFullExplanation: true
+    hasFullExplanation: true,
+    level: "B1"
   },
   {
     id: "comparatives-and-superlatives",
@@ -590,7 +607,8 @@ export const grammarTopics: GrammarTopic[] = [
       "Adjectives and Adverbs"
     ],
     fullExplanationPath: "/grammar-foundations/comparatives-and-superlatives",
-    hasFullExplanation: true
+    hasFullExplanation: true,
+    level: "A2"
   },
   {
     id: "adjectives-and-adverbs",
@@ -623,7 +641,8 @@ export const grammarTopics: GrammarTopic[] = [
       "English Auxiliaries"
     ],
     fullExplanationPath: "/grammar-foundations/adjectives-and-adverbs",
-    hasFullExplanation: true
+    hasFullExplanation: true,
+    level: "A2"
   },
   {
     id: "connectors-and-discourse-markers",
@@ -657,7 +676,8 @@ export const grammarTopics: GrammarTopic[] = [
       "Key Structure Differences"
     ],
     fullExplanationPath: "/communication-patterns/connectors-and-discourse-markers",
-    hasFullExplanation: true
+    hasFullExplanation: true,
+    level: "B2"
   },
   {
     id: "practical-writing-patterns",
@@ -692,7 +712,8 @@ export const grammarTopics: GrammarTopic[] = [
       "Polite Requests"
     ],
     fullExplanationPath: "/communication-patterns/practical-writing-patterns",
-    hasFullExplanation: true
+    hasFullExplanation: true,
+    level: "B1"
   },
   {
     id: "phrasal-verbs",
@@ -727,7 +748,8 @@ export const grammarTopics: GrammarTopic[] = [
       "Gerunds and Infinitives"
     ],
     fullExplanationPath: "/communication-patterns/phrasal-verbs",
-    hasFullExplanation: true
+    hasFullExplanation: true,
+    level: "B1"
   },
   {
     id: "key-structure-differences",
@@ -754,7 +776,8 @@ export const grammarTopics: GrammarTopic[] = [
     ],
     relatedTopics: ["Verb Tenses", "Modal Verbs", "Common Prepositions"],
     fullExplanationPath: "/sentence-building/key-structure-differences",
-    hasFullExplanation: true
+    hasFullExplanation: true,
+    level: "B1"
   }
 ];
 

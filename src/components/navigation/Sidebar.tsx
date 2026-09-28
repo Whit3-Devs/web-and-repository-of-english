@@ -263,14 +263,24 @@ export function Sidebar({ onNavigate, headerAction }: SidebarProps) {
                         {subgroup.label}
                       </p>
                       {subgroup.items.map((item) => (
-                        <NavItemLink key={item.id} to={item.to} onNavigate={onNavigate}>
+                        <NavItemLink
+                          key={item.id}
+                          to={item.to}
+                          level={filtered.isFiltering ? undefined : item.level}
+                          onNavigate={onNavigate}
+                        >
                           {item.label}
                         </NavItemLink>
                       ))}
                     </div>
                   ))
                 : group.items.map((item) => (
-                    <NavItemLink key={item.id} to={item.to} onNavigate={onNavigate}>
+                    <NavItemLink
+                      key={item.id}
+                      to={item.to}
+                      level={filtered.isFiltering ? undefined : item.level}
+                      onNavigate={onNavigate}
+                    >
                       {item.label}
                     </NavItemLink>
                   ))}

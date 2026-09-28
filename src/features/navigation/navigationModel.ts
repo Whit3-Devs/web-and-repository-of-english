@@ -5,12 +5,14 @@ import {
 } from "../../data/grammarTopics";
 import { irregularVerbs } from "../../data/irregularVerbs";
 import { verbTenses } from "../../data/verbTenses";
+import type { CefrLevel } from "../../shared/types/content";
 import { normalizeText } from "../../shared/utils/normalizeText";
 
 export type NavLink = {
   id: string;
   label: string;
   to: string;
+  level?: CefrLevel;
 };
 
 export type NavSubgroup = {
@@ -74,7 +76,8 @@ function buildVerbTensesGroup(): NavGroup {
         .map((tense) => ({
           id: tense.id,
           label: tense.name,
-          to: tense.fullExplanationPath
+          to: tense.fullExplanationPath,
+          level: tense.level
         }));
 
       return {
@@ -100,7 +103,8 @@ function buildGrammarTopicGroups(): NavGroup[] {
     const items = getGrammarTopicsBySection(section).map((topic) => ({
       id: topic.id,
       label: topic.title,
-      to: topic.fullExplanationPath
+      to: topic.fullExplanationPath,
+      level: topic.level
     }));
 
     return {

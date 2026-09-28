@@ -1,6 +1,7 @@
 import type { GrammarTopic } from "../shared/types/content";
+import { getCefrLevelBadgeVariant } from "../shared/utils/cefrLevel";
 import { FullExplanationLink } from "./FullExplanationLink";
-import { Card } from "./ui";
+import { Badge, Card } from "./ui";
 
 type GrammarTopicCardProps = {
   topic: GrammarTopic;
@@ -16,10 +17,13 @@ export function GrammarTopicCard({ topic }: GrammarTopicCardProps) {
             <p className="mt-2 max-w-3xl text-slate-600 dark:text-slate-400">{topic.summary}</p>
           </div>
 
-          <FullExplanationLink
-            to={topic.fullExplanationPath}
-            available={topic.hasFullExplanation}
-          />
+          <div className="flex flex-wrap items-center gap-2">
+            <Badge variant={getCefrLevelBadgeVariant(topic.level)}>{topic.level}</Badge>
+            <FullExplanationLink
+              to={topic.fullExplanationPath}
+              available={topic.hasFullExplanation}
+            />
+          </div>
         </div>
 
         <div className="mt-5 grid gap-4 md:grid-cols-3">

@@ -27,7 +27,8 @@ const availableTopic: GrammarTopic = {
   ],
   relatedTopics: ["WH Questions", "English Auxiliaries"],
   fullExplanationPath: "/sentence-building/question-builder-cheat-sheet",
-  hasFullExplanation: true
+  hasFullExplanation: true,
+  level: "A1"
 };
 
 const comingSoonTopic: GrammarTopic = {

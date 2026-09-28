@@ -135,6 +135,25 @@ describe("Verb Tenses pages", () => {
     ).toBeTruthy();
   });
 
+  it("shows a CEFR level badge on Full view cards and filters by level", () => {
+    render(
+      <MemoryRouter>
+        <VerbTensesPage />
+      </MemoryRouter>
+    );
+
+    fireEvent.click(screen.getByRole("tab", { name: /full/i }));
+
+    expect(screen.getAllByText("A1").length).toBeGreaterThan(0);
+
+    fireEvent.change(screen.getByLabelText("Level"), {
+      target: { value: "B1" }
+    });
+
+    expect(screen.getByText("Present Perfect Continuous")).toBeTruthy();
+    expect(screen.queryByText("Present Simple")).toBeNull();
+  });
+
   it("shows the shared empty state when filters remove all results", () => {
     render(
       <MemoryRouter>
@@ -160,6 +179,7 @@ describe("Verb Tenses pages", () => {
 
     expect(screen.getByRole("heading", { name: "Present Simple" })).toBeTruthy();
     expect(screen.getByText("Available now")).toBeTruthy();
+    expect(screen.getByText("A1")).toBeTruthy();
     expect(screen.getByText("Overview / main use")).toBeTruthy();
     expect(screen.getByText("Decision rules")).toBeTruthy();
     expect(screen.getByText("Why this tense")).toBeTruthy();

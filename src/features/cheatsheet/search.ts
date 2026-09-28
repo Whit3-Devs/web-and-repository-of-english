@@ -1,4 +1,5 @@
 import type {
+  CefrLevel,
   GrammarTopic,
   GrammarTopicSection,
   IrregularVerb,
@@ -10,6 +11,7 @@ import { normalizeText } from "../../shared/utils/normalizeText";
 type VerbTenseFilters = {
   searchTerm?: string;
   category?: VerbTense["category"];
+  level?: CefrLevel;
   hasFullExplanation?: boolean;
 };
 
@@ -102,10 +104,11 @@ export function matchesGrammarTopic(topic: GrammarTopic, searchTerm: string) {
 
 export function filterVerbTenses(
   verbTenses: VerbTense[],
-  { searchTerm = "", category, hasFullExplanation }: VerbTenseFilters
+  { searchTerm = "", category, level, hasFullExplanation }: VerbTenseFilters
 ) {
   return verbTenses.filter((verbTense) => {
     const matchesCategory = category ? verbTense.category === category : true;
+    const matchesLevel = level ? verbTense.level === level : true;
     const matchesFullExplanation =
       typeof hasFullExplanation === "boolean"
         ? verbTense.hasFullExplanation === hasFullExplanation
@@ -113,6 +116,7 @@ export function filterVerbTenses(
 
     return (
       matchesCategory &&
+      matchesLevel &&
       matchesFullExplanation &&
       matchesVerbTense(verbTense, searchTerm)
     );
