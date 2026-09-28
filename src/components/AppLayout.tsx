@@ -10,6 +10,10 @@ import { findVerbTenseBySlug } from "../data/verbTenses";
 import { MobileNavBar } from "./navigation/MobileNavBar";
 import { Sidebar } from "./navigation/Sidebar";
 import { useMediaQuery } from "../shared/hooks/useMediaQuery";
+import {
+  useRecentlyVisitedStore,
+  type RecentlyVisitedEntry
+} from "../store/useRecentlyVisitedStore";
 
 // Matches Tailwind's `lg` breakpoint, where the sidebar replaces the mobile drawer.
 const desktopQuery = "(min-width: 1024px)";
@@ -33,6 +37,7 @@ export function AppLayout() {
   const pageTitle = getPageTitle(location.pathname);
   const pageDescription = getPageDescription(location.pathname);
   useDocumentMeta({ title: pageTitle, description: pageDescription, pathname: location.pathname });
+  useRecordVisit(location.pathname, pageTitle);
   const isDesktop = useMediaQuery(desktopQuery);
 
   return (
@@ -167,6 +172,49 @@ function setMetaContent(selector: string, content: string) {
 
 function setCanonicalHref(href: string) {
   document.querySelector('link[rel="canonical"]')?.setAttribute("href", href);
+}
+
+// Records topic/tense/verb detail pages (not Home, not listing pages) so the
+// Home page can show a "Continue studying" shortcut. Kept as one effect here
+// rather than spread across every detail page component.
+function useRecordVisit(pathname: string, title: string) {
+  const recordVisit = useRecentlyVisitedStore((state) => state.recordVisit);
+
+  useEffect(() => {
+    const entry = getVisitedEntry(pathname, title);
+
+    if (entry) {
+      recordVisit(entry);
+    }
+  }, [pathname, title, recordVisit]);
+}
+
+function getVisitedEntry(pathname: string, title: string): RecentlyVisitedEntry | undefined {
+  const verbTenseMatch = matchPath("/verb-tenses/:slug", pathname);
+  if (verbTenseMatch?.params.slug && findVerbTenseBySlug(verbTenseMatch.params.slug)) {
+    return { path: pathname, title, kind: "verb-tense" };
+  }
+
+  for (const section of visibleGrammarTopicSections) {
+    const details = grammarTopicSectionDetails[section];
+    const grammarTopicMatch = matchPath(`${details.path}/:slug`, pathname);
+    if (
+      grammarTopicMatch?.params.slug &&
+      findGrammarTopic(section, grammarTopicMatch.params.slug)
+    ) {
+      return { path: pathname, title, kind: "grammar-topic" };
+    }
+  }
+
+  const irregularVerbMatch = matchPath("/irregular-verbs/:slug", pathname);
+  if (
+    irregularVerbMatch?.params.slug &&
+    findIrregularVerbBySlug(irregularVerbMatch.params.slug)
+  ) {
+    return { path: pathname, title, kind: "irregular-verb" };
+  }
+
+  return undefined;
 }
 
 function getPageTitle(pathname: string) {

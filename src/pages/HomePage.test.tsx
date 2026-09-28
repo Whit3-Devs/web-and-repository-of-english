@@ -1,54 +1,133 @@
-import { render, screen } from "@testing-library/react";
+import { render, screen, within } from "@testing-library/react";
 import { MemoryRouter, Route, Routes } from "react-router-dom";
-import { describe, expect, it } from "vitest";
+import { beforeEach, describe, expect, it } from "vitest";
 import { App } from "../App";
+import { useRecentlyVisitedStore } from "../store/useRecentlyVisitedStore";
 import { HomePage } from "./HomePage";
 import { IrregularVerbDetailPage } from "./IrregularVerbDetailPage";
 
 describe("Home page topic directory", () => {
-  it("renders grouped sections with direct topic links", () => {
-    render(
-      <MemoryRouter>
-        <HomePage />
-      </MemoryRouter>
-    );
-
-    expect(screen.getByText("Verb Tenses")).toBeTruthy();
-    expect(screen.getByText("Modal Verbs")).toBeTruthy();
-    expect(screen.getByText("Sentence Building")).toBeTruthy();
-    expect(screen.getByText("Grammar Foundations")).toBeTruthy();
-    expect(screen.getByText("Advanced Structures")).toBeTruthy();
-    expect(screen.getByText("Communication Patterns")).toBeTruthy();
-    expect(screen.getByText("Irregular Verbs")).toBeTruthy();
-
-    expect(screen.getByRole("link", { name: "Present Simple" })).toBeTruthy();
-    expect(screen.getByRole("link", { name: "Modal Verbs Overview" })).toBeTruthy();
-    expect(screen.getByRole("link", { name: "Polite Requests" })).toBeTruthy();
-    expect(screen.getByRole("link", { name: "Question Builder Cheat Sheet" })).toBeTruthy();
-    expect(screen.getByRole("link", { name: "WH Questions" })).toBeTruthy();
-    expect(screen.getByRole("link", { name: "Conditionals Overview" })).toBeTruthy();
-    expect(screen.getByRole("link", { name: "Phrasal Verbs" })).toBeTruthy();
-    expect(screen.getByRole("link", { name: "awake" })).toBeTruthy();
+  beforeEach(() => {
+    useRecentlyVisitedStore.setState({ entries: [] });
   });
 
-  it("renders view-all links for grouped sections", () => {
+  it("renders a hero with a single h1 and links to the first A1 topic and irregular verbs", () => {
     render(
       <MemoryRouter>
         <HomePage />
       </MemoryRouter>
     );
 
-    expect(screen.getByRole("link", { name: "View all verb tenses →" })).toBeTruthy();
-    expect(
-      screen.getByRole("link", { name: "View all modal verb topics →" })
-    ).toBeTruthy();
-    expect(screen.getByRole("link", { name: "View all sentence building topics →" })).toBeTruthy();
-    expect(screen.getByRole("link", { name: "View all grammar foundation topics →" })).toBeTruthy();
-    expect(screen.getByRole("link", { name: "View all advanced structure topics →" })).toBeTruthy();
-    expect(screen.getByRole("link", { name: "View all communication pattern topics →" })).toBeTruthy();
-    expect(
-      screen.getByRole("link", { name: "View all irregular verbs →" })
-    ).toBeTruthy();
+    expect(screen.getAllByRole("heading", { level: 1 }).length).toBe(1);
+    expect(screen.getByRole("link", { name: /start with the basics/i }).getAttribute("href")).toBe(
+      "/verb-tenses/present-simple"
+    );
+    expect(screen.getByRole("link", { name: "Browse irregular verbs" }).getAttribute("href")).toBe(
+      "/irregular-verbs"
+    );
+  });
+
+  it("renders the learning path grouped by CEFR level with section metadata", () => {
+    render(
+      <MemoryRouter>
+        <HomePage />
+      </MemoryRouter>
+    );
+
+    const learningPath = screen.getByRole("heading", { name: "Learning path" }).closest("section");
+    expect(learningPath).toBeTruthy();
+
+    const a1Link = within(learningPath as HTMLElement).getByRole("link", {
+      name: /present simple/i
+    });
+    expect(a1Link.getAttribute("href")).toBe("/verb-tenses/present-simple");
+
+    const c1Badge = within(learningPath as HTMLElement).getByText("C1");
+    expect(c1Badge).toBeTruthy();
+  });
+
+  it("renders section overview cards without full topic lists", () => {
+    render(
+      <MemoryRouter>
+        <HomePage />
+      </MemoryRouter>
+    );
+
+    const sectionsPanel = screen.getByRole("heading", { name: "Sections" }).closest("section");
+    expect(sectionsPanel).toBeTruthy();
+    const sections = within(sectionsPanel as HTMLElement);
+
+    expect(sections.getByRole("heading", { name: "Verb Tenses" })).toBeTruthy();
+    expect(sections.getByRole("heading", { name: "Modal Verbs" })).toBeTruthy();
+    expect(sections.getByRole("heading", { name: "Sentence Building" })).toBeTruthy();
+    expect(sections.getByRole("heading", { name: "Grammar Foundations" })).toBeTruthy();
+    expect(sections.getByRole("heading", { name: "Advanced Structures" })).toBeTruthy();
+    expect(sections.getByRole("heading", { name: "Communication Patterns" })).toBeTruthy();
+    expect(sections.getByRole("heading", { name: "Irregular Verbs" })).toBeTruthy();
+
+    expect(sections.getAllByRole("link", { name: "View all →" }).length).toBeGreaterThan(0);
+    // Section overview cards no longer list every individual topic.
+    expect(sections.queryByRole("link", { name: "Modal Verbs Overview" })).toBeNull();
+  });
+
+  it("hides the continue studying section when there is no visit history", () => {
+    render(
+      <MemoryRouter>
+        <HomePage />
+      </MemoryRouter>
+    );
+
+    expect(screen.queryByText("Continue studying")).toBeNull();
+  });
+
+  it("shows the continue studying section from recorded visits", () => {
+    useRecentlyVisitedStore.setState({
+      entries: [
+        { path: "/verb-tenses/present-perfect", title: "Present Perfect", kind: "verb-tense" }
+      ]
+    });
+
+    render(
+      <MemoryRouter>
+        <HomePage />
+      </MemoryRouter>
+    );
+
+    const continueStudying = screen
+      .getByRole("heading", { name: "Continue studying" })
+      .closest("section");
+    expect(continueStudying).toBeTruthy();
+
+    const scoped = within(continueStudying as HTMLElement);
+    const link = scoped.getByRole("link", { name: /present perfect/i });
+    expect(link.getAttribute("href")).toBe("/verb-tenses/present-perfect");
+    expect(scoped.getByText("Verb tense")).toBeTruthy();
+  });
+
+  it("records a visited verb tense detail page from AppLayout's route effect", async () => {
+    render(
+      <MemoryRouter initialEntries={["/verb-tenses/present-perfect"]}>
+        <App />
+      </MemoryRouter>
+    );
+
+    expect(await screen.findByRole("heading", { name: "Present Perfect" })).toBeTruthy();
+    expect(useRecentlyVisitedStore.getState().entries[0]).toEqual({
+      path: "/verb-tenses/present-perfect",
+      title: "Present Perfect",
+      kind: "verb-tense"
+    });
+  });
+
+  it("does not record Home or an invalid detail slug as a visit", async () => {
+    render(
+      <MemoryRouter initialEntries={["/verb-tenses/not-real"]}>
+        <App />
+      </MemoryRouter>
+    );
+
+    await screen.findByRole("heading", { name: "Topic not found" });
+    expect(useRecentlyVisitedStore.getState().entries).toEqual([]);
   });
 
   it("supports direct irregular verb detail routing", () => {

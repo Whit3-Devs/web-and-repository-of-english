@@ -1,9 +1,11 @@
 import type { Meta, StoryObj } from "@storybook/react-vite";
 import { MemoryRouter } from "react-router-dom";
-import { ActionLink, Badge, Card, PillLink } from "../components/ui";
+import { useRecentlyVisitedStore } from "../store/useRecentlyVisitedStore";
+import { HomePage } from "./HomePage";
 
 const meta = {
-  title: "Pages/HomePage/Composition",
+  title: "Pages/HomePage",
+  component: HomePage,
   decorators: [
     (Story) => (
       <MemoryRouter>
@@ -12,55 +14,33 @@ const meta = {
     )
   ],
   tags: ["autodocs"]
-} satisfies Meta;
+} satisfies Meta<typeof HomePage>;
 
 export default meta;
 
 type Story = StoryObj<typeof meta>;
 
-const topics = [
-  { label: "Present Simple", to: "/verb-tenses/present-simple" },
-  { label: "Present Continuous", to: "/verb-tenses/present-continuous" },
-  { label: "Present Perfect", to: "/verb-tenses/present-perfect" },
-  { label: "Future Simple", to: "/verb-tenses/future-simple" }
-];
+export const NewVisitor: Story = {
+  render: () => {
+    useRecentlyVisitedStore.setState({ entries: [] });
+    return <HomePage />;
+  }
+};
 
-export const DirectorySection: Story = {
-  render: () => (
-    <section>
-      <Card interactive>
-        <div className="flex flex-wrap items-start justify-between gap-4">
-          <div>
-            <h3 className="text-2xl font-black text-slate-950 dark:text-slate-50">
-              Verb Tenses
-            </h3>
-            <p className="mt-2 max-w-3xl text-slate-600 dark:text-slate-400">
-              Open any tense directly and jump into its full explanation route.
-            </p>
-          </div>
-          <Badge variant="primary">{topics.length}</Badge>
-        </div>
-
-        <div className="mt-5 flex flex-wrap gap-3">
-          {topics.map((topic) => (
-            <PillLink
-              key={topic.label}
-              to={topic.to}
-            >
-              {topic.label}
-            </PillLink>
-          ))}
-        </div>
-
-        <div className="mt-5">
-          <ActionLink
-            to="/verb-tenses"
-            variant="text"
-          >
-            View all verb tenses →
-          </ActionLink>
-        </div>
-      </Card>
-    </section>
-  )
+export const ReturningVisitor: Story = {
+  render: () => {
+    useRecentlyVisitedStore.setState({
+      entries: [
+        { path: "/verb-tenses/present-perfect", title: "Present Perfect", kind: "verb-tense" },
+        {
+          path: "/modal-verbs/ability-and-permission",
+          title: "Ability and Permission",
+          kind: "grammar-topic"
+        },
+        { path: "/irregular-verbs/go", title: "go", kind: "irregular-verb" },
+        { path: "/verb-tenses/past-simple", title: "Past Simple", kind: "verb-tense" }
+      ]
+    });
+    return <HomePage />;
+  }
 };
