@@ -1044,7 +1044,8 @@ describe("Grammar topic pages", () => {
       </MemoryRouter>
     );
 
-    expect(screen.getByRole("button", { name: /switch to .* mode/i })).toBeTruthy();
+    expect(screen.getByRole("button", { name: "Light" })).toBeTruthy();
+    expect(screen.getByRole("button", { name: "Dark" })).toBeTruthy();
   });
 
   it("renders the GitHub calls to action in the footer", () => {

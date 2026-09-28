@@ -11,12 +11,28 @@ describe("ThemeToggle", () => {
     localStorage.clear();
   });
 
-  it("renders the light mode action by default", () => {
+  it("marks dark as pressed by default", () => {
     render(<ThemeToggle />);
 
-    expect(screen.getByRole("button", { name: "Switch to light mode" })).toBeTruthy();
-    expect(screen.getByText("Light mode")).toBeTruthy();
+    expect(screen.getByRole("button", { name: "Dark" }).getAttribute("aria-pressed")).toBe(
+      "true"
+    );
+    expect(screen.getByRole("button", { name: "Light" }).getAttribute("aria-pressed")).toBe(
+      "false"
+    );
     expect(document.documentElement.classList.contains("dark")).toBe(true);
+  });
+
+  it("persists light mode and removes the dark class", () => {
+    render(<ThemeToggle />);
+
+    fireEvent.click(screen.getByRole("button", { name: "Light" }));
+
+    expect(localStorage.getItem(themeStorageKey)).toBe("light");
+    expect(document.documentElement.classList.contains("dark")).toBe(false);
+    expect(screen.getByRole("button", { name: "Light" }).getAttribute("aria-pressed")).toBe(
+      "true"
+    );
   });
 
   it("persists dark mode and applies the dark class", () => {
@@ -24,22 +40,12 @@ describe("ThemeToggle", () => {
 
     render(<ThemeToggle />);
 
-    fireEvent.click(screen.getByRole("button", { name: "Switch to dark mode" }));
+    fireEvent.click(screen.getByRole("button", { name: "Dark" }));
 
     expect(localStorage.getItem(themeStorageKey)).toBe("dark");
     expect(document.documentElement.classList.contains("dark")).toBe(true);
-    expect(screen.getByRole("button", { name: "Switch to light mode" })).toBeTruthy();
-  });
-
-  it("persists light mode and removes the dark class", () => {
-    useThemeStore.getState().setTheme("dark");
-
-    render(<ThemeToggle />);
-
-    fireEvent.click(screen.getByRole("button", { name: "Switch to light mode" }));
-
-    expect(localStorage.getItem(themeStorageKey)).toBe("light");
-    expect(document.documentElement.classList.contains("dark")).toBe(false);
-    expect(screen.getByRole("button", { name: "Switch to dark mode" })).toBeTruthy();
+    expect(screen.getByRole("button", { name: "Dark" }).getAttribute("aria-pressed")).toBe(
+      "true"
+    );
   });
 });
