@@ -59,7 +59,7 @@ export function IrregularVerbDetailPage() {
         <div className="mt-8 grid gap-4 md:grid-cols-3">
           <InfoBlock title="Category" value={irregularVerb.category} />
           <InfoBlock title="Frequency" value={irregularVerb.frequency} />
-          <InfoBlock title="Example" value={irregularVerb.example} />
+          <InfoBlock title="Example" value={irregularVerb.example} preserveCase />
         </div>
 
         <div className="mt-8 rounded-3xl bg-slate-50 dark:bg-slate-800 p-6">
@@ -76,11 +76,27 @@ export function IrregularVerbDetailPage() {
   );
 }
 
-function InfoBlock({ title, value }: { title: string; value: string }) {
+function InfoBlock({
+  title,
+  value,
+  preserveCase = false
+}: {
+  title: string;
+  value: string;
+  preserveCase?: boolean;
+}) {
   return (
     <div className="rounded-2xl bg-slate-50 dark:bg-slate-800 p-4">
       <h3 className="font-bold capitalize text-slate-900 dark:text-slate-100">{title}</h3>
-      <p className="mt-1 capitalize text-slate-600 dark:text-slate-200">{value}</p>
+      <p
+        className={
+          preserveCase
+            ? "mt-1 text-slate-600 dark:text-slate-200"
+            : "mt-1 capitalize text-slate-600 dark:text-slate-200"
+        }
+      >
+        {value}
+      </p>
     </div>
   );
 }
