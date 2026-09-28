@@ -31,7 +31,8 @@ const navItems = [
 export function AppLayout() {
   const location = useLocation();
   const pageTitle = getPageTitle(location.pathname);
-  useDocumentTitle(pageTitle);
+  const pageDescription = getPageDescription(location.pathname);
+  useDocumentMeta({ title: pageTitle, description: pageDescription, pathname: location.pathname });
   const isDesktop = useMediaQuery(desktopQuery);
 
   return (
@@ -135,10 +136,37 @@ function RouteLoadingFallback() {
   );
 }
 
-function useDocumentTitle(pageTitle: string) {
+const siteDescription =
+  "A focused English reference for grammar, verb tenses, modal verbs, irregular verbs, and practical usage patterns.";
+
+// Per-route document metadata. Real link previews for crawlers that don't
+// execute JS would need prerendering/SSR, which is out of scope here — this
+// only keeps the tags correct for users who navigate client-side and for any
+// crawler that does run JS.
+function useDocumentMeta({
+  title,
+  description,
+  pathname
+}: {
+  title: string;
+  description: string;
+  pathname: string;
+}) {
   useEffect(() => {
-    document.title = `${pageTitle} | English Cheatsheet`;
-  }, [pageTitle]);
+    document.title = `${title} | English Cheatsheet`;
+    setMetaContent('meta[name="description"]', description);
+    setMetaContent('meta[property="og:title"]', title);
+    setMetaContent('meta[property="og:description"]', description);
+    setCanonicalHref(`${window.location.origin}${pathname}`);
+  }, [title, description, pathname]);
+}
+
+function setMetaContent(selector: string, content: string) {
+  document.querySelector(selector)?.setAttribute("content", content);
+}
+
+function setCanonicalHref(href: string) {
+  document.querySelector('link[rel="canonical"]')?.setAttribute("href", href);
 }
 
 function getPageTitle(pathname: string) {
@@ -180,5 +208,50 @@ function getPageTitle(pathname: string) {
         }
       }
       return "English Cheatsheet";
+  }
+}
+
+function getPageDescription(pathname: string) {
+  if (pathname === "/") {
+    return siteDescription;
+  }
+
+  const verbTenseMatch = matchPath("/verb-tenses/:slug", pathname);
+  if (verbTenseMatch?.params.slug) {
+    return findVerbTenseBySlug(verbTenseMatch.params.slug)?.summary ?? siteDescription;
+  }
+
+  for (const section of visibleGrammarTopicSections) {
+    const details = grammarTopicSectionDetails[section];
+    const grammarTopicMatch = matchPath(`${details.path}/:slug`, pathname);
+    if (grammarTopicMatch?.params.slug) {
+      return (
+        findGrammarTopic(section, grammarTopicMatch.params.slug)?.summary ??
+        details.description
+      );
+    }
+  }
+
+  const irregularVerbMatch = matchPath("/irregular-verbs/:slug", pathname);
+  if (irregularVerbMatch?.params.slug) {
+    const verb = findIrregularVerbBySlug(irregularVerbMatch.params.slug);
+    return verb
+      ? `Quick reference for the irregular verb "${verb.infinitive}": base form, past simple, and past participle.`
+      : siteDescription;
+  }
+
+  switch (pathname) {
+    case "/verb-tenses":
+      return "Browse every English verb tense with quick reference tables and full explanations.";
+    case "/irregular-verbs":
+      return "Browse the full list of English irregular verbs with past simple, past participle, and examples.";
+    default:
+      for (const section of visibleGrammarTopicSections) {
+        const details = grammarTopicSectionDetails[section];
+        if (pathname === details.path) {
+          return details.description;
+        }
+      }
+      return siteDescription;
   }
 }
