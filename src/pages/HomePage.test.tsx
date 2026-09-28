@@ -116,24 +116,26 @@ describe("Home page topic directory", () => {
     expect(document.title).toBe("Conditionals Overview | English Cheatsheet");
   });
 
-  it("redirects the old core grammar list route to sentence building", () => {
+  it("redirects the old core grammar list route to sentence building", async () => {
     render(
       <MemoryRouter initialEntries={["/core-grammar"]}>
         <App />
       </MemoryRouter>
     );
 
-    expect(screen.getByRole("heading", { name: "Sentence Building" })).toBeTruthy();
+    expect(await screen.findByRole("heading", { name: "Sentence Building" })).toBeTruthy();
   });
 
-  it("redirects old core grammar topic routes to their new section", () => {
+  it("redirects old core grammar topic routes to their new section", async () => {
     render(
       <MemoryRouter initialEntries={["/core-grammar/question-builder-cheat-sheet"]}>
         <App />
       </MemoryRouter>
     );
 
-    expect(screen.getByRole("heading", { name: "Question Builder Cheat Sheet" })).toBeTruthy();
+    expect(
+      await screen.findByRole("heading", { name: "Question Builder Cheat Sheet" })
+    ).toBeTruthy();
   });
 
   it("uses ability and permission in the browser tab", () => {

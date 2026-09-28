@@ -1,4 +1,4 @@
-import { useEffect } from "react";
+import { Suspense, useEffect } from "react";
 import { Link, Outlet, matchPath, useLocation } from "react-router-dom";
 import {
   findGrammarTopic,
@@ -49,7 +49,9 @@ export function AppLayout() {
         <MobileNavBar pageTitle={pageTitle} />
 
         <main className="mx-auto w-full max-w-6xl flex-1 px-6 py-8">
-          <Outlet />
+          <Suspense fallback={<RouteLoadingFallback />}>
+            <Outlet />
+          </Suspense>
         </main>
 
         <footer className="border-t border-slate-200 bg-white transition-colors dark:border-slate-800 dark:bg-slate-950">
@@ -116,6 +118,19 @@ export function AppLayout() {
           </div>
         </footer>
       </div>
+    </div>
+  );
+}
+
+function RouteLoadingFallback() {
+  return (
+    <div
+      role="status"
+      aria-live="polite"
+      className="flex min-h-[40vh] items-center justify-center"
+    >
+      <div className="h-10 w-10 animate-spin rounded-full border-4 border-slate-200 border-t-blue-600 motion-reduce:animate-none dark:border-slate-700 dark:border-t-blue-400" />
+      <span className="sr-only">Loading page…</span>
     </div>
   );
 }
