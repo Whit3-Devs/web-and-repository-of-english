@@ -1,4 +1,5 @@
 import { useParams } from "react-router-dom";
+import { RelatedTopicsSection } from "../components/RelatedTopicsSection";
 import { ActionLink, BackLink } from "../components/ui";
 import { findVerbTenseFullExplanationBySlug } from "../data/verbTenseFullExplanations";
 import { findVerbTenseBySlug } from "../data/verbTenses";
@@ -236,7 +237,7 @@ export function VerbTenseDetailPage() {
 
         <div className="mt-8 grid gap-6 md:grid-cols-2">
           <ContentSection title="Practice ideas" items={fullExplanation.practiceIdeas} />
-          <ContentSection title="Related topics" items={fullExplanation.relatedTopics} />
+          <RelatedTopicsSection items={fullExplanation.relatedTopics} />
         </div>
       </article>
     </section>

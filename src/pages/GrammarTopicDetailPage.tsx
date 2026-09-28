@@ -1,4 +1,5 @@
 import { useParams } from "react-router-dom";
+import { RelatedTopicsSection } from "../components/RelatedTopicsSection";
 import { SemanticCallout } from "../components/SemanticCallout";
 import { ActionLink, BackLink, PillLink } from "../components/ui";
 import { findGrammarTopicFullExplanationBySlug } from "../data/grammarTopicFullExplanations";
@@ -273,7 +274,7 @@ function PrepositionsContent({
           items={explanation.quickMemory}
           variant="amber"
         />
-        <ContentSection title="Related topics" items={explanation.relatedTopics} />
+        <RelatedTopicsSection items={explanation.relatedTopics} />
       </div>
     </>
   );
@@ -413,7 +414,7 @@ function ModalTopicContent({
 
       <div className="mt-8 grid gap-6 md:grid-cols-2">
         <ContentSection title="Quick memory" items={explanation.quickMemory} variant="amber" />
-        <ContentSection title="Related topics" items={explanation.relatedTopics} />
+        <RelatedTopicsSection items={explanation.relatedTopics} />
       </div>
     </>
   );
@@ -662,7 +663,7 @@ function WhQuestionsContent({
 
       <div className="mt-8 grid gap-6 md:grid-cols-2">
         <ContentSection title="Quick memory" items={explanation.quickMemory} variant="amber" />
-        <ContentSection title="Related topics" items={explanation.relatedTopics} />
+        <RelatedTopicsSection items={explanation.relatedTopics} />
       </div>
     </>
   );
@@ -735,7 +736,7 @@ function EmbeddedWhClausesContent({
 
       <div className="mt-8 grid gap-6 md:grid-cols-2">
         <ContentSection title="Quick memory" items={explanation.quickMemory} variant="amber" />
-        <ContentSection title="Related topics" items={explanation.relatedTopics} />
+        <RelatedTopicsSection items={explanation.relatedTopics} />
       </div>
     </>
   );
@@ -837,7 +838,7 @@ function EnglishAuxiliariesContent({
 
       <div className="mt-8 grid gap-6 md:grid-cols-2">
         <ContentSection title="Quick memory" items={explanation.quickMemory} variant="amber" />
-        <ContentSection title="Related topics" items={explanation.relatedTopics} />
+        <RelatedTopicsSection items={explanation.relatedTopics} />
       </div>
     </>
   );
@@ -914,7 +915,7 @@ function PronounsPossessivesContent({
 
       <div className="mt-8 grid gap-6 md:grid-cols-2">
         <ContentSection title="Quick memory" items={explanation.quickMemory} variant="amber" />
-        <ContentSection title="Related topics" items={explanation.relatedTopics} />
+        <RelatedTopicsSection items={explanation.relatedTopics} />
       </div>
     </>
   );
@@ -1019,7 +1020,7 @@ function StructureDifferencesContent({
 
       <div className="mt-8 grid gap-6 md:grid-cols-2">
         <ContentSection title="Quick memory" items={explanation.quickMemory} variant="amber" />
-        <ContentSection title="Related topics" items={explanation.relatedTopics} />
+        <RelatedTopicsSection items={explanation.relatedTopics} />
       </div>
     </>
   );
@@ -1092,7 +1093,7 @@ function ArticlesDeterminersContent({
       <PracticeSection items={explanation.practiceItems} />
 
       <div className="mt-8">
-        <ContentSection title="Related topics" items={explanation.relatedTopics} />
+        <RelatedTopicsSection items={explanation.relatedTopics} />
       </div>
     </>
   );
@@ -1176,7 +1177,7 @@ function GerundsInfinitivesContent({
 
       <div className="mt-8 grid gap-6 md:grid-cols-2">
         <ContentSection title="Quick memory" items={explanation.quickMemory} variant="amber" />
-        <ContentSection title="Related topics" items={explanation.relatedTopics} />
+        <RelatedTopicsSection items={explanation.relatedTopics} />
       </div>
     </>
   );
@@ -1248,7 +1249,7 @@ function PassiveVoiceContent({
 
       <div className="mt-8 grid gap-6 md:grid-cols-2">
         <ContentSection title="Quick memory" items={explanation.quickMemory} variant="amber" />
-        <ContentSection title="Related topics" items={explanation.relatedTopics} />
+        <RelatedTopicsSection items={explanation.relatedTopics} />
       </div>
     </>
   );
@@ -1328,7 +1329,7 @@ function ReportedSpeechContent({
 
       <div className="mt-8 grid gap-6 md:grid-cols-2">
         <ContentSection title="Quick memory" items={explanation.quickMemory} variant="amber" />
-        <ContentSection title="Related topics" items={explanation.relatedTopics} />
+        <RelatedTopicsSection items={explanation.relatedTopics} />
       </div>
     </>
   );
@@ -1376,7 +1377,7 @@ function ComparativesSuperlativesContent({
 
       <div className="mt-8 grid gap-6 md:grid-cols-2">
         <ContentSection title="Quick memory" items={explanation.quickMemory} variant="amber" />
-        <ContentSection title="Related topics" items={explanation.relatedTopics} />
+        <RelatedTopicsSection items={explanation.relatedTopics} />
       </div>
     </>
   );
@@ -1424,7 +1425,7 @@ function AdjectivesAdverbsContent({
 
       <div className="mt-8 grid gap-6 md:grid-cols-2">
         <ContentSection title="Quick memory" items={explanation.quickMemory} variant="amber" />
-        <ContentSection title="Related topics" items={explanation.relatedTopics} />
+        <RelatedTopicsSection items={explanation.relatedTopics} />
       </div>
     </>
   );
@@ -1461,7 +1462,7 @@ function ConnectorsDiscourseMarkersContent({
 
       <div className="mt-8 grid gap-6 md:grid-cols-2">
         <ContentSection title="Quick memory" items={explanation.quickMemory} variant="amber" />
-        <ContentSection title="Related topics" items={explanation.relatedTopics} />
+        <RelatedTopicsSection items={explanation.relatedTopics} />
       </div>
     </>
   );
@@ -1496,7 +1497,7 @@ function PracticalWritingPatternsContent({
 
       <div className="mt-8 grid gap-6 md:grid-cols-2">
         <ContentSection title="Quick memory" items={explanation.quickMemory} variant="amber" />
-        <ContentSection title="Related topics" items={explanation.relatedTopics} />
+        <RelatedTopicsSection items={explanation.relatedTopics} />
       </div>
     </>
   );
@@ -1533,7 +1534,7 @@ function PhrasalVerbsContent({
 
       <div className="mt-8 grid gap-6 md:grid-cols-2">
         <ContentSection title="Quick memory" items={explanation.quickMemory} variant="amber" />
-        <ContentSection title="Related topics" items={explanation.relatedTopics} />
+        <RelatedTopicsSection items={explanation.relatedTopics} />
       </div>
     </>
   );
