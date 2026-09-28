@@ -66,6 +66,7 @@ export function App() {
         <Route path="core-grammar" element={<Navigate to="/sentence-building" replace />} />
         <Route path="core-grammar/:slug" element={<LegacyCoreGrammarRedirect />} />
         <Route path="irregular-verbs" element={<IrregularVerbsPage />} />
+        <Route path="irregular-verbs/forego" element={<Navigate to="/irregular-verbs/forgo" replace />} />
         <Route path="irregular-verbs/:slug" element={<IrregularVerbDetailPage />} />
         <Route path="*" element={<Navigate to="/" replace />} />
       </Route>

@@ -19,8 +19,8 @@ function sentenceHasWholeWord(sentence: string, form: string) {
 }
 
 describe("irregularVerbs data integrity", () => {
-  it("covers all 175 verbs", () => {
-    expect(irregularVerbs.length).toBe(175);
+  it("covers all 174 verbs", () => {
+    expect(irregularVerbs.length).toBe(174);
   });
 
   it("gives every verb a non-empty meaning", () => {

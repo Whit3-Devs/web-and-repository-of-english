@@ -805,28 +805,12 @@ export const irregularVerbs: IrregularVerb[] = [
     category: "general"
   },
   {
-    id: "forego",
-    slug: "forego",
-    infinitive: "forego",
-    pastSimple: "forewent",
-    pastParticiple: "foregone",
-    meaning: "renunciar a (variante de forgo); preceder",
-    examples: {
-      base: "You may forego dessert to save calories.",
-      past: "He forewent his bonus to help the team.",
-      participle: "He has foregone his salary to keep the company afloat."
-    },
-    fullExplanationPath: "/irregular-verbs/forego",
-    frequency: "low",
-    category: "prefixed"
-  },
-  {
     id: "forgo",
     slug: "forgo",
     infinitive: "forgo",
     pastSimple: "forwent",
     pastParticiple: "forgone",
-    meaning: "renunciar a, privarse de",
+    meaning: "renunciar a, privarse de (también se escribe 'forego')",
     examples: {
       base: "Many fans forgo sleep to watch the games live.",
       past: "She forwent her vacation to finish the project.",
