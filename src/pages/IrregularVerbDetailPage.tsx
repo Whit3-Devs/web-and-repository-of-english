@@ -59,7 +59,7 @@ export function IrregularVerbDetailPage() {
         <div className="mt-8 grid gap-4 md:grid-cols-3">
           <InfoBlock title="Category" value={irregularVerb.category} />
           <InfoBlock title="Frequency" value={irregularVerb.frequency} />
-          <InfoBlock title="Example" value={irregularVerb.example} preserveCase />
+          <InfoBlock title="Example" value={irregularVerb.examples.base} preserveCase />
         </div>
 
         <div className="mt-8 rounded-3xl bg-slate-50 dark:bg-slate-800 p-6">

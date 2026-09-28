@@ -42,11 +42,14 @@ const irregularVerbs: IrregularVerb[] = [
     pastSimple: "went",
     pastParticiple: "gone",
     meaning: "move from one place to another",
-    example: "I went home.",
+    examples: {
+      base: "I go home every day.",
+      past: "I went home.",
+      participle: "I have gone home already."
+    },
     frequency: "high",
     category: "movement",
-    fullExplanationPath: "/irregular-verbs/go",
-    hasFullExplanation: false
+    fullExplanationPath: "/irregular-verbs/go"
   }
 ];
 

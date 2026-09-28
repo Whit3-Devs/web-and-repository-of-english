@@ -126,16 +126,21 @@ export type VerbTenseFullExplanation = {
 
 export type IrregularVerbFrequency = "high" | "medium" | "low";
 
+export type IrregularVerbExamples = {
+  base: string;
+  past: string;
+  participle: string;
+};
+
 export type IrregularVerb = {
   id: string;
   slug: string;
   infinitive: string;
   pastSimple: string;
   pastParticiple: string;
-  meaning?: string;
-  example: string;
+  meaning: string;
+  examples: IrregularVerbExamples;
   fullExplanationPath: string;
-  hasFullExplanation: boolean;
   frequency: IrregularVerbFrequency;
   category: string;
 };

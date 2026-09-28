@@ -65,8 +65,10 @@ export function matchesIrregularVerb(irregularVerb: IrregularVerb, searchTerm: s
     irregularVerb.infinitive,
     irregularVerb.pastSimple,
     irregularVerb.pastParticiple,
-    irregularVerb.meaning ?? "",
-    irregularVerb.example,
+    irregularVerb.meaning,
+    irregularVerb.examples.base,
+    irregularVerb.examples.past,
+    irregularVerb.examples.participle,
     irregularVerb.frequency,
     irregularVerb.category
   ]

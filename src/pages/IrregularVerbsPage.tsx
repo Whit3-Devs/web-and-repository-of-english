@@ -138,12 +138,12 @@ function IrregularVerbsTableView({
 }) {
   return (
     <Card className="overflow-hidden" padding="sm">
-      <div className="grid grid-cols-5 gap-4 bg-slate-100 px-5 py-3 text-sm font-bold uppercase tracking-wide text-slate-600 dark:bg-slate-800 dark:text-slate-400">
+      <div className="grid grid-cols-4 gap-4 bg-slate-100 px-5 py-3 text-sm font-bold uppercase tracking-wide text-slate-600 dark:bg-slate-800 dark:text-slate-400 md:grid-cols-5">
         <span>Infinitive</span>
         <span>Past</span>
         <span>Participle</span>
         <span>Category</span>
-        <span>Example</span>
+        <span className="hidden md:block">Meaning</span>
       </div>
 
       {filteredIrregularVerbs.map((verb) => (
@@ -160,7 +160,7 @@ function IrregularVerbsTableView({
           <span>{verb.pastSimple}</span>
           <span>{verb.pastParticiple}</span>
           <span className="capitalize">{verb.category}</span>
-          <span className="text-slate-500 dark:text-slate-400">{verb.example}</span>
+          <span className="hidden text-slate-500 dark:text-slate-400 md:block">{verb.meaning}</span>
         </article>
       ))}
     </Card>
