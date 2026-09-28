@@ -61,7 +61,8 @@ describe("Home page topic directory", () => {
     );
 
     expect(screen.getByRole("heading", { name: "go" })).toBeTruthy();
-    expect(screen.getByText("Full explanation coming soon")).toBeTruthy();
+    expect(screen.getByText("ir")).toBeTruthy();
+    expect(screen.getByRole("link", { name: "grind →" })).toBeTruthy();
   });
 
   it("updates the browser tab title based on the current route", () => {

@@ -41,7 +41,7 @@ describe("Grammar topic pages", () => {
     expect(screen.getByText("Phrasal Verbs")).toBeTruthy();
   });
 
-  it("renders placeholder detail routes for irregular verb pages that are not migrated yet", () => {
+  it("renders the irregular verb study page with its forms and meaning", () => {
     render(
       <MemoryRouter initialEntries={["/irregular-verbs/go"]}>
         <Routes>
@@ -51,7 +51,7 @@ describe("Grammar topic pages", () => {
     );
 
     expect(screen.getByRole("heading", { name: "go" })).toBeTruthy();
-    expect(screen.getByText("Full explanation coming soon")).toBeTruthy();
+    expect(screen.getByText("ir")).toBeTruthy();
   });
 
   it("renders full explanation content for Ability and Permission", () => {
