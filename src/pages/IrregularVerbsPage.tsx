@@ -5,6 +5,7 @@ import { irregularVerbs } from "../data/irregularVerbs";
 import { getIrregularVerbPatternGroups } from "../data/irregularVerbPatterns";
 import { filterIrregularVerbs } from "../features/cheatsheet/search";
 import type { IrregularVerbFrequency } from "../shared/types/content";
+import { formatVerbForm } from "../shared/utils/verbFormVariants";
 import { useCheatsheetStore } from "../store/useCheatsheetStore";
 import { useMemo, useState } from "react";
 
@@ -157,8 +158,8 @@ function IrregularVerbsTableView({
           >
             {verb.infinitive}
           </Link>
-          <span>{verb.pastSimple}</span>
-          <span>{verb.pastParticiple}</span>
+          <span>{formatVerbForm(verb.pastSimple)}</span>
+          <span>{formatVerbForm(verb.pastParticiple)}</span>
           <span className="capitalize">{verb.category}</span>
           <span className="hidden text-slate-500 dark:text-slate-400 md:block">{verb.meaning}</span>
         </article>
@@ -211,8 +212,8 @@ function IrregularVerbPatternView({
                   >
                     {verb.infinitive}
                   </Link>
-                  <span>{verb.pastSimple}</span>
-                  <span>{verb.pastParticiple}</span>
+                  <span>{formatVerbForm(verb.pastSimple)}</span>
+                  <span>{formatVerbForm(verb.pastParticiple)}</span>
                   <Badge variant="neutral" className="capitalize">
                     {verb.frequency}
                   </Badge>

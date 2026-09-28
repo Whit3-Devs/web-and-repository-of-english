@@ -1,3 +1,5 @@
+import { splitVerbFormVariants } from "./verbFormVariants";
+
 export type HighlightSegment = {
   text: string;
   matched: boolean;
@@ -10,10 +12,7 @@ export type HighlightSegment = {
  * variant actually appears in the sentence.
  */
 export function highlightVerbForm(sentence: string, form: string): HighlightSegment[] {
-  const variants = form
-    .split(/[/,]/)
-    .map((variant) => variant.trim())
-    .filter(Boolean);
+  const variants = splitVerbFormVariants(form);
 
   if (!variants.length) {
     return [{ text: sentence, matched: false }];

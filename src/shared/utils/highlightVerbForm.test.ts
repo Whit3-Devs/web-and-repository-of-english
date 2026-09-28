@@ -32,6 +32,11 @@ describe("highlightVerbForm", () => {
     expect(wasSegments.some((segment) => segment.matched && segment.text === "was")).toBe(true);
   });
 
+  it("highlights the participle variant that appears (got/gotten)", () => {
+    const segments = highlightVerbForm("Things have got much better.", "got/gotten");
+    expect(segments.filter((segment) => segment.matched)).toEqual([{ text: "got", matched: true }]);
+  });
+
   it("returns the whole sentence unmatched when the form is empty", () => {
     const segments = highlightVerbForm("Just a sentence.", "");
     expect(segments).toEqual([{ text: "Just a sentence.", matched: false }]);

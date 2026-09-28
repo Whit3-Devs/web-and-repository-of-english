@@ -48,6 +48,13 @@ describe("Irregular Verb detail page", () => {
     expect(screen.getByRole("link", { name: "begin" })).toBeTruthy();
   });
 
+  it("shows slash variants spaced out and highlights the variant used", () => {
+    renderDetailPage("get");
+
+    expect(screen.getByText("got / gotten")).toBeTruthy();
+    expect(screen.getAllByText("got").length).toBeGreaterThan(0);
+  });
+
   it("falls back to a not-found state for an unknown slug", () => {
     renderDetailPage("does-not-exist");
 

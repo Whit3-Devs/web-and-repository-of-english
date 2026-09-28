@@ -12,9 +12,9 @@ export const irregularVerbs: IrregularVerb[] = [
     pastParticiple: "awoken",
     meaning: "despertar(se)",
     examples: {
-      base: "I awake early every morning to exercise.",
+      base: "Most mornings, I awake before my alarm goes off.",
       past: "She awoke suddenly during the thunderstorm.",
-      participle: "He has awoken feeling refreshed today."
+      participle: "The loud music has awoken the baby again."
     },
     fullExplanationPath: "/irregular-verbs/awake",
     frequency: "medium",
@@ -41,12 +41,12 @@ export const irregularVerbs: IrregularVerb[] = [
     slug: "bear",
     infinitive: "bear",
     pastSimple: "bore",
-    pastParticiple: "born",
+    pastParticiple: "borne/born",
     meaning: "soportar, dar a luz",
     examples: {
       base: "I can't bear this loud noise.",
-      past: "She bore three children in that house.",
-      participle: "The baby was born in July."
+      past: "He bore the pain without complaining.",
+      participle: "The company has borne all the extra costs."
     },
     fullExplanationPath: "/irregular-verbs/bear",
     frequency: "medium",
@@ -57,16 +57,16 @@ export const irregularVerbs: IrregularVerb[] = [
     slug: "beat",
     infinitive: "beat",
     pastSimple: "beat",
-    pastParticiple: "beat",
+    pastParticiple: "beaten",
     meaning: "vencer, golpear",
     examples: {
-      base: "Our team will beat the rivals tomorrow.",
+      base: "Our team will beat our rivals tomorrow.",
       past: "She beat him easily at chess.",
-      participle: "The old record has been beat this year."
+      participle: "The old record has been beaten this year."
     },
     fullExplanationPath: "/irregular-verbs/beat",
     frequency: "medium",
-    category: "unchanged"
+    category: "conflict"
   },
   {
     id: "become",
@@ -142,7 +142,7 @@ export const irregularVerbs: IrregularVerb[] = [
     examples: {
       base: "I bet you can't finish that pizza.",
       past: "He bet twenty dollars on the game.",
-      participle: "Money has been bet on every match."
+      participle: "He has bet on the wrong team again."
     },
     fullExplanationPath: "/irregular-verbs/bet",
     frequency: "medium",
@@ -156,9 +156,9 @@ export const irregularVerbs: IrregularVerb[] = [
     pastParticiple: "bid",
     meaning: "pujar, ofertar",
     examples: {
-      base: "Investors bid on the property every week.",
+      base: "Collectors bid on rare coins at online auctions.",
       past: "She bid five thousand dollars at the auction.",
-      participle: "The painting has been bid on twice."
+      participle: "She has bid on three houses this month."
     },
     fullExplanationPath: "/irregular-verbs/bid",
     frequency: "low",
@@ -302,7 +302,7 @@ export const irregularVerbs: IrregularVerb[] = [
     examples: {
       base: "Workers will build a new bridge here.",
       past: "They built this house in 1990.",
-      participle: "The tower has been built in record time."
+      participle: "They have built a new school near our house."
     },
     fullExplanationPath: "/irregular-verbs/build",
     frequency: "high",
@@ -312,13 +312,13 @@ export const irregularVerbs: IrregularVerb[] = [
     id: "burn",
     slug: "burn",
     infinitive: "burn",
-    pastSimple: "burnt",
-    pastParticiple: "burnt",
+    pastSimple: "burned/burnt",
+    pastParticiple: "burned/burnt",
     meaning: "quemar(se)",
     examples: {
       base: "Dry leaves burn quickly in autumn.",
-      past: "The candle burnt all night long.",
-      participle: "The toast has burnt again this morning."
+      past: "The candle burned all night long.",
+      participle: "I have burned the toast again this morning."
     },
     fullExplanationPath: "/irregular-verbs/burn",
     frequency: "medium",
@@ -334,7 +334,7 @@ export const irregularVerbs: IrregularVerb[] = [
     examples: {
       base: "Balloons burst easily near sharp objects.",
       past: "The pipe burst during the cold snap.",
-      participle: "The tire has burst on the highway."
+      participle: "A water pipe has burst in the basement."
     },
     fullExplanationPath: "/irregular-verbs/burst",
     frequency: "medium",
@@ -350,7 +350,7 @@ export const irregularVerbs: IrregularVerb[] = [
     examples: {
       base: "I need to buy groceries after work.",
       past: "She bought a new phone yesterday.",
-      participle: "We have bought this house at last."
+      participle: "We have finally bought our first house."
     },
     fullExplanationPath: "/irregular-verbs/buy",
     frequency: "high",
@@ -378,11 +378,11 @@ export const irregularVerbs: IrregularVerb[] = [
     infinitive: "catch",
     pastSimple: "caught",
     pastParticiple: "caught",
-    meaning: "atrapar, coger",
+    meaning: "atrapar, agarrar",
     examples: {
       base: "Try to catch the ball with both hands.",
       past: "He caught a bad cold last week.",
-      participle: "The thief has been caught by police."
+      participle: "The thief has been caught by the police."
     },
     fullExplanationPath: "/irregular-verbs/catch",
     frequency: "high",
@@ -414,7 +414,7 @@ export const irregularVerbs: IrregularVerb[] = [
     examples: {
       base: "Wet clothes cling to your skin uncomfortably.",
       past: "The child clung to her mother's leg.",
-      participle: "Old habits have clung to him for years."
+      participle: "The smell of smoke has clung to my jacket all day."
     },
     fullExplanationPath: "/irregular-verbs/cling",
     frequency: "low",
@@ -520,12 +520,12 @@ export const irregularVerbs: IrregularVerb[] = [
     id: "dive",
     slug: "dive",
     infinitive: "dive",
-    pastSimple: "dove",
+    pastSimple: "dived/dove",
     pastParticiple: "dived",
-    meaning: "bucear, zambullirse",
+    meaning: "zambullirse, tirarse de cabeza, bucear",
     examples: {
-      base: "Divers dive into the reef every morning.",
-      past: "He dove off the high board bravely.",
+      base: "Divers dive near the reef every morning.",
+      past: "He dived off the high board into the pool.",
       participle: "She has dived competitively since childhood."
     },
     fullExplanationPath: "/irregular-verbs/dive",
@@ -568,13 +568,13 @@ export const irregularVerbs: IrregularVerb[] = [
     id: "dream",
     slug: "dream",
     infinitive: "dream",
-    pastSimple: "dreamt",
-    pastParticiple: "dreamt",
+    pastSimple: "dreamed/dreamt",
+    pastParticiple: "dreamed/dreamt",
     meaning: "soñar",
     examples: {
       base: "I dream about traveling every single night.",
-      past: "He dreamt about flying over mountains.",
-      participle: "She has dreamt of this moment for years."
+      past: "He dreamed about flying over mountains.",
+      participle: "She has dreamed of this moment for years."
     },
     fullExplanationPath: "/irregular-verbs/dream",
     frequency: "medium",
@@ -712,13 +712,13 @@ export const irregularVerbs: IrregularVerb[] = [
     id: "fit",
     slug: "fit",
     infinitive: "fit",
-    pastSimple: "fit",
-    pastParticiple: "fit",
+    pastSimple: "fit/fitted",
+    pastParticiple: "fit/fitted",
     meaning: "encajar, quedar bien (ropa)",
     examples: {
-      base: "These shoes fit perfectly on my feet.",
+      base: "These shoes fit me perfectly.",
       past: "The dress fit her beautifully at the wedding.",
-      participle: "The new part has fit the engine well."
+      participle: "These jeans have fit me well for years."
     },
     fullExplanationPath: "/irregular-verbs/fit",
     frequency: "medium",
@@ -734,7 +734,7 @@ export const irregularVerbs: IrregularVerb[] = [
     examples: {
       base: "Families flee the city before the storm.",
       past: "They fled the country during the war.",
-      participle: "Refugees have fled the region for years."
+      participle: "Thousands of people have fled the region since the war."
     },
     fullExplanationPath: "/irregular-verbs/flee",
     frequency: "medium",
@@ -766,7 +766,7 @@ export const irregularVerbs: IrregularVerb[] = [
     examples: {
       base: "Birds fly south for the winter.",
       past: "We flew to Tokyo last spring.",
-      participle: "She has flown over twenty countries."
+      participle: "She has flown to over twenty countries."
     },
     fullExplanationPath: "/irregular-verbs/fly",
     frequency: "medium",
@@ -780,7 +780,7 @@ export const irregularVerbs: IrregularVerb[] = [
     pastParticiple: "forbidden",
     meaning: "prohibir",
     examples: {
-      base: "Rules forbid smoking inside the building.",
+      base: "The rules forbid smoking inside the building.",
       past: "Her parents forbade her from staying out late.",
       participle: "Smoking has been forbidden here for years."
     },
@@ -810,11 +810,11 @@ export const irregularVerbs: IrregularVerb[] = [
     infinitive: "forego",
     pastSimple: "forewent",
     pastParticiple: "foregone",
-    meaning: "renunciar a, prescindir de",
+    meaning: "renunciar a (variante de forgo); preceder",
     examples: {
       base: "You may forego dessert to save calories.",
       past: "He forewent his bonus to help the team.",
-      participle: "The reward has been foregone for the cause."
+      participle: "He has foregone his salary to keep the company afloat."
     },
     fullExplanationPath: "/irregular-verbs/forego",
     frequency: "low",
@@ -828,9 +828,9 @@ export const irregularVerbs: IrregularVerb[] = [
     pastParticiple: "forgone",
     meaning: "renunciar a, privarse de",
     examples: {
-      base: "We should forgo the extra fees this time.",
+      base: "Many fans forgo sleep to watch the games live.",
       past: "She forwent her vacation to finish the project.",
-      participle: "That comfort has been forgone for safety."
+      participle: "Many workers have forgone raises this year."
     },
     fullExplanationPath: "/irregular-verbs/forgo",
     frequency: "low",
@@ -862,7 +862,7 @@ export const irregularVerbs: IrregularVerb[] = [
     examples: {
       base: "True friends never forsake each other.",
       past: "He forsook his old habits completely.",
-      participle: "The old house has been forsaken for decades."
+      participle: "He has forsaken his old friends for fame."
     },
     fullExplanationPath: "/irregular-verbs/forsake",
     frequency: "low",
@@ -889,12 +889,12 @@ export const irregularVerbs: IrregularVerb[] = [
     slug: "get",
     infinitive: "get",
     pastSimple: "got",
-    pastParticiple: "gotten",
-    meaning: "obtener, conseguir",
+    pastParticiple: "got/gotten",
+    meaning: "conseguir, obtener, llegar",
     examples: {
       base: "I need to get some sleep tonight.",
       past: "She got a promotion last month.",
-      participle: "He has gotten much stronger this year."
+      participle: "Things have got much better since you arrived."
     },
     fullExplanationPath: "/irregular-verbs/get",
     frequency: "high",
@@ -974,7 +974,7 @@ export const irregularVerbs: IrregularVerb[] = [
     examples: {
       base: "Please hang your coat by the door.",
       past: "She hung the picture on the wall.",
-      participle: "The laundry has hung outside all day."
+      participle: "Her portrait has hung in the hall for years."
     },
     fullExplanationPath: "/irregular-verbs/hang",
     frequency: "medium",
@@ -1038,7 +1038,7 @@ export const irregularVerbs: IrregularVerb[] = [
     examples: {
       base: "Please hold the door for me.",
       past: "She held the baby gently.",
-      participle: "The meeting has been held every Monday."
+      participle: "The festival has been held here since 2010."
     },
     fullExplanationPath: "/irregular-verbs/hold",
     frequency: "high",
@@ -1050,11 +1050,11 @@ export const irregularVerbs: IrregularVerb[] = [
     infinitive: "hurt",
     pastSimple: "hurt",
     pastParticiple: "hurt",
-    meaning: "herir, doler",
+    meaning: "lastimar, doler, herir",
     examples: {
       base: "Harsh words can hurt people deeply.",
       past: "He hurt his back moving furniture.",
-      participle: "Nobody has been hurt in the accident."
+      participle: "Luckily, nobody has been hurt so far."
     },
     fullExplanationPath: "/irregular-verbs/hurt",
     frequency: "high",
@@ -1080,13 +1080,13 @@ export const irregularVerbs: IrregularVerb[] = [
     id: "kneel",
     slug: "kneel",
     infinitive: "kneel",
-    pastSimple: "knelt",
-    pastParticiple: "knelt",
+    pastSimple: "knelt/kneeled",
+    pastParticiple: "knelt/kneeled",
     meaning: "arrodillarse",
     examples: {
       base: "Gardeners often kneel to plant seeds.",
       past: "He knelt beside the injured dog.",
-      participle: "She has knelt in prayer every morning."
+      participle: "He has knelt there for almost an hour."
     },
     fullExplanationPath: "/irregular-verbs/kneel",
     frequency: "low",
@@ -1096,17 +1096,17 @@ export const irregularVerbs: IrregularVerb[] = [
     id: "knit",
     slug: "knit",
     infinitive: "knit",
-    pastSimple: "knit",
-    pastParticiple: "knit",
+    pastSimple: "knitted/knit",
+    pastParticiple: "knitted/knit",
     meaning: "tejer",
     examples: {
       base: "My grandmother likes to knit scarves.",
-      past: "She knit a sweater for the baby.",
-      participle: "This blanket has been knit by hand."
+      past: "She knitted a sweater for the baby.",
+      participle: "This blanket has been knitted by hand."
     },
     fullExplanationPath: "/irregular-verbs/knit",
     frequency: "low",
-    category: "unchanged"
+    category: "creation"
   },
   {
     id: "know",
@@ -1150,7 +1150,7 @@ export const irregularVerbs: IrregularVerb[] = [
     examples: {
       base: "Good managers lead by example.",
       past: "She led the team to victory.",
-      participle: "The company has been led well this year."
+      participle: "She has led the sales team for five years."
     },
     fullExplanationPath: "/irregular-verbs/lead",
     frequency: "medium",
@@ -1160,13 +1160,13 @@ export const irregularVerbs: IrregularVerb[] = [
     id: "leap",
     slug: "leap",
     infinitive: "leap",
-    pastSimple: "leapt",
-    pastParticiple: "leapt",
+    pastSimple: "leaped/leapt",
+    pastParticiple: "leaped/leapt",
     meaning: "saltar",
     examples: {
       base: "Frogs leap quickly into the pond.",
-      past: "He leapt over the fence easily.",
-      participle: "Sales have leapt significantly this quarter."
+      past: "He leaped over the fence easily.",
+      participle: "Sales have leaped this quarter."
     },
     fullExplanationPath: "/irregular-verbs/leap",
     frequency: "low",
@@ -1176,8 +1176,8 @@ export const irregularVerbs: IrregularVerb[] = [
     id: "learn",
     slug: "learn",
     infinitive: "learn",
-    pastSimple: "learned",
-    pastParticiple: "learned",
+    pastSimple: "learned/learnt",
+    pastParticiple: "learned/learnt",
     meaning: "aprender",
     examples: {
       base: "Students learn new words every day.",
@@ -1230,7 +1230,7 @@ export const irregularVerbs: IrregularVerb[] = [
     examples: {
       base: "Please let me finish my sentence.",
       past: "She let the dog out this morning.",
-      participle: "The room has been let to a new tenant."
+      participle: "She has let her hair grow long."
     },
     fullExplanationPath: "/irregular-verbs/let",
     frequency: "high",
@@ -1242,7 +1242,7 @@ export const irregularVerbs: IrregularVerb[] = [
     infinitive: "lie",
     pastSimple: "lay",
     pastParticiple: "lain",
-    meaning: "acostarse, yacer",
+    meaning: "acostarse, estar tumbado, yacer",
     examples: {
       base: "I usually lie down for a short nap.",
       past: "He lay on the grass all afternoon.",
@@ -1256,13 +1256,13 @@ export const irregularVerbs: IrregularVerb[] = [
     id: "light",
     slug: "light",
     infinitive: "light",
-    pastSimple: "lit",
-    pastParticiple: "lighted",
+    pastSimple: "lit/lighted",
+    pastParticiple: "lit/lighted",
     meaning: "encender, iluminar",
     examples: {
       base: "Please light the candles for dinner.",
-      past: "She lit the fireplace last night.",
-      participle: "The stage has been lighted for the show."
+      past: "She lit a fire in the fireplace last night.",
+      participle: "The stage has been lit for the show."
     },
     fullExplanationPath: "/irregular-verbs/light",
     frequency: "medium",
@@ -1310,7 +1310,7 @@ export const irregularVerbs: IrregularVerb[] = [
     examples: {
       base: "I didn't mean to upset you.",
       past: "That word meant something different back then.",
-      participle: "It has meant a lot to me."
+      participle: "Your support has meant a lot to me."
     },
     fullExplanationPath: "/irregular-verbs/mean",
     frequency: "high",
@@ -1336,13 +1336,13 @@ export const irregularVerbs: IrregularVerb[] = [
     id: "misspell",
     slug: "misspell",
     infinitive: "misspell",
-    pastSimple: "misspelt",
-    pastParticiple: "misspelt",
+    pastSimple: "misspelled/misspelt",
+    pastParticiple: "misspelled/misspelt",
     meaning: "escribir mal (una palabra)",
     examples: {
       base: "Students often misspell tricky words.",
-      past: "He misspelt her name in the email.",
-      participle: "That word has been misspelt again."
+      past: "He misspelled her name in the email.",
+      participle: "That word has been misspelled again."
     },
     fullExplanationPath: "/irregular-verbs/misspell",
     frequency: "medium",
@@ -1357,7 +1357,7 @@ export const irregularVerbs: IrregularVerb[] = [
     meaning: "confundir, equivocarse",
     examples: {
       base: "People often mistake him for his brother.",
-      past: "She mistook the exit on the highway.",
+      past: "She mistook the stranger for an old friend.",
       participle: "He has been mistaken for someone else."
     },
     fullExplanationPath: "/irregular-verbs/mistake",
@@ -1369,12 +1369,12 @@ export const irregularVerbs: IrregularVerb[] = [
     slug: "mow",
     infinitive: "mow",
     pastSimple: "mowed",
-    pastParticiple: "mowed",
+    pastParticiple: "mowed/mown",
     meaning: "cortar el césped",
     examples: {
       base: "I mow the lawn every Saturday.",
       past: "He mowed the yard before the party.",
-      participle: "The grass has been mowed this week."
+      participle: "The lawn has just been mowed."
     },
     fullExplanationPath: "/irregular-verbs/mow",
     frequency: "low",
@@ -1406,7 +1406,7 @@ export const irregularVerbs: IrregularVerb[] = [
     examples: {
       base: "Try not to overdo the seasoning.",
       past: "He overdid the exercise and got hurt.",
-      participle: "The sauce has been overdone with salt."
+      participle: "I think I have overdone it at the gym."
     },
     fullExplanationPath: "/irregular-verbs/overdo",
     frequency: "low",
@@ -1422,7 +1422,7 @@ export const irregularVerbs: IrregularVerb[] = [
     examples: {
       base: "Cars should not overtake on this curve.",
       past: "She overtook the leader on the final lap.",
-      participle: "Sales have been overtaken by our rival."
+      participle: "Electric cars have overtaken diesel sales in Europe."
     },
     fullExplanationPath: "/irregular-verbs/overtake",
     frequency: "medium",
@@ -1464,13 +1464,13 @@ export const irregularVerbs: IrregularVerb[] = [
     id: "plead",
     slug: "plead",
     infinitive: "plead",
-    pastSimple: "pled",
-    pastParticiple: "pled",
-    meaning: "suplicar, declararse",
+    pastSimple: "pleaded/pled",
+    pastParticiple: "pleaded/pled",
+    meaning: "suplicar, declararse (culpable o inocente)",
     examples: {
-      base: "Lawyers plead cases before the judge.",
-      past: "He pled guilty to the minor charge.",
-      participle: "Not guilty has been pled by the defendant."
+      base: "Please don't make me plead with you.",
+      past: "He pleaded guilty to the minor charge.",
+      participle: "She has pleaded with him to stay."
     },
     fullExplanationPath: "/irregular-verbs/plead",
     frequency: "low",
@@ -1481,7 +1481,7 @@ export const irregularVerbs: IrregularVerb[] = [
     slug: "prove",
     infinitive: "prove",
     pastSimple: "proved",
-    pastParticiple: "proved",
+    pastParticiple: "proved/proven",
     meaning: "probar, demostrar",
     examples: {
       base: "Scientists must prove their theories with data.",
@@ -1550,7 +1550,7 @@ export const irregularVerbs: IrregularVerb[] = [
     examples: {
       base: "We need to rid the house of pests.",
       past: "They rid the garden of weeds.",
-      participle: "The building has been rid of mold."
+      participle: "We have finally rid the house of mice."
     },
     fullExplanationPath: "/irregular-verbs/rid",
     frequency: "low",
@@ -1562,7 +1562,7 @@ export const irregularVerbs: IrregularVerb[] = [
     infinitive: "ride",
     pastSimple: "rode",
     pastParticiple: "ridden",
-    meaning: "montar, andar en bici o caballo",
+    meaning: "montar, andar (en bici, a caballo)",
     examples: {
       base: "I ride my bike to school.",
       past: "She rode a horse for the first time.",
@@ -1625,7 +1625,7 @@ export const irregularVerbs: IrregularVerb[] = [
     slug: "saw",
     infinitive: "saw",
     pastSimple: "sawed",
-    pastParticiple: "sawn",
+    pastParticiple: "sawn/sawed",
     meaning: "aserrar, cortar con sierra",
     examples: {
       base: "Workers saw the logs into planks.",
@@ -1646,7 +1646,7 @@ export const irregularVerbs: IrregularVerb[] = [
     examples: {
       base: "What did you say just now?",
       past: "She said hello to everyone.",
-      participle: "The truth has been said clearly."
+      participle: "She has said the same thing twice."
     },
     fullExplanationPath: "/irregular-verbs/say",
     frequency: "high",
@@ -1678,7 +1678,7 @@ export const irregularVerbs: IrregularVerb[] = [
     examples: {
       base: "Many people seek advice before investing.",
       past: "He sought help from a specialist.",
-      participle: "The answer has been sought for years."
+      participle: "He has sought legal advice about the contract."
     },
     fullExplanationPath: "/irregular-verbs/seek",
     frequency: "medium",
@@ -1726,7 +1726,7 @@ export const irregularVerbs: IrregularVerb[] = [
     examples: {
       base: "Let's set the table for dinner.",
       past: "She set the alarm for six.",
-      participle: "The rules have been set clearly."
+      participle: "A date has been set for the wedding."
     },
     fullExplanationPath: "/irregular-verbs/set",
     frequency: "high",
@@ -1758,7 +1758,7 @@ export const irregularVerbs: IrregularVerb[] = [
     examples: {
       base: "Please shake the bottle before opening.",
       past: "The earthquake shook the whole building.",
-      participle: "Her hands have shaken since the accident."
+      participle: "The scandal has shaken the whole town."
     },
     fullExplanationPath: "/irregular-verbs/shake",
     frequency: "medium",
@@ -1769,12 +1769,12 @@ export const irregularVerbs: IrregularVerb[] = [
     slug: "shave",
     infinitive: "shave",
     pastSimple: "shaved",
-    pastParticiple: "shaven",
+    pastParticiple: "shaved/shaven",
     meaning: "afeitar(se)",
     examples: {
       base: "He likes to shave every morning.",
       past: "She shaved his beard carefully.",
-      participle: "His head has been shaven for the surgery."
+      participle: "His head has been shaved for the surgery."
     },
     fullExplanationPath: "/irregular-verbs/shave",
     frequency: "low",
@@ -1784,13 +1784,13 @@ export const irregularVerbs: IrregularVerb[] = [
     id: "shear",
     slug: "shear",
     infinitive: "shear",
-    pastSimple: "shore",
-    pastParticiple: "shorn",
+    pastSimple: "sheared",
+    pastParticiple: "sheared/shorn",
     meaning: "esquilar, cortar",
     examples: {
       base: "Farmers shear sheep in early summer.",
-      past: "He shore the sheep quickly.",
-      participle: "The wool has been shorn already."
+      past: "He sheared the sheep quickly.",
+      participle: "The sheep have been sheared already."
     },
     fullExplanationPath: "/irregular-verbs/shear",
     frequency: "low",
@@ -1806,7 +1806,7 @@ export const irregularVerbs: IrregularVerb[] = [
     examples: {
       base: "Snakes shed their skin regularly.",
       past: "The dog shed fur all over the couch.",
-      participle: "Tears have been shed at every wedding."
+      participle: "The company has shed a thousand jobs."
     },
     fullExplanationPath: "/irregular-verbs/shed",
     frequency: "medium",
@@ -1816,13 +1816,13 @@ export const irregularVerbs: IrregularVerb[] = [
     id: "shine",
     slug: "shine",
     infinitive: "shine",
-    pastSimple: "shone",
-    pastParticiple: "shone",
+    pastSimple: "shone/shined",
+    pastParticiple: "shone/shined",
     meaning: "brillar",
     examples: {
       base: "Stars shine brightly on clear nights.",
       past: "The sun shone all afternoon.",
-      participle: "Her shoes have shone since she polished them."
+      participle: "The sun has shone all week."
     },
     fullExplanationPath: "/irregular-verbs/shine",
     frequency: "medium",
@@ -1832,12 +1832,12 @@ export const irregularVerbs: IrregularVerb[] = [
     id: "shoe",
     slug: "shoe",
     infinitive: "shoe",
-    pastSimple: "shoed",
-    pastParticiple: "shod",
+    pastSimple: "shod/shoed",
+    pastParticiple: "shod/shoed",
     meaning: "herrar (un caballo)",
     examples: {
       base: "The blacksmith will shoe the horse today.",
-      past: "He shoed three horses this morning.",
+      past: "He shod three horses this morning.",
       participle: "The horse has been shod for the race."
     },
     fullExplanationPath: "/irregular-verbs/shoe",
@@ -1853,8 +1853,8 @@ export const irregularVerbs: IrregularVerb[] = [
     meaning: "disparar, filmar",
     examples: {
       base: "Photographers shoot the sunset every evening.",
-      past: "She shot the winning goal.",
-      participle: "The film has been shot in Spain."
+      past: "He shot a short film in Mexico.",
+      participle: "Several scenes have been shot on location in Spain."
     },
     fullExplanationPath: "/irregular-verbs/shoot",
     frequency: "medium",
@@ -1870,7 +1870,7 @@ export const irregularVerbs: IrregularVerb[] = [
     examples: {
       base: "Can you show me the way?",
       past: "He showed her the new house.",
-      participle: "The results have been shown clearly."
+      participle: "Studies have shown that exercise improves sleep."
     },
     fullExplanationPath: "/irregular-verbs/show",
     frequency: "high",
@@ -2014,7 +2014,7 @@ export const irregularVerbs: IrregularVerb[] = [
     examples: {
       base: "Hikers sling their backpacks over one shoulder.",
       past: "He slung the bag across his back.",
-      participle: "The rifle has been slung over his shoulder."
+      participle: "He has slung his jacket over the chair."
     },
     fullExplanationPath: "/irregular-verbs/sling",
     frequency: "medium",
@@ -2041,12 +2041,12 @@ export const irregularVerbs: IrregularVerb[] = [
     slug: "smite",
     infinitive: "smite",
     pastSimple: "smote",
-    pastParticiple: "smitten",
-    meaning: "golpear, herir",
+    pastParticiple: "smitten/smote",
+    meaning: "golpear, castigar (literario)",
     examples: {
-      base: "The legend says the gods smite liars.",
+      base: "In the legend, the gods smite anyone who lies.",
       past: "Lightning smote the old oak tree.",
-      participle: "The kingdom has been smitten by famine."
+      participle: "He has been smitten with her since they met."
     },
     fullExplanationPath: "/irregular-verbs/smite",
     frequency: "low",
@@ -2088,8 +2088,8 @@ export const irregularVerbs: IrregularVerb[] = [
     id: "speed",
     slug: "speed",
     infinitive: "speed",
-    pastSimple: "sped",
-    pastParticiple: "sped",
+    pastSimple: "sped/speeded",
+    pastParticiple: "sped/speeded",
     meaning: "acelerar, ir rápido",
     examples: {
       base: "Drivers should not speed near schools.",
@@ -2120,8 +2120,8 @@ export const irregularVerbs: IrregularVerb[] = [
     id: "spill",
     slug: "spill",
     infinitive: "spill",
-    pastSimple: "spilled",
-    pastParticiple: "spilled",
+    pastSimple: "spilled/spilt",
+    pastParticiple: "spilled/spilt",
     meaning: "derramar",
     examples: {
       base: "Try not to spill the coffee.",
@@ -2152,13 +2152,13 @@ export const irregularVerbs: IrregularVerb[] = [
     id: "spit",
     slug: "spit",
     infinitive: "spit",
-    pastSimple: "spat",
-    pastParticiple: "spit",
+    pastSimple: "spat/spit",
+    pastParticiple: "spat/spit",
     meaning: "escupir",
     examples: {
       base: "It's rude to spit in public.",
       past: "He spat on the ground angrily.",
-      participle: "The gum has been spit into the trash."
+      participle: "He has spat his gum onto the sidewalk."
     },
     fullExplanationPath: "/irregular-verbs/spit",
     frequency: "medium",
@@ -2190,7 +2190,7 @@ export const irregularVerbs: IrregularVerb[] = [
     examples: {
       base: "News tends to spread quickly online.",
       past: "The fire spread across the dry hills.",
-      participle: "Butter has been spread on the toast."
+      participle: "The rumor has spread across the whole school."
     },
     fullExplanationPath: "/irregular-verbs/spread",
     frequency: "medium",
@@ -2254,7 +2254,7 @@ export const irregularVerbs: IrregularVerb[] = [
     examples: {
       base: "Wet stamps stick to almost anything.",
       past: "The gum stuck to his shoe.",
-      participle: "The rules have stuck for years."
+      participle: "That nickname has stuck with him since school."
     },
     fullExplanationPath: "/irregular-verbs/stick",
     frequency: "medium",
@@ -2270,7 +2270,7 @@ export const irregularVerbs: IrregularVerb[] = [
     examples: {
       base: "Bees sting when they feel threatened.",
       past: "A wasp stung her arm at the picnic.",
-      participle: "His eyes have stung from the smoke."
+      participle: "She has been stung by a bee twice."
     },
     fullExplanationPath: "/irregular-verbs/sting",
     frequency: "medium",
@@ -2302,7 +2302,7 @@ export const irregularVerbs: IrregularVerb[] = [
     examples: {
       base: "He likes to stride across the office confidently.",
       past: "She strode onto the stage boldly.",
-      participle: "He has stridden through every challenge calmly."
+      participle: "She has stridden across that stage many times."
     },
     fullExplanationPath: "/irregular-verbs/stride",
     frequency: "low",
@@ -2344,8 +2344,8 @@ export const irregularVerbs: IrregularVerb[] = [
     id: "strive",
     slug: "strive",
     infinitive: "strive",
-    pastSimple: "strove",
-    pastParticiple: "striven",
+    pastSimple: "strove/strived",
+    pastParticiple: "striven/strived",
     meaning: "esforzarse",
     examples: {
       base: "Good students strive to improve every day.",
@@ -2393,7 +2393,7 @@ export const irregularVerbs: IrregularVerb[] = [
     slug: "swell",
     infinitive: "swell",
     pastSimple: "swelled",
-    pastParticiple: "swollen",
+    pastParticiple: "swollen/swelled",
     meaning: "hincharse",
     examples: {
       base: "Ankles often swell during long flights.",
@@ -2494,7 +2494,7 @@ export const irregularVerbs: IrregularVerb[] = [
     examples: {
       base: "Please tell me the truth.",
       past: "She told a funny story at dinner.",
-      participle: "The secret has been told to everyone."
+      participle: "She has told me that story before."
     },
     fullExplanationPath: "/irregular-verbs/tell",
     frequency: "high",
@@ -2542,7 +2542,7 @@ export const irregularVerbs: IrregularVerb[] = [
     examples: {
       base: "Please throw the ball to me.",
       past: "He threw the trash in the bin.",
-      participle: "The game has been thrown away carelessly."
+      participle: "Someone has thrown trash all over the park."
     },
     fullExplanationPath: "/irregular-verbs/throw",
     frequency: "high",
@@ -2590,7 +2590,7 @@ export const irregularVerbs: IrregularVerb[] = [
     examples: {
       base: "I understand your point of view.",
       past: "She understood the instructions clearly.",
-      participle: "The rules have been understood by everyone."
+      participle: "I have never understood his jokes."
     },
     fullExplanationPath: "/irregular-verbs/understand",
     frequency: "high",
@@ -2680,13 +2680,13 @@ export const irregularVerbs: IrregularVerb[] = [
     id: "wed",
     slug: "wed",
     infinitive: "wed",
-    pastSimple: "wed",
-    pastParticiple: "wed",
+    pastSimple: "wed/wedded",
+    pastParticiple: "wed/wedded",
     meaning: "casarse con",
     examples: {
       base: "They plan to wed next spring.",
       past: "The couple wed in a small ceremony.",
-      participle: "They have been wed for ten years."
+      participle: "She has wed her childhood sweetheart."
     },
     fullExplanationPath: "/irregular-verbs/wed",
     frequency: "low",
@@ -2714,11 +2714,11 @@ export const irregularVerbs: IrregularVerb[] = [
     infinitive: "wind",
     pastSimple: "wound",
     pastParticiple: "wound",
-    meaning: "enrollar, serpentear",
+    meaning: "enrollar, dar cuerda, serpentear",
     examples: {
-      base: "The road will wind through the mountains.",
+      base: "Mountain roads wind through small villages.",
       past: "She wound the yarn into a ball.",
-      participle: "The clock has been wound every week."
+      participle: "Have you wound the clock this week?"
     },
     fullExplanationPath: "/irregular-verbs/wind",
     frequency: "medium",
@@ -2780,7 +2780,7 @@ export const irregularVerbs: IrregularVerb[] = [
     pastParticiple: "wrung",
     meaning: "escurrir, retorcer",
     examples: {
-      base: "Please wring the towel before hanging it.",
+      base: "Wring out the towel before you hang it.",
       past: "She wrung the wet cloth over the sink.",
       participle: "The rag has been wrung dry."
     },

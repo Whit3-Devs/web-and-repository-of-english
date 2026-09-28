@@ -11,6 +11,7 @@ import {
 } from "../data/irregularVerbPatterns";
 import type { IrregularVerb } from "../shared/types/content";
 import { highlightVerbForm } from "../shared/utils/highlightVerbForm";
+import { formatVerbForm } from "../shared/utils/verbFormVariants";
 
 const MAX_PATTERN_VERBS = 12;
 
@@ -76,8 +77,8 @@ export function IrregularVerbDetailPage() {
         <h3 className="text-xl font-black text-slate-950 dark:text-slate-50">Forms</h3>
         <div className="mt-4 grid gap-4 sm:grid-cols-3">
           <FormBlock label="Base" value={irregularVerb.infinitive} />
-          <FormBlock label="Past simple" value={irregularVerb.pastSimple} />
-          <FormBlock label="Past participle" value={irregularVerb.pastParticiple} />
+          <FormBlock label="Past simple" value={formatVerbForm(irregularVerb.pastSimple)} />
+          <FormBlock label="Past participle" value={formatVerbForm(irregularVerb.pastParticiple)} />
         </div>
       </Card>
 
