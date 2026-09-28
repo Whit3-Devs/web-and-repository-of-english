@@ -53,9 +53,9 @@ export function HomePage() {
         <p className="text-sm font-semibold uppercase tracking-[0.3em] text-blue-300">
           Study Directory
         </p>
-        <h2 className="mt-3 max-w-3xl text-4xl font-black tracking-tight">
+        <h1 className="mt-3 max-w-3xl text-4xl font-black tracking-tight">
           Jump straight into the topic you want to study.
-        </h2>
+        </h1>
         <p className="mt-4 max-w-2xl text-lg text-slate-300">
           Use Home as your fast study map: topics are grouped by section, and each
           item opens its current full explanation route directly.
