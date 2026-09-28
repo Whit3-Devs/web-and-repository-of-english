@@ -162,7 +162,11 @@ function useDocumentMeta({
     setMetaContent('meta[name="description"]', description);
     setMetaContent('meta[property="og:title"]', title);
     setMetaContent('meta[property="og:description"]', description);
-    setCanonicalHref(`${window.location.origin}${pathname}`);
+    setMetaContent('meta[name="twitter:title"]', title);
+    setMetaContent('meta[name="twitter:description"]', description);
+    const url = `${window.location.origin}${pathname}`;
+    setMetaContent('meta[property="og:url"]', url);
+    setCanonicalHref(url);
   }, [title, description, pathname]);
 }
 
