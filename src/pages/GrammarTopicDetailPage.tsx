@@ -244,17 +244,17 @@ function PrepositionsContent({
 
       <div className="mt-8 grid gap-6 md:grid-cols-2">
         {explanation.ruleNotes.map((rule) => (
-          <div key={rule.title} className="rounded-3xl bg-violet-50 p-6">
-            <h3 className="text-xl font-black text-violet-950">{rule.title}</h3>
-            <p className="mt-3 rounded-2xl bg-white dark:bg-slate-900 p-4 font-semibold text-violet-900">
+          <div key={rule.title} className="rounded-3xl bg-violet-50 dark:bg-violet-950/40 p-6">
+            <h3 className="text-xl font-black text-violet-950 dark:text-violet-100">{rule.title}</h3>
+            <p className="mt-3 rounded-2xl bg-white dark:bg-slate-900 p-4 font-semibold text-violet-900 dark:text-violet-200">
               {rule.structure}
             </p>
-            <ul className="mt-4 space-y-2 text-sm text-violet-950">
+            <ul className="mt-4 space-y-2 text-sm text-violet-950 dark:text-violet-100">
               {rule.examples.map((example) => (
                 <li key={example}>• {example}</li>
               ))}
             </ul>
-            <p className="mt-4 text-sm text-violet-900">{rule.takeaway}</p>
+            <p className="mt-4 text-sm text-violet-900 dark:text-violet-200">{rule.takeaway}</p>
           </div>
         ))}
 
@@ -370,11 +370,11 @@ function ModalTopicContent({
             </div>
 
             {card.notes?.length ? (
-              <div className="mt-4 rounded-2xl bg-violet-50 p-4">
-                <p className="text-sm font-semibold uppercase tracking-wide text-violet-700">
+              <div className="mt-4 rounded-2xl bg-violet-50 dark:bg-violet-950/40 p-4">
+                <p className="text-sm font-semibold uppercase tracking-wide text-violet-700 dark:text-violet-300">
                   Notes
                 </p>
-                <ul className="mt-2 space-y-2 text-sm text-violet-950">
+                <ul className="mt-2 space-y-2 text-sm text-violet-950 dark:text-violet-100">
                   {card.notes.map((note) => (
                     <li key={note}>• {note}</li>
                   ))}
@@ -620,8 +620,8 @@ function WhQuestionsContent({
         ))}
       </div>
 
-      <div className="mt-8 rounded-3xl bg-violet-50 p-6">
-        <h3 className="text-xl font-black text-violet-950">Special cases</h3>
+      <div className="mt-8 rounded-3xl bg-violet-50 dark:bg-violet-950/40 p-6">
+        <h3 className="text-xl font-black text-violet-950 dark:text-violet-100">Special cases</h3>
         <div className="mt-4 grid gap-4 md:grid-cols-3">
           {explanation.specialCases.map((item) => (
             <div key={item.title} className="rounded-2xl bg-white dark:bg-slate-900 p-4 shadow-sm">
@@ -708,8 +708,8 @@ function EmbeddedWhClausesContent({
         </div>
       </div>
 
-      <div className="mt-8 rounded-3xl bg-violet-50 p-6">
-        <h3 className="text-xl font-black text-violet-950">Short usage block</h3>
+      <div className="mt-8 rounded-3xl bg-violet-50 dark:bg-violet-950/40 p-6">
+        <h3 className="text-xl font-black text-violet-950 dark:text-violet-100">Short usage block</h3>
         <div className="mt-4 grid gap-4 md:grid-cols-3">
           {explanation.usageBlocks.map((block) => (
             <div key={block.title} className="rounded-2xl bg-white dark:bg-slate-900 p-4 shadow-sm">
@@ -802,8 +802,8 @@ function EnglishAuxiliariesContent({
         ))}
       </div>
 
-      <div className="mt-8 rounded-3xl bg-violet-50 p-6">
-        <h3 className="text-xl font-black text-violet-950">Quick comparisons</h3>
+      <div className="mt-8 rounded-3xl bg-violet-50 dark:bg-violet-950/40 p-6">
+        <h3 className="text-xl font-black text-violet-950 dark:text-violet-100">Quick comparisons</h3>
         <div className="mt-4 grid gap-4 md:grid-cols-2">
           {explanation.quickComparisons.map((comparison) => (
             <div key={comparison.title} className="rounded-2xl bg-white dark:bg-slate-900 p-4 shadow-sm">
@@ -871,8 +871,8 @@ function PronounsPossessivesContent({
         ))}
       </div>
 
-      <div className="mt-8 rounded-3xl bg-violet-50 p-6">
-        <h3 className="text-xl font-black text-violet-950">Focus words</h3>
+      <div className="mt-8 rounded-3xl bg-violet-50 dark:bg-violet-950/40 p-6">
+        <h3 className="text-xl font-black text-violet-950 dark:text-violet-100">Focus words</h3>
         <div className="mt-4 grid gap-4 md:grid-cols-2">
           {explanation.focusWords.map((word) => (
             <div key={word.word} className="rounded-2xl bg-white dark:bg-slate-900 p-4 shadow-sm">
@@ -947,7 +947,7 @@ function StructureDifferencesContent({
               <span className="rounded-full bg-blue-100 dark:bg-blue-900/60 px-3 py-1 text-xs font-bold text-blue-800 dark:text-blue-200">
                 {card.structureA}
               </span>
-              <span className="rounded-full bg-violet-100 px-3 py-1 text-xs font-bold text-violet-800">
+              <span className="rounded-full bg-violet-100 dark:bg-violet-900/60 px-3 py-1 text-xs font-bold text-violet-800 dark:text-violet-200">
                 {card.structureB}
               </span>
             </div>
@@ -966,12 +966,12 @@ function StructureDifferencesContent({
                 <p className="mt-1 text-slate-700 dark:text-slate-300">{card.exampleA}</p>
               </div>
 
-              <div className="rounded-2xl border border-violet-200 bg-violet-50 p-4">
-                <p className="text-sm font-semibold uppercase tracking-wide text-violet-700">
+              <div className="rounded-2xl border border-violet-200 dark:border-violet-800 bg-violet-50 dark:bg-violet-950/40 p-4">
+                <p className="text-sm font-semibold uppercase tracking-wide text-violet-700 dark:text-violet-300">
                   Choose {card.structureB} when...
                 </p>
-                <p className="mt-2 text-violet-950">{card.whenToUseB}</p>
-                <p className="mt-4 text-sm font-semibold uppercase tracking-wide text-violet-700">
+                <p className="mt-2 text-violet-950 dark:text-violet-100">{card.whenToUseB}</p>
+                <p className="mt-4 text-sm font-semibold uppercase tracking-wide text-violet-700 dark:text-violet-300">
                   Example
                 </p>
                 <p className="mt-1 text-slate-700 dark:text-slate-300">{card.exampleB}</p>
@@ -1145,8 +1145,8 @@ function GerundsInfinitivesContent({
         </div>
       </div>
 
-      <div className="mt-8 rounded-3xl bg-violet-50 p-6">
-        <h3 className="text-xl font-black text-violet-950">
+      <div className="mt-8 rounded-3xl bg-violet-50 dark:bg-violet-950/40 p-6">
+        <h3 className="text-xl font-black text-violet-950 dark:text-violet-100">
           Meaning-change patterns
         </h3>
         <div className="mt-4 grid gap-4 md:grid-cols-2">
@@ -1159,9 +1159,9 @@ function GerundsInfinitivesContent({
                   <p className="mt-2 text-blue-950 dark:text-blue-100">{card.firstMeaning}</p>
                   <p className="mt-3 text-slate-700 dark:text-slate-300">{card.firstExample}</p>
                 </div>
-                <div className="rounded-2xl border border-violet-200 bg-violet-50 p-4">
-                  <p className="font-semibold text-violet-900">{card.secondPattern}</p>
-                  <p className="mt-2 text-violet-950">{card.secondMeaning}</p>
+                <div className="rounded-2xl border border-violet-200 dark:border-violet-800 bg-violet-50 dark:bg-violet-950/40 p-4">
+                  <p className="font-semibold text-violet-900 dark:text-violet-100">{card.secondPattern}</p>
+                  <p className="mt-2 text-violet-950 dark:text-violet-100">{card.secondMeaning}</p>
                   <p className="mt-3 text-slate-700 dark:text-slate-300">{card.secondExample}</p>
                 </div>
               </div>
@@ -2506,12 +2506,12 @@ function PracticeSection({
   }
 
   return (
-    <div className="mt-8 rounded-3xl bg-indigo-50 p-6">
-      <h3 className="text-xl font-black text-indigo-950">Micro practice</h3>
+    <div className="mt-8 rounded-3xl bg-indigo-50 dark:bg-indigo-950/40 p-6">
+      <h3 className="text-xl font-black text-indigo-950 dark:text-indigo-100">Micro practice</h3>
       <div className="mt-4 grid gap-4 md:grid-cols-2">
         {items.map((item) => (
           <div key={item.prompt} className="rounded-2xl bg-white dark:bg-slate-900 p-4 shadow-sm">
-            <p className="font-semibold text-indigo-900">{item.prompt}</p>
+            <p className="font-semibold text-indigo-900 dark:text-indigo-200">{item.prompt}</p>
             <p className="mt-3 text-sm font-semibold uppercase tracking-wide text-slate-500 dark:text-slate-400">
               Focus
             </p>

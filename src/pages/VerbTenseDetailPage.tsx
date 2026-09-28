@@ -163,8 +163,8 @@ export function VerbTenseDetailPage() {
         ) : null}
 
         {fullExplanation.confusionExamples?.length ? (
-          <div className="mt-8 rounded-3xl bg-violet-50 p-6">
-            <h3 className="text-xl font-black text-violet-950">
+          <div className="mt-8 rounded-3xl bg-violet-50 dark:bg-violet-950/40 p-6">
+            <h3 className="text-xl font-black text-violet-950 dark:text-violet-100">
               Common confusion examples
             </h3>
             <div className="mt-4 grid gap-4 md:grid-cols-2">
@@ -176,7 +176,7 @@ export function VerbTenseDetailPage() {
                       <li key={example}>• {example}</li>
                     ))}
                   </ul>
-                  <p className="mt-4 rounded-2xl bg-violet-50 p-3 text-sm text-violet-900">
+                  <p className="mt-4 rounded-2xl bg-violet-50 dark:bg-violet-950/40 p-3 text-sm text-violet-900 dark:text-violet-200">
                     {item.takeaway}
                   </p>
                 </div>
@@ -393,9 +393,9 @@ function getContentSectionStyles(variant: "default" | "highlight" | "indigo" | "
       };
     case "indigo":
       return {
-        container: "bg-indigo-50",
-        title: "text-indigo-950",
-        body: "text-indigo-900"
+        container: "bg-indigo-50 dark:bg-indigo-950/40",
+        title: "text-indigo-950 dark:text-indigo-100",
+        body: "text-indigo-900 dark:text-indigo-100"
       };
     case "amber":
       return {
